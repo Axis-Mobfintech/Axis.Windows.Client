@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{55585DC9-42D0-44B7-8BDB-0E1838E8B692}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AXIS_Client</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\auto_gen_grpc_client\acceptance-list.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\acceptance-list.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\accepted-bin.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\accepted-bin.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\aid-table.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\aid-table.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\capk-table.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\capk-table.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\device-parameters.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\device-parameters.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\device-register.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\device-register.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\pan-acceptance-list.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\pan-acceptance-list.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\pan-restriction-list.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\pan-restriction-list.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\par-acceptance-list.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\par-acceptance-list.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\par-restriction-list.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\par-restriction-list.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\passage_register.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\passage_register.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\restriction-list.grpc.pb.cc" />
+    <ClCompile Include="src\auto_gen_grpc_client\restriction-list.pb.cc" />
+    <ClCompile Include="src\devices_manager_client.cpp" />
+    <ClCompile Include="src\devices_prameters_client.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\restriction_lists_client.cpp" />
+    <ClCompile Include="src\transactions_client.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="build_protos.bat" />
+    <None Include="gRPC_protos\acceptance-list.proto" />
+    <None Include="gRPC_protos\capk-table.proto" />
+    <None Include="gRPC_protos\device-parameters.proto" />
+    <None Include="gRPC_protos\device-register.proto" />
+    <None Include="gRPC_protos\logs\protos\pan-restriction-list.proto" />
+    <None Include="gRPC_protos\logs\protos\par-restriction-list.proto" />
+    <None Include="gRPC_protos\passage_register.proto" />
+    <None Include="gRPC_protos\Protos\accepted-bin.proto" />
+    <None Include="gRPC_protos\Protos\aid-table.proto" />
+    <None Include="gRPC_protos\Protos\pan-acceptance-list.proto" />
+    <None Include="gRPC_protos\Protos\par-acceptance-list.proto" />
+    <None Include="gRPC_protos\restriction-list.proto" />
+    <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\capk-table.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\capk-table.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\device-parameters.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\device-parameters.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\device-register.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\device-register.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\pan-restriction-list.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\pan-restriction-list.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\par-restriction-list.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\par-restriction-list.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\passage_register.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\passage_register.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\accepted-bin.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\accepted-bin.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\aid-table.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\aid-table.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan-acceptance-list.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan-acceptance-list.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\par-acceptance-list.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\par-acceptance-list.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\restriction-list.grpc.pb.h" />
+    <ClInclude Include="src\auto_gen_grpc_client\restriction-list.pb.h" />
+    <ClInclude Include="src\devices_manager_client.h" />
+    <ClInclude Include="src\devices_prameters_client.h" />
+    <ClInclude Include="src\restriction_lists_client.h" />
+    <ClInclude Include="src\transactions_client.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="AXIS_Client_Windows_Versoes.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

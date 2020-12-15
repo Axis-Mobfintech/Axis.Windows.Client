@@ -1,0 +1,18 @@
+# Visual Studio cache/options directory
+.vs/
+
+# Visual C++ cache files
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+# User-specific files
+*.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+
+# *.proto files
+gRPC_protos/
