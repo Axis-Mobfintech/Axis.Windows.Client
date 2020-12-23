@@ -93,7 +93,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -108,7 +108,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,7 +127,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -146,7 +146,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -174,17 +174,19 @@
     <ClCompile Include="src\auto_gen_grpc_client\passage_register.pb.cc" />
     <ClCompile Include="src\auto_gen_grpc_client\restriction-list.grpc.pb.cc" />
     <ClCompile Include="src\auto_gen_grpc_client\restriction-list.pb.cc" />
+    <ClCompile Include="src\demo.cpp" />
     <ClCompile Include="src\devices_manager_client.cpp" />
     <ClCompile Include="src\devices_prameters_client.cpp" />
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\restriction_lists_client.cpp" />
     <ClCompile Include="src\transactions_client.cpp" />
+    <ClCompile Include="src\demo_version.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="build_protos.bat" />
     <None Include="gRPC_protos\acceptance-list.proto" />
     <None Include="gRPC_protos\capk-table.proto" />
+    <None Include="gRPC_protos\debit_recovery.proto" />
     <None Include="gRPC_protos\device-parameters.proto" />
     <None Include="gRPC_protos\device-register.proto" />
     <None Include="gRPC_protos\logs\protos\pan-restriction-list.proto" />
@@ -198,6 +200,8 @@
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="src\app_version.h" />
     <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.grpc.pb.h" />
     <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.pb.h" />
     <ClInclude Include="src\auto_gen_grpc_client\capk-table.grpc.pb.h" />
@@ -226,9 +230,13 @@
     <ClInclude Include="src\devices_prameters_client.h" />
     <ClInclude Include="src\restriction_lists_client.h" />
     <ClInclude Include="src\transactions_client.h" />
+    <ClInclude Include="src\version.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="AXIS_Client_Windows_Versoes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AXIS_Client.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,7 +5,6 @@
 
 #include <grpcpp/grpcpp.h>
 
-#include "auto_gen_grpc_client\passage_register.pb.h"
 #include "auto_gen_grpc_client\passage_register.grpc.pb.h"
 
 
@@ -22,7 +21,7 @@ class TransactionsClient
 public:
    TransactionsClient(std::shared_ptr<Channel> channel);
    ~TransactionsClient();
-   RegisterPassageResponse MakeTransaction(RegisterPassage registrer) throw (Status);
+   RegisterPassageResponse MakeTransaction(RegisterPassage registrer, int timeout_seconds=10) throw (Status);
 
 private:
    std::unique_ptr<Transactions::Stub> stub_;

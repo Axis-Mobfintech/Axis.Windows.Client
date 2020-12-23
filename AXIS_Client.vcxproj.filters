@@ -39,9 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\auto_gen_grpc_client\passage_register.pb.cc">
       <Filter>Source Files\auto_gen_grpc_client</Filter>
     </ClCompile>
@@ -126,6 +123,12 @@
     <ClCompile Include="src\transactions_client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\demo_version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md">
@@ -171,6 +174,9 @@
       <Filter>gRPC_protos\logs\protos</Filter>
     </None>
     <None Include=".gitignore" />
+    <None Include="gRPC_protos\debit_recovery.proto">
+      <Filter>gRPC_protos</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.grpc.pb.h">
@@ -257,10 +263,24 @@
     <ClInclude Include="src\transactions_client.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app_version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="AXIS_Client_Windows_Versoes.txt">
       <Filter>Docs</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AXIS_Client.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
