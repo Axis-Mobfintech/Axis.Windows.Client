@@ -5,15 +5,16 @@
 
 #include <grpcpp/grpcpp.h>
 
-#include "auto_gen_grpc_client\device-parameters.grpc.pb.h"
+#include "auto_gen_grpc_client\device_parameters.grpc.pb.h"
 
 
 using axis::transactions::DevicesParameters;
 using axis::transactions::Parameters;
 using axis::transactions::ParametersResponse;
 
-using axis::transactions::ApplicationIdentifierTable;
-using axis::transactions::ApplicationData;
+using axis::transactions::ApplicationIdentifier;
+using axis::transactions::CertificateAuthorityPublicKeyTable;
+using axis::transactions::AcceptedBankIdentificationNumber;
 
 using grpc::Channel;
 using grpc::Status;

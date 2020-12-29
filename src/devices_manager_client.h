@@ -5,7 +5,7 @@
 
 #include <grpcpp/grpcpp.h>
 
-#include "auto_gen_grpc_client\device-register.grpc.pb.h"
+#include "auto_gen_grpc_client\device_register.grpc.pb.h"
 
 
 using axis::transactions::DevicesManager;

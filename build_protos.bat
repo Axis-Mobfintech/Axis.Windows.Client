@@ -19,7 +19,7 @@ set GRPC_CPP_PLUGIN=C:\tools\vcpkg\packages\grpc_x64-windows\tools\grpc\grpc_cpp
 :: Deleta os fontes c++ existentes
 del src\auto_gen_grpc_client\*              /q 
 del src\auto_gen_grpc_client\Protos\*       /q 
-del src\auto_gen_grpc_client\logs\protos\*  /q 
+::del src\auto_gen_grpc_client\logs\protos\*  /q 
 
 
 :: Concatena o nome de todos os arquivos *.proto 
@@ -38,4 +38,4 @@ protoc --proto_path=%PROTOS_DIR% --proto_path=%PROTO_DIR_INCLUDE% --grpc_out=%OU
 
 :: Copia os arquivos *.cc, das pastas "Proto" e "logs\Proto" para a raiz "auto_gen_grpc_client"
 move /y %OUTPUT_DIR%\Protos\*cc %OUTPUT_DIR%\
-move /y %OUTPUT_DIR%\logs\protos\*.cc %OUTPUT_DIR%\
+::move /y %OUTPUT_DIR%\logs\protos\*.cc %OUTPUT_DIR%\

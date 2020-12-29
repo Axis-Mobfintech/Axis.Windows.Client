@@ -14,7 +14,7 @@ O projeto AXIS Client visa demonstrar o uso da API gRPC, em C++, para acesso ao 
 
 #**Instalação do ambiente**
 
-##**Windows**
+##**Windows (vcpkg)**
 
 ---
 - Instalar Visual Studio 2015, 2017 ou 2019;
@@ -28,8 +28,8 @@ O projeto AXIS Client visa demonstrar o uso da API gRPC, em C++, para acesso ao 
 - Instalar o protobuf: "vcpkg install protobuf protobuf:x64-windows"
 - Executar o comando a seguir, para que os pacotes recém instalados fiquem disponíveis para o sistema: "vcpkg integrate install"
 - Acrescentar o diretório do protoc à variável de ambiente PATH: "C:\tools\vcpkg\packages\protobuf_x64-windows\tools\"
-- Por default, o diretório dos certificados fica em "/usr/share/grpc/". Para alterá-lo, basta acrescentar a seguinte variável de 
-  ambiente GRPC_DEFAULT_SSL_ROOTS_FILE_PATH: "C:\tools\vcpkg\installed\x64-windows\share\gRPC" 
+- Por default, o diretório dos certificados fica em "/usr/share/grpc/roots.pem". Para alterá-lo, basta acrescentar a seguinte variável de 
+  ambiente GRPC_DEFAULT_SSL_ROOTS_FILE_PATH: "C:\tools\vcpkg\installed\x64-windows\share\gRPC\roots.pem" 
   (ou via API, através de SslCredentials(ssl_opts)).
 
 

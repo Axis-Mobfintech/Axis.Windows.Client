@@ -12,6 +12,7 @@
 #include "restriction_lists_client.h"
 #include "devices_manager_client.h"
 #include "transactions_client.h"
+#include "debit_recovery.h"
 
 #include "app_version.h"
 
@@ -22,8 +23,6 @@ using grpc::Status;
 
 using grpc::experimental::AltsCredentials;
 using grpc::experimental::AltsCredentialsOptions;
-//using grpc_impl::experimental::AltsCredentialsOptions;
-
 
 using google::protobuf::Timestamp;
 using google::protobuf::util::TimeUtil;
@@ -61,6 +60,7 @@ static void registro_do_validador_(void)
    DevicesManagerClient deviceManagerClient(channel);
 
    DeviceRegister registrerDevice;   
+
    registrerDevice.set_ksn_data("1234567890"); //KSN LEITOR
    registrerDevice.set_device_serial_number("1234567890");
    registrerDevice.set_reader_serial_number("1234567890");
@@ -142,45 +142,75 @@ static void requisicao_de_parametros_(void)
       std::cout << "   Descricao:" << s.error_message() << std::endl;
       return;
    }
-
-   ApplicationIdentifierTable aid_table = response.aid_table();
-   std::cout 
+   
+   std::cout
       << "RegisterDevice OK!" << std::endl
       << " response code         : " << response.response_code() << std::endl
       << " emv parameters version: " << response.emv_parameters_version() << std::endl
       << " bin parameters version: " << response.bin_parameters_version() << std::endl
-      << " date                  : " << TimeUtil::ToString(response.response_date()) << std::endl
-      << " message id            : " << aid_table.message_id() << std::endl;
-   
-   ApplicationData data = aid_table.application_data();
-   std::cout
-      << "   table index         : " << aid_table.index() << std::endl
-      << "   AID                 : " << data.application_identifier() << std::endl
-      //<< "   general flags       : " << data.general_flags() << std::endl
-      << "   authorized amount   : " << data.authorized_amount() << std::endl
-      << "   country code        : " << data.country_code() << std::endl
-      << "   currency code       : " << data.currency_code() << std::endl
-      << "   currency exponent   : " << data.currency_exponent() << std::endl
-      << "   terminal type       : " << data.terminal_type() << std::endl
-      << "   merchant category   : " << data.merchant_category_code() << std::endl
-      << "   TTQ                 : " << data.terminal_transaction_qualifiers() << std::endl
-      << "   ctls floor limit    : " << data.contactless_floor_limit() << std::endl
-      << "   reader floor limit  : " << data.reader_floor_limit() << std::endl
-      << "   limit no on device  : " << data.limit_no_on_device() << std::endl //(No On-device CVM)
-      << "   limit on device     : " << data.limit_on_device() << std::endl //(On - device CVM)
-      << "   cvm required limit  : " << data.cvm_required_limit() << std::endl
-      << "   term. cap.          : " << data.terminal_capabilities() << std::endl
-      << "   add. term. cap.     : " << data.addictional_terminal_capabilities() << std::endl
-      << "   app. version number : " << data.application_version_number() << std::endl
-      << "   card data input cap.: " << data.card_data_input_capability() << std::endl
-      << "   cvm cap. req.       : " << data.cvm_capability_required() << std::endl
-      << "   cvm cap. not req.   : " << data.cvm_capability_not_required() << std::endl
-      << "   security cap.       : " << data.security_capability() << std::endl
-      << "   TAC default         : " << data.terminal_action_code_default() << std::endl
-      << "   TAC denial          : " << data.terminal_action_code_denial() << std::endl
-      << "   TAC online          : " << data.terminal_action_code_online() << std::endl
-      << "   risk management data: " << data.risk_management_data() << std::endl
-      << "   category code       : " << data.category_code() << std::endl;
+      << " date                  : " << TimeUtil::ToString(response.response_date()) << std::endl;
+      
+
+   int i;
+
+   // AIDs
+   for (i = 0 ; i < response.emv_table_size(); i++)
+   {      
+      ApplicationIdentifier aid = response.emv_table(i);
+      std::cout
+         //<< "   table index         : " << aid.index() << std::endl
+         << "   AID                 : " << aid.application_identifier() << std::endl
+         //<< "   general flags       : " << aid.general_flags() << std::endl
+         << "   authorized amount   : " << aid.authorized_amount() << std::endl
+         << "   country code        : " << aid.country_code() << std::endl
+         << "   currency code       : " << aid.currency_code() << std::endl
+         << "   currency exponent   : " << aid.currency_exponent() << std::endl
+         << "   terminal type       : " << aid.terminal_type() << std::endl
+         << "   merchant category   : " << aid.merchant_category_code() << std::endl
+         << "   TTQ                 : " << aid.terminal_transaction_qualifiers() << std::endl
+         << "   ctls floor limit    : " << aid.contactless_floor_limit() << std::endl
+         << "   reader floor limit  : " << aid.reader_floor_limit() << std::endl
+         << "   limit no on device  : " << aid.limit_no_on_device() << std::endl //(No On-device CVM)
+         << "   limit on device     : " << aid.limit_on_device() << std::endl    //(On - device CVM)
+         << "   cvm required limit  : " << aid.cvm_required_limit() << std::endl
+         << "   term. cap.          : " << aid.terminal_capabilities() << std::endl
+         << "   add. term. cap.     : " << aid.addictional_terminal_capabilities() << std::endl
+         << "   app. version number : " << aid.application_version_number() << std::endl
+         << "   card data input cap.: " << aid.card_data_input_capability() << std::endl
+         << "   cvm cap. req.       : " << aid.cvm_capability_required() << std::endl
+         << "   cvm cap. not req.   : " << aid.cvm_capability_not_required() << std::endl
+         << "   security cap.       : " << aid.security_capability() << std::endl
+         << "   TAC default         : " << aid.terminal_action_code_default() << std::endl
+         << "   TAC denial          : " << aid.terminal_action_code_denial() << std::endl
+         << "   TAC online          : " << aid.terminal_action_code_online() << std::endl
+         << "   risk management data: " << aid.risk_management_data() << std::endl
+         << "   category code       : " << aid.category_code() << std::endl;
+   }
+
+   // CAPKs
+   for (i = 0; i < response.capk_table_size(); i++)
+   {
+      CertificateAuthorityPublicKeyTable capk = response.capk_table(i);
+      std::cout
+         << "   table index         : " << capk.index() << std::endl
+         << "   registered id.      : " << capk.registered_identifier() << std::endl
+         << "   rsa key modulus     : " << capk.rsa_key_modulus() << std::endl
+         << "   rsa key exponent    : " << capk.rsa_key_exponent() << std::endl
+         << "   checksum            : " << capk.checksum() << std::endl;
+   }
+
+   // BINs
+   for (i = 0; i < response.emv_table_size(); i++)
+   {
+      AcceptedBankIdentificationNumber bin = response.aid_table(i);
+      std::cout
+         << "   table index         : " << bin.index() << std::endl
+         << "   issuer code         : " << bin.issuer_code() << std::endl
+         << "   initial range       : " << bin.initial_range() << std::endl
+         << "   final range         : " << bin.final_range() << std::endl
+         << "   total trans. allowed: " << bin.total_sequential_transactions_allowed() << std::endl;
+   }
+
 }
 
 /*-----------------------------------------------------*/
@@ -203,7 +233,7 @@ static void requisicao_da_lista_de_excecao_(void)
    parametres.set_reader_serial_number("numero de serie do leitor");
    parametres.set_register_code(1234);
    parametres.set_restriction_list_version(1234);
-   
+
    parametres.set_line_id(obtem_dado_("Insira o ID da linha:"));
    parametres.set_operator_id(obtem_dado_("Insira o ID do operador:"));
    parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
@@ -215,10 +245,10 @@ static void requisicao_da_lista_de_excecao_(void)
 
 
    std::cout << " GetRestrictionList...." << std::endl;
-   
+
    RestrictionListResponse response;
    try {
-      response  = restrictionLists.GetRestrictionList(parametres);
+      response = restrictionLists.GetRestrictionList(parametres);
    }
    catch (grpc::Status s)
    {
@@ -231,25 +261,36 @@ static void requisicao_da_lista_de_excecao_(void)
       << "RegisterDevice OK!" << std::endl
       << " response code           : " << response.response_code() << std::endl
       << " restriction list version: " << response.restriction_list_version() << std::endl
-      << " date                    : " << response.register_date () << std::endl;
-         
-   PrimaryAccountNumberBlackList pan = response.pan_list();  
-   std::cout 
-      << "   index                 : " << pan.index() << std::endl
-      << "   reason                : " << pan.reason() << std::endl
-      << "   date                  : " << TimeUtil::ToString(pan.register_date()) << std::endl
-      << "   initial pan crypt     : " << pan.initial_pan_crypt() << std::endl
-      << "   pan sequence number   : " << pan.pan_sequence_number() << std::endl;
-   
-   PrimaryAccountReferenceBlackList par = response.par_list();
-   std::cout
-      << "   index                 : " << par.index () << std::endl
-      << "   message id            : " << par.message_id() << std::endl
-      << "   reason                : " << par.reason () << std::endl
-      << "   date                  : " << TimeUtil::ToString(par.register_date()) << std::endl
-      << "   payment account ref.  : " << par.payment_account_reference() << std::endl;
-}
+      << " date                    : " << TimeUtil::ToString(response.register_date()) << std::endl;
 
+   int i;
+
+   // Restrições
+   for (i = 0; i < response.card_information_size(); i++)
+   {
+      RestrictionListCardInformation restriction_card_info = response.card_information(i);
+      std::cout << "  restriction card - action         : " << restriction_card_info.action() << std::endl;
+
+      RestrictionListCardInformation card_info = response.card_information(i);
+      
+      // PAN Black List
+      PrimaryAccountNumberBlackList pan_black_list = card_info.pan_list();
+      std::cout
+         << "  pan black list index            : " << pan_black_list.index() << std::endl
+         << "   reason                         : " << pan_black_list.reason() << std::endl
+         << "   date                           : " << TimeUtil::ToString(pan_black_list.register_date()) << std::endl
+         << "   initial pan crypt              : " << pan_black_list.initial_pan_crypt() << std::endl
+         << "   pan sequence number            : " << pan_black_list.pan_sequence_number() << std::endl;
+      
+      // PAR Black List
+      PrimaryAccountReferenceBlackList par_black_list = card_info.par_list();
+      std::cout
+         << "  pan black list index            : " << par_black_list.index() << std::endl
+         << "   reason                         : " << par_black_list.reason() << std::endl
+         << "   date                           : " << TimeUtil::ToString(par_black_list.register_date()) << std::endl
+         << "   payment account reference      : " << par_black_list.payment_account_reference() << std::endl;
+   }
+}
 
 /*-----------------------------------------------------*/
 static void registro_de_passagem_(void)
@@ -346,15 +387,60 @@ static void registro_de_passagem_(void)
 /*-----------------------------------------------------*/
 static void recuperacao_de_debito_(void)
 {
-   std::cout << ">>>> Recuperacao de Debito indisponivel!!!" << std::endl << std::endl;
-
+   std::cout << " Iniciando Recuperacao de Debito..." << std::endl << std::endl;
+   
    // Create a default SSL ChannelCredentials object.
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
    // Create a channel using the credentials created in the previous step.
    auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);
 
-   //........
-   //........
+   
+   RecoverDebitClient recoverDebit(channel);
+
+   DebitRecovery debit;
+
+   debit.set_line_id(obtem_dado_("Insira o ID da linha:"));
+   debit.set_operator_id(obtem_dado_("Insira o ID do operador:"));  
+   debit.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
+
+   //debit.set_emv_parameters_version();
+   //debit.set_bin_parameters_version();
+   //debit.set_restriction_list_version();
+
+   debit.set_device_id("id do validador");
+   debit.set_device_serial_number("1234567890");
+   debit.set_device_suid("9999");
+   debit.set_geolocation("geolocalizacao");
+
+   //debit.set_pan_hash();
+   //debit.set_par_card();
+
+   debit.set_reader_serial_number("1234567890");
+   debit.set_register_code(1234);
+   
+   debit.set_transaction_data("\x9F\x27\x01\x80\x9F\x26\x08\x76\x5D\xC1\x38\x07\xD1\xE4\xC8\x9F\x36\x02\x00\x06\x95\x05\x00\x10\x00\x00\x00\x8F\x01\x05\x9F\x37\x04\x5A\x77\xAC\xF0");
+   debit.set_transaction_value(100);
+
+   std::cout << " MakeTransaction..." << std::endl;
+
+   DebitRecoveryResponse response;
+   try {
+      response = recoverDebit.RecoverDebit(debit);
+   }
+   catch (grpc::Status s)
+   {
+      std::cout << "   Erro:" << s.error_code() << std::endl;
+      std::cout << "   Descricao:" << s.error_message() << std::endl;
+      return;
+   }
+
+   std::cout << "RecoverDebit OK!" << std::endl
+      << " response code           : " << response.response_code() << std::endl
+      << " NSU validador           : " << response.device_suid() << std::endl
+      << " NSU gateway             : " << response.gateway_uid() << std::endl
+      << " Versao Tabelas EMV      : " << response.emv_parameters_version() << std::endl
+      << " Versao Tabelas BIN      : " << response.bin_parameters_version() << std::endl
+      << " Versao lista restricao  : " << response.restriction_list_version() << std::endl;
 }
 
 

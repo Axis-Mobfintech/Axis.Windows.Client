@@ -5,14 +5,17 @@
 
 #include <grpcpp/grpcpp.h>
 
-#include "auto_gen_grpc_client\restriction-list.grpc.pb.h"
-
+#include "auto_gen_grpc_client\restriction_list.grpc.pb.h"
 
 using axis::transactions::RestrictionLists;
 using axis::transactions::RestrictionListResponse;
 using axis::transactions::RestrictionListRequest;
+using axis::transactions::RestrictionListCardInformation;
 using axis::transactions::PrimaryAccountReferenceBlackList;
 using axis::transactions::PrimaryAccountNumberBlackList;
+//using axis::transactions::PrimaryAccountReferenceWhiteList;
+//using axis::transactions::PrimaryAccountNumberWhiteList;
+
 
 using grpc::Channel;
 using grpc::Status;

@@ -31,86 +31,8 @@
     <Filter Include="gRPC_protos\Protos">
       <UniqueIdentifier>{12bf795b-819e-4812-bdcd-88065b3b906b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="gRPC_protos\logs">
-      <UniqueIdentifier>{fb04e0b5-cf20-4d48-ac64-3bb5b46ac800}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="gRPC_protos\logs\protos">
-      <UniqueIdentifier>{c9a9ea27-3d17-4486-b9d7-eebf7b979794}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\auto_gen_grpc_client\passage_register.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\restriction-list.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\restriction-list.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\acceptance-list.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\acceptance-list.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\accepted-bin.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\accepted-bin.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\aid-table.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\aid-table.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\capk-table.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\capk-table.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\device-parameters.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\device-parameters.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\device-register.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\device-register.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\pan-acceptance-list.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\pan-acceptance-list.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\pan-restriction-list.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\pan-restriction-list.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\par-acceptance-list.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\par-acceptance-list.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\par-restriction-list.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\par-restriction-list.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="src\auto_gen_grpc_client\passage_register.grpc.pb.cc">
-      <Filter>Source Files\auto_gen_grpc_client</Filter>
-    </ClCompile>
     <ClCompile Include="src\devices_prameters_client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -129,6 +51,93 @@
     <ClCompile Include="src\demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\acceptance_list.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\acceptance_list.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\accepted_bin.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\accepted_bin.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\application_identifier.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\application_identifier.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\capk_table.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\capk_table.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\card_action.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\card_action.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\debit_recovery.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\debit_recovery.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\device_parameters.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\device_parameters.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\device_register.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\device_register.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\pan_acceptance_list.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\pan_acceptance_list.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\pan_restriction_list.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\pan_restriction_list.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\par_acceptance_list.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\par_acceptance_list.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\par_restriction_list.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\par_restriction_list.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\passage_register.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\passage_register.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\restriction_list.grpc.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\auto_gen_grpc_client\restriction_list.pb.cc">
+      <Filter>Source Files\auto_gen_grpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\debit_recovery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md">
@@ -137,120 +146,51 @@
     <None Include="build_protos.bat">
       <Filter>Tools</Filter>
     </None>
-    <None Include="gRPC_protos\passage_register.proto">
-      <Filter>gRPC_protos</Filter>
-    </None>
-    <None Include="gRPC_protos\restriction-list.proto">
-      <Filter>gRPC_protos</Filter>
-    </None>
-    <None Include="gRPC_protos\acceptance-list.proto">
-      <Filter>gRPC_protos</Filter>
-    </None>
-    <None Include="gRPC_protos\capk-table.proto">
-      <Filter>gRPC_protos</Filter>
-    </None>
-    <None Include="gRPC_protos\device-parameters.proto">
-      <Filter>gRPC_protos</Filter>
-    </None>
-    <None Include="gRPC_protos\device-register.proto">
-      <Filter>gRPC_protos</Filter>
-    </None>
-    <None Include="gRPC_protos\Protos\pan-acceptance-list.proto">
-      <Filter>gRPC_protos\Protos</Filter>
-    </None>
-    <None Include="gRPC_protos\Protos\par-acceptance-list.proto">
-      <Filter>gRPC_protos\Protos</Filter>
-    </None>
-    <None Include="gRPC_protos\Protos\accepted-bin.proto">
-      <Filter>gRPC_protos\Protos</Filter>
-    </None>
-    <None Include="gRPC_protos\Protos\aid-table.proto">
-      <Filter>gRPC_protos\Protos</Filter>
-    </None>
-    <None Include="gRPC_protos\logs\protos\par-restriction-list.proto">
-      <Filter>gRPC_protos\logs\protos</Filter>
-    </None>
-    <None Include="gRPC_protos\logs\protos\pan-restriction-list.proto">
-      <Filter>gRPC_protos\logs\protos</Filter>
-    </None>
     <None Include=".gitignore" />
+    <None Include="gRPC_protos\restriction_list.proto">
+      <Filter>gRPC_protos</Filter>
+    </None>
+    <None Include="gRPC_protos\acceptance_list.proto">
+      <Filter>gRPC_protos</Filter>
+    </None>
     <None Include="gRPC_protos\debit_recovery.proto">
       <Filter>gRPC_protos</Filter>
     </None>
+    <None Include="gRPC_protos\device_parameters.proto">
+      <Filter>gRPC_protos</Filter>
+    </None>
+    <None Include="gRPC_protos\device_register.proto">
+      <Filter>gRPC_protos</Filter>
+    </None>
+    <None Include="gRPC_protos\passage_register.proto">
+      <Filter>gRPC_protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\par_acceptance_list.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\par_restriction_list.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\accepted_bin.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\application_identifier.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\capk_table.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\card_action.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\pan_acceptance_list.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
+    <None Include="gRPC_protos\Protos\pan_restriction_list.proto">
+      <Filter>gRPC_protos\Protos</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\acceptance-list.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\capk-table.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\capk-table.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\device-parameters.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\device-parameters.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\device-register.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\device-register.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\passage_register.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\passage_register.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\restriction-list.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\restriction-list.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\par-acceptance-list.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\par-acceptance-list.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\accepted-bin.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\accepted-bin.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\aid-table.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\aid-table.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan-acceptance-list.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan-acceptance-list.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\par-restriction-list.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\par-restriction-list.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\pan-restriction-list.grpc.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="src\auto_gen_grpc_client\logs\protos\pan-restriction-list.pb.h">
-      <Filter>Header Files\auto_gen_grpc_client</Filter>
-    </ClInclude>
     <ClInclude Include="src\devices_prameters_client.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -270,6 +210,93 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\app_version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan_acceptance_list.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan_restriction_list.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan_restriction_list.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\par_acceptance_list.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\par_acceptance_list.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\par_restriction_list.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\par_restriction_list.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\accepted_bin.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\accepted_bin.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\application_identifier.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\application_identifier.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\capk_table.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\capk_table.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\card_action.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\card_action.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\Protos\pan_acceptance_list.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\passage_register.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\restriction_list.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\restriction_list.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\acceptance_list.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\acceptance_list.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\debit_recovery.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\debit_recovery.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\device_parameters.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\device_parameters.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\device_register.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\device_register.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\auto_gen_grpc_client\passage_register.grpc.pb.h">
+      <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debit_recovery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
