@@ -34,7 +34,7 @@ static std::string obtem_dado_(std::string titulo)
 {
    char data[30];
 
-   std::cout << titulo << std::endl;
+   std::cout << titulo << " ";
 
    std::cin.getline(data, sizeof (data));   
 
@@ -45,21 +45,12 @@ static std::string obtem_dado_(std::string titulo)
 /*-----------------------------------------------------*/
 static void registro_do_validador_(void) 
 {
-   std::cout << std::endl << " Registro do Validador..." << std::endl << std::endl;
-     
-   //grpc::SslCredentialsOptions ssl_opts;
-   //std::shared_ptr<grpc::ChannelCredentials> creds = grpc::SslCredentials(ssl_opts);
-   //auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", creds);
-   
+   std::cout << std::endl << "##########  Registro do Validador  ##########" << std::endl << std::endl;
+       
    // Create a default SSL ChannelCredentials object.
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
    // Create a channel using the credentials created in the previous step.
-   auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);   
-   
-   
-   //4ioiybj5xk.execute-api.sa-east-1.amazonaws.com:443
-   //auto channel = grpc::CreateChannel("4ioiybj5xk.execute-api.sa-east-1.amazonaws.com:443", channel_creds);   //https://4ioiybj5xk.execute-api.sa-east-1.amazonaws.com/Prod
-      
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);       
 
    DevicesManagerClient deviceManagerClient(channel);
 
@@ -69,9 +60,9 @@ static void registro_do_validador_(void)
    registrerDevice.set_device_serial_number("1234567890");
    registrerDevice.set_reader_serial_number("1234567890");
    
-   registrerDevice.set_line_id(obtem_dado_("Insira o ID da linha:"));
+   registrerDevice.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    registrerDevice.set_operator_id(obtem_dado_("Insira o ID do operador:"));
-   registrerDevice.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
+   registrerDevice.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
    
    auto date_time = new Timestamp{};
    date_time->set_seconds(time(NULL));
@@ -79,7 +70,7 @@ static void registro_do_validador_(void)
    registrerDevice.set_allocated_register_date(date_time);
      
 
-   std::cout << std::endl << " RegisterDevice...." << std::endl;
+   std::cout << std::endl << "RegisterDevice...." << std::endl ;
 
    DeviceRegisterResponse response;
    try {
@@ -87,29 +78,29 @@ static void registro_do_validador_(void)
    }
    catch (grpc::Status s)
    {
-      std::cout << "   Erro:" << s.error_code() << std::endl;
-      std::cout << "   Descricao:" << s.error_message() << std::endl;
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
       return;
    }
 
    std::cout 
-      << "RegisterDevice OK!" << std::endl
-      << " response code: " << response.response_code() << std::endl
-      << " register code: " << response.register_code() << std::endl
-      << " device id    : " << response.device_id() << std::endl
-      << " date         : " << TimeUtil::ToString(response.register_date()) << std::endl;         
+      << "RegisterDevice OK!" << std::endl << std::endl
+      << "  response code: " << response.response_code() << std::endl
+      << "  register code: " << response.register_code() << std::endl
+      << "  device id    : " << response.device_id() << std::endl
+      << "  date         : " << TimeUtil::ToString(response.register_date()) << std::endl;         
 }
 
 
 /*-----------------------------------------------------*/
 static void requisicao_de_parametros_(void)
 {
-   std::cout << " Requisicao parametros..." << std::endl << std::endl;
+   std::cout << std::endl << "##########  Requisicao parametros  ##########" << std::endl << std::endl;
 
    // Create a default SSL ChannelCredentials object.
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
-   // Create a channel using the credentials created in the previous step.
-   auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);
+   // Create a channel using the credentials created in the previous step.      
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
 
 
    DevicesParametersClient devicesParameters(channel);
@@ -124,9 +115,9 @@ static void requisicao_de_parametros_(void)
    parametres.set_ksn_data("ksn"); //KSN LEITOR
    parametres.set_reader_serial_number("numero de serie do leitor");
 
-   parametres.set_line_id(obtem_dado_("Insira o ID da linha:"));
+   parametres.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    parametres.set_operator_id(obtem_dado_("Insira o ID do operador:"));
-   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
+   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
 
    auto date_time = new google::protobuf::Timestamp{};
    date_time->set_seconds(time(NULL));
@@ -134,7 +125,7 @@ static void requisicao_de_parametros_(void)
    parametres.set_allocated_register_date(date_time);
 
 
-   std::cout << " RegisterDevice...." << std::endl;
+   std::cout << std::endl << "RegisterDevice...." << std::endl;
 
    ParametersResponse response;
    try {
@@ -142,17 +133,17 @@ static void requisicao_de_parametros_(void)
    }
    catch (grpc::Status s)
    {
-      std::cout << "   Erro:" << s.error_code() << std::endl;
-      std::cout << "   Descricao:" << s.error_message() << std::endl;
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
       return;
    }
    
    std::cout
-      << "RegisterDevice OK!" << std::endl
-      << " response code         : " << response.response_code() << std::endl
-      << " emv parameters version: " << response.emv_parameters_version() << std::endl
-      << " bin parameters version: " << response.bin_parameters_version() << std::endl
-      << " date                  : " << TimeUtil::ToString(response.response_date()) << std::endl;
+      << "RegisterDevice OK!" << std::endl << std::endl
+      << "  response code         : " << response.response_code() << std::endl
+      << "  emv parameters version: " << response.emv_parameters_version() << std::endl
+      << "  bin parameters version: " << response.bin_parameters_version() << std::endl
+      << "  date                  : " << TimeUtil::ToString(response.response_date()) << std::endl;
       
 
    int i;
@@ -162,34 +153,34 @@ static void requisicao_de_parametros_(void)
    {      
       ApplicationIdentifier aid = response.aid_table(i);
       std::cout
-         << "  table index           : " << aid.index() << std::endl
-         << "  AID                   : " << aid.application_identifier() << std::endl
-         << "  action                : " << aid.card_action() << std::endl
-         << "    kernel ctls         : " << aid.general_flags().kernel_ctls() << std::endl
-         << "    authorized amount   : " << aid.authorized_amount() << std::endl
-         << "    country code        : " << aid.country_code() << std::endl
-         << "    currency code       : " << aid.currency_code() << std::endl
-         << "    currency exponent   : " << aid.currency_exponent() << std::endl
-         << "    terminal type       : " << aid.terminal_type() << std::endl
-         << "    merchant category   : " << aid.merchant_category_code() << std::endl
-         << "    TTQ                 : " << aid.terminal_transaction_qualifiers() << std::endl
-         << "    ctls floor limit    : " << aid.contactless_floor_limit() << std::endl
-         << "    reader floor limit  : " << aid.reader_floor_limit() << std::endl
-         << "    limit no on device  : " << aid.limit_no_on_device() << std::endl //(No On-device CVM)
-         << "    limit on device     : " << aid.limit_on_device() << std::endl    //(On - device CVM)
-         << "    cvm required limit  : " << aid.cvm_required_limit() << std::endl
-         << "    term. cap.          : " << aid.terminal_capabilities() << std::endl
-         << "    add. term. cap.     : " << aid.addictional_terminal_capabilities() << std::endl
-         << "    app. version number : " << aid.application_version_number() << std::endl
-         << "    card data input cap.: " << aid.card_data_input_capability() << std::endl
-         << "    cvm cap. req.       : " << aid.cvm_capability_required() << std::endl
-         << "    cvm cap. not req.   : " << aid.cvm_capability_not_required() << std::endl
-         << "    security cap.       : " << aid.security_capability() << std::endl
-         << "    TAC default         : " << aid.terminal_action_code_default() << std::endl
-         << "    TAC denial          : " << aid.terminal_action_code_denial() << std::endl
-         << "    TAC online          : " << aid.terminal_action_code_online() << std::endl
-         << "    risk management data: " << aid.risk_management_data() << std::endl
-         << "    category code       : " << aid.category_code() << std::endl;
+         << "   table index           : " << aid.index() << std::endl
+         << "   AID                   : " << aid.application_identifier() << std::endl
+         << "   action                : " << aid.card_action() << std::endl
+         << "     kernel ctls         : " << aid.general_flags().kernel_ctls() << std::endl
+         << "     authorized amount   : " << aid.authorized_amount() << std::endl
+         << "     country code        : " << aid.country_code() << std::endl
+         << "     currency code       : " << aid.currency_code() << std::endl
+         << "     currency exponent   : " << aid.currency_exponent() << std::endl
+         << "     terminal type       : " << aid.terminal_type() << std::endl
+         << "     merchant category   : " << aid.merchant_category_code() << std::endl
+         << "     TTQ                 : " << aid.terminal_transaction_qualifiers() << std::endl
+         << "     ctls floor limit    : " << aid.contactless_floor_limit() << std::endl
+         << "     reader floor limit  : " << aid.reader_floor_limit() << std::endl
+         << "     limit no on device  : " << aid.limit_no_on_device() << std::endl //(No On-device CVM)
+         << "     limit on device     : " << aid.limit_on_device() << std::endl    //(On - device CVM)
+         << "     cvm required limit  : " << aid.cvm_required_limit() << std::endl
+         << "     term. cap.          : " << aid.terminal_capabilities() << std::endl
+         << "     add. term. cap.     : " << aid.addictional_terminal_capabilities() << std::endl
+         << "     app. version number : " << aid.application_version_number() << std::endl
+         << "     card data input cap.: " << aid.card_data_input_capability() << std::endl
+         << "     cvm cap. req.       : " << aid.cvm_capability_required() << std::endl
+         << "     cvm cap. not req.   : " << aid.cvm_capability_not_required() << std::endl
+         << "     security cap.       : " << aid.security_capability() << std::endl
+         << "     TAC default         : " << aid.terminal_action_code_default() << std::endl
+         << "     TAC denial          : " << aid.terminal_action_code_denial() << std::endl
+         << "     TAC online          : " << aid.terminal_action_code_online() << std::endl
+         << "     risk management data: " << aid.risk_management_data() << std::endl
+         << "     category code       : " << aid.category_code() << std::endl;
    }
 
    // CAPKs
@@ -197,11 +188,11 @@ static void requisicao_de_parametros_(void)
    {
       CertificateAuthorityPublicKeyTable capk = response.capk_table(i);
       std::cout
-         << "  table index           : " << capk.index() << std::endl
-         << "    registered id.      : " << capk.registered_identifier() << std::endl
-         << "    rsa key modulus     : " << capk.rsa_key_modulus() << std::endl
-         << "    rsa key exponent    : " << capk.rsa_key_exponent() << std::endl
-         << "    checksum            : " << capk.checksum() << std::endl;
+         << "   table index           : " << capk.index() << std::endl
+         << "     registered id.      : " << capk.registered_identifier() << std::endl
+         << "     rsa key modulus     : " << capk.rsa_key_modulus() << std::endl
+         << "     rsa key exponent    : " << capk.rsa_key_exponent() << std::endl
+         << "     checksum            : " << capk.checksum() << std::endl;
    }
 
    // BINs
@@ -209,24 +200,24 @@ static void requisicao_de_parametros_(void)
    {
       AcceptedBankIdentificationNumber bin = response.bin_table(i);
       std::cout
-         << "  table index           : " << bin.index() << std::endl
-         << "    issuer code         : " << bin.issuer_code() << std::endl
-         << "    initial range       : " << bin.initial_range() << std::endl
-         << "    final range         : " << bin.final_range() << std::endl
-         << "    total trans. allowed: " << bin.total_sequential_transactions_allowed() << std::endl;
+         << "   table index           : " << bin.index() << std::endl
+         << "     issuer code         : " << bin.issuer_code() << std::endl
+         << "     initial range       : " << bin.initial_range() << std::endl
+         << "     final range         : " << bin.final_range() << std::endl
+         << "     total trans. allowed: " << bin.total_sequential_transactions_allowed() << std::endl;
    }
 
 }
 
 /*-----------------------------------------------------*/
 static void requisicao_da_lista_de_excecao_(void)
-{
-   std::cout << " Requisicao da lista de excecao..." << std::endl << std::endl;
+{   
+   std::cout << std::endl << "##########  Requisicao da lista de excecao  ##########" << std::endl << std::endl;
 
    // Create a default SSL ChannelCredentials object.
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
    // Create a channel using the credentials created in the previous step.
-   auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
 
    RestrictionListsClient restrictionLists(channel);
 
@@ -239,9 +230,9 @@ static void requisicao_da_lista_de_excecao_(void)
    parametres.set_register_code(1234);
    parametres.set_restriction_list_version(1234);
 
-   parametres.set_line_id(obtem_dado_("Insira o ID da linha:"));
+   parametres.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    parametres.set_operator_id(obtem_dado_("Insira o ID do operador:"));
-   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
+   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
 
    auto date_time = new google::protobuf::Timestamp{};
    date_time->set_seconds(time(NULL));
@@ -249,7 +240,7 @@ static void requisicao_da_lista_de_excecao_(void)
    parametres.set_allocated_register_date(date_time);
 
 
-   std::cout << " GetRestrictionList...." << std::endl;
+   std::cout << std::endl << "GetRestrictionList...." << std::endl;
 
    RestrictionListResponse response;
    try {
@@ -257,16 +248,16 @@ static void requisicao_da_lista_de_excecao_(void)
    }
    catch (grpc::Status s)
    {
-      std::cout << "   Erro:" << s.error_code() << std::endl;
-      std::cout << "   Descricao:" << s.error_message() << std::endl;
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
       return;
    }
 
    std::cout
-      << "RegisterDevice OK!" << std::endl
-      << " response code           : " << response.response_code() << std::endl
-      << " restriction list version: " << response.restriction_list_version() << std::endl
-      << " date                    : " << TimeUtil::ToString(response.register_date()) << std::endl;
+      << "RegisterDevice OK!" << std::endl << std::endl
+      << "  response code           : " << response.response_code() << std::endl
+      << "  restriction list version: " << response.restriction_list_version() << std::endl
+      << "  date                    : " << TimeUtil::ToString(response.register_date()) << std::endl;
 
    int i;
 
@@ -274,33 +265,33 @@ static void requisicao_da_lista_de_excecao_(void)
    for (i = 0; i < response.card_information_size(); i++)
    {
       RestrictionListCardInformation restriction_card_info = response.card_information(i);
-      std::cout << "  restriction card - action         : " << restriction_card_info.action() << std::endl;
+      std::cout << "   restriction card - action         : " << restriction_card_info.action() << std::endl;
 
       RestrictionListCardInformation card_info = response.card_information(i);
       
       // PAN Black List
       PrimaryAccountNumberBlackList pan_black_list = card_info.pan_list();
       std::cout
-         << "  pan black list index            : " << pan_black_list.index() << std::endl
-         << "   reason                         : " << pan_black_list.reason() << std::endl
-         << "   date                           : " << TimeUtil::ToString(pan_black_list.register_date()) << std::endl
-         << "   initial pan crypt              : " << pan_black_list.initial_pan_crypt() << std::endl
-         << "   pan sequence number            : " << pan_black_list.pan_sequence_number() << std::endl;
+         << "   pan black list index            : " << pan_black_list.index() << std::endl
+         << "    reason                         : " << pan_black_list.reason() << std::endl
+         << "    date                           : " << TimeUtil::ToString(pan_black_list.register_date()) << std::endl
+         << "    initial pan crypt              : " << pan_black_list.initial_pan_crypt() << std::endl
+         << "    pan sequence number            : " << pan_black_list.pan_sequence_number() << std::endl;
       
       // PAR Black List
       PrimaryAccountReferenceBlackList par_black_list = card_info.par_list();
       std::cout
-         << "  pan black list index            : " << par_black_list.index() << std::endl
-         << "   reason                         : " << par_black_list.reason() << std::endl
-         << "   date                           : " << TimeUtil::ToString(par_black_list.register_date()) << std::endl
-         << "   payment account reference      : " << par_black_list.payment_account_reference() << std::endl;
+         << "   pan black list index            : " << par_black_list.index() << std::endl
+         << "    reason                         : " << par_black_list.reason() << std::endl
+         << "    date                           : " << TimeUtil::ToString(par_black_list.register_date()) << std::endl
+         << "    payment account reference      : " << par_black_list.payment_account_reference() << std::endl;
    }
 }
 
 /*-----------------------------------------------------*/
 static void registro_de_passagem_(void)
 {
-   std::cout << " Iniciando Passagem de Registro..." << std::endl << std::endl;
+   std::cout << std::endl << "##########   Iniciando Passagem de Registro   ##########" << std::endl << std::endl;
 
    /*
    AltsCredentialsOptions opts;
@@ -312,15 +303,16 @@ static void registro_de_passagem_(void)
          
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
    // Create a channel using the credentials created in the previous step.
-   auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);
+   
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
 
    TransactionsClient transactionsClient(channel);
 
    RegisterPassage registrer;
 
-   registrer.set_line_id(obtem_dado_("Insira o ID da linha:"));
+   registrer.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    registrer.set_operator_id(obtem_dado_("Insira o ID do operador:"));
-   registrer.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
+   registrer.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
 
    registrer.set_device_id("id do validador");
    registrer.set_reader_serial_number("numero de serie do leitor");
@@ -366,7 +358,7 @@ static void registro_de_passagem_(void)
    registrer.set_geolocation("geolocalizacao");
 
 
-   std::cout << " MakeTransaction..." << std::endl;
+   std::cout << std::endl << "MakeTransaction..." << std::endl;
 
    RegisterPassageResponse response;
    try {
@@ -374,39 +366,39 @@ static void registro_de_passagem_(void)
    }
    catch (grpc::Status s)
    {
-      std::cout << "   Erro:" << s.error_code() << std::endl;
-      std::cout << "   Descricao:" << s.error_message() << std::endl;
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
       return;
    }
 
-   std::cout << "RegisterDevice OK!" << std::endl
-      << " response code           : " << response.response_code() << std::endl
-      << " NSU validador           : " << response.device_suid() << std::endl
-      << " NSU gateway             : " << response.gateway_uid() << std::endl
-      << " Versao Tabelas EMV      : " << response.emv_parameters_version() << std::endl
-      << " Versao Tabelas BIN      : " << response.bin_parameters_version() << std::endl
-      << " Versao lista restricao  : " << response.restriction_list_version() << std::endl;
+   std::cout << "RegisterDevice OK!" << std::endl << std::endl
+      << "   response code           : " << response.response_code() << std::endl
+      << "   NSU validador           : " << response.device_suid() << std::endl
+      << "   NSU gateway             : " << response.gateway_uid() << std::endl
+      << "   Versao Tabelas EMV      : " << response.emv_parameters_version() << std::endl
+      << "   Versao Tabelas BIN      : " << response.bin_parameters_version() << std::endl
+      << "   Versao lista restricao  : " << response.restriction_list_version() << std::endl;
 
 }
 
 /*-----------------------------------------------------*/
 static void recuperacao_de_debito_(void)
 {
-   std::cout << " Iniciando Recuperacao de Debito..." << std::endl << std::endl;
+   std::cout << std::endl << "##########   Iniciando Recuperacao de Debito   ##########" << std::endl << std::endl;
    
    // Create a default SSL ChannelCredentials object.
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
    // Create a channel using the credentials created in the previous step.
-   auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
 
    
    RecoverDebitClient recoverDebit(channel);
 
    DebitRecovery debit;
 
-   debit.set_line_id(obtem_dado_("Insira o ID da linha:"));
+   debit.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    debit.set_operator_id(obtem_dado_("Insira o ID do operador:"));  
-   debit.set_vehicle_id(obtem_dado_("Insira o ID do veiculo:"));
+   debit.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
 
    //debit.set_emv_parameters_version();
    //debit.set_bin_parameters_version();
@@ -426,7 +418,7 @@ static void recuperacao_de_debito_(void)
    debit.set_transaction_data("\x9F\x27\x01\x80\x9F\x26\x08\x76\x5D\xC1\x38\x07\xD1\xE4\xC8\x9F\x36\x02\x00\x06\x95\x05\x00\x10\x00\x00\x00\x8F\x01\x05\x9F\x37\x04\x5A\x77\xAC\xF0");
    debit.set_transaction_value(100);
 
-   std::cout << " MakeTransaction..." << std::endl;
+   std::cout << std::endl << "MakeTransaction..." << std::endl ;
 
    DebitRecoveryResponse response;
    try {
@@ -434,18 +426,18 @@ static void recuperacao_de_debito_(void)
    }
    catch (grpc::Status s)
    {
-      std::cout << "   Erro:" << s.error_code() << std::endl;
-      std::cout << "   Descricao:" << s.error_message() << std::endl;
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
       return;
    }
 
-   std::cout << "RecoverDebit OK!" << std::endl
-      << " response code           : " << response.response_code() << std::endl
-      << " NSU validador           : " << response.device_suid() << std::endl
-      << " NSU gateway             : " << response.gateway_uid() << std::endl
-      << " Versao Tabelas EMV      : " << response.emv_parameters_version() << std::endl
-      << " Versao Tabelas BIN      : " << response.bin_parameters_version() << std::endl
-      << " Versao lista restricao  : " << response.restriction_list_version() << std::endl;
+   std::cout << "RecoverDebit OK!" << std::endl << std::endl
+      << "  response code           : " << response.response_code() << std::endl
+      << "  NSU validador           : " << response.device_suid() << std::endl
+      << "  NSU gateway             : " << response.gateway_uid() << std::endl
+      << "  Versao Tabelas EMV      : " << response.emv_parameters_version() << std::endl
+      << "  Versao Tabelas BIN      : " << response.bin_parameters_version() << std::endl
+      << "  Versao lista restricao  : " << response.restriction_list_version() << std::endl;
 }
 
 
@@ -500,5 +492,6 @@ void main(void)
       default:
          break;
       }
+      std::cout << std::endl << std::endl << std::endl ;
    }
 }
