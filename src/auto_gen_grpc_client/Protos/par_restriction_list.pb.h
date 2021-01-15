@@ -183,13 +183,12 @@ class PrimaryAccountReferenceBlackList PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPaymentAccountReferenceFieldNumber = 5,
-    kRegisterDateFieldNumber = 4,
-    kMessageIdFieldNumber = 1,
-    kIndexFieldNumber = 2,
-    kReasonFieldNumber = 3,
+    kPaymentAccountReferenceFieldNumber = 4,
+    kRegisterDateFieldNumber = 3,
+    kIndexFieldNumber = 1,
+    kReasonFieldNumber = 2,
   };
-  // string payment_account_reference = 5;
+  // string payment_account_reference = 4;
   void clear_payment_account_reference();
   const std::string& payment_account_reference() const;
   void set_payment_account_reference(const std::string& value);
@@ -205,7 +204,7 @@ class PrimaryAccountReferenceBlackList PROTOBUF_FINAL :
   std::string* _internal_mutable_payment_account_reference();
   public:
 
-  // .google.protobuf.Timestamp register_date = 4;
+  // .google.protobuf.Timestamp register_date = 3;
   bool has_register_date() const;
   private:
   bool _internal_has_register_date() const;
@@ -223,16 +222,7 @@ class PrimaryAccountReferenceBlackList PROTOBUF_FINAL :
       PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
   PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
 
-  // int32 message_id = 1;
-  void clear_message_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 message_id() const;
-  void set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_message_id() const;
-  void _internal_set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // int32 index = 2;
+  // int32 index = 1;
   void clear_index();
   ::PROTOBUF_NAMESPACE_ID::int32 index() const;
   void set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -241,7 +231,7 @@ class PrimaryAccountReferenceBlackList PROTOBUF_FINAL :
   void _internal_set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 reason = 3;
+  // int32 reason = 2;
   void clear_reason();
   ::PROTOBUF_NAMESPACE_ID::int32 reason() const;
   void set_reason(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -259,7 +249,6 @@ class PrimaryAccountReferenceBlackList PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payment_account_reference_;
   PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
-  ::PROTOBUF_NAMESPACE_ID::int32 message_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 index_;
   ::PROTOBUF_NAMESPACE_ID::int32 reason_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -276,27 +265,7 @@ class PrimaryAccountReferenceBlackList PROTOBUF_FINAL :
 #endif  // __GNUC__
 // PrimaryAccountReferenceBlackList
 
-// int32 message_id = 1;
-inline void PrimaryAccountReferenceBlackList::clear_message_id() {
-  message_id_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 PrimaryAccountReferenceBlackList::_internal_message_id() const {
-  return message_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 PrimaryAccountReferenceBlackList::message_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.PrimaryAccountReferenceBlackList.message_id)
-  return _internal_message_id();
-}
-inline void PrimaryAccountReferenceBlackList::_internal_set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  message_id_ = value;
-}
-inline void PrimaryAccountReferenceBlackList::set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_message_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.PrimaryAccountReferenceBlackList.message_id)
-}
-
-// int32 index = 2;
+// int32 index = 1;
 inline void PrimaryAccountReferenceBlackList::clear_index() {
   index_ = 0;
 }
@@ -316,7 +285,7 @@ inline void PrimaryAccountReferenceBlackList::set_index(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set:axis.transactions.PrimaryAccountReferenceBlackList.index)
 }
 
-// int32 reason = 3;
+// int32 reason = 2;
 inline void PrimaryAccountReferenceBlackList::clear_reason() {
   reason_ = 0;
 }
@@ -336,7 +305,7 @@ inline void PrimaryAccountReferenceBlackList::set_reason(::PROTOBUF_NAMESPACE_ID
   // @@protoc_insertion_point(field_set:axis.transactions.PrimaryAccountReferenceBlackList.reason)
 }
 
-// .google.protobuf.Timestamp register_date = 4;
+// .google.protobuf.Timestamp register_date = 3;
 inline bool PrimaryAccountReferenceBlackList::_internal_has_register_date() const {
   return this != internal_default_instance() && register_date_ != nullptr;
 }
@@ -413,7 +382,7 @@ inline void PrimaryAccountReferenceBlackList::set_allocated_register_date(PROTOB
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.PrimaryAccountReferenceBlackList.register_date)
 }
 
-// string payment_account_reference = 5;
+// string payment_account_reference = 4;
 inline void PrimaryAccountReferenceBlackList::clear_payment_account_reference() {
   payment_account_reference_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }

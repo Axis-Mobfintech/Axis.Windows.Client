@@ -51,6 +51,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2fcapk_5ftable_2eproto:
   PROTOBUF_FIELD_OFFSET(::axis::transactions::CertificateAuthorityPublicKeyTable, rsa_key_modulus_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::CertificateAuthorityPublicKeyTable, rsa_key_exponent_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::CertificateAuthorityPublicKeyTable, checksum_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::CertificateAuthorityPublicKeyTable, card_action_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::axis::transactions::CertificateAuthorityPublicKeyTable)},
@@ -62,23 +63,26 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_Protos_2fcapk_5ftable_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027Protos/capk_table.proto\022\021axis.transact"
-  "ions\"\227\001\n\"CertificateAuthorityPublicKeyTa"
-  "ble\022\r\n\005index\030\001 \001(\005\022\035\n\025registered_identif"
-  "ier\030\002 \001(\014\022\027\n\017rsa_key_modulus\030\003 \001(\014\022\030\n\020rs"
-  "a_key_exponent\030\004 \001(\014\022\020\n\010checksum\030\005 \001(\014BQ"
-  "\n#com.axismobfintech.gpb.transactionsZ\022a"
-  "xistransactionspb\252\002\025Axis.GPB.Transaction"
-  "sb\006proto3"
+  "ions\032\030Protos/card_action.proto\"\313\001\n\"Certi"
+  "ficateAuthorityPublicKeyTable\022\r\n\005index\030\001"
+  " \001(\005\022\035\n\025registered_identifier\030\002 \001(\014\022\027\n\017r"
+  "sa_key_modulus\030\003 \001(\014\022\030\n\020rsa_key_exponent"
+  "\030\004 \001(\014\022\020\n\010checksum\030\005 \001(\014\0222\n\013card_action\030"
+  "\006 \001(\0162\035.axis.transactions.CardActionBQ\n#"
+  "com.axismobfintech.gpb.transactionsZ\022axi"
+  "stransactionspb\252\002\025Axis.GPB.Transactionsb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Protos_2fcapk_5ftable_2eproto_deps[1] = {
+  &::descriptor_table_Protos_2fcard_5faction_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Protos_2fcapk_5ftable_2eproto_sccs[1] = {
   &scc_info_CertificateAuthorityPublicKeyTable_Protos_2fcapk_5ftable_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Protos_2fcapk_5ftable_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Protos_2fcapk_5ftable_2eproto = {
-  false, false, descriptor_table_protodef_Protos_2fcapk_5ftable_2eproto, "Protos/capk_table.proto", 289,
-  &descriptor_table_Protos_2fcapk_5ftable_2eproto_once, descriptor_table_Protos_2fcapk_5ftable_2eproto_sccs, descriptor_table_Protos_2fcapk_5ftable_2eproto_deps, 1, 0,
+  false, false, descriptor_table_protodef_Protos_2fcapk_5ftable_2eproto, "Protos/capk_table.proto", 367,
+  &descriptor_table_Protos_2fcapk_5ftable_2eproto_once, descriptor_table_Protos_2fcapk_5ftable_2eproto_sccs, descriptor_table_Protos_2fcapk_5ftable_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_Protos_2fcapk_5ftable_2eproto::offsets,
   file_level_metadata_Protos_2fcapk_5ftable_2eproto, 1, file_level_enum_descriptors_Protos_2fcapk_5ftable_2eproto, file_level_service_descriptors_Protos_2fcapk_5ftable_2eproto,
 };
@@ -125,7 +129,9 @@ CertificateAuthorityPublicKeyTable::CertificateAuthorityPublicKeyTable(const Cer
     checksum_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_checksum(),
       GetArena());
   }
-  index_ = from.index_;
+  ::memcpy(&index_, &from.index_,
+    static_cast<size_t>(reinterpret_cast<char*>(&card_action_) -
+    reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
   // @@protoc_insertion_point(copy_constructor:axis.transactions.CertificateAuthorityPublicKeyTable)
 }
 
@@ -135,7 +141,9 @@ void CertificateAuthorityPublicKeyTable::SharedCtor() {
   rsa_key_modulus_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   rsa_key_exponent_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   checksum_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  index_ = 0;
+  ::memset(&index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&card_action_) -
+      reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
 }
 
 CertificateAuthorityPublicKeyTable::~CertificateAuthorityPublicKeyTable() {
@@ -177,7 +185,9 @@ void CertificateAuthorityPublicKeyTable::Clear() {
   rsa_key_modulus_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   rsa_key_exponent_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   checksum_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  index_ = 0;
+  ::memset(&index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&card_action_) -
+      reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -226,6 +236,14 @@ const char* CertificateAuthorityPublicKeyTable::_InternalParse(const char* ptr, 
           auto str = _internal_mutable_checksum();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .axis.transactions.CardAction card_action = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_card_action(static_cast<::axis::transactions::CardAction>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -286,6 +304,13 @@ failure:
         5, this->_internal_checksum(), target);
   }
 
+  // .axis.transactions.CardAction card_action = 6;
+  if (this->card_action() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      6, this->_internal_card_action(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -337,6 +362,12 @@ size_t CertificateAuthorityPublicKeyTable::ByteSizeLong() const {
         this->_internal_index());
   }
 
+  // .axis.transactions.CardAction card_action = 6;
+  if (this->card_action() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_card_action());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -383,6 +414,9 @@ void CertificateAuthorityPublicKeyTable::MergeFrom(const CertificateAuthorityPub
   if (from.index() != 0) {
     _internal_set_index(from._internal_index());
   }
+  if (from.card_action() != 0) {
+    _internal_set_card_action(from._internal_card_action());
+  }
 }
 
 void CertificateAuthorityPublicKeyTable::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -410,7 +444,12 @@ void CertificateAuthorityPublicKeyTable::InternalSwap(CertificateAuthorityPublic
   rsa_key_modulus_.Swap(&other->rsa_key_modulus_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   rsa_key_exponent_.Swap(&other->rsa_key_exponent_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   checksum_.Swap(&other->checksum_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(index_, other->index_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CertificateAuthorityPublicKeyTable, card_action_)
+      + sizeof(CertificateAuthorityPublicKeyTable::card_action_)
+      - PROTOBUF_FIELD_OFFSET(CertificateAuthorityPublicKeyTable, index_)>(
+          reinterpret_cast<char*>(&index_),
+          reinterpret_cast<char*>(&other->index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CertificateAuthorityPublicKeyTable::GetMetadata() const {

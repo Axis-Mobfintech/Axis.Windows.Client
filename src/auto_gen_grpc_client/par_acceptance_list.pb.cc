@@ -48,7 +48,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2fpar_5facceptance_5fli
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountReferenceWhiteList, message_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountReferenceWhiteList, index_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountReferenceWhiteList, reason_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountReferenceWhiteList, register_date_),
@@ -65,13 +64,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_Protos_2fpar_5facceptance_5flist_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n Protos/par_acceptance_list.proto\022\021axis"
   ".transactions\032\037google/protobuf/timestamp"
-  ".proto\"\253\001\n PrimaryAccountReferenceWhiteL"
-  "ist\022\022\n\nmessage_id\030\001 \001(\005\022\r\n\005index\030\002 \001(\005\022\016"
-  "\n\006reason\030\003 \001(\005\0221\n\rregister_date\030\004 \001(\0132\032."
-  "google.protobuf.Timestamp\022!\n\031payment_acc"
-  "ount_reference\030\005 \001(\005BQ\n#com.axismobfinte"
-  "ch.gpb.transactionsZ\022axistransactionspb\252"
-  "\002\025Axis.GPB.Transactionsb\006proto3"
+  ".proto\"\227\001\n PrimaryAccountReferenceWhiteL"
+  "ist\022\r\n\005index\030\001 \001(\005\022\016\n\006reason\030\002 \001(\005\0221\n\rre"
+  "gister_date\030\003 \001(\0132\032.google.protobuf.Time"
+  "stamp\022!\n\031payment_account_reference\030\004 \001(\005"
+  "BQ\n#com.axismobfintech.gpb.transactionsZ"
+  "\022axistransactionspb\252\002\025Axis.GPB.Transacti"
+  "onsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -81,7 +80,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Pro
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto = {
-  false, false, descriptor_table_protodef_Protos_2fpar_5facceptance_5flist_2eproto, "Protos/par_acceptance_list.proto", 351,
+  false, false, descriptor_table_protodef_Protos_2fpar_5facceptance_5flist_2eproto, "Protos/par_acceptance_list.proto", 331,
   &descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto_once, descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto_sccs, descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_Protos_2fpar_5facceptance_5flist_2eproto::offsets,
   file_level_metadata_Protos_2fpar_5facceptance_5flist_2eproto, 1, file_level_enum_descriptors_Protos_2fpar_5facceptance_5flist_2eproto, file_level_service_descriptors_Protos_2fpar_5facceptance_5flist_2eproto,
@@ -127,9 +126,9 @@ PrimaryAccountReferenceWhiteList::PrimaryAccountReferenceWhiteList(const Primary
   } else {
     register_date_ = nullptr;
   }
-  ::memcpy(&message_id_, &from.message_id_,
+  ::memcpy(&index_, &from.index_,
     static_cast<size_t>(reinterpret_cast<char*>(&payment_account_reference_) -
-    reinterpret_cast<char*>(&message_id_)) + sizeof(payment_account_reference_));
+    reinterpret_cast<char*>(&index_)) + sizeof(payment_account_reference_));
   // @@protoc_insertion_point(copy_constructor:axis.transactions.PrimaryAccountReferenceWhiteList)
 }
 
@@ -176,9 +175,9 @@ void PrimaryAccountReferenceWhiteList::Clear() {
     delete register_date_;
   }
   register_date_ = nullptr;
-  ::memset(&message_id_, 0, static_cast<size_t>(
+  ::memset(&index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&payment_account_reference_) -
-      reinterpret_cast<char*>(&message_id_)) + sizeof(payment_account_reference_));
+      reinterpret_cast<char*>(&index_)) + sizeof(payment_account_reference_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -190,37 +189,30 @@ const char* PrimaryAccountReferenceWhiteList::_InternalParse(const char* ptr, ::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int32 message_id = 1;
+      // int32 index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          message_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int32 index = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 reason = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // int32 reason = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           reason_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp register_date = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // .google.protobuf.Timestamp register_date = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 payment_account_reference = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // int32 payment_account_reference = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           payment_account_reference_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -253,36 +245,30 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 message_id = 1;
-  if (this->message_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_message_id(), target);
-  }
-
-  // int32 index = 2;
+  // int32 index = 1;
   if (this->index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_index(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_index(), target);
   }
 
-  // int32 reason = 3;
+  // int32 reason = 2;
   if (this->reason() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_reason(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_reason(), target);
   }
 
-  // .google.protobuf.Timestamp register_date = 4;
+  // .google.protobuf.Timestamp register_date = 3;
   if (this->has_register_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::register_date(this), target, stream);
+        3, _Internal::register_date(this), target, stream);
   }
 
-  // int32 payment_account_reference = 5;
+  // int32 payment_account_reference = 4;
   if (this->payment_account_reference() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_payment_account_reference(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_payment_account_reference(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -301,35 +287,28 @@ size_t PrimaryAccountReferenceWhiteList::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Timestamp register_date = 4;
+  // .google.protobuf.Timestamp register_date = 3;
   if (this->has_register_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *register_date_);
   }
 
-  // int32 message_id = 1;
-  if (this->message_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_message_id());
-  }
-
-  // int32 index = 2;
+  // int32 index = 1;
   if (this->index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_index());
   }
 
-  // int32 reason = 3;
+  // int32 reason = 2;
   if (this->reason() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_reason());
   }
 
-  // int32 payment_account_reference = 5;
+  // int32 payment_account_reference = 4;
   if (this->payment_account_reference() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
@@ -369,9 +348,6 @@ void PrimaryAccountReferenceWhiteList::MergeFrom(const PrimaryAccountReferenceWh
 
   if (from.has_register_date()) {
     _internal_mutable_register_date()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
-  }
-  if (from.message_id() != 0) {
-    _internal_set_message_id(from._internal_message_id());
   }
   if (from.index() != 0) {
     _internal_set_index(from._internal_index());

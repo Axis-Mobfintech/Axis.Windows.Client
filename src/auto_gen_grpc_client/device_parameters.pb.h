@@ -506,52 +506,51 @@ class ParametersResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEmvTableFieldNumber = 5,
-    kAidTableFieldNumber = 6,
-    kCapkTableFieldNumber = 7,
-    kResponseDateFieldNumber = 8,
+    kAidTableFieldNumber = 4,
+    kBinTableFieldNumber = 5,
+    kCapkTableFieldNumber = 6,
+    kResponseDateFieldNumber = 7,
     kResponseCodeFieldNumber = 1,
     kEmvParametersVersionFieldNumber = 2,
     kBinParametersVersionFieldNumber = 3,
-    kCapkParametersVersionFieldNumber = 4,
   };
-  // repeated .axis.transactions.ApplicationIdentifier emv_table = 5;
-  int emv_table_size() const;
-  private:
-  int _internal_emv_table_size() const;
-  public:
-  void clear_emv_table();
-  ::axis::transactions::ApplicationIdentifier* mutable_emv_table(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >*
-      mutable_emv_table();
-  private:
-  const ::axis::transactions::ApplicationIdentifier& _internal_emv_table(int index) const;
-  ::axis::transactions::ApplicationIdentifier* _internal_add_emv_table();
-  public:
-  const ::axis::transactions::ApplicationIdentifier& emv_table(int index) const;
-  ::axis::transactions::ApplicationIdentifier* add_emv_table();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >&
-      emv_table() const;
-
-  // repeated .axis.transactions.AcceptedBankIdentificationNumber aid_table = 6;
+  // repeated .axis.transactions.ApplicationIdentifier aid_table = 4;
   int aid_table_size() const;
   private:
   int _internal_aid_table_size() const;
   public:
   void clear_aid_table();
-  ::axis::transactions::AcceptedBankIdentificationNumber* mutable_aid_table(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >*
+  ::axis::transactions::ApplicationIdentifier* mutable_aid_table(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >*
       mutable_aid_table();
   private:
-  const ::axis::transactions::AcceptedBankIdentificationNumber& _internal_aid_table(int index) const;
-  ::axis::transactions::AcceptedBankIdentificationNumber* _internal_add_aid_table();
+  const ::axis::transactions::ApplicationIdentifier& _internal_aid_table(int index) const;
+  ::axis::transactions::ApplicationIdentifier* _internal_add_aid_table();
   public:
-  const ::axis::transactions::AcceptedBankIdentificationNumber& aid_table(int index) const;
-  ::axis::transactions::AcceptedBankIdentificationNumber* add_aid_table();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >&
+  const ::axis::transactions::ApplicationIdentifier& aid_table(int index) const;
+  ::axis::transactions::ApplicationIdentifier* add_aid_table();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >&
       aid_table() const;
 
-  // repeated .axis.transactions.CertificateAuthorityPublicKeyTable capk_table = 7;
+  // repeated .axis.transactions.AcceptedBankIdentificationNumber bin_table = 5;
+  int bin_table_size() const;
+  private:
+  int _internal_bin_table_size() const;
+  public:
+  void clear_bin_table();
+  ::axis::transactions::AcceptedBankIdentificationNumber* mutable_bin_table(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >*
+      mutable_bin_table();
+  private:
+  const ::axis::transactions::AcceptedBankIdentificationNumber& _internal_bin_table(int index) const;
+  ::axis::transactions::AcceptedBankIdentificationNumber* _internal_add_bin_table();
+  public:
+  const ::axis::transactions::AcceptedBankIdentificationNumber& bin_table(int index) const;
+  ::axis::transactions::AcceptedBankIdentificationNumber* add_bin_table();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >&
+      bin_table() const;
+
+  // repeated .axis.transactions.CertificateAuthorityPublicKeyTable capk_table = 6;
   int capk_table_size() const;
   private:
   int _internal_capk_table_size() const;
@@ -569,7 +568,7 @@ class ParametersResponse PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::CertificateAuthorityPublicKeyTable >&
       capk_table() const;
 
-  // .google.protobuf.Timestamp response_date = 8;
+  // .google.protobuf.Timestamp response_date = 7;
   bool has_response_date() const;
   private:
   bool _internal_has_response_date() const;
@@ -614,15 +613,6 @@ class ParametersResponse PROTOBUF_FINAL :
   void _internal_set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 capk_parameters_version = 4;
-  void clear_capk_parameters_version();
-  ::PROTOBUF_NAMESPACE_ID::int32 capk_parameters_version() const;
-  void set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_capk_parameters_version() const;
-  void _internal_set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:axis.transactions.ParametersResponse)
  private:
   class _Internal;
@@ -630,14 +620,13 @@ class ParametersResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier > emv_table_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber > aid_table_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier > aid_table_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber > bin_table_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::CertificateAuthorityPublicKeyTable > capk_table_;
   PROTOBUF_NAMESPACE_ID::Timestamp* response_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 response_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 emv_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 bin_parameters_version_;
-  ::PROTOBUF_NAMESPACE_ID::int32 capk_parameters_version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_device_5fparameters_2eproto;
 };
@@ -1307,99 +1296,79 @@ inline void ParametersResponse::set_bin_parameters_version(::PROTOBUF_NAMESPACE_
   // @@protoc_insertion_point(field_set:axis.transactions.ParametersResponse.bin_parameters_version)
 }
 
-// int32 capk_parameters_version = 4;
-inline void ParametersResponse::clear_capk_parameters_version() {
-  capk_parameters_version_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersResponse::_internal_capk_parameters_version() const {
-  return capk_parameters_version_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersResponse::capk_parameters_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.ParametersResponse.capk_parameters_version)
-  return _internal_capk_parameters_version();
-}
-inline void ParametersResponse::_internal_set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  capk_parameters_version_ = value;
-}
-inline void ParametersResponse::set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_capk_parameters_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.ParametersResponse.capk_parameters_version)
-}
-
-// repeated .axis.transactions.ApplicationIdentifier emv_table = 5;
-inline int ParametersResponse::_internal_emv_table_size() const {
-  return emv_table_.size();
-}
-inline int ParametersResponse::emv_table_size() const {
-  return _internal_emv_table_size();
-}
-inline ::axis::transactions::ApplicationIdentifier* ParametersResponse::mutable_emv_table(int index) {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersResponse.emv_table)
-  return emv_table_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >*
-ParametersResponse::mutable_emv_table() {
-  // @@protoc_insertion_point(field_mutable_list:axis.transactions.ParametersResponse.emv_table)
-  return &emv_table_;
-}
-inline const ::axis::transactions::ApplicationIdentifier& ParametersResponse::_internal_emv_table(int index) const {
-  return emv_table_.Get(index);
-}
-inline const ::axis::transactions::ApplicationIdentifier& ParametersResponse::emv_table(int index) const {
-  // @@protoc_insertion_point(field_get:axis.transactions.ParametersResponse.emv_table)
-  return _internal_emv_table(index);
-}
-inline ::axis::transactions::ApplicationIdentifier* ParametersResponse::_internal_add_emv_table() {
-  return emv_table_.Add();
-}
-inline ::axis::transactions::ApplicationIdentifier* ParametersResponse::add_emv_table() {
-  // @@protoc_insertion_point(field_add:axis.transactions.ParametersResponse.emv_table)
-  return _internal_add_emv_table();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >&
-ParametersResponse::emv_table() const {
-  // @@protoc_insertion_point(field_list:axis.transactions.ParametersResponse.emv_table)
-  return emv_table_;
-}
-
-// repeated .axis.transactions.AcceptedBankIdentificationNumber aid_table = 6;
+// repeated .axis.transactions.ApplicationIdentifier aid_table = 4;
 inline int ParametersResponse::_internal_aid_table_size() const {
   return aid_table_.size();
 }
 inline int ParametersResponse::aid_table_size() const {
   return _internal_aid_table_size();
 }
-inline ::axis::transactions::AcceptedBankIdentificationNumber* ParametersResponse::mutable_aid_table(int index) {
+inline ::axis::transactions::ApplicationIdentifier* ParametersResponse::mutable_aid_table(int index) {
   // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersResponse.aid_table)
   return aid_table_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >*
 ParametersResponse::mutable_aid_table() {
   // @@protoc_insertion_point(field_mutable_list:axis.transactions.ParametersResponse.aid_table)
   return &aid_table_;
 }
-inline const ::axis::transactions::AcceptedBankIdentificationNumber& ParametersResponse::_internal_aid_table(int index) const {
+inline const ::axis::transactions::ApplicationIdentifier& ParametersResponse::_internal_aid_table(int index) const {
   return aid_table_.Get(index);
 }
-inline const ::axis::transactions::AcceptedBankIdentificationNumber& ParametersResponse::aid_table(int index) const {
+inline const ::axis::transactions::ApplicationIdentifier& ParametersResponse::aid_table(int index) const {
   // @@protoc_insertion_point(field_get:axis.transactions.ParametersResponse.aid_table)
   return _internal_aid_table(index);
 }
-inline ::axis::transactions::AcceptedBankIdentificationNumber* ParametersResponse::_internal_add_aid_table() {
+inline ::axis::transactions::ApplicationIdentifier* ParametersResponse::_internal_add_aid_table() {
   return aid_table_.Add();
 }
-inline ::axis::transactions::AcceptedBankIdentificationNumber* ParametersResponse::add_aid_table() {
+inline ::axis::transactions::ApplicationIdentifier* ParametersResponse::add_aid_table() {
   // @@protoc_insertion_point(field_add:axis.transactions.ParametersResponse.aid_table)
   return _internal_add_aid_table();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier >&
 ParametersResponse::aid_table() const {
   // @@protoc_insertion_point(field_list:axis.transactions.ParametersResponse.aid_table)
   return aid_table_;
 }
 
-// repeated .axis.transactions.CertificateAuthorityPublicKeyTable capk_table = 7;
+// repeated .axis.transactions.AcceptedBankIdentificationNumber bin_table = 5;
+inline int ParametersResponse::_internal_bin_table_size() const {
+  return bin_table_.size();
+}
+inline int ParametersResponse::bin_table_size() const {
+  return _internal_bin_table_size();
+}
+inline ::axis::transactions::AcceptedBankIdentificationNumber* ParametersResponse::mutable_bin_table(int index) {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersResponse.bin_table)
+  return bin_table_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >*
+ParametersResponse::mutable_bin_table() {
+  // @@protoc_insertion_point(field_mutable_list:axis.transactions.ParametersResponse.bin_table)
+  return &bin_table_;
+}
+inline const ::axis::transactions::AcceptedBankIdentificationNumber& ParametersResponse::_internal_bin_table(int index) const {
+  return bin_table_.Get(index);
+}
+inline const ::axis::transactions::AcceptedBankIdentificationNumber& ParametersResponse::bin_table(int index) const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersResponse.bin_table)
+  return _internal_bin_table(index);
+}
+inline ::axis::transactions::AcceptedBankIdentificationNumber* ParametersResponse::_internal_add_bin_table() {
+  return bin_table_.Add();
+}
+inline ::axis::transactions::AcceptedBankIdentificationNumber* ParametersResponse::add_bin_table() {
+  // @@protoc_insertion_point(field_add:axis.transactions.ParametersResponse.bin_table)
+  return _internal_add_bin_table();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber >&
+ParametersResponse::bin_table() const {
+  // @@protoc_insertion_point(field_list:axis.transactions.ParametersResponse.bin_table)
+  return bin_table_;
+}
+
+// repeated .axis.transactions.CertificateAuthorityPublicKeyTable capk_table = 6;
 inline int ParametersResponse::_internal_capk_table_size() const {
   return capk_table_.size();
 }
@@ -1435,7 +1404,7 @@ ParametersResponse::capk_table() const {
   return capk_table_;
 }
 
-// .google.protobuf.Timestamp response_date = 8;
+// .google.protobuf.Timestamp response_date = 7;
 inline bool ParametersResponse::_internal_has_response_date() const {
   return this != internal_default_instance() && response_date_ != nullptr;
 }

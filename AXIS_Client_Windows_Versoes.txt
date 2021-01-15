@@ -7,4 +7,4 @@
 ---------------------
 - Primeira versão. 
 
-Arquivos proto: v1.2.0.0.
+Arquivos proto: v3.0.2.

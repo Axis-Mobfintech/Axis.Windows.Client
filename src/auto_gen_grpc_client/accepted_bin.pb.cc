@@ -46,12 +46,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2faccepted_5fbin_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, message_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, index_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, issuer_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, initial_range_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, final_range_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, total_sequential_transactions_allowed_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, card_action_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::axis::transactions::AcceptedBankIdentificationNumber)},
@@ -63,24 +63,26 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_Protos_2faccepted_5fbin_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031Protos/accepted_bin.proto\022\021axis.transa"
-  "ctions\"\265\001\n AcceptedBankIdentificationNum"
-  "ber\022\022\n\nmessage_id\030\001 \001(\005\022\r\n\005index\030\002 \001(\005\022\023"
-  "\n\013issuer_code\030\003 \001(\005\022\025\n\rinitial_range\030\004 \001"
-  "(\004\022\023\n\013final_range\030\005 \001(\004\022-\n%total_sequent"
-  "ial_transactions_allowed\030\006 \001(\rBQ\n#com.ax"
-  "ismobfintech.gpb.transactionsZ\022axistrans"
-  "actionspb\252\002\025Axis.GPB.Transactionsb\006proto"
-  "3"
+  "ctions\032\030Protos/card_action.proto\"\325\001\n Acc"
+  "eptedBankIdentificationNumber\022\r\n\005index\030\002"
+  " \001(\005\022\023\n\013issuer_code\030\003 \001(\005\022\025\n\rinitial_ran"
+  "ge\030\004 \001(\004\022\023\n\013final_range\030\005 \001(\004\022-\n%total_s"
+  "equential_transactions_allowed\030\006 \001(\r\0222\n\013"
+  "card_action\030\007 \001(\0162\035.axis.transactions.Ca"
+  "rdActionBQ\n#com.axismobfintech.gpb.trans"
+  "actionsZ\022axistransactionspb\252\002\025Axis.GPB.T"
+  "ransactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Protos_2faccepted_5fbin_2eproto_deps[1] = {
+  &::descriptor_table_Protos_2fcard_5faction_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Protos_2faccepted_5fbin_2eproto_sccs[1] = {
   &scc_info_AcceptedBankIdentificationNumber_Protos_2faccepted_5fbin_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Protos_2faccepted_5fbin_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Protos_2faccepted_5fbin_2eproto = {
-  false, false, descriptor_table_protodef_Protos_2faccepted_5fbin_2eproto, "Protos/accepted_bin.proto", 321,
-  &descriptor_table_Protos_2faccepted_5fbin_2eproto_once, descriptor_table_Protos_2faccepted_5fbin_2eproto_sccs, descriptor_table_Protos_2faccepted_5fbin_2eproto_deps, 1, 0,
+  false, false, descriptor_table_protodef_Protos_2faccepted_5fbin_2eproto, "Protos/accepted_bin.proto", 379,
+  &descriptor_table_Protos_2faccepted_5fbin_2eproto_once, descriptor_table_Protos_2faccepted_5fbin_2eproto_sccs, descriptor_table_Protos_2faccepted_5fbin_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_Protos_2faccepted_5fbin_2eproto::offsets,
   file_level_metadata_Protos_2faccepted_5fbin_2eproto, 1, file_level_enum_descriptors_Protos_2faccepted_5fbin_2eproto, file_level_service_descriptors_Protos_2faccepted_5fbin_2eproto,
 };
@@ -107,16 +109,16 @@ AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(::PROTOBUF_NA
 AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(const AcceptedBankIdentificationNumber& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&message_id_, &from.message_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&final_range_) -
-    reinterpret_cast<char*>(&message_id_)) + sizeof(final_range_));
+  ::memcpy(&index_, &from.index_,
+    static_cast<size_t>(reinterpret_cast<char*>(&card_action_) -
+    reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
   // @@protoc_insertion_point(copy_constructor:axis.transactions.AcceptedBankIdentificationNumber)
 }
 
 void AcceptedBankIdentificationNumber::SharedCtor() {
-  ::memset(&message_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&final_range_) -
-      reinterpret_cast<char*>(&message_id_)) + sizeof(final_range_));
+  ::memset(&index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&card_action_) -
+      reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
 }
 
 AcceptedBankIdentificationNumber::~AcceptedBankIdentificationNumber() {
@@ -150,9 +152,9 @@ void AcceptedBankIdentificationNumber::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&message_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&final_range_) -
-      reinterpret_cast<char*>(&message_id_)) + sizeof(final_range_));
+  ::memset(&index_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&card_action_) -
+      reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -164,13 +166,6 @@ const char* AcceptedBankIdentificationNumber::_InternalParse(const char* ptr, ::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int32 message_id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          message_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
       // int32 index = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
@@ -206,6 +201,14 @@ const char* AcceptedBankIdentificationNumber::_InternalParse(const char* ptr, ::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // .axis.transactions.CardAction card_action = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_card_action(static_cast<::axis::transactions::CardAction>(val));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -233,12 +236,6 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.AcceptedBankIdentificationNumber)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
-
-  // int32 message_id = 1;
-  if (this->message_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_message_id(), target);
-  }
 
   // int32 index = 2;
   if (this->index() != 0) {
@@ -270,6 +267,13 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_total_sequential_transactions_allowed(), target);
   }
 
+  // .axis.transactions.CardAction card_action = 7;
+  if (this->card_action() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      7, this->_internal_card_action(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -286,25 +290,11 @@ size_t AcceptedBankIdentificationNumber::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 message_id = 1;
-  if (this->message_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_message_id());
-  }
-
   // int32 index = 2;
   if (this->index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_index());
-  }
-
-  // uint64 initial_range = 4;
-  if (this->initial_range() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_initial_range());
   }
 
   // int32 issuer_code = 3;
@@ -314,11 +304,11 @@ size_t AcceptedBankIdentificationNumber::ByteSizeLong() const {
         this->_internal_issuer_code());
   }
 
-  // uint32 total_sequential_transactions_allowed = 6;
-  if (this->total_sequential_transactions_allowed() != 0) {
+  // uint64 initial_range = 4;
+  if (this->initial_range() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_total_sequential_transactions_allowed());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_initial_range());
   }
 
   // uint64 final_range = 5;
@@ -326,6 +316,19 @@ size_t AcceptedBankIdentificationNumber::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_final_range());
+  }
+
+  // uint32 total_sequential_transactions_allowed = 6;
+  if (this->total_sequential_transactions_allowed() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_total_sequential_transactions_allowed());
+  }
+
+  // .axis.transactions.CardAction card_action = 7;
+  if (this->card_action() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_card_action());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -359,23 +362,23 @@ void AcceptedBankIdentificationNumber::MergeFrom(const AcceptedBankIdentificatio
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.message_id() != 0) {
-    _internal_set_message_id(from._internal_message_id());
-  }
   if (from.index() != 0) {
     _internal_set_index(from._internal_index());
-  }
-  if (from.initial_range() != 0) {
-    _internal_set_initial_range(from._internal_initial_range());
   }
   if (from.issuer_code() != 0) {
     _internal_set_issuer_code(from._internal_issuer_code());
   }
-  if (from.total_sequential_transactions_allowed() != 0) {
-    _internal_set_total_sequential_transactions_allowed(from._internal_total_sequential_transactions_allowed());
+  if (from.initial_range() != 0) {
+    _internal_set_initial_range(from._internal_initial_range());
   }
   if (from.final_range() != 0) {
     _internal_set_final_range(from._internal_final_range());
+  }
+  if (from.total_sequential_transactions_allowed() != 0) {
+    _internal_set_total_sequential_transactions_allowed(from._internal_total_sequential_transactions_allowed());
+  }
+  if (from.card_action() != 0) {
+    _internal_set_card_action(from._internal_card_action());
   }
 }
 
@@ -401,11 +404,11 @@ void AcceptedBankIdentificationNumber::InternalSwap(AcceptedBankIdentificationNu
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(AcceptedBankIdentificationNumber, final_range_)
-      + sizeof(AcceptedBankIdentificationNumber::final_range_)
-      - PROTOBUF_FIELD_OFFSET(AcceptedBankIdentificationNumber, message_id_)>(
-          reinterpret_cast<char*>(&message_id_),
-          reinterpret_cast<char*>(&other->message_id_));
+      PROTOBUF_FIELD_OFFSET(AcceptedBankIdentificationNumber, card_action_)
+      + sizeof(AcceptedBankIdentificationNumber::card_action_)
+      - PROTOBUF_FIELD_OFFSET(AcceptedBankIdentificationNumber, index_)>(
+          reinterpret_cast<char*>(&index_),
+          reinterpret_cast<char*>(&other->index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptedBankIdentificationNumber::GetMetadata() const {

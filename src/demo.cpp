@@ -55,6 +55,10 @@ static void registro_do_validador_(void)
    auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
    // Create a channel using the credentials created in the previous step.
    auto channel = grpc::CreateChannel("transaction-dev.axis-mobfintech.com:443", channel_creds);   
+   
+   
+   //4ioiybj5xk.execute-api.sa-east-1.amazonaws.com:443
+   //auto channel = grpc::CreateChannel("4ioiybj5xk.execute-api.sa-east-1.amazonaws.com:443", channel_creds);   //https://4ioiybj5xk.execute-api.sa-east-1.amazonaws.com/Prod
       
 
    DevicesManagerClient deviceManagerClient(channel);
@@ -154,37 +158,38 @@ static void requisicao_de_parametros_(void)
    int i;
 
    // AIDs
-   for (i = 0 ; i < response.emv_table_size(); i++)
+   for (i = 0 ; i < response.aid_table_size(); i++)
    {      
-      ApplicationIdentifier aid = response.emv_table(i);
+      ApplicationIdentifier aid = response.aid_table(i);
       std::cout
-         //<< "   table index         : " << aid.index() << std::endl
-         << "   AID                 : " << aid.application_identifier() << std::endl
-         //<< "   general flags       : " << aid.general_flags() << std::endl
-         << "   authorized amount   : " << aid.authorized_amount() << std::endl
-         << "   country code        : " << aid.country_code() << std::endl
-         << "   currency code       : " << aid.currency_code() << std::endl
-         << "   currency exponent   : " << aid.currency_exponent() << std::endl
-         << "   terminal type       : " << aid.terminal_type() << std::endl
-         << "   merchant category   : " << aid.merchant_category_code() << std::endl
-         << "   TTQ                 : " << aid.terminal_transaction_qualifiers() << std::endl
-         << "   ctls floor limit    : " << aid.contactless_floor_limit() << std::endl
-         << "   reader floor limit  : " << aid.reader_floor_limit() << std::endl
-         << "   limit no on device  : " << aid.limit_no_on_device() << std::endl //(No On-device CVM)
-         << "   limit on device     : " << aid.limit_on_device() << std::endl    //(On - device CVM)
-         << "   cvm required limit  : " << aid.cvm_required_limit() << std::endl
-         << "   term. cap.          : " << aid.terminal_capabilities() << std::endl
-         << "   add. term. cap.     : " << aid.addictional_terminal_capabilities() << std::endl
-         << "   app. version number : " << aid.application_version_number() << std::endl
-         << "   card data input cap.: " << aid.card_data_input_capability() << std::endl
-         << "   cvm cap. req.       : " << aid.cvm_capability_required() << std::endl
-         << "   cvm cap. not req.   : " << aid.cvm_capability_not_required() << std::endl
-         << "   security cap.       : " << aid.security_capability() << std::endl
-         << "   TAC default         : " << aid.terminal_action_code_default() << std::endl
-         << "   TAC denial          : " << aid.terminal_action_code_denial() << std::endl
-         << "   TAC online          : " << aid.terminal_action_code_online() << std::endl
-         << "   risk management data: " << aid.risk_management_data() << std::endl
-         << "   category code       : " << aid.category_code() << std::endl;
+         << "  table index           : " << aid.index() << std::endl
+         << "  AID                   : " << aid.application_identifier() << std::endl
+         << "  action                : " << aid.card_action() << std::endl
+         << "    kernel ctls         : " << aid.general_flags().kernel_ctls() << std::endl
+         << "    authorized amount   : " << aid.authorized_amount() << std::endl
+         << "    country code        : " << aid.country_code() << std::endl
+         << "    currency code       : " << aid.currency_code() << std::endl
+         << "    currency exponent   : " << aid.currency_exponent() << std::endl
+         << "    terminal type       : " << aid.terminal_type() << std::endl
+         << "    merchant category   : " << aid.merchant_category_code() << std::endl
+         << "    TTQ                 : " << aid.terminal_transaction_qualifiers() << std::endl
+         << "    ctls floor limit    : " << aid.contactless_floor_limit() << std::endl
+         << "    reader floor limit  : " << aid.reader_floor_limit() << std::endl
+         << "    limit no on device  : " << aid.limit_no_on_device() << std::endl //(No On-device CVM)
+         << "    limit on device     : " << aid.limit_on_device() << std::endl    //(On - device CVM)
+         << "    cvm required limit  : " << aid.cvm_required_limit() << std::endl
+         << "    term. cap.          : " << aid.terminal_capabilities() << std::endl
+         << "    add. term. cap.     : " << aid.addictional_terminal_capabilities() << std::endl
+         << "    app. version number : " << aid.application_version_number() << std::endl
+         << "    card data input cap.: " << aid.card_data_input_capability() << std::endl
+         << "    cvm cap. req.       : " << aid.cvm_capability_required() << std::endl
+         << "    cvm cap. not req.   : " << aid.cvm_capability_not_required() << std::endl
+         << "    security cap.       : " << aid.security_capability() << std::endl
+         << "    TAC default         : " << aid.terminal_action_code_default() << std::endl
+         << "    TAC denial          : " << aid.terminal_action_code_denial() << std::endl
+         << "    TAC online          : " << aid.terminal_action_code_online() << std::endl
+         << "    risk management data: " << aid.risk_management_data() << std::endl
+         << "    category code       : " << aid.category_code() << std::endl;
    }
 
    // CAPKs
@@ -192,23 +197,23 @@ static void requisicao_de_parametros_(void)
    {
       CertificateAuthorityPublicKeyTable capk = response.capk_table(i);
       std::cout
-         << "   table index         : " << capk.index() << std::endl
-         << "   registered id.      : " << capk.registered_identifier() << std::endl
-         << "   rsa key modulus     : " << capk.rsa_key_modulus() << std::endl
-         << "   rsa key exponent    : " << capk.rsa_key_exponent() << std::endl
-         << "   checksum            : " << capk.checksum() << std::endl;
+         << "  table index           : " << capk.index() << std::endl
+         << "    registered id.      : " << capk.registered_identifier() << std::endl
+         << "    rsa key modulus     : " << capk.rsa_key_modulus() << std::endl
+         << "    rsa key exponent    : " << capk.rsa_key_exponent() << std::endl
+         << "    checksum            : " << capk.checksum() << std::endl;
    }
 
    // BINs
-   for (i = 0; i < response.emv_table_size(); i++)
+   for (i = 0; i < response.bin_table_size(); i++)
    {
-      AcceptedBankIdentificationNumber bin = response.aid_table(i);
+      AcceptedBankIdentificationNumber bin = response.bin_table(i);
       std::cout
-         << "   table index         : " << bin.index() << std::endl
-         << "   issuer code         : " << bin.issuer_code() << std::endl
-         << "   initial range       : " << bin.initial_range() << std::endl
-         << "   final range         : " << bin.final_range() << std::endl
-         << "   total trans. allowed: " << bin.total_sequential_transactions_allowed() << std::endl;
+         << "  table index           : " << bin.index() << std::endl
+         << "    issuer code         : " << bin.issuer_code() << std::endl
+         << "    initial range       : " << bin.initial_range() << std::endl
+         << "    final range         : " << bin.final_range() << std::endl
+         << "    total trans. allowed: " << bin.total_sequential_transactions_allowed() << std::endl;
    }
 
 }

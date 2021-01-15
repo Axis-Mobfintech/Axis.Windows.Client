@@ -32,6 +32,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "Protos/card_action.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_Protos_2fcapk_5ftable_2eproto
@@ -187,6 +188,7 @@ class CertificateAuthorityPublicKeyTable PROTOBUF_FINAL :
     kRsaKeyExponentFieldNumber = 4,
     kChecksumFieldNumber = 5,
     kIndexFieldNumber = 1,
+    kCardActionFieldNumber = 6,
   };
   // bytes registered_identifier = 2;
   void clear_registered_identifier();
@@ -261,6 +263,15 @@ class CertificateAuthorityPublicKeyTable PROTOBUF_FINAL :
   void _internal_set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // .axis.transactions.CardAction card_action = 6;
+  void clear_card_action();
+  ::axis::transactions::CardAction card_action() const;
+  void set_card_action(::axis::transactions::CardAction value);
+  private:
+  ::axis::transactions::CardAction _internal_card_action() const;
+  void _internal_set_card_action(::axis::transactions::CardAction value);
+  public:
+
   // @@protoc_insertion_point(class_scope:axis.transactions.CertificateAuthorityPublicKeyTable)
  private:
   class _Internal;
@@ -273,6 +284,7 @@ class CertificateAuthorityPublicKeyTable PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rsa_key_exponent_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr checksum_;
   ::PROTOBUF_NAMESPACE_ID::int32 index_;
+  int card_action_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Protos_2fcapk_5ftable_2eproto;
 };
@@ -553,6 +565,26 @@ inline void CertificateAuthorityPublicKeyTable::set_allocated_checksum(std::stri
   checksum_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), checksum,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.CertificateAuthorityPublicKeyTable.checksum)
+}
+
+// .axis.transactions.CardAction card_action = 6;
+inline void CertificateAuthorityPublicKeyTable::clear_card_action() {
+  card_action_ = 0;
+}
+inline ::axis::transactions::CardAction CertificateAuthorityPublicKeyTable::_internal_card_action() const {
+  return static_cast< ::axis::transactions::CardAction >(card_action_);
+}
+inline ::axis::transactions::CardAction CertificateAuthorityPublicKeyTable::card_action() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.CertificateAuthorityPublicKeyTable.card_action)
+  return _internal_card_action();
+}
+inline void CertificateAuthorityPublicKeyTable::_internal_set_card_action(::axis::transactions::CardAction value) {
+  
+  card_action_ = value;
+}
+inline void CertificateAuthorityPublicKeyTable::set_card_action(::axis::transactions::CardAction value) {
+  _internal_set_card_action(value);
+  // @@protoc_insertion_point(field_set:axis.transactions.CertificateAuthorityPublicKeyTable.card_action)
 }
 
 #ifdef __GNUC__

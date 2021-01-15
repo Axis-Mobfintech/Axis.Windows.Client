@@ -32,6 +32,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "Protos/card_action.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_Protos_2faccepted_5fbin_2eproto
@@ -182,22 +183,13 @@ class AcceptedBankIdentificationNumber PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMessageIdFieldNumber = 1,
     kIndexFieldNumber = 2,
-    kInitialRangeFieldNumber = 4,
     kIssuerCodeFieldNumber = 3,
-    kTotalSequentialTransactionsAllowedFieldNumber = 6,
+    kInitialRangeFieldNumber = 4,
     kFinalRangeFieldNumber = 5,
+    kTotalSequentialTransactionsAllowedFieldNumber = 6,
+    kCardActionFieldNumber = 7,
   };
-  // int32 message_id = 1;
-  void clear_message_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 message_id() const;
-  void set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_message_id() const;
-  void _internal_set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
   // int32 index = 2;
   void clear_index();
   ::PROTOBUF_NAMESPACE_ID::int32 index() const;
@@ -205,15 +197,6 @@ class AcceptedBankIdentificationNumber PROTOBUF_FINAL :
   private:
   ::PROTOBUF_NAMESPACE_ID::int32 _internal_index() const;
   void _internal_set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // uint64 initial_range = 4;
-  void clear_initial_range();
-  ::PROTOBUF_NAMESPACE_ID::uint64 initial_range() const;
-  void set_initial_range(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_initial_range() const;
-  void _internal_set_initial_range(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // int32 issuer_code = 3;
@@ -225,13 +208,13 @@ class AcceptedBankIdentificationNumber PROTOBUF_FINAL :
   void _internal_set_issuer_code(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint32 total_sequential_transactions_allowed = 6;
-  void clear_total_sequential_transactions_allowed();
-  ::PROTOBUF_NAMESPACE_ID::uint32 total_sequential_transactions_allowed() const;
-  void set_total_sequential_transactions_allowed(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint64 initial_range = 4;
+  void clear_initial_range();
+  ::PROTOBUF_NAMESPACE_ID::uint64 initial_range() const;
+  void set_initial_range(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_sequential_transactions_allowed() const;
-  void _internal_set_total_sequential_transactions_allowed(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_initial_range() const;
+  void _internal_set_initial_range(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 final_range = 5;
@@ -243,6 +226,24 @@ class AcceptedBankIdentificationNumber PROTOBUF_FINAL :
   void _internal_set_final_range(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
+  // uint32 total_sequential_transactions_allowed = 6;
+  void clear_total_sequential_transactions_allowed();
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_sequential_transactions_allowed() const;
+  void set_total_sequential_transactions_allowed(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_sequential_transactions_allowed() const;
+  void _internal_set_total_sequential_transactions_allowed(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // .axis.transactions.CardAction card_action = 7;
+  void clear_card_action();
+  ::axis::transactions::CardAction card_action() const;
+  void set_card_action(::axis::transactions::CardAction value);
+  private:
+  ::axis::transactions::CardAction _internal_card_action() const;
+  void _internal_set_card_action(::axis::transactions::CardAction value);
+  public:
+
   // @@protoc_insertion_point(class_scope:axis.transactions.AcceptedBankIdentificationNumber)
  private:
   class _Internal;
@@ -250,12 +251,12 @@ class AcceptedBankIdentificationNumber PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 message_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 index_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 initial_range_;
   ::PROTOBUF_NAMESPACE_ID::int32 issuer_code_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 total_sequential_transactions_allowed_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 initial_range_;
   ::PROTOBUF_NAMESPACE_ID::uint64 final_range_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_sequential_transactions_allowed_;
+  int card_action_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Protos_2faccepted_5fbin_2eproto;
 };
@@ -269,26 +270,6 @@ class AcceptedBankIdentificationNumber PROTOBUF_FINAL :
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
 // AcceptedBankIdentificationNumber
-
-// int32 message_id = 1;
-inline void AcceptedBankIdentificationNumber::clear_message_id() {
-  message_id_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 AcceptedBankIdentificationNumber::_internal_message_id() const {
-  return message_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 AcceptedBankIdentificationNumber::message_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.AcceptedBankIdentificationNumber.message_id)
-  return _internal_message_id();
-}
-inline void AcceptedBankIdentificationNumber::_internal_set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  message_id_ = value;
-}
-inline void AcceptedBankIdentificationNumber::set_message_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_message_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.AcceptedBankIdentificationNumber.message_id)
-}
 
 // int32 index = 2;
 inline void AcceptedBankIdentificationNumber::clear_index() {
@@ -388,6 +369,26 @@ inline void AcceptedBankIdentificationNumber::_internal_set_total_sequential_tra
 inline void AcceptedBankIdentificationNumber::set_total_sequential_transactions_allowed(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_total_sequential_transactions_allowed(value);
   // @@protoc_insertion_point(field_set:axis.transactions.AcceptedBankIdentificationNumber.total_sequential_transactions_allowed)
+}
+
+// .axis.transactions.CardAction card_action = 7;
+inline void AcceptedBankIdentificationNumber::clear_card_action() {
+  card_action_ = 0;
+}
+inline ::axis::transactions::CardAction AcceptedBankIdentificationNumber::_internal_card_action() const {
+  return static_cast< ::axis::transactions::CardAction >(card_action_);
+}
+inline ::axis::transactions::CardAction AcceptedBankIdentificationNumber::card_action() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.AcceptedBankIdentificationNumber.card_action)
+  return _internal_card_action();
+}
+inline void AcceptedBankIdentificationNumber::_internal_set_card_action(::axis::transactions::CardAction value) {
+  
+  card_action_ = value;
+}
+inline void AcceptedBankIdentificationNumber::set_card_action(::axis::transactions::CardAction value) {
+  _internal_set_card_action(value);
+  // @@protoc_insertion_point(field_set:axis.transactions.AcceptedBankIdentificationNumber.card_action)
 }
 
 #ifdef __GNUC__
