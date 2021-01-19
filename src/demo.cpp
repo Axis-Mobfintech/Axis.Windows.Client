@@ -10,6 +10,7 @@
 
 #include "devices_prameters_client.h"
 #include "restriction_lists_client.h"
+#include "acceptance_list_client.h"
 #include "devices_manager_client.h"
 #include "transactions_client.h"
 #include "debit_recovery.h"
@@ -92,65 +93,14 @@ static void registro_do_validador_(void)
 }
 
 
-/*-----------------------------------------------------*/
-static void requisicao_de_parametros_(void)
+/*---------------------------------------------------------------------*/
+static void log_requisicao_de_parametros_(ParametersResponse response)
 {
-   std::cout << std::endl << "##########  Requisicao parametros  ##########" << std::endl << std::endl;
-
-   // Create a default SSL ChannelCredentials object.
-   auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
-   // Create a channel using the credentials created in the previous step.      
-   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
-
-
-   DevicesParametersClient devicesParameters(channel);
-
-   Parameters parametres;
-
-   parametres.set_device_id("id do validador");
-   parametres.set_device_serial_number("numero serie validador");
-   parametres.set_emv_parameters_version(1234);
-   parametres.set_bin_parameters_version(1234);
-   parametres.set_register_code(1234);
-   parametres.set_ksn_data("ksn"); //KSN LEITOR
-   parametres.set_reader_serial_number("numero de serie do leitor");
-
-   parametres.set_line_id(obtem_dado_("Insira o ID da linha   :"));
-   parametres.set_operator_id(obtem_dado_("Insira o ID do operador:"));
-   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
-
-   auto date_time = new google::protobuf::Timestamp{};
-   date_time->set_seconds(time(NULL));
-   date_time->set_nanos(0);
-   parametres.set_allocated_register_date(date_time);
-
-
-   std::cout << std::endl << "RegisterDevice...." << std::endl;
-
-   ParametersResponse response;
-   try {
-      response = devicesParameters.GetDeviceParameters(parametres);
-   }
-   catch (grpc::Status s)
-   {
-      std::cout << ">> Erro:" << s.error_code() << std::endl;
-      std::cout << ">> Descricao:" << s.error_message() << std::endl;
-      return;
-   }
-   
-   std::cout
-      << "RegisterDevice OK!" << std::endl << std::endl
-      << "  response code         : " << response.response_code() << std::endl
-      << "  emv parameters version: " << response.emv_parameters_version() << std::endl
-      << "  bin parameters version: " << response.bin_parameters_version() << std::endl
-      << "  date                  : " << TimeUtil::ToString(response.response_date()) << std::endl;
-      
-
    int i;
 
    // AIDs
-   for (i = 0 ; i < response.aid_table_size(); i++)
-   {      
+   for (i = 0; i < response.aid_table_size(); i++)
+   {
       ApplicationIdentifier aid = response.aid_table(i);
       std::cout
          << "   table index           : " << aid.index() << std::endl
@@ -206,8 +156,96 @@ static void requisicao_de_parametros_(void)
          << "     final range         : " << bin.final_range() << std::endl
          << "     total trans. allowed: " << bin.total_sequential_transactions_allowed() << std::endl;
    }
-
 }
+
+
+/*-----------------------------------------------------*/
+static void requisicao_de_parametros_(void)
+{
+   std::cout << std::endl << "##########  Requisicao parametros  ##########" << std::endl << std::endl;
+
+   // Create a default SSL ChannelCredentials object.
+   auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
+   // Create a channel using the credentials created in the previous step.      
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
+
+
+   DevicesParametersClient devicesParameters(channel);
+
+   Parameters parametres;
+
+   parametres.set_device_id("id do validador");
+   parametres.set_device_serial_number("numero serie validador");
+   parametres.set_emv_parameters_version(1234);
+   parametres.set_bin_parameters_version(1234);
+   parametres.set_register_code(1234);
+   parametres.set_ksn_data("ksn"); //KSN LEITOR
+   parametres.set_reader_serial_number("numero de serie do leitor");
+
+   parametres.set_line_id(obtem_dado_("Insira o ID da linha   :"));
+   parametres.set_operator_id(obtem_dado_("Insira o ID do operador:"));
+   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
+
+   auto date_time = new google::protobuf::Timestamp{};
+   date_time->set_seconds(time(NULL));
+   date_time->set_nanos(0);
+   parametres.set_allocated_register_date(date_time);
+
+
+   std::cout << std::endl << "GetDeviceParameters...." << std::endl;
+
+   ParametersResponse response;
+   try {
+      response = devicesParameters.GetDeviceParameters(parametres);
+   }
+   catch (grpc::Status s)
+   {
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
+      return;
+   }
+   
+   std::cout
+      << "GetDeviceParameters OK!" << std::endl << std::endl
+      << "  response code         : " << response.response_code() << std::endl
+      << "  emv parameters version: " << response.emv_parameters_version() << std::endl
+      << "  bin parameters version: " << response.bin_parameters_version() << std::endl
+      << "  date                  : " << TimeUtil::ToString(response.response_date()) << std::endl;
+      
+   log_requisicao_de_parametros_(response);
+}
+
+
+/*---------------------------------------------------------------------*/
+static void log_requisicao_lista_excessao_(RestrictionListResponse response)
+{
+   int i;
+
+   // Restrições
+   for (i = 0; i < response.card_information_size(); i++)
+   {
+      RestrictionListCardInformation card_info = response.card_information(i);
+      std::cout << "   restriction card - action         : " << card_info.action() << std::endl;
+
+      // PAN Black List
+      PrimaryAccountNumberBlackList pan_black_list = card_info.pan_list();
+      std::cout
+         << "   pan black list index            : " << pan_black_list.index() << std::endl
+         << "    reason                         : " << pan_black_list.reason() << std::endl
+         << "    date                           : " << TimeUtil::ToString(pan_black_list.register_date()) << std::endl
+         << "    initial pan crypt              : " << pan_black_list.initial_pan_crypt() << std::endl
+         << "    pan sequence number            : " << pan_black_list.pan_sequence_number() << std::endl;
+
+      // PAR Black List
+      PrimaryAccountReferenceBlackList par_black_list = card_info.par_list();
+      std::cout
+         << "   pan black list index            : " << par_black_list.index() << std::endl
+         << "    reason                         : " << par_black_list.reason() << std::endl
+         << "    date                           : " << TimeUtil::ToString(par_black_list.register_date()) << std::endl
+         << "    payment account reference      : " << par_black_list.payment_account_reference() << std::endl;
+   }
+}
+
 
 /*-----------------------------------------------------*/
 static void requisicao_da_lista_de_excecao_(void)
@@ -254,39 +292,100 @@ static void requisicao_da_lista_de_excecao_(void)
    }
 
    std::cout
-      << "RegisterDevice OK!" << std::endl << std::endl
+      << "GetRestrictionList OK!" << std::endl << std::endl
       << "  response code           : " << response.response_code() << std::endl
       << "  restriction list version: " << response.restriction_list_version() << std::endl
       << "  date                    : " << TimeUtil::ToString(response.register_date()) << std::endl;
 
+   log_requisicao_lista_excessao_(response);
+}
+
+
+/*---------------------------------------------------------------------*/
+static void log_requisicao_lista_aceitacao_(AcceptanceListResponse response)
+{
    int i;
 
-   // Restrições
+   // Lista de aceitos
    for (i = 0; i < response.card_information_size(); i++)
    {
-      RestrictionListCardInformation restriction_card_info = response.card_information(i);
-      std::cout << "   restriction card - action         : " << restriction_card_info.action() << std::endl;
+      AcceptanceListCardInformation card_info = response.card_information(i);
+      std::cout << "   restriction card - action         : " << card_info.action() << std::endl;
 
-      RestrictionListCardInformation card_info = response.card_information(i);
-      
-      // PAN Black List
-      PrimaryAccountNumberBlackList pan_black_list = card_info.pan_list();
+
+      // PAN White List
+      PrimaryAccountNumberWhiteList pan_white_list = card_info.pan_list();
       std::cout
-         << "   pan black list index            : " << pan_black_list.index() << std::endl
-         << "    reason                         : " << pan_black_list.reason() << std::endl
-         << "    date                           : " << TimeUtil::ToString(pan_black_list.register_date()) << std::endl
-         << "    initial pan crypt              : " << pan_black_list.initial_pan_crypt() << std::endl
-         << "    pan sequence number            : " << pan_black_list.pan_sequence_number() << std::endl;
-      
-      // PAR Black List
-      PrimaryAccountReferenceBlackList par_black_list = card_info.par_list();
+         << "   pan white list index            : " << pan_white_list.index() << std::endl
+         << "    reason                         : " << pan_white_list.reason() << std::endl
+         << "    date                           : " << TimeUtil::ToString(pan_white_list.register_date()) << std::endl
+         << "    initial pan crypt              : " << pan_white_list.initial_pan_crypt() << std::endl
+         << "    pan sequence number            : " << pan_white_list.pan_sequence_number() << std::endl;
+
+      // PAR White List
+      PrimaryAccountReferenceWhiteList par_white_list = card_info.par_list();
       std::cout
-         << "   pan black list index            : " << par_black_list.index() << std::endl
-         << "    reason                         : " << par_black_list.reason() << std::endl
-         << "    date                           : " << TimeUtil::ToString(par_black_list.register_date()) << std::endl
-         << "    payment account reference      : " << par_black_list.payment_account_reference() << std::endl;
+         << "   pan white list index            : " << par_white_list.index() << std::endl
+         << "    reason                         : " << par_white_list.reason() << std::endl
+         << "    date                           : " << TimeUtil::ToString(par_white_list.register_date()) << std::endl
+         << "    payment account reference      : " << par_white_list.payment_account_reference() << std::endl;
    }
 }
+
+
+/*-----------------------------------------------------*/
+static void requisicao_da_lista_de_aceitacao_(void)
+{
+   std::cout << std::endl << "##########  Requisicao da lista de aceitacao ##########" << std::endl << std::endl;
+
+   // Create a default SSL ChannelCredentials object.
+   auto channel_creds = grpc::SslCredentials(grpc::SslCredentialsOptions());
+   // Create a channel using the credentials created in the previous step.
+   auto channel = grpc::CreateChannel("transaction.axis-mobfintech.com:5001", channel_creds);
+   
+   AcceptanceListsClient accepLists(channel);
+
+   AcceptanceListRequest parametres;
+
+   parametres.set_device_id("id do validador");
+   parametres.set_device_serial_number("numero serie validador");
+   parametres.set_ksn_data("ksn"); //KSN LEITOR
+   parametres.set_reader_serial_number("numero de serie do leitor");
+   parametres.set_register_code(1234);
+   parametres.set_acceptance_list_version(1234);
+
+   parametres.set_line_id(obtem_dado_("Insira o ID da linha   :"));
+   parametres.set_operator_id(obtem_dado_("Insira o ID do operador:"));
+   parametres.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
+
+   auto date_time = new google::protobuf::Timestamp{};
+   date_time->set_seconds(time(NULL));
+   date_time->set_nanos(0);
+   parametres.set_allocated_register_date(date_time);
+
+
+   std::cout << std::endl << "GetAcceptanceList...." << std::endl;
+
+   AcceptanceListResponse response;
+   try {
+      response = accepLists.GetAcceptanceList(parametres);
+   }
+   catch (grpc::Status s)
+   {
+      std::cout << ">> Erro:" << s.error_code() << std::endl;
+      std::cout << ">> Descricao:" << s.error_message() << std::endl;
+      return;
+   }
+
+   std::cout
+      << "GetAcceptanceList OK!" << std::endl << std::endl
+      << "  response code           : " << response.response_code() << std::endl
+      << "  restriction list version: " << response.acceptance_list_version() << std::endl
+      << "  date                    : " << TimeUtil::ToString(response.register_date()) << std::endl;
+
+   log_requisicao_lista_aceitacao_(response);
+}
+
 
 /*-----------------------------------------------------*/
 static void registro_de_passagem_(void)
@@ -371,7 +470,7 @@ static void registro_de_passagem_(void)
       return;
    }
 
-   std::cout << "RegisterDevice OK!" << std::endl << std::endl
+   std::cout << "MakeTransaction OK!" << std::endl << std::endl
       << "   response code           : " << response.response_code() << std::endl
       << "   NSU validador           : " << response.device_suid() << std::endl
       << "   NSU gateway             : " << response.gateway_uid() << std::endl
@@ -418,7 +517,7 @@ static void recuperacao_de_debito_(void)
    debit.set_transaction_data("\x9F\x27\x01\x80\x9F\x26\x08\x76\x5D\xC1\x38\x07\xD1\xE4\xC8\x9F\x36\x02\x00\x06\x95\x05\x00\x10\x00\x00\x00\x8F\x01\x05\x9F\x37\x04\x5A\x77\xAC\xF0");
    debit.set_transaction_value(100);
 
-   std::cout << std::endl << "MakeTransaction..." << std::endl ;
+   std::cout << std::endl << "RecoverDebit..." << std::endl ;
 
    DebitRecoveryResponse response;
    try {
@@ -441,8 +540,8 @@ static void recuperacao_de_debito_(void)
 }
 
 
-
-
+/*-----------------------------------------------------*/
+/* main                                                */
 /*-----------------------------------------------------*/
 void main(void)
 {
@@ -461,9 +560,10 @@ void main(void)
          << "   1 - registro do validador" << std::endl
          << "   2 - requisicao parametros" << std::endl
          << "   3 - requisicao de lista de excecao" << std::endl
-         << "   4 - registro de passagem" << std::endl
-         << "   5 - recuperacao de debito" << std::endl
-         << "   6 - sair" << std::endl;
+         << "   4 - requisicao de lista de aceitacao" << std::endl
+         << "   5 - registro de passagem" << std::endl
+         << "   6 - recuperacao de debito" << std::endl
+         << "   7 - sair" << std::endl;
 
       option = std::cin.get() - '0';            
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore to the end of line
@@ -480,14 +580,17 @@ void main(void)
          requisicao_da_lista_de_excecao_();
          break;
       case 4:
-         registro_de_passagem_();
+         requisicao_da_lista_de_aceitacao_();
          break;
       case 5:
-         recuperacao_de_debito_();
+         registro_de_passagem_();
          break;
       case 6:
+         recuperacao_de_debito_();
+         break;
+      case 7:
          std::cout << std::endl << "FIM!!" << std::endl;
-         Sleep(2000);
+         Sleep(1000);
          return;
       default:
          break;

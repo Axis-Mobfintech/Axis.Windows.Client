@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\acceptance_list_client.cpp" />
     <ClCompile Include="src\auto_gen_grpc_client\acceptance_list.grpc.pb.cc" />
     <ClCompile Include="src\auto_gen_grpc_client\acceptance_list.pb.cc" />
     <ClCompile Include="src\auto_gen_grpc_client\accepted_bin.grpc.pb.cc" />
@@ -207,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="src\acceptance_list_client.h" />
     <ClInclude Include="src\app_version.h" />
     <ClInclude Include="src\auto_gen_grpc_client\acceptance_list.grpc.pb.h" />
     <ClInclude Include="src\auto_gen_grpc_client\acceptance_list.pb.h" />

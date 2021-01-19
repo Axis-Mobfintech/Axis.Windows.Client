@@ -138,6 +138,9 @@
     <ClCompile Include="src\auto_gen_grpc_client\restriction_list.pb.cc">
       <Filter>Source Files\auto_gen_grpc_client</Filter>
     </ClCompile>
+    <ClCompile Include="src\acceptance_list_client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md">
@@ -298,6 +301,9 @@
     </ClInclude>
     <ClInclude Include="src\auto_gen_grpc_client\debit_recovery.grpc.pb.h">
       <Filter>Header Files\auto_gen_grpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="src\acceptance_list_client.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
