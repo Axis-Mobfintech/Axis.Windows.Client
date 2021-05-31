@@ -6,7 +6,7 @@ using grpc::ClientContext;
 
 AcceptanceListsClient::AcceptanceListsClient(std::shared_ptr<Channel> channel)
 {
-   stub_ = AcceptanceLists::NewStub(channel);
+   stub_ = AcceptanceListService::NewStub(channel);
 }
 
 AcceptanceListsClient::~AcceptanceListsClient()

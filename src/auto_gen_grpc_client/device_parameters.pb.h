@@ -60,16 +60,16 @@ struct TableStruct_device_5fparameters_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_5fparameters_2eproto;
 namespace axis {
 namespace transactions {
-class Parameters;
-class ParametersDefaultTypeInternal;
-extern ParametersDefaultTypeInternal _Parameters_default_instance_;
+class ParametersRequest;
+class ParametersRequestDefaultTypeInternal;
+extern ParametersRequestDefaultTypeInternal _ParametersRequest_default_instance_;
 class ParametersResponse;
 class ParametersResponseDefaultTypeInternal;
 extern ParametersResponseDefaultTypeInternal _ParametersResponse_default_instance_;
 }  // namespace transactions
 }  // namespace axis
 PROTOBUF_NAMESPACE_OPEN
-template<> ::axis::transactions::Parameters* Arena::CreateMaybeMessage<::axis::transactions::Parameters>(Arena*);
+template<> ::axis::transactions::ParametersRequest* Arena::CreateMaybeMessage<::axis::transactions::ParametersRequest>(Arena*);
 template<> ::axis::transactions::ParametersResponse* Arena::CreateMaybeMessage<::axis::transactions::ParametersResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace axis {
@@ -77,23 +77,23 @@ namespace transactions {
 
 // ===================================================================
 
-class Parameters PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:axis.transactions.Parameters) */ {
+class ParametersRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:axis.transactions.ParametersRequest) */ {
  public:
-  inline Parameters() : Parameters(nullptr) {}
-  virtual ~Parameters();
+  inline ParametersRequest() : ParametersRequest(nullptr) {}
+  virtual ~ParametersRequest();
 
-  Parameters(const Parameters& from);
-  Parameters(Parameters&& from) noexcept
-    : Parameters() {
+  ParametersRequest(const ParametersRequest& from);
+  ParametersRequest(ParametersRequest&& from) noexcept
+    : ParametersRequest() {
     *this = ::std::move(from);
   }
 
-  inline Parameters& operator=(const Parameters& from) {
+  inline ParametersRequest& operator=(const ParametersRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Parameters& operator=(Parameters&& from) noexcept {
+  inline ParametersRequest& operator=(ParametersRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -111,20 +111,20 @@ class Parameters PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const Parameters& default_instance();
+  static const ParametersRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Parameters* internal_default_instance() {
-    return reinterpret_cast<const Parameters*>(
-               &_Parameters_default_instance_);
+  static inline const ParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const ParametersRequest*>(
+               &_ParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(Parameters& a, Parameters& b) {
+  friend void swap(ParametersRequest& a, ParametersRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(Parameters* other) {
+  inline void Swap(ParametersRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -132,7 +132,7 @@ class Parameters PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(Parameters* other) {
+  void UnsafeArenaSwap(ParametersRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -140,17 +140,17 @@ class Parameters PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline Parameters* New() const final {
-    return CreateMaybeMessage<Parameters>(nullptr);
+  inline ParametersRequest* New() const final {
+    return CreateMaybeMessage<ParametersRequest>(nullptr);
   }
 
-  Parameters* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Parameters>(arena);
+  ParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ParametersRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Parameters& from);
-  void MergeFrom(const Parameters& from);
+  void CopyFrom(const ParametersRequest& from);
+  void MergeFrom(const ParametersRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -164,13 +164,13 @@ class Parameters PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Parameters* other);
+  void InternalSwap(ParametersRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "axis.transactions.Parameters";
+    return "axis.transactions.ParametersRequest";
   }
   protected:
-  explicit Parameters(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit ParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -369,7 +369,7 @@ class Parameters PROTOBUF_FINAL :
   void _internal_set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:axis.transactions.Parameters)
+  // @@protoc_insertion_point(class_scope:axis.transactions.ParametersRequest)
  private:
   class _Internal;
 
@@ -639,60 +639,60 @@ class ParametersResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Parameters
+// ParametersRequest
 
 // string device_id = 1;
-inline void Parameters::clear_device_id() {
+inline void ParametersRequest::clear_device_id() {
   device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::device_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.device_id)
+inline const std::string& ParametersRequest::device_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.device_id)
   return _internal_device_id();
 }
-inline void Parameters::set_device_id(const std::string& value) {
+inline void ParametersRequest::set_device_id(const std::string& value) {
   _internal_set_device_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.device_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.device_id)
 }
-inline std::string* Parameters::mutable_device_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.device_id)
+inline std::string* ParametersRequest::mutable_device_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.device_id)
   return _internal_mutable_device_id();
 }
-inline const std::string& Parameters::_internal_device_id() const {
+inline const std::string& ParametersRequest::_internal_device_id() const {
   return device_id_.Get();
 }
-inline void Parameters::_internal_set_device_id(const std::string& value) {
+inline void ParametersRequest::_internal_set_device_id(const std::string& value) {
   
   device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_device_id(std::string&& value) {
+inline void ParametersRequest::set_device_id(std::string&& value) {
   
   device_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.device_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.device_id)
 }
-inline void Parameters::set_device_id(const char* value) {
+inline void ParametersRequest::set_device_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.device_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.device_id)
 }
-inline void Parameters::set_device_id(const char* value,
+inline void ParametersRequest::set_device_id(const char* value,
     size_t size) {
   
   device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.device_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.device_id)
 }
-inline std::string* Parameters::_internal_mutable_device_id() {
+inline std::string* ParametersRequest::_internal_mutable_device_id() {
   
   return device_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_device_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.device_id)
+inline std::string* ParametersRequest::release_device_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.device_id)
   return device_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_device_id(std::string* device_id) {
+inline void ParametersRequest::set_allocated_device_id(std::string* device_id) {
   if (device_id != nullptr) {
     
   } else {
@@ -700,61 +700,61 @@ inline void Parameters::set_allocated_device_id(std::string* device_id) {
   }
   device_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.device_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.device_id)
 }
 
 // string operator_id = 2;
-inline void Parameters::clear_operator_id() {
+inline void ParametersRequest::clear_operator_id() {
   operator_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::operator_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.operator_id)
+inline const std::string& ParametersRequest::operator_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.operator_id)
   return _internal_operator_id();
 }
-inline void Parameters::set_operator_id(const std::string& value) {
+inline void ParametersRequest::set_operator_id(const std::string& value) {
   _internal_set_operator_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.operator_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.operator_id)
 }
-inline std::string* Parameters::mutable_operator_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.operator_id)
+inline std::string* ParametersRequest::mutable_operator_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.operator_id)
   return _internal_mutable_operator_id();
 }
-inline const std::string& Parameters::_internal_operator_id() const {
+inline const std::string& ParametersRequest::_internal_operator_id() const {
   return operator_id_.Get();
 }
-inline void Parameters::_internal_set_operator_id(const std::string& value) {
+inline void ParametersRequest::_internal_set_operator_id(const std::string& value) {
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_operator_id(std::string&& value) {
+inline void ParametersRequest::set_operator_id(std::string&& value) {
   
   operator_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.operator_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.operator_id)
 }
-inline void Parameters::set_operator_id(const char* value) {
+inline void ParametersRequest::set_operator_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.operator_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.operator_id)
 }
-inline void Parameters::set_operator_id(const char* value,
+inline void ParametersRequest::set_operator_id(const char* value,
     size_t size) {
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.operator_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.operator_id)
 }
-inline std::string* Parameters::_internal_mutable_operator_id() {
+inline std::string* ParametersRequest::_internal_mutable_operator_id() {
   
   return operator_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_operator_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.operator_id)
+inline std::string* ParametersRequest::release_operator_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.operator_id)
   return operator_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_operator_id(std::string* operator_id) {
+inline void ParametersRequest::set_allocated_operator_id(std::string* operator_id) {
   if (operator_id != nullptr) {
     
   } else {
@@ -762,61 +762,61 @@ inline void Parameters::set_allocated_operator_id(std::string* operator_id) {
   }
   operator_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operator_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.operator_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.operator_id)
 }
 
 // string reader_serial_number = 3;
-inline void Parameters::clear_reader_serial_number() {
+inline void ParametersRequest::clear_reader_serial_number() {
   reader_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::reader_serial_number() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.reader_serial_number)
+inline const std::string& ParametersRequest::reader_serial_number() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.reader_serial_number)
   return _internal_reader_serial_number();
 }
-inline void Parameters::set_reader_serial_number(const std::string& value) {
+inline void ParametersRequest::set_reader_serial_number(const std::string& value) {
   _internal_set_reader_serial_number(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.reader_serial_number)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.reader_serial_number)
 }
-inline std::string* Parameters::mutable_reader_serial_number() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.reader_serial_number)
+inline std::string* ParametersRequest::mutable_reader_serial_number() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.reader_serial_number)
   return _internal_mutable_reader_serial_number();
 }
-inline const std::string& Parameters::_internal_reader_serial_number() const {
+inline const std::string& ParametersRequest::_internal_reader_serial_number() const {
   return reader_serial_number_.Get();
 }
-inline void Parameters::_internal_set_reader_serial_number(const std::string& value) {
+inline void ParametersRequest::_internal_set_reader_serial_number(const std::string& value) {
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_reader_serial_number(std::string&& value) {
+inline void ParametersRequest::set_reader_serial_number(std::string&& value) {
   
   reader_serial_number_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.reader_serial_number)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.reader_serial_number)
 }
-inline void Parameters::set_reader_serial_number(const char* value) {
+inline void ParametersRequest::set_reader_serial_number(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.reader_serial_number)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.reader_serial_number)
 }
-inline void Parameters::set_reader_serial_number(const char* value,
+inline void ParametersRequest::set_reader_serial_number(const char* value,
     size_t size) {
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.reader_serial_number)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.reader_serial_number)
 }
-inline std::string* Parameters::_internal_mutable_reader_serial_number() {
+inline std::string* ParametersRequest::_internal_mutable_reader_serial_number() {
   
   return reader_serial_number_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_reader_serial_number() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.reader_serial_number)
+inline std::string* ParametersRequest::release_reader_serial_number() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.reader_serial_number)
   return reader_serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_reader_serial_number(std::string* reader_serial_number) {
+inline void ParametersRequest::set_allocated_reader_serial_number(std::string* reader_serial_number) {
   if (reader_serial_number != nullptr) {
     
   } else {
@@ -824,61 +824,61 @@ inline void Parameters::set_allocated_reader_serial_number(std::string* reader_s
   }
   reader_serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reader_serial_number,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.reader_serial_number)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.reader_serial_number)
 }
 
 // string device_serial_number = 4;
-inline void Parameters::clear_device_serial_number() {
+inline void ParametersRequest::clear_device_serial_number() {
   device_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::device_serial_number() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.device_serial_number)
+inline const std::string& ParametersRequest::device_serial_number() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.device_serial_number)
   return _internal_device_serial_number();
 }
-inline void Parameters::set_device_serial_number(const std::string& value) {
+inline void ParametersRequest::set_device_serial_number(const std::string& value) {
   _internal_set_device_serial_number(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.device_serial_number)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.device_serial_number)
 }
-inline std::string* Parameters::mutable_device_serial_number() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.device_serial_number)
+inline std::string* ParametersRequest::mutable_device_serial_number() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.device_serial_number)
   return _internal_mutable_device_serial_number();
 }
-inline const std::string& Parameters::_internal_device_serial_number() const {
+inline const std::string& ParametersRequest::_internal_device_serial_number() const {
   return device_serial_number_.Get();
 }
-inline void Parameters::_internal_set_device_serial_number(const std::string& value) {
+inline void ParametersRequest::_internal_set_device_serial_number(const std::string& value) {
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_device_serial_number(std::string&& value) {
+inline void ParametersRequest::set_device_serial_number(std::string&& value) {
   
   device_serial_number_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.device_serial_number)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.device_serial_number)
 }
-inline void Parameters::set_device_serial_number(const char* value) {
+inline void ParametersRequest::set_device_serial_number(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.device_serial_number)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.device_serial_number)
 }
-inline void Parameters::set_device_serial_number(const char* value,
+inline void ParametersRequest::set_device_serial_number(const char* value,
     size_t size) {
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.device_serial_number)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.device_serial_number)
 }
-inline std::string* Parameters::_internal_mutable_device_serial_number() {
+inline std::string* ParametersRequest::_internal_mutable_device_serial_number() {
   
   return device_serial_number_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_device_serial_number() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.device_serial_number)
+inline std::string* ParametersRequest::release_device_serial_number() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.device_serial_number)
   return device_serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_device_serial_number(std::string* device_serial_number) {
+inline void ParametersRequest::set_allocated_device_serial_number(std::string* device_serial_number) {
   if (device_serial_number != nullptr) {
     
   } else {
@@ -886,61 +886,61 @@ inline void Parameters::set_allocated_device_serial_number(std::string* device_s
   }
   device_serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_serial_number,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.device_serial_number)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.device_serial_number)
 }
 
 // bytes ksn_data = 5;
-inline void Parameters::clear_ksn_data() {
+inline void ParametersRequest::clear_ksn_data() {
   ksn_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::ksn_data() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.ksn_data)
+inline const std::string& ParametersRequest::ksn_data() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.ksn_data)
   return _internal_ksn_data();
 }
-inline void Parameters::set_ksn_data(const std::string& value) {
+inline void ParametersRequest::set_ksn_data(const std::string& value) {
   _internal_set_ksn_data(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.ksn_data)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.ksn_data)
 }
-inline std::string* Parameters::mutable_ksn_data() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.ksn_data)
+inline std::string* ParametersRequest::mutable_ksn_data() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.ksn_data)
   return _internal_mutable_ksn_data();
 }
-inline const std::string& Parameters::_internal_ksn_data() const {
+inline const std::string& ParametersRequest::_internal_ksn_data() const {
   return ksn_data_.Get();
 }
-inline void Parameters::_internal_set_ksn_data(const std::string& value) {
+inline void ParametersRequest::_internal_set_ksn_data(const std::string& value) {
   
   ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_ksn_data(std::string&& value) {
+inline void ParametersRequest::set_ksn_data(std::string&& value) {
   
   ksn_data_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.ksn_data)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.ksn_data)
 }
-inline void Parameters::set_ksn_data(const char* value) {
+inline void ParametersRequest::set_ksn_data(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.ksn_data)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.ksn_data)
 }
-inline void Parameters::set_ksn_data(const void* value,
+inline void ParametersRequest::set_ksn_data(const void* value,
     size_t size) {
   
   ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.ksn_data)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.ksn_data)
 }
-inline std::string* Parameters::_internal_mutable_ksn_data() {
+inline std::string* ParametersRequest::_internal_mutable_ksn_data() {
   
   return ksn_data_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_ksn_data() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.ksn_data)
+inline std::string* ParametersRequest::release_ksn_data() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.ksn_data)
   return ksn_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_ksn_data(std::string* ksn_data) {
+inline void ParametersRequest::set_allocated_ksn_data(std::string* ksn_data) {
   if (ksn_data != nullptr) {
     
   } else {
@@ -948,81 +948,81 @@ inline void Parameters::set_allocated_ksn_data(std::string* ksn_data) {
   }
   ksn_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ksn_data,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.ksn_data)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.ksn_data)
 }
 
 // int32 register_code = 6;
-inline void Parameters::clear_register_code() {
+inline void ParametersRequest::clear_register_code() {
   register_code_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::_internal_register_code() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::_internal_register_code() const {
   return register_code_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::register_code() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.register_code)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::register_code() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.register_code)
   return _internal_register_code();
 }
-inline void Parameters::_internal_set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::_internal_set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   register_code_ = value;
 }
-inline void Parameters::set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_register_code(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.register_code)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.register_code)
 }
 
 // string line_id = 7;
-inline void Parameters::clear_line_id() {
+inline void ParametersRequest::clear_line_id() {
   line_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::line_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.line_id)
+inline const std::string& ParametersRequest::line_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.line_id)
   return _internal_line_id();
 }
-inline void Parameters::set_line_id(const std::string& value) {
+inline void ParametersRequest::set_line_id(const std::string& value) {
   _internal_set_line_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.line_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.line_id)
 }
-inline std::string* Parameters::mutable_line_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.line_id)
+inline std::string* ParametersRequest::mutable_line_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.line_id)
   return _internal_mutable_line_id();
 }
-inline const std::string& Parameters::_internal_line_id() const {
+inline const std::string& ParametersRequest::_internal_line_id() const {
   return line_id_.Get();
 }
-inline void Parameters::_internal_set_line_id(const std::string& value) {
+inline void ParametersRequest::_internal_set_line_id(const std::string& value) {
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_line_id(std::string&& value) {
+inline void ParametersRequest::set_line_id(std::string&& value) {
   
   line_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.line_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.line_id)
 }
-inline void Parameters::set_line_id(const char* value) {
+inline void ParametersRequest::set_line_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.line_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.line_id)
 }
-inline void Parameters::set_line_id(const char* value,
+inline void ParametersRequest::set_line_id(const char* value,
     size_t size) {
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.line_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.line_id)
 }
-inline std::string* Parameters::_internal_mutable_line_id() {
+inline std::string* ParametersRequest::_internal_mutable_line_id() {
   
   return line_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_line_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.line_id)
+inline std::string* ParametersRequest::release_line_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.line_id)
   return line_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_line_id(std::string* line_id) {
+inline void ParametersRequest::set_allocated_line_id(std::string* line_id) {
   if (line_id != nullptr) {
     
   } else {
@@ -1030,61 +1030,61 @@ inline void Parameters::set_allocated_line_id(std::string* line_id) {
   }
   line_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), line_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.line_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.line_id)
 }
 
 // string vehicle_id = 8;
-inline void Parameters::clear_vehicle_id() {
+inline void ParametersRequest::clear_vehicle_id() {
   vehicle_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& Parameters::vehicle_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.vehicle_id)
+inline const std::string& ParametersRequest::vehicle_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.vehicle_id)
   return _internal_vehicle_id();
 }
-inline void Parameters::set_vehicle_id(const std::string& value) {
+inline void ParametersRequest::set_vehicle_id(const std::string& value) {
   _internal_set_vehicle_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.vehicle_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.vehicle_id)
 }
-inline std::string* Parameters::mutable_vehicle_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.vehicle_id)
+inline std::string* ParametersRequest::mutable_vehicle_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.vehicle_id)
   return _internal_mutable_vehicle_id();
 }
-inline const std::string& Parameters::_internal_vehicle_id() const {
+inline const std::string& ParametersRequest::_internal_vehicle_id() const {
   return vehicle_id_.Get();
 }
-inline void Parameters::_internal_set_vehicle_id(const std::string& value) {
+inline void ParametersRequest::_internal_set_vehicle_id(const std::string& value) {
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void Parameters::set_vehicle_id(std::string&& value) {
+inline void ParametersRequest::set_vehicle_id(std::string&& value) {
   
   vehicle_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.Parameters.vehicle_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.ParametersRequest.vehicle_id)
 }
-inline void Parameters::set_vehicle_id(const char* value) {
+inline void ParametersRequest::set_vehicle_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.Parameters.vehicle_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.ParametersRequest.vehicle_id)
 }
-inline void Parameters::set_vehicle_id(const char* value,
+inline void ParametersRequest::set_vehicle_id(const char* value,
     size_t size) {
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.Parameters.vehicle_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.ParametersRequest.vehicle_id)
 }
-inline std::string* Parameters::_internal_mutable_vehicle_id() {
+inline std::string* ParametersRequest::_internal_mutable_vehicle_id() {
   
   return vehicle_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* Parameters::release_vehicle_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.vehicle_id)
+inline std::string* ParametersRequest::release_vehicle_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.vehicle_id)
   return vehicle_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Parameters::set_allocated_vehicle_id(std::string* vehicle_id) {
+inline void ParametersRequest::set_allocated_vehicle_id(std::string* vehicle_id) {
   if (vehicle_id != nullptr) {
     
   } else {
@@ -1092,26 +1092,26 @@ inline void Parameters::set_allocated_vehicle_id(std::string* vehicle_id) {
   }
   vehicle_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vehicle_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.vehicle_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.vehicle_id)
 }
 
 // .google.protobuf.Timestamp register_date = 9;
-inline bool Parameters::_internal_has_register_date() const {
+inline bool ParametersRequest::_internal_has_register_date() const {
   return this != internal_default_instance() && register_date_ != nullptr;
 }
-inline bool Parameters::has_register_date() const {
+inline bool ParametersRequest::has_register_date() const {
   return _internal_has_register_date();
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& Parameters::_internal_register_date() const {
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& ParametersRequest::_internal_register_date() const {
   const PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
   return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
       &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& Parameters::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.register_date)
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& ParametersRequest::register_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.register_date)
   return _internal_register_date();
 }
-inline void Parameters::unsafe_arena_set_allocated_register_date(
+inline void ParametersRequest::unsafe_arena_set_allocated_register_date(
     PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
@@ -1122,9 +1122,9 @@ inline void Parameters::unsafe_arena_set_allocated_register_date(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.Parameters.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.ParametersRequest.register_date)
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* Parameters::release_register_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::release_register_date() {
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
   register_date_ = nullptr;
@@ -1133,14 +1133,14 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* Parameters::release_register_date() {
   }
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* Parameters::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.Parameters.register_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::unsafe_arena_release_register_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.register_date)
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
   register_date_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* Parameters::_internal_mutable_register_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::_internal_mutable_register_date() {
   
   if (register_date_ == nullptr) {
     auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
@@ -1148,11 +1148,11 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* Parameters::_internal_mutable_register_
   }
   return register_date_;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* Parameters::mutable_register_date() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.Parameters.register_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::mutable_register_date() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.register_date)
   return _internal_mutable_register_date();
 }
-inline void Parameters::set_allocated_register_date(PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void ParametersRequest::set_allocated_register_date(PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
@@ -1169,67 +1169,67 @@ inline void Parameters::set_allocated_register_date(PROTOBUF_NAMESPACE_ID::Times
     
   }
   register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.Parameters.register_date)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.register_date)
 }
 
 // int32 emv_parameters_version = 10;
-inline void Parameters::clear_emv_parameters_version() {
+inline void ParametersRequest::clear_emv_parameters_version() {
   emv_parameters_version_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::_internal_emv_parameters_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::_internal_emv_parameters_version() const {
   return emv_parameters_version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::emv_parameters_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.emv_parameters_version)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::emv_parameters_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.emv_parameters_version)
   return _internal_emv_parameters_version();
 }
-inline void Parameters::_internal_set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::_internal_set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   emv_parameters_version_ = value;
 }
-inline void Parameters::set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_emv_parameters_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.emv_parameters_version)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.emv_parameters_version)
 }
 
 // int32 bin_parameters_version = 11;
-inline void Parameters::clear_bin_parameters_version() {
+inline void ParametersRequest::clear_bin_parameters_version() {
   bin_parameters_version_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::_internal_bin_parameters_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::_internal_bin_parameters_version() const {
   return bin_parameters_version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::bin_parameters_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.bin_parameters_version)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::bin_parameters_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.bin_parameters_version)
   return _internal_bin_parameters_version();
 }
-inline void Parameters::_internal_set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::_internal_set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   bin_parameters_version_ = value;
 }
-inline void Parameters::set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_bin_parameters_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.bin_parameters_version)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.bin_parameters_version)
 }
 
 // int32 capk_parameters_version = 12;
-inline void Parameters::clear_capk_parameters_version() {
+inline void ParametersRequest::clear_capk_parameters_version() {
   capk_parameters_version_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::_internal_capk_parameters_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::_internal_capk_parameters_version() const {
   return capk_parameters_version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Parameters::capk_parameters_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.Parameters.capk_parameters_version)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ParametersRequest::capk_parameters_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.capk_parameters_version)
   return _internal_capk_parameters_version();
 }
-inline void Parameters::_internal_set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::_internal_set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   capk_parameters_version_ = value;
 }
-inline void Parameters::set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ParametersRequest::set_capk_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_capk_parameters_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.Parameters.capk_parameters_version)
+  // @@protoc_insertion_point(field_set:axis.transactions.ParametersRequest.capk_parameters_version)
 }
 
 // -------------------------------------------------------------------

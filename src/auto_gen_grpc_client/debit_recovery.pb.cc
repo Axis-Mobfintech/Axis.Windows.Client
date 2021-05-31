@@ -17,29 +17,29 @@
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace axis {
 namespace transactions {
-class DebitRecoveryDefaultTypeInternal {
+class DebitRecoveryRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DebitRecovery> _instance;
-} _DebitRecovery_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DebitRecoveryRequest> _instance;
+} _DebitRecoveryRequest_default_instance_;
 class DebitRecoveryResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DebitRecoveryResponse> _instance;
 } _DebitRecoveryResponse_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_DebitRecovery_debit_5frecovery_2eproto() {
+static void InitDefaultsscc_info_DebitRecoveryRequest_debit_5frecovery_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::axis::transactions::_DebitRecovery_default_instance_;
-    new (ptr) ::axis::transactions::DebitRecovery();
+    void* ptr = &::axis::transactions::_DebitRecoveryRequest_default_instance_;
+    new (ptr) ::axis::transactions::DebitRecoveryRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::axis::transactions::DebitRecovery::InitAsDefaultInstance();
+  ::axis::transactions::DebitRecoveryRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DebitRecovery_debit_5frecovery_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DebitRecovery_debit_5frecovery_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DebitRecoveryRequest_debit_5frecovery_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DebitRecoveryRequest_debit_5frecovery_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsscc_info_DebitRecoveryResponse_debit_5frecovery_2eproto() {
@@ -62,28 +62,29 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_debit_5frecovery_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, device_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, operator_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, reader_serial_number_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, device_serial_number_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, register_code_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, passage_date_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, transaction_date_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, device_suid_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, pan_hash_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, par_card_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, transaction_data_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, emv_parameters_version_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, bin_parameters_version_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, restriction_list_version_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, transaction_value_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, line_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, vehicle_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecovery, geolocation_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, device_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, operator_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, reader_serial_number_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, device_serial_number_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, register_code_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, passage_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, transaction_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, device_suid_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, pan_hash_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, par_card_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, transaction_data_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, emv_parameters_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, bin_parameters_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, restriction_list_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, acceptance_list_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, transaction_value_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, line_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, vehicle_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryRequest, geolocation_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -97,52 +98,53 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_debit_5frecovery_2eproto::offs
   PROTOBUF_FIELD_OFFSET(::axis::transactions::DebitRecoveryResponse, device_suid_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::DebitRecovery)},
-  { 23, -1, sizeof(::axis::transactions::DebitRecoveryResponse)},
+  { 0, -1, sizeof(::axis::transactions::DebitRecoveryRequest)},
+  { 24, -1, sizeof(::axis::transactions::DebitRecoveryResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_DebitRecovery_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_DebitRecoveryRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_DebitRecoveryResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_debit_5frecovery_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\024debit_recovery.proto\022\021axis.transaction"
-  "s\032\037google/protobuf/timestamp.proto\"\374\003\n\rD"
-  "ebitRecovery\022\021\n\tdevice_id\030\001 \001(\t\022\023\n\013opera"
-  "tor_id\030\002 \001(\t\022\034\n\024reader_serial_number\030\003 \001"
-  "(\t\022\034\n\024device_serial_number\030\004 \001(\t\022\025\n\rregi"
-  "ster_code\030\005 \001(\005\0220\n\014passage_date\030\006 \001(\0132\032."
-  "google.protobuf.Timestamp\0224\n\020transaction"
-  "_date\030\007 \001(\0132\032.google.protobuf.Timestamp\022"
-  "\023\n\013device_suid\030\010 \001(\t\022\020\n\010pan_hash\030\t \001(\014\022\020"
-  "\n\010par_card\030\n \001(\t\022\030\n\020transaction_data\030\013 \001"
-  "(\014\022\036\n\026emv_parameters_version\030\014 \001(\005\022\036\n\026bi"
-  "n_parameters_version\030\r \001(\005\022 \n\030restrictio"
-  "n_list_version\030\016 \001(\005\022\031\n\021transaction_valu"
-  "e\030\017 \001(\005\022\017\n\007line_id\030\020 \001(\t\022\022\n\nvehicle_id\030\021"
-  " \001(\t\022\023\n\013geolocation\030\022 \001(\t\"\272\001\n\025DebitRecov"
+  "s\032\037google/protobuf/timestamp.proto\"\244\004\n\024D"
+  "ebitRecoveryRequest\022\021\n\tdevice_id\030\001 \001(\t\022\023"
+  "\n\013operator_id\030\002 \001(\t\022\034\n\024reader_serial_num"
+  "ber\030\003 \001(\t\022\034\n\024device_serial_number\030\004 \001(\t\022"
+  "\025\n\rregister_code\030\005 \001(\005\0220\n\014passage_date\030\006"
+  " \001(\0132\032.google.protobuf.Timestamp\0224\n\020tran"
+  "saction_date\030\007 \001(\0132\032.google.protobuf.Tim"
+  "estamp\022\023\n\013device_suid\030\010 \001(\t\022\020\n\010pan_hash\030"
+  "\t \001(\014\022\020\n\010par_card\030\n \001(\t\022\030\n\020transaction_d"
+  "ata\030\013 \001(\014\022\036\n\026emv_parameters_version\030\014 \001("
+  "\005\022\036\n\026bin_parameters_version\030\r \001(\005\022 \n\030res"
+  "triction_list_version\030\016 \001(\005\022\037\n\027acceptanc"
+  "e_list_version\030\017 \001(\005\022\031\n\021transaction_valu"
+  "e\030\020 \001(\005\022\017\n\007line_id\030\021 \001(\t\022\022\n\nvehicle_id\030\022"
+  " \001(\t\022\023\n\013geolocation\030\023 \001(\t\"\272\001\n\025DebitRecov"
   "eryResponse\022\025\n\rresponse_code\030\001 \001(\005\022\023\n\013ga"
   "teway_uid\030\002 \001(\t\022\036\n\026emv_parameters_versio"
   "n\030\003 \001(\005\022\036\n\026bin_parameters_version\030\004 \001(\005\022"
   " \n\030restriction_list_version\030\005 \001(\005\022\023\n\013dev"
-  "ice_suid\030\006 \001(\t2e\n\014RecoverDebit\022U\n\007Recove"
-  "r\022 .axis.transactions.DebitRecovery\032(.ax"
-  "is.transactions.DebitRecoveryResponseBQ\n"
-  "#com.axismobfintech.gpb.transactionsZ\022ax"
-  "istransactionspb\252\002\025Axis.GPB.Transactions"
-  "b\006proto3"
+  "ice_suid\030\006 \001(\t2s\n\023RecoverDebitService\022\\\n"
+  "\007Recover\022\'.axis.transactions.DebitRecove"
+  "ryRequest\032(.axis.transactions.DebitRecov"
+  "eryResponseBQ\n#com.axismobfintech.gpb.tr"
+  "ansactionsZ\022axistransactionspb\252\002\025Axis.GP"
+  "B.Transactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_debit_5frecovery_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_debit_5frecovery_2eproto_sccs[2] = {
-  &scc_info_DebitRecovery_debit_5frecovery_2eproto.base,
+  &scc_info_DebitRecoveryRequest_debit_5frecovery_2eproto.base,
   &scc_info_DebitRecoveryResponse_debit_5frecovery_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_debit_5frecovery_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_debit_5frecovery_2eproto = {
-  false, false, descriptor_table_protodef_debit_5frecovery_2eproto, "debit_recovery.proto", 968,
+  false, false, descriptor_table_protodef_debit_5frecovery_2eproto, "debit_recovery.proto", 1022,
   &descriptor_table_debit_5frecovery_2eproto_once, descriptor_table_debit_5frecovery_2eproto_sccs, descriptor_table_debit_5frecovery_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_debit_5frecovery_2eproto::offsets,
   file_level_metadata_debit_5frecovery_2eproto, 2, file_level_enum_descriptors_debit_5frecovery_2eproto, file_level_service_descriptors_debit_5frecovery_2eproto,
@@ -155,45 +157,45 @@ namespace transactions {
 
 // ===================================================================
 
-void DebitRecovery::InitAsDefaultInstance() {
-  ::axis::transactions::_DebitRecovery_default_instance_._instance.get_mutable()->passage_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+void DebitRecoveryRequest::InitAsDefaultInstance() {
+  ::axis::transactions::_DebitRecoveryRequest_default_instance_._instance.get_mutable()->passage_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
       PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
-  ::axis::transactions::_DebitRecovery_default_instance_._instance.get_mutable()->transaction_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+  ::axis::transactions::_DebitRecoveryRequest_default_instance_._instance.get_mutable()->transaction_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
       PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
 }
-class DebitRecovery::_Internal {
+class DebitRecoveryRequest::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& passage_date(const DebitRecovery* msg);
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date(const DebitRecovery* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& passage_date(const DebitRecoveryRequest* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date(const DebitRecoveryRequest* msg);
 };
 
 const PROTOBUF_NAMESPACE_ID::Timestamp&
-DebitRecovery::_Internal::passage_date(const DebitRecovery* msg) {
+DebitRecoveryRequest::_Internal::passage_date(const DebitRecoveryRequest* msg) {
   return *msg->passage_date_;
 }
 const PROTOBUF_NAMESPACE_ID::Timestamp&
-DebitRecovery::_Internal::transaction_date(const DebitRecovery* msg) {
+DebitRecoveryRequest::_Internal::transaction_date(const DebitRecoveryRequest* msg) {
   return *msg->transaction_date_;
 }
-void DebitRecovery::clear_passage_date() {
+void DebitRecoveryRequest::clear_passage_date() {
   if (GetArena() == nullptr && passage_date_ != nullptr) {
     delete passage_date_;
   }
   passage_date_ = nullptr;
 }
-void DebitRecovery::clear_transaction_date() {
+void DebitRecoveryRequest::clear_transaction_date() {
   if (GetArena() == nullptr && transaction_date_ != nullptr) {
     delete transaction_date_;
   }
   transaction_date_ = nullptr;
 }
-DebitRecovery::DebitRecovery(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+DebitRecoveryRequest::DebitRecoveryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:axis.transactions.DebitRecovery)
+  // @@protoc_insertion_point(arena_constructor:axis.transactions.DebitRecoveryRequest)
 }
-DebitRecovery::DebitRecovery(const DebitRecovery& from)
+DebitRecoveryRequest::DebitRecoveryRequest(const DebitRecoveryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -264,11 +266,11 @@ DebitRecovery::DebitRecovery(const DebitRecovery& from)
   ::memcpy(&register_code_, &from.register_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&transaction_value_) -
     reinterpret_cast<char*>(&register_code_)) + sizeof(transaction_value_));
-  // @@protoc_insertion_point(copy_constructor:axis.transactions.DebitRecovery)
+  // @@protoc_insertion_point(copy_constructor:axis.transactions.DebitRecoveryRequest)
 }
 
-void DebitRecovery::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DebitRecovery_debit_5frecovery_2eproto.base);
+void DebitRecoveryRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DebitRecoveryRequest_debit_5frecovery_2eproto.base);
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -285,13 +287,13 @@ void DebitRecovery::SharedCtor() {
       reinterpret_cast<char*>(&passage_date_)) + sizeof(transaction_value_));
 }
 
-DebitRecovery::~DebitRecovery() {
-  // @@protoc_insertion_point(destructor:axis.transactions.DebitRecovery)
+DebitRecoveryRequest::~DebitRecoveryRequest() {
+  // @@protoc_insertion_point(destructor:axis.transactions.DebitRecoveryRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void DebitRecovery::SharedDtor() {
+void DebitRecoveryRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operator_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -308,23 +310,23 @@ void DebitRecovery::SharedDtor() {
   if (this != internal_default_instance()) delete transaction_date_;
 }
 
-void DebitRecovery::ArenaDtor(void* object) {
-  DebitRecovery* _this = reinterpret_cast< DebitRecovery* >(object);
+void DebitRecoveryRequest::ArenaDtor(void* object) {
+  DebitRecoveryRequest* _this = reinterpret_cast< DebitRecoveryRequest* >(object);
   (void)_this;
 }
-void DebitRecovery::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void DebitRecoveryRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void DebitRecovery::SetCachedSize(int size) const {
+void DebitRecoveryRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DebitRecovery& DebitRecovery::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DebitRecovery_debit_5frecovery_2eproto.base);
+const DebitRecoveryRequest& DebitRecoveryRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DebitRecoveryRequest_debit_5frecovery_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void DebitRecovery::Clear() {
-// @@protoc_insertion_point(message_clear_start:axis.transactions.DebitRecovery)
+void DebitRecoveryRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:axis.transactions.DebitRecoveryRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -354,7 +356,7 @@ void DebitRecovery::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DebitRecoveryRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -367,7 +369,7 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_device_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.device_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.device_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -376,7 +378,7 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_operator_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.operator_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.operator_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -385,7 +387,7 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_reader_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.reader_serial_number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.reader_serial_number"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -394,7 +396,7 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_device_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.device_serial_number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.device_serial_number"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -424,7 +426,7 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_device_suid();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.device_suid"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.device_suid"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -441,7 +443,7 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           auto str = _internal_mutable_par_card();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.par_card"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.par_card"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -474,37 +476,44 @@ const char* DebitRecovery::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int32 transaction_value = 15;
+      // int32 acceptance_list_version = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
+          acceptance_list_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 transaction_value = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
           transaction_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string line_id = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
-          auto str = _internal_mutable_line_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.line_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string vehicle_id = 17;
+      // string line_id = 17;
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
-          auto str = _internal_mutable_vehicle_id();
+          auto str = _internal_mutable_line_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.vehicle_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.line_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string geolocation = 18;
+      // string vehicle_id = 18;
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          auto str = _internal_mutable_vehicle_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.vehicle_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string geolocation = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
           auto str = _internal_mutable_geolocation();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecovery.geolocation"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DebitRecoveryRequest.geolocation"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -530,9 +539,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DebitRecovery::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* DebitRecoveryRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.DebitRecovery)
+  // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.DebitRecoveryRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -541,7 +550,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.device_id");
+      "axis.transactions.DebitRecoveryRequest.device_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_device_id(), target);
   }
@@ -551,7 +560,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_operator_id().data(), static_cast<int>(this->_internal_operator_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.operator_id");
+      "axis.transactions.DebitRecoveryRequest.operator_id");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_operator_id(), target);
   }
@@ -561,7 +570,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reader_serial_number().data(), static_cast<int>(this->_internal_reader_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.reader_serial_number");
+      "axis.transactions.DebitRecoveryRequest.reader_serial_number");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_reader_serial_number(), target);
   }
@@ -571,7 +580,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_serial_number().data(), static_cast<int>(this->_internal_device_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.device_serial_number");
+      "axis.transactions.DebitRecoveryRequest.device_serial_number");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_device_serial_number(), target);
   }
@@ -603,7 +612,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_suid().data(), static_cast<int>(this->_internal_device_suid().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.device_suid");
+      "axis.transactions.DebitRecoveryRequest.device_suid");
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_device_suid(), target);
   }
@@ -619,7 +628,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_par_card().data(), static_cast<int>(this->_internal_par_card().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.par_card");
+      "axis.transactions.DebitRecoveryRequest.par_card");
     target = stream->WriteStringMaybeAliased(
         10, this->_internal_par_card(), target);
   }
@@ -648,52 +657,58 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(14, this->_internal_restriction_list_version(), target);
   }
 
-  // int32 transaction_value = 15;
-  if (this->transaction_value() != 0) {
+  // int32 acceptance_list_version = 15;
+  if (this->acceptance_list_version() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_transaction_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_acceptance_list_version(), target);
   }
 
-  // string line_id = 16;
+  // int32 transaction_value = 16;
+  if (this->transaction_value() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(16, this->_internal_transaction_value(), target);
+  }
+
+  // string line_id = 17;
   if (this->line_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_line_id().data(), static_cast<int>(this->_internal_line_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.line_id");
+      "axis.transactions.DebitRecoveryRequest.line_id");
     target = stream->WriteStringMaybeAliased(
-        16, this->_internal_line_id(), target);
+        17, this->_internal_line_id(), target);
   }
 
-  // string vehicle_id = 17;
+  // string vehicle_id = 18;
   if (this->vehicle_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_vehicle_id().data(), static_cast<int>(this->_internal_vehicle_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.vehicle_id");
+      "axis.transactions.DebitRecoveryRequest.vehicle_id");
     target = stream->WriteStringMaybeAliased(
-        17, this->_internal_vehicle_id(), target);
+        18, this->_internal_vehicle_id(), target);
   }
 
-  // string geolocation = 18;
+  // string geolocation = 19;
   if (this->geolocation().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_geolocation().data(), static_cast<int>(this->_internal_geolocation().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DebitRecovery.geolocation");
+      "axis.transactions.DebitRecoveryRequest.geolocation");
     target = stream->WriteStringMaybeAliased(
-        18, this->_internal_geolocation(), target);
+        19, this->_internal_geolocation(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:axis.transactions.DebitRecovery)
+  // @@protoc_insertion_point(serialize_to_array_end:axis.transactions.DebitRecoveryRequest)
   return target;
 }
 
-size_t DebitRecovery::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:axis.transactions.DebitRecovery)
+size_t DebitRecoveryRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:axis.transactions.DebitRecoveryRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -756,21 +771,21 @@ size_t DebitRecovery::ByteSizeLong() const {
         this->_internal_transaction_data());
   }
 
-  // string line_id = 16;
+  // string line_id = 17;
   if (this->line_id().size() > 0) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_line_id());
   }
 
-  // string vehicle_id = 17;
+  // string vehicle_id = 18;
   if (this->vehicle_id().size() > 0) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_vehicle_id());
   }
 
-  // string geolocation = 18;
+  // string geolocation = 19;
   if (this->geolocation().size() > 0) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -819,9 +834,16 @@ size_t DebitRecovery::ByteSizeLong() const {
         this->_internal_restriction_list_version());
   }
 
-  // int32 transaction_value = 15;
-  if (this->transaction_value() != 0) {
+  // int32 acceptance_list_version = 15;
+  if (this->acceptance_list_version() != 0) {
     total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_acceptance_list_version());
+  }
+
+  // int32 transaction_value = 16;
+  if (this->transaction_value() != 0) {
+    total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_transaction_value());
   }
@@ -835,23 +857,23 @@ size_t DebitRecovery::ByteSizeLong() const {
   return total_size;
 }
 
-void DebitRecovery::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.DebitRecovery)
+void DebitRecoveryRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.DebitRecoveryRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const DebitRecovery* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DebitRecovery>(
+  const DebitRecoveryRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DebitRecoveryRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.DebitRecovery)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.DebitRecoveryRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.DebitRecovery)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.DebitRecoveryRequest)
     MergeFrom(*source);
   }
 }
 
-void DebitRecovery::MergeFrom(const DebitRecovery& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.DebitRecovery)
+void DebitRecoveryRequest::MergeFrom(const DebitRecoveryRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.DebitRecoveryRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -908,30 +930,33 @@ void DebitRecovery::MergeFrom(const DebitRecovery& from) {
   if (from.restriction_list_version() != 0) {
     _internal_set_restriction_list_version(from._internal_restriction_list_version());
   }
+  if (from.acceptance_list_version() != 0) {
+    _internal_set_acceptance_list_version(from._internal_acceptance_list_version());
+  }
   if (from.transaction_value() != 0) {
     _internal_set_transaction_value(from._internal_transaction_value());
   }
 }
 
-void DebitRecovery::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.DebitRecovery)
+void DebitRecoveryRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.DebitRecoveryRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void DebitRecovery::CopyFrom(const DebitRecovery& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:axis.transactions.DebitRecovery)
+void DebitRecoveryRequest::CopyFrom(const DebitRecoveryRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:axis.transactions.DebitRecoveryRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DebitRecovery::IsInitialized() const {
+bool DebitRecoveryRequest::IsInitialized() const {
   return true;
 }
 
-void DebitRecovery::InternalSwap(DebitRecovery* other) {
+void DebitRecoveryRequest::InternalSwap(DebitRecoveryRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   device_id_.Swap(&other->device_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -946,14 +971,14 @@ void DebitRecovery::InternalSwap(DebitRecovery* other) {
   vehicle_id_.Swap(&other->vehicle_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   geolocation_.Swap(&other->geolocation_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DebitRecovery, transaction_value_)
-      + sizeof(DebitRecovery::transaction_value_)
-      - PROTOBUF_FIELD_OFFSET(DebitRecovery, passage_date_)>(
+      PROTOBUF_FIELD_OFFSET(DebitRecoveryRequest, transaction_value_)
+      + sizeof(DebitRecoveryRequest::transaction_value_)
+      - PROTOBUF_FIELD_OFFSET(DebitRecoveryRequest, passage_date_)>(
           reinterpret_cast<char*>(&passage_date_),
           reinterpret_cast<char*>(&other->passage_date_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata DebitRecovery::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata DebitRecoveryRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1316,8 +1341,8 @@ void DebitRecoveryResponse::InternalSwap(DebitRecoveryResponse* other) {
 }  // namespace transactions
 }  // namespace axis
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::axis::transactions::DebitRecovery* Arena::CreateMaybeMessage< ::axis::transactions::DebitRecovery >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::axis::transactions::DebitRecovery >(arena);
+template<> PROTOBUF_NOINLINE ::axis::transactions::DebitRecoveryRequest* Arena::CreateMaybeMessage< ::axis::transactions::DebitRecoveryRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::axis::transactions::DebitRecoveryRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::axis::transactions::DebitRecoveryResponse* Arena::CreateMaybeMessage< ::axis::transactions::DebitRecoveryResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::axis::transactions::DebitRecoveryResponse >(arena);

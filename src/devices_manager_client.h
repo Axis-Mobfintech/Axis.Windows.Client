@@ -8,8 +8,8 @@
 #include "auto_gen_grpc_client\device_register.grpc.pb.h"
 
 
-using axis::transactions::DevicesManager;
-using axis::transactions::DeviceRegister;
+using axis::transactions::DeviceRegisterService;
+using axis::transactions::DeviceRegisterRequest;
 using axis::transactions::DeviceRegisterResponse;
 
 using grpc::Channel;
@@ -21,10 +21,10 @@ class DevicesManagerClient
 public:
    DevicesManagerClient(std::shared_ptr<Channel> channel);
    ~DevicesManagerClient();
-   DeviceRegisterResponse RegisterDevice(DeviceRegister registrerDevice, int timeout_seconds=10) throw (Status);
+   DeviceRegisterResponse RegisterDevice(DeviceRegisterRequest registrerDevice, int timeout_seconds=10) throw (Status);
 
 private:
-   std::unique_ptr<DevicesManager::Stub> stub_;
+   std::unique_ptr<DeviceRegisterService::Stub> stub_;
 };
 
 

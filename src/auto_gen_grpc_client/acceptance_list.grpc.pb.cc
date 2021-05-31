@@ -22,49 +22,49 @@
 namespace axis {
 namespace transactions {
 
-static const char* AcceptanceLists_method_names[] = {
-  "/axis.transactions.AcceptanceLists/GetAcceptanceList",
+static const char* AcceptanceListService_method_names[] = {
+  "/axis.transactions.AcceptanceListService/GetAcceptanceList",
 };
 
-std::unique_ptr< AcceptanceLists::Stub> AcceptanceLists::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< AcceptanceListService::Stub> AcceptanceListService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< AcceptanceLists::Stub> stub(new AcceptanceLists::Stub(channel));
+  std::unique_ptr< AcceptanceListService::Stub> stub(new AcceptanceListService::Stub(channel));
   return stub;
 }
 
-AcceptanceLists::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_GetAcceptanceList_(AcceptanceLists_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+AcceptanceListService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_GetAcceptanceList_(AcceptanceListService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status AcceptanceLists::Stub::GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::axis::transactions::AcceptanceListResponse* response) {
+::grpc::Status AcceptanceListService::Stub::GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::axis::transactions::AcceptanceListResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetAcceptanceList_, context, request, response);
 }
 
-void AcceptanceLists::Stub::experimental_async::GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, std::function<void(::grpc::Status)> f) {
+void AcceptanceListService::Stub::experimental_async::GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAcceptanceList_, context, request, response, std::move(f));
 }
 
-void AcceptanceLists::Stub::experimental_async::GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void AcceptanceListService::Stub::experimental_async::GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAcceptanceList_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>* AcceptanceLists::Stub::PrepareAsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>* AcceptanceListService::Stub::PrepareAsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::AcceptanceListResponse>::Create(channel_.get(), cq, rpcmethod_GetAcceptanceList_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>* AcceptanceLists::Stub::AsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>* AcceptanceListService::Stub::AsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetAcceptanceListRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-AcceptanceLists::Service::Service() {
+AcceptanceListService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AcceptanceLists_method_names[0],
+      AcceptanceListService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AcceptanceLists::Service, ::axis::transactions::AcceptanceListRequest, ::axis::transactions::AcceptanceListResponse>(
-          [](AcceptanceLists::Service* service,
+      new ::grpc::internal::RpcMethodHandler< AcceptanceListService::Service, ::axis::transactions::AcceptanceListRequest, ::axis::transactions::AcceptanceListResponse>(
+          [](AcceptanceListService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::axis::transactions::AcceptanceListRequest* req,
              ::axis::transactions::AcceptanceListResponse* resp) {
@@ -72,10 +72,10 @@ AcceptanceLists::Service::Service() {
              }, this)));
 }
 
-AcceptanceLists::Service::~Service() {
+AcceptanceListService::Service::~Service() {
 }
 
-::grpc::Status AcceptanceLists::Service::GetAcceptanceList(::grpc::ServerContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response) {
+::grpc::Status AcceptanceListService::Service::GetAcceptanceList(::grpc::ServerContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response) {
   (void) context;
   (void) request;
   (void) response;

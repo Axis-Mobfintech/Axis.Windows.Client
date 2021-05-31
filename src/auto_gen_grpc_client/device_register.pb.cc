@@ -17,29 +17,29 @@
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace axis {
 namespace transactions {
-class DeviceRegisterDefaultTypeInternal {
+class DeviceRegisterRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeviceRegister> _instance;
-} _DeviceRegister_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeviceRegisterRequest> _instance;
+} _DeviceRegisterRequest_default_instance_;
 class DeviceRegisterResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeviceRegisterResponse> _instance;
 } _DeviceRegisterResponse_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_DeviceRegister_device_5fregister_2eproto() {
+static void InitDefaultsscc_info_DeviceRegisterRequest_device_5fregister_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::axis::transactions::_DeviceRegister_default_instance_;
-    new (ptr) ::axis::transactions::DeviceRegister();
+    void* ptr = &::axis::transactions::_DeviceRegisterRequest_default_instance_;
+    new (ptr) ::axis::transactions::DeviceRegisterRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::axis::transactions::DeviceRegister::InitAsDefaultInstance();
+  ::axis::transactions::DeviceRegisterRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeviceRegister_device_5fregister_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DeviceRegister_device_5fregister_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeviceRegisterRequest_device_5fregister_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DeviceRegisterRequest_device_5fregister_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsscc_info_DeviceRegisterResponse_device_5fregister_2eproto() {
@@ -63,17 +63,17 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_device_5fregister_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, operator_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, reader_serial_number_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, device_serial_number_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, ksn_data_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, line_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, vehicle_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegister, register_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, operator_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, reader_serial_number_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, device_serial_number_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, ksn_data_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, line_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, vehicle_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterRequest, register_date_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -85,43 +85,44 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_device_5fregister_2eproto::off
   PROTOBUF_FIELD_OFFSET(::axis::transactions::DeviceRegisterResponse, register_date_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::DeviceRegister)},
+  { 0, -1, sizeof(::axis::transactions::DeviceRegisterRequest)},
   { 12, -1, sizeof(::axis::transactions::DeviceRegisterResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_DeviceRegister_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_DeviceRegisterRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_DeviceRegisterResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_device_5fregister_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025device_register.proto\022\021axis.transactio"
-  "ns\032\037google/protobuf/timestamp.proto\"\313\001\n\016"
-  "DeviceRegister\022\023\n\013operator_id\030\001 \001(\t\022\034\n\024r"
-  "eader_serial_number\030\002 \001(\t\022\034\n\024device_seri"
-  "al_number\030\003 \001(\t\022\020\n\010ksn_data\030\004 \001(\014\022\017\n\007lin"
-  "e_id\030\005 \001(\t\022\022\n\nvehicle_id\030\006 \001(\t\0221\n\rregist"
-  "er_date\030\007 \001(\0132\032.google.protobuf.Timestam"
-  "p\"\214\001\n\026DeviceRegisterResponse\022\025\n\rresponse"
-  "_code\030\001 \001(\005\022\025\n\rregister_code\030\002 \001(\t\022\021\n\tde"
-  "vice_id\030\003 \001(\t\0221\n\rregister_date\030\004 \001(\0132\032.g"
-  "oogle.protobuf.Timestamp2p\n\016DevicesManag"
-  "er\022^\n\016RegisterDevice\022!.axis.transactions"
-  ".DeviceRegister\032).axis.transactions.Devi"
-  "ceRegisterResponseBQ\n#com.axismobfintech"
-  ".gpb.transactionsZ\022axistransactionspb\252\002\025"
-  "Axis.GPB.Transactionsb\006proto3"
+  "ns\032\037google/protobuf/timestamp.proto\"\322\001\n\025"
+  "DeviceRegisterRequest\022\023\n\013operator_id\030\001 \001"
+  "(\t\022\034\n\024reader_serial_number\030\002 \001(\t\022\034\n\024devi"
+  "ce_serial_number\030\003 \001(\t\022\020\n\010ksn_data\030\004 \001(\014"
+  "\022\017\n\007line_id\030\005 \001(\t\022\022\n\nvehicle_id\030\006 \001(\t\0221\n"
+  "\rregister_date\030\007 \001(\0132\032.google.protobuf.T"
+  "imestamp\"\214\001\n\026DeviceRegisterResponse\022\025\n\rr"
+  "esponse_code\030\001 \001(\005\022\025\n\rregister_code\030\002 \001("
+  "\t\022\021\n\tdevice_id\030\003 \001(\t\0221\n\rregister_date\030\004 "
+  "\001(\0132\032.google.protobuf.Timestamp2~\n\025Devic"
+  "eRegisterService\022e\n\016RegisterDevice\022(.axi"
+  "s.transactions.DeviceRegisterRequest\032).a"
+  "xis.transactions.DeviceRegisterResponseB"
+  "Q\n#com.axismobfintech.gpb.transactionsZ\022"
+  "axistransactionspb\252\002\025Axis.GPB.Transactio"
+  "nsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_device_5fregister_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_device_5fregister_2eproto_sccs[2] = {
-  &scc_info_DeviceRegister_device_5fregister_2eproto.base,
+  &scc_info_DeviceRegisterRequest_device_5fregister_2eproto.base,
   &scc_info_DeviceRegisterResponse_device_5fregister_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_device_5fregister_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_5fregister_2eproto = {
-  false, false, descriptor_table_protodef_device_5fregister_2eproto, "device_register.proto", 629,
+  false, false, descriptor_table_protodef_device_5fregister_2eproto, "device_register.proto", 650,
   &descriptor_table_device_5fregister_2eproto_once, descriptor_table_device_5fregister_2eproto_sccs, descriptor_table_device_5fregister_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_device_5fregister_2eproto::offsets,
   file_level_metadata_device_5fregister_2eproto, 2, file_level_enum_descriptors_device_5fregister_2eproto, file_level_service_descriptors_device_5fregister_2eproto,
@@ -134,32 +135,32 @@ namespace transactions {
 
 // ===================================================================
 
-void DeviceRegister::InitAsDefaultInstance() {
-  ::axis::transactions::_DeviceRegister_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+void DeviceRegisterRequest::InitAsDefaultInstance() {
+  ::axis::transactions::_DeviceRegisterRequest_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
       PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
 }
-class DeviceRegister::_Internal {
+class DeviceRegisterRequest::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const DeviceRegister* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const DeviceRegisterRequest* msg);
 };
 
 const PROTOBUF_NAMESPACE_ID::Timestamp&
-DeviceRegister::_Internal::register_date(const DeviceRegister* msg) {
+DeviceRegisterRequest::_Internal::register_date(const DeviceRegisterRequest* msg) {
   return *msg->register_date_;
 }
-void DeviceRegister::clear_register_date() {
+void DeviceRegisterRequest::clear_register_date() {
   if (GetArena() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-DeviceRegister::DeviceRegister(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+DeviceRegisterRequest::DeviceRegisterRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(arena_constructor:axis.transactions.DeviceRegisterRequest)
 }
-DeviceRegister::DeviceRegister(const DeviceRegister& from)
+DeviceRegisterRequest::DeviceRegisterRequest(const DeviceRegisterRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -197,11 +198,11 @@ DeviceRegister::DeviceRegister(const DeviceRegister& from)
   } else {
     register_date_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(copy_constructor:axis.transactions.DeviceRegisterRequest)
 }
 
-void DeviceRegister::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DeviceRegister_device_5fregister_2eproto.base);
+void DeviceRegisterRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DeviceRegisterRequest_device_5fregister_2eproto.base);
   operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -211,13 +212,13 @@ void DeviceRegister::SharedCtor() {
   register_date_ = nullptr;
 }
 
-DeviceRegister::~DeviceRegister() {
-  // @@protoc_insertion_point(destructor:axis.transactions.DeviceRegister)
+DeviceRegisterRequest::~DeviceRegisterRequest() {
+  // @@protoc_insertion_point(destructor:axis.transactions.DeviceRegisterRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void DeviceRegister::SharedDtor() {
+void DeviceRegisterRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   operator_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reader_serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -228,23 +229,23 @@ void DeviceRegister::SharedDtor() {
   if (this != internal_default_instance()) delete register_date_;
 }
 
-void DeviceRegister::ArenaDtor(void* object) {
-  DeviceRegister* _this = reinterpret_cast< DeviceRegister* >(object);
+void DeviceRegisterRequest::ArenaDtor(void* object) {
+  DeviceRegisterRequest* _this = reinterpret_cast< DeviceRegisterRequest* >(object);
   (void)_this;
 }
-void DeviceRegister::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void DeviceRegisterRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void DeviceRegister::SetCachedSize(int size) const {
+void DeviceRegisterRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DeviceRegister& DeviceRegister::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeviceRegister_device_5fregister_2eproto.base);
+const DeviceRegisterRequest& DeviceRegisterRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeviceRegisterRequest_device_5fregister_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void DeviceRegister::Clear() {
-// @@protoc_insertion_point(message_clear_start:axis.transactions.DeviceRegister)
+void DeviceRegisterRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:axis.transactions.DeviceRegisterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -262,7 +263,7 @@ void DeviceRegister::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeviceRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeviceRegisterRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -275,7 +276,7 @@ const char* DeviceRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_operator_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegister.operator_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegisterRequest.operator_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -284,7 +285,7 @@ const char* DeviceRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_reader_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegister.reader_serial_number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegisterRequest.reader_serial_number"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -293,7 +294,7 @@ const char* DeviceRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_device_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegister.device_serial_number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegisterRequest.device_serial_number"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -310,7 +311,7 @@ const char* DeviceRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_line_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegister.line_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegisterRequest.line_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -319,7 +320,7 @@ const char* DeviceRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_vehicle_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegister.vehicle_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.DeviceRegisterRequest.vehicle_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -352,9 +353,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DeviceRegister::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* DeviceRegisterRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.DeviceRegisterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -363,7 +364,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_operator_id().data(), static_cast<int>(this->_internal_operator_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DeviceRegister.operator_id");
+      "axis.transactions.DeviceRegisterRequest.operator_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_operator_id(), target);
   }
@@ -373,7 +374,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reader_serial_number().data(), static_cast<int>(this->_internal_reader_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DeviceRegister.reader_serial_number");
+      "axis.transactions.DeviceRegisterRequest.reader_serial_number");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_reader_serial_number(), target);
   }
@@ -383,7 +384,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_serial_number().data(), static_cast<int>(this->_internal_device_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DeviceRegister.device_serial_number");
+      "axis.transactions.DeviceRegisterRequest.device_serial_number");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_device_serial_number(), target);
   }
@@ -399,7 +400,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_line_id().data(), static_cast<int>(this->_internal_line_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DeviceRegister.line_id");
+      "axis.transactions.DeviceRegisterRequest.line_id");
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_line_id(), target);
   }
@@ -409,7 +410,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_vehicle_id().data(), static_cast<int>(this->_internal_vehicle_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.DeviceRegister.vehicle_id");
+      "axis.transactions.DeviceRegisterRequest.vehicle_id");
     target = stream->WriteStringMaybeAliased(
         6, this->_internal_vehicle_id(), target);
   }
@@ -426,12 +427,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(serialize_to_array_end:axis.transactions.DeviceRegisterRequest)
   return target;
 }
 
-size_t DeviceRegister::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:axis.transactions.DeviceRegister)
+size_t DeviceRegisterRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:axis.transactions.DeviceRegisterRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -496,23 +497,23 @@ size_t DeviceRegister::ByteSizeLong() const {
   return total_size;
 }
 
-void DeviceRegister::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.DeviceRegister)
+void DeviceRegisterRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.DeviceRegisterRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const DeviceRegister* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeviceRegister>(
+  const DeviceRegisterRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeviceRegisterRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.DeviceRegisterRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.DeviceRegisterRequest)
     MergeFrom(*source);
   }
 }
 
-void DeviceRegister::MergeFrom(const DeviceRegister& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.DeviceRegister)
+void DeviceRegisterRequest::MergeFrom(const DeviceRegisterRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.DeviceRegisterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -541,25 +542,25 @@ void DeviceRegister::MergeFrom(const DeviceRegister& from) {
   }
 }
 
-void DeviceRegister::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.DeviceRegister)
+void DeviceRegisterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.DeviceRegisterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void DeviceRegister::CopyFrom(const DeviceRegister& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:axis.transactions.DeviceRegister)
+void DeviceRegisterRequest::CopyFrom(const DeviceRegisterRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:axis.transactions.DeviceRegisterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DeviceRegister::IsInitialized() const {
+bool DeviceRegisterRequest::IsInitialized() const {
   return true;
 }
 
-void DeviceRegister::InternalSwap(DeviceRegister* other) {
+void DeviceRegisterRequest::InternalSwap(DeviceRegisterRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   operator_id_.Swap(&other->operator_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -571,7 +572,7 @@ void DeviceRegister::InternalSwap(DeviceRegister* other) {
   swap(register_date_, other->register_date_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata DeviceRegister::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata DeviceRegisterRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -909,8 +910,8 @@ void DeviceRegisterResponse::InternalSwap(DeviceRegisterResponse* other) {
 }  // namespace transactions
 }  // namespace axis
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::axis::transactions::DeviceRegister* Arena::CreateMaybeMessage< ::axis::transactions::DeviceRegister >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::axis::transactions::DeviceRegister >(arena);
+template<> PROTOBUF_NOINLINE ::axis::transactions::DeviceRegisterRequest* Arena::CreateMaybeMessage< ::axis::transactions::DeviceRegisterRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::axis::transactions::DeviceRegisterRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::axis::transactions::DeviceRegisterResponse* Arena::CreateMaybeMessage< ::axis::transactions::DeviceRegisterResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::axis::transactions::DeviceRegisterResponse >(arena);

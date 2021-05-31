@@ -7,7 +7,7 @@
 
 #include "auto_gen_grpc_client\restriction_list.grpc.pb.h"
 
-using axis::transactions::RestrictionLists;
+using axis::transactions::RestrictionListService;
 using axis::transactions::RestrictionListResponse;
 using axis::transactions::RestrictionListRequest;
 using axis::transactions::RestrictionListCardInformation;
@@ -29,7 +29,7 @@ public:
    RestrictionListResponse GetRestrictionList(RestrictionListRequest parametres, int timeout_seconds=10) throw (Status);
 
 private:
-   std::unique_ptr<RestrictionLists::Stub> stub_;
+   std::unique_ptr<RestrictionListService::Stub> stub_;
 };
 
 

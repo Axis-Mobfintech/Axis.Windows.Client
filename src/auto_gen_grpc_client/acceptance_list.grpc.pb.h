@@ -29,10 +29,10 @@
 namespace axis {
 namespace transactions {
 
-class AcceptanceLists final {
+class AcceptanceListService final {
  public:
   static constexpr char const* service_full_name() {
-    return "axis.transactions.AcceptanceLists";
+    return "axis.transactions.AcceptanceListService";
   }
   class StubInterface {
    public:

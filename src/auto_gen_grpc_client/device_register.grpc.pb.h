@@ -29,29 +29,29 @@
 namespace axis {
 namespace transactions {
 
-class DevicesManager final {
+class DeviceRegisterService final {
  public:
   static constexpr char const* service_full_name() {
-    return "axis.transactions.DevicesManager";
+    return "axis.transactions.DeviceRegisterService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::axis::transactions::DeviceRegisterResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>> AsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::axis::transactions::DeviceRegisterResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>> AsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>>(AsyncRegisterDeviceRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>> PrepareAsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>> PrepareAsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>>(PrepareAsyncRegisterDeviceRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -62,27 +62,27 @@ class DevicesManager final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>* AsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>* PrepareAsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>* AsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DeviceRegisterResponse>* PrepareAsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::axis::transactions::DeviceRegisterResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>> AsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::axis::transactions::DeviceRegisterResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>> AsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>>(AsyncRegisterDeviceRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>> PrepareAsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>> PrepareAsyncRegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>>(PrepareAsyncRegisterDeviceRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response, std::function<void(::grpc::Status)>) override;
+      void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -95,8 +95,8 @@ class DevicesManager final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>* AsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>* PrepareAsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegister& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>* AsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>* PrepareAsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_RegisterDevice_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -105,7 +105,7 @@ class DevicesManager final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status RegisterDevice(::grpc::ServerContext* context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response);
+    virtual ::grpc::Status RegisterDevice(::grpc::ServerContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_RegisterDevice : public BaseClass {
@@ -119,11 +119,11 @@ class DevicesManager final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
+    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRegisterDevice(::grpc::ServerContext* context, ::axis::transactions::DeviceRegister* request, ::grpc::ServerAsyncResponseWriter< ::axis::transactions::DeviceRegisterResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRegisterDevice(::grpc::ServerContext* context, ::axis::transactions::DeviceRegisterRequest* request, ::grpc::ServerAsyncResponseWriter< ::axis::transactions::DeviceRegisterResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -140,38 +140,38 @@ class DevicesManager final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DeviceRegister, ::axis::transactions::DeviceRegisterResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::axis::transactions::DeviceRegister* request, ::axis::transactions::DeviceRegisterResponse* response) { return this->RegisterDevice(context, request, response); }));}
+                     context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response) { return this->RegisterDevice(context, request, response); }));}
     void SetMessageAllocatorFor_RegisterDevice(
-        ::grpc::experimental::MessageAllocator< ::axis::transactions::DeviceRegister, ::axis::transactions::DeviceRegisterResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DeviceRegister, ::axis::transactions::DeviceRegisterResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RegisterDevice() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
+    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* RegisterDevice(
-      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* RegisterDevice(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -192,7 +192,7 @@ class DevicesManager final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
+    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -209,7 +209,7 @@ class DevicesManager final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
+    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -242,7 +242,7 @@ class DevicesManager final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
+    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -263,10 +263,10 @@ class DevicesManager final {
     WithStreamedUnaryMethod_RegisterDevice() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::axis::transactions::DeviceRegister, ::axis::transactions::DeviceRegisterResponse>(
+          ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::axis::transactions::DeviceRegister, ::axis::transactions::DeviceRegisterResponse>* streamer) {
+                     ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse>* streamer) {
                        return this->StreamedRegisterDevice(context,
                          streamer);
                   }));
@@ -275,12 +275,12 @@ class DevicesManager final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegister* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
+    ::grpc::Status RegisterDevice(::grpc::ServerContext* /*context*/, const ::axis::transactions::DeviceRegisterRequest* /*request*/, ::axis::transactions::DeviceRegisterResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRegisterDevice(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::axis::transactions::DeviceRegister,::axis::transactions::DeviceRegisterResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRegisterDevice(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::axis::transactions::DeviceRegisterRequest,::axis::transactions::DeviceRegisterResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_RegisterDevice<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;

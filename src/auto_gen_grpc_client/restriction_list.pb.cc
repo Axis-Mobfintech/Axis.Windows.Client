@@ -154,12 +154,13 @@ const char descriptor_table_protodef_restriction_5flist_2eproto[] PROTOBUF_SECTI
   "untNumberBlackList\022E\n\010par_list\030\002 \001(\01323.a"
   "xis.transactions.PrimaryAccountReference"
   "BlackList\022-\n\006action\030\003 \001(\0162\035.axis.transac"
-  "tions.CardAction2\177\n\020RestrictionLists\022k\n\022"
-  "GetRestrictionList\022).axis.transactions.R"
-  "estrictionListRequest\032*.axis.transaction"
-  "s.RestrictionListResponseBQ\n#com.axismob"
-  "fintech.gpb.transactionsZ\022axistransactio"
-  "nspb\252\002\025Axis.GPB.Transactionsb\006proto3"
+  "tions.CardAction2\205\001\n\026RestrictionListServ"
+  "ice\022k\n\022GetRestrictionList\022).axis.transac"
+  "tions.RestrictionListRequest\032*.axis.tran"
+  "sactions.RestrictionListResponseBQ\n#com."
+  "axismobfintech.gpb.transactionsZ\022axistra"
+  "nsactionspb\252\002\025Axis.GPB.Transactionsb\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_restriction_5flist_2eproto_deps[4] = {
   &::descriptor_table_Protos_2fcard_5faction_2eproto,
@@ -174,7 +175,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_res
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_restriction_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_restriction_5flist_2eproto = {
-  false, false, descriptor_table_protodef_restriction_5flist_2eproto, "restriction_list.proto", 1116,
+  false, false, descriptor_table_protodef_restriction_5flist_2eproto, "restriction_list.proto", 1123,
   &descriptor_table_restriction_5flist_2eproto_once, descriptor_table_restriction_5flist_2eproto_sccs, descriptor_table_restriction_5flist_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_restriction_5flist_2eproto::offsets,
   file_level_metadata_restriction_5flist_2eproto, 3, file_level_enum_descriptors_restriction_5flist_2eproto, file_level_service_descriptors_restriction_5flist_2eproto,

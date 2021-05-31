@@ -6,14 +6,14 @@ using grpc::ClientContext;
 
 RecoverDebitClient::RecoverDebitClient(std::shared_ptr<Channel> channel)
 {
-   stub_ = RecoverDebit::NewStub(channel);
+   stub_ = RecoverDebitService::NewStub(channel);
 }
 
 RecoverDebitClient::~RecoverDebitClient()
 {
 }
 
-DebitRecoveryResponse  RecoverDebitClient::RecoverDebit(DebitRecovery debit, int timeout_seconds)  throw (Status) {
+DebitRecoveryResponse  RecoverDebitClient::RecoverDebit(DebitRecoveryRequest debit, int timeout_seconds)  throw (Status) {
 
    // Container for the data we expect from the server.
    DebitRecoveryResponse  response;

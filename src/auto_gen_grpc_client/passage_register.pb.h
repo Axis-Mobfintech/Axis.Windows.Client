@@ -57,16 +57,16 @@ struct TableStruct_passage_5fregister_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_passage_5fregister_2eproto;
 namespace axis {
 namespace transactions {
-class RegisterPassage;
-class RegisterPassageDefaultTypeInternal;
-extern RegisterPassageDefaultTypeInternal _RegisterPassage_default_instance_;
+class RegisterPassageRequest;
+class RegisterPassageRequestDefaultTypeInternal;
+extern RegisterPassageRequestDefaultTypeInternal _RegisterPassageRequest_default_instance_;
 class RegisterPassageResponse;
 class RegisterPassageResponseDefaultTypeInternal;
 extern RegisterPassageResponseDefaultTypeInternal _RegisterPassageResponse_default_instance_;
 }  // namespace transactions
 }  // namespace axis
 PROTOBUF_NAMESPACE_OPEN
-template<> ::axis::transactions::RegisterPassage* Arena::CreateMaybeMessage<::axis::transactions::RegisterPassage>(Arena*);
+template<> ::axis::transactions::RegisterPassageRequest* Arena::CreateMaybeMessage<::axis::transactions::RegisterPassageRequest>(Arena*);
 template<> ::axis::transactions::RegisterPassageResponse* Arena::CreateMaybeMessage<::axis::transactions::RegisterPassageResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace axis {
@@ -74,23 +74,23 @@ namespace transactions {
 
 // ===================================================================
 
-class RegisterPassage PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:axis.transactions.RegisterPassage) */ {
+class RegisterPassageRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:axis.transactions.RegisterPassageRequest) */ {
  public:
-  inline RegisterPassage() : RegisterPassage(nullptr) {}
-  virtual ~RegisterPassage();
+  inline RegisterPassageRequest() : RegisterPassageRequest(nullptr) {}
+  virtual ~RegisterPassageRequest();
 
-  RegisterPassage(const RegisterPassage& from);
-  RegisterPassage(RegisterPassage&& from) noexcept
-    : RegisterPassage() {
+  RegisterPassageRequest(const RegisterPassageRequest& from);
+  RegisterPassageRequest(RegisterPassageRequest&& from) noexcept
+    : RegisterPassageRequest() {
     *this = ::std::move(from);
   }
 
-  inline RegisterPassage& operator=(const RegisterPassage& from) {
+  inline RegisterPassageRequest& operator=(const RegisterPassageRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline RegisterPassage& operator=(RegisterPassage&& from) noexcept {
+  inline RegisterPassageRequest& operator=(RegisterPassageRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -108,20 +108,20 @@ class RegisterPassage PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const RegisterPassage& default_instance();
+  static const RegisterPassageRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RegisterPassage* internal_default_instance() {
-    return reinterpret_cast<const RegisterPassage*>(
-               &_RegisterPassage_default_instance_);
+  static inline const RegisterPassageRequest* internal_default_instance() {
+    return reinterpret_cast<const RegisterPassageRequest*>(
+               &_RegisterPassageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(RegisterPassage& a, RegisterPassage& b) {
+  friend void swap(RegisterPassageRequest& a, RegisterPassageRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(RegisterPassage* other) {
+  inline void Swap(RegisterPassageRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -129,7 +129,7 @@ class RegisterPassage PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(RegisterPassage* other) {
+  void UnsafeArenaSwap(RegisterPassageRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -137,17 +137,17 @@ class RegisterPassage PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline RegisterPassage* New() const final {
-    return CreateMaybeMessage<RegisterPassage>(nullptr);
+  inline RegisterPassageRequest* New() const final {
+    return CreateMaybeMessage<RegisterPassageRequest>(nullptr);
   }
 
-  RegisterPassage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<RegisterPassage>(arena);
+  RegisterPassageRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RegisterPassageRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const RegisterPassage& from);
-  void MergeFrom(const RegisterPassage& from);
+  void CopyFrom(const RegisterPassageRequest& from);
+  void MergeFrom(const RegisterPassageRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -161,13 +161,13 @@ class RegisterPassage PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(RegisterPassage* other);
+  void InternalSwap(RegisterPassageRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "axis.transactions.RegisterPassage";
+    return "axis.transactions.RegisterPassageRequest";
   }
   protected:
-  explicit RegisterPassage(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit RegisterPassageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -195,16 +195,17 @@ class RegisterPassage PROTOBUF_FINAL :
     kPanHashFieldNumber = 9,
     kParCardFieldNumber = 10,
     kTransactionDataFieldNumber = 11,
-    kLineIdFieldNumber = 16,
-    kVehicleIdFieldNumber = 17,
-    kGeolocationFieldNumber = 18,
+    kLineIdFieldNumber = 17,
+    kVehicleIdFieldNumber = 18,
+    kGeolocationFieldNumber = 19,
     kPassageDateFieldNumber = 6,
     kTransactionDateFieldNumber = 7,
     kRegisterCodeFieldNumber = 5,
     kEmvParametersVersionFieldNumber = 12,
     kBinParametersVersionFieldNumber = 13,
     kRestrictionListVersionFieldNumber = 14,
-    kTransactionValueFieldNumber = 15,
+    kAcceptanceListVersionFieldNumber = 15,
+    kTransactionValueFieldNumber = 16,
   };
   // string device_id = 1;
   void clear_device_id();
@@ -334,7 +335,7 @@ class RegisterPassage PROTOBUF_FINAL :
   std::string* _internal_mutable_transaction_data();
   public:
 
-  // string line_id = 16;
+  // string line_id = 17;
   void clear_line_id();
   const std::string& line_id() const;
   void set_line_id(const std::string& value);
@@ -350,7 +351,7 @@ class RegisterPassage PROTOBUF_FINAL :
   std::string* _internal_mutable_line_id();
   public:
 
-  // string vehicle_id = 17;
+  // string vehicle_id = 18;
   void clear_vehicle_id();
   const std::string& vehicle_id() const;
   void set_vehicle_id(const std::string& value);
@@ -366,7 +367,7 @@ class RegisterPassage PROTOBUF_FINAL :
   std::string* _internal_mutable_vehicle_id();
   public:
 
-  // string geolocation = 18;
+  // string geolocation = 19;
   void clear_geolocation();
   const std::string& geolocation() const;
   void set_geolocation(const std::string& value);
@@ -454,7 +455,16 @@ class RegisterPassage PROTOBUF_FINAL :
   void _internal_set_restriction_list_version(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int32 transaction_value = 15;
+  // int32 acceptance_list_version = 15;
+  void clear_acceptance_list_version();
+  ::PROTOBUF_NAMESPACE_ID::int32 acceptance_list_version() const;
+  void set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_acceptance_list_version() const;
+  void _internal_set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 transaction_value = 16;
   void clear_transaction_value();
   ::PROTOBUF_NAMESPACE_ID::int32 transaction_value() const;
   void set_transaction_value(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -463,7 +473,7 @@ class RegisterPassage PROTOBUF_FINAL :
   void _internal_set_transaction_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:axis.transactions.RegisterPassage)
+  // @@protoc_insertion_point(class_scope:axis.transactions.RegisterPassageRequest)
  private:
   class _Internal;
 
@@ -487,6 +497,7 @@ class RegisterPassage PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::int32 emv_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 bin_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 restriction_list_version_;
+  ::PROTOBUF_NAMESPACE_ID::int32 acceptance_list_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 transaction_value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_passage_5fregister_2eproto;
@@ -706,60 +717,60 @@ class RegisterPassageResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// RegisterPassage
+// RegisterPassageRequest
 
 // string device_id = 1;
-inline void RegisterPassage::clear_device_id() {
+inline void RegisterPassageRequest::clear_device_id() {
   device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::device_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.device_id)
+inline const std::string& RegisterPassageRequest::device_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.device_id)
   return _internal_device_id();
 }
-inline void RegisterPassage::set_device_id(const std::string& value) {
+inline void RegisterPassageRequest::set_device_id(const std::string& value) {
   _internal_set_device_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.device_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.device_id)
 }
-inline std::string* RegisterPassage::mutable_device_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.device_id)
+inline std::string* RegisterPassageRequest::mutable_device_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.device_id)
   return _internal_mutable_device_id();
 }
-inline const std::string& RegisterPassage::_internal_device_id() const {
+inline const std::string& RegisterPassageRequest::_internal_device_id() const {
   return device_id_.Get();
 }
-inline void RegisterPassage::_internal_set_device_id(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_device_id(const std::string& value) {
   
   device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_device_id(std::string&& value) {
+inline void RegisterPassageRequest::set_device_id(std::string&& value) {
   
   device_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.device_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.device_id)
 }
-inline void RegisterPassage::set_device_id(const char* value) {
+inline void RegisterPassageRequest::set_device_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.device_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.device_id)
 }
-inline void RegisterPassage::set_device_id(const char* value,
+inline void RegisterPassageRequest::set_device_id(const char* value,
     size_t size) {
   
   device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.device_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.device_id)
 }
-inline std::string* RegisterPassage::_internal_mutable_device_id() {
+inline std::string* RegisterPassageRequest::_internal_mutable_device_id() {
   
   return device_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_device_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.device_id)
+inline std::string* RegisterPassageRequest::release_device_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.device_id)
   return device_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_device_id(std::string* device_id) {
+inline void RegisterPassageRequest::set_allocated_device_id(std::string* device_id) {
   if (device_id != nullptr) {
     
   } else {
@@ -767,61 +778,61 @@ inline void RegisterPassage::set_allocated_device_id(std::string* device_id) {
   }
   device_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.device_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.device_id)
 }
 
 // string operator_id = 2;
-inline void RegisterPassage::clear_operator_id() {
+inline void RegisterPassageRequest::clear_operator_id() {
   operator_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::operator_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.operator_id)
+inline const std::string& RegisterPassageRequest::operator_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.operator_id)
   return _internal_operator_id();
 }
-inline void RegisterPassage::set_operator_id(const std::string& value) {
+inline void RegisterPassageRequest::set_operator_id(const std::string& value) {
   _internal_set_operator_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.operator_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.operator_id)
 }
-inline std::string* RegisterPassage::mutable_operator_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.operator_id)
+inline std::string* RegisterPassageRequest::mutable_operator_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.operator_id)
   return _internal_mutable_operator_id();
 }
-inline const std::string& RegisterPassage::_internal_operator_id() const {
+inline const std::string& RegisterPassageRequest::_internal_operator_id() const {
   return operator_id_.Get();
 }
-inline void RegisterPassage::_internal_set_operator_id(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_operator_id(const std::string& value) {
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_operator_id(std::string&& value) {
+inline void RegisterPassageRequest::set_operator_id(std::string&& value) {
   
   operator_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.operator_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.operator_id)
 }
-inline void RegisterPassage::set_operator_id(const char* value) {
+inline void RegisterPassageRequest::set_operator_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.operator_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.operator_id)
 }
-inline void RegisterPassage::set_operator_id(const char* value,
+inline void RegisterPassageRequest::set_operator_id(const char* value,
     size_t size) {
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.operator_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.operator_id)
 }
-inline std::string* RegisterPassage::_internal_mutable_operator_id() {
+inline std::string* RegisterPassageRequest::_internal_mutable_operator_id() {
   
   return operator_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_operator_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.operator_id)
+inline std::string* RegisterPassageRequest::release_operator_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.operator_id)
   return operator_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_operator_id(std::string* operator_id) {
+inline void RegisterPassageRequest::set_allocated_operator_id(std::string* operator_id) {
   if (operator_id != nullptr) {
     
   } else {
@@ -829,61 +840,61 @@ inline void RegisterPassage::set_allocated_operator_id(std::string* operator_id)
   }
   operator_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operator_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.operator_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.operator_id)
 }
 
 // string reader_serial_number = 3;
-inline void RegisterPassage::clear_reader_serial_number() {
+inline void RegisterPassageRequest::clear_reader_serial_number() {
   reader_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::reader_serial_number() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.reader_serial_number)
+inline const std::string& RegisterPassageRequest::reader_serial_number() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.reader_serial_number)
   return _internal_reader_serial_number();
 }
-inline void RegisterPassage::set_reader_serial_number(const std::string& value) {
+inline void RegisterPassageRequest::set_reader_serial_number(const std::string& value) {
   _internal_set_reader_serial_number(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.reader_serial_number)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.reader_serial_number)
 }
-inline std::string* RegisterPassage::mutable_reader_serial_number() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.reader_serial_number)
+inline std::string* RegisterPassageRequest::mutable_reader_serial_number() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.reader_serial_number)
   return _internal_mutable_reader_serial_number();
 }
-inline const std::string& RegisterPassage::_internal_reader_serial_number() const {
+inline const std::string& RegisterPassageRequest::_internal_reader_serial_number() const {
   return reader_serial_number_.Get();
 }
-inline void RegisterPassage::_internal_set_reader_serial_number(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_reader_serial_number(const std::string& value) {
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_reader_serial_number(std::string&& value) {
+inline void RegisterPassageRequest::set_reader_serial_number(std::string&& value) {
   
   reader_serial_number_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.reader_serial_number)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.reader_serial_number)
 }
-inline void RegisterPassage::set_reader_serial_number(const char* value) {
+inline void RegisterPassageRequest::set_reader_serial_number(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.reader_serial_number)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.reader_serial_number)
 }
-inline void RegisterPassage::set_reader_serial_number(const char* value,
+inline void RegisterPassageRequest::set_reader_serial_number(const char* value,
     size_t size) {
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.reader_serial_number)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.reader_serial_number)
 }
-inline std::string* RegisterPassage::_internal_mutable_reader_serial_number() {
+inline std::string* RegisterPassageRequest::_internal_mutable_reader_serial_number() {
   
   return reader_serial_number_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_reader_serial_number() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.reader_serial_number)
+inline std::string* RegisterPassageRequest::release_reader_serial_number() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.reader_serial_number)
   return reader_serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_reader_serial_number(std::string* reader_serial_number) {
+inline void RegisterPassageRequest::set_allocated_reader_serial_number(std::string* reader_serial_number) {
   if (reader_serial_number != nullptr) {
     
   } else {
@@ -891,61 +902,61 @@ inline void RegisterPassage::set_allocated_reader_serial_number(std::string* rea
   }
   reader_serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reader_serial_number,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.reader_serial_number)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.reader_serial_number)
 }
 
 // string device_serial_number = 4;
-inline void RegisterPassage::clear_device_serial_number() {
+inline void RegisterPassageRequest::clear_device_serial_number() {
   device_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::device_serial_number() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.device_serial_number)
+inline const std::string& RegisterPassageRequest::device_serial_number() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.device_serial_number)
   return _internal_device_serial_number();
 }
-inline void RegisterPassage::set_device_serial_number(const std::string& value) {
+inline void RegisterPassageRequest::set_device_serial_number(const std::string& value) {
   _internal_set_device_serial_number(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.device_serial_number)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.device_serial_number)
 }
-inline std::string* RegisterPassage::mutable_device_serial_number() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.device_serial_number)
+inline std::string* RegisterPassageRequest::mutable_device_serial_number() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.device_serial_number)
   return _internal_mutable_device_serial_number();
 }
-inline const std::string& RegisterPassage::_internal_device_serial_number() const {
+inline const std::string& RegisterPassageRequest::_internal_device_serial_number() const {
   return device_serial_number_.Get();
 }
-inline void RegisterPassage::_internal_set_device_serial_number(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_device_serial_number(const std::string& value) {
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_device_serial_number(std::string&& value) {
+inline void RegisterPassageRequest::set_device_serial_number(std::string&& value) {
   
   device_serial_number_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.device_serial_number)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.device_serial_number)
 }
-inline void RegisterPassage::set_device_serial_number(const char* value) {
+inline void RegisterPassageRequest::set_device_serial_number(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.device_serial_number)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.device_serial_number)
 }
-inline void RegisterPassage::set_device_serial_number(const char* value,
+inline void RegisterPassageRequest::set_device_serial_number(const char* value,
     size_t size) {
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.device_serial_number)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.device_serial_number)
 }
-inline std::string* RegisterPassage::_internal_mutable_device_serial_number() {
+inline std::string* RegisterPassageRequest::_internal_mutable_device_serial_number() {
   
   return device_serial_number_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_device_serial_number() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.device_serial_number)
+inline std::string* RegisterPassageRequest::release_device_serial_number() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.device_serial_number)
   return device_serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_device_serial_number(std::string* device_serial_number) {
+inline void RegisterPassageRequest::set_allocated_device_serial_number(std::string* device_serial_number) {
   if (device_serial_number != nullptr) {
     
   } else {
@@ -953,46 +964,46 @@ inline void RegisterPassage::set_allocated_device_serial_number(std::string* dev
   }
   device_serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_serial_number,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.device_serial_number)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.device_serial_number)
 }
 
 // int32 register_code = 5;
-inline void RegisterPassage::clear_register_code() {
+inline void RegisterPassageRequest::clear_register_code() {
   register_code_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::_internal_register_code() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::_internal_register_code() const {
   return register_code_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::register_code() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.register_code)
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::register_code() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.register_code)
   return _internal_register_code();
 }
-inline void RegisterPassage::_internal_set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::_internal_set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   register_code_ = value;
 }
-inline void RegisterPassage::set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::set_register_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_register_code(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.register_code)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.register_code)
 }
 
 // .google.protobuf.Timestamp passage_date = 6;
-inline bool RegisterPassage::_internal_has_passage_date() const {
+inline bool RegisterPassageRequest::_internal_has_passage_date() const {
   return this != internal_default_instance() && passage_date_ != nullptr;
 }
-inline bool RegisterPassage::has_passage_date() const {
+inline bool RegisterPassageRequest::has_passage_date() const {
   return _internal_has_passage_date();
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassage::_internal_passage_date() const {
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassageRequest::_internal_passage_date() const {
   const PROTOBUF_NAMESPACE_ID::Timestamp* p = passage_date_;
   return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
       &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassage::passage_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.passage_date)
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassageRequest::passage_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.passage_date)
   return _internal_passage_date();
 }
-inline void RegisterPassage::unsafe_arena_set_allocated_passage_date(
+inline void RegisterPassageRequest::unsafe_arena_set_allocated_passage_date(
     PROTOBUF_NAMESPACE_ID::Timestamp* passage_date) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(passage_date_);
@@ -1003,9 +1014,9 @@ inline void RegisterPassage::unsafe_arena_set_allocated_passage_date(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RegisterPassage.passage_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RegisterPassageRequest.passage_date)
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::release_passage_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::release_passage_date() {
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = passage_date_;
   passage_date_ = nullptr;
@@ -1014,14 +1025,14 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::release_passage_date()
   }
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::unsafe_arena_release_passage_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.passage_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::unsafe_arena_release_passage_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.passage_date)
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = passage_date_;
   passage_date_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::_internal_mutable_passage_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::_internal_mutable_passage_date() {
   
   if (passage_date_ == nullptr) {
     auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
@@ -1029,11 +1040,11 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::_internal_mutable_pass
   }
   return passage_date_;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::mutable_passage_date() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.passage_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::mutable_passage_date() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.passage_date)
   return _internal_mutable_passage_date();
 }
-inline void RegisterPassage::set_allocated_passage_date(PROTOBUF_NAMESPACE_ID::Timestamp* passage_date) {
+inline void RegisterPassageRequest::set_allocated_passage_date(PROTOBUF_NAMESPACE_ID::Timestamp* passage_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(passage_date_);
@@ -1050,26 +1061,26 @@ inline void RegisterPassage::set_allocated_passage_date(PROTOBUF_NAMESPACE_ID::T
     
   }
   passage_date_ = passage_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.passage_date)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.passage_date)
 }
 
 // .google.protobuf.Timestamp transaction_date = 7;
-inline bool RegisterPassage::_internal_has_transaction_date() const {
+inline bool RegisterPassageRequest::_internal_has_transaction_date() const {
   return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool RegisterPassage::has_transaction_date() const {
+inline bool RegisterPassageRequest::has_transaction_date() const {
   return _internal_has_transaction_date();
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassage::_internal_transaction_date() const {
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassageRequest::_internal_transaction_date() const {
   const PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
       &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassage::transaction_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.transaction_date)
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& RegisterPassageRequest::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.transaction_date)
   return _internal_transaction_date();
 }
-inline void RegisterPassage::unsafe_arena_set_allocated_transaction_date(
+inline void RegisterPassageRequest::unsafe_arena_set_allocated_transaction_date(
     PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
@@ -1080,9 +1091,9 @@ inline void RegisterPassage::unsafe_arena_set_allocated_transaction_date(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RegisterPassage.transaction_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RegisterPassageRequest.transaction_date)
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::release_transaction_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::release_transaction_date() {
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
   transaction_date_ = nullptr;
@@ -1091,14 +1102,14 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::release_transaction_da
   }
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::unsafe_arena_release_transaction_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.transaction_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.transaction_date)
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
   transaction_date_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::_internal_mutable_transaction_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::_internal_mutable_transaction_date() {
   
   if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
@@ -1106,11 +1117,11 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::_internal_mutable_tran
   }
   return transaction_date_;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassage::mutable_transaction_date() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.transaction_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* RegisterPassageRequest::mutable_transaction_date() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.transaction_date)
   return _internal_mutable_transaction_date();
 }
-inline void RegisterPassage::set_allocated_transaction_date(PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
+inline void RegisterPassageRequest::set_allocated_transaction_date(PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
@@ -1127,61 +1138,61 @@ inline void RegisterPassage::set_allocated_transaction_date(PROTOBUF_NAMESPACE_I
     
   }
   transaction_date_ = transaction_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.transaction_date)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.transaction_date)
 }
 
 // string device_suid = 8;
-inline void RegisterPassage::clear_device_suid() {
+inline void RegisterPassageRequest::clear_device_suid() {
   device_suid_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::device_suid() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.device_suid)
+inline const std::string& RegisterPassageRequest::device_suid() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.device_suid)
   return _internal_device_suid();
 }
-inline void RegisterPassage::set_device_suid(const std::string& value) {
+inline void RegisterPassageRequest::set_device_suid(const std::string& value) {
   _internal_set_device_suid(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.device_suid)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.device_suid)
 }
-inline std::string* RegisterPassage::mutable_device_suid() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.device_suid)
+inline std::string* RegisterPassageRequest::mutable_device_suid() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.device_suid)
   return _internal_mutable_device_suid();
 }
-inline const std::string& RegisterPassage::_internal_device_suid() const {
+inline const std::string& RegisterPassageRequest::_internal_device_suid() const {
   return device_suid_.Get();
 }
-inline void RegisterPassage::_internal_set_device_suid(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_device_suid(const std::string& value) {
   
   device_suid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_device_suid(std::string&& value) {
+inline void RegisterPassageRequest::set_device_suid(std::string&& value) {
   
   device_suid_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.device_suid)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.device_suid)
 }
-inline void RegisterPassage::set_device_suid(const char* value) {
+inline void RegisterPassageRequest::set_device_suid(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   device_suid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.device_suid)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.device_suid)
 }
-inline void RegisterPassage::set_device_suid(const char* value,
+inline void RegisterPassageRequest::set_device_suid(const char* value,
     size_t size) {
   
   device_suid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.device_suid)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.device_suid)
 }
-inline std::string* RegisterPassage::_internal_mutable_device_suid() {
+inline std::string* RegisterPassageRequest::_internal_mutable_device_suid() {
   
   return device_suid_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_device_suid() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.device_suid)
+inline std::string* RegisterPassageRequest::release_device_suid() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.device_suid)
   return device_suid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_device_suid(std::string* device_suid) {
+inline void RegisterPassageRequest::set_allocated_device_suid(std::string* device_suid) {
   if (device_suid != nullptr) {
     
   } else {
@@ -1189,61 +1200,61 @@ inline void RegisterPassage::set_allocated_device_suid(std::string* device_suid)
   }
   device_suid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_suid,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.device_suid)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.device_suid)
 }
 
 // bytes pan_hash = 9;
-inline void RegisterPassage::clear_pan_hash() {
+inline void RegisterPassageRequest::clear_pan_hash() {
   pan_hash_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::pan_hash() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.pan_hash)
+inline const std::string& RegisterPassageRequest::pan_hash() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.pan_hash)
   return _internal_pan_hash();
 }
-inline void RegisterPassage::set_pan_hash(const std::string& value) {
+inline void RegisterPassageRequest::set_pan_hash(const std::string& value) {
   _internal_set_pan_hash(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.pan_hash)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.pan_hash)
 }
-inline std::string* RegisterPassage::mutable_pan_hash() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.pan_hash)
+inline std::string* RegisterPassageRequest::mutable_pan_hash() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.pan_hash)
   return _internal_mutable_pan_hash();
 }
-inline const std::string& RegisterPassage::_internal_pan_hash() const {
+inline const std::string& RegisterPassageRequest::_internal_pan_hash() const {
   return pan_hash_.Get();
 }
-inline void RegisterPassage::_internal_set_pan_hash(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_pan_hash(const std::string& value) {
   
   pan_hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_pan_hash(std::string&& value) {
+inline void RegisterPassageRequest::set_pan_hash(std::string&& value) {
   
   pan_hash_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.pan_hash)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.pan_hash)
 }
-inline void RegisterPassage::set_pan_hash(const char* value) {
+inline void RegisterPassageRequest::set_pan_hash(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   pan_hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.pan_hash)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.pan_hash)
 }
-inline void RegisterPassage::set_pan_hash(const void* value,
+inline void RegisterPassageRequest::set_pan_hash(const void* value,
     size_t size) {
   
   pan_hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.pan_hash)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.pan_hash)
 }
-inline std::string* RegisterPassage::_internal_mutable_pan_hash() {
+inline std::string* RegisterPassageRequest::_internal_mutable_pan_hash() {
   
   return pan_hash_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_pan_hash() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.pan_hash)
+inline std::string* RegisterPassageRequest::release_pan_hash() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.pan_hash)
   return pan_hash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_pan_hash(std::string* pan_hash) {
+inline void RegisterPassageRequest::set_allocated_pan_hash(std::string* pan_hash) {
   if (pan_hash != nullptr) {
     
   } else {
@@ -1251,61 +1262,61 @@ inline void RegisterPassage::set_allocated_pan_hash(std::string* pan_hash) {
   }
   pan_hash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pan_hash,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.pan_hash)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.pan_hash)
 }
 
 // string par_card = 10;
-inline void RegisterPassage::clear_par_card() {
+inline void RegisterPassageRequest::clear_par_card() {
   par_card_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::par_card() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.par_card)
+inline const std::string& RegisterPassageRequest::par_card() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.par_card)
   return _internal_par_card();
 }
-inline void RegisterPassage::set_par_card(const std::string& value) {
+inline void RegisterPassageRequest::set_par_card(const std::string& value) {
   _internal_set_par_card(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.par_card)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.par_card)
 }
-inline std::string* RegisterPassage::mutable_par_card() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.par_card)
+inline std::string* RegisterPassageRequest::mutable_par_card() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.par_card)
   return _internal_mutable_par_card();
 }
-inline const std::string& RegisterPassage::_internal_par_card() const {
+inline const std::string& RegisterPassageRequest::_internal_par_card() const {
   return par_card_.Get();
 }
-inline void RegisterPassage::_internal_set_par_card(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_par_card(const std::string& value) {
   
   par_card_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_par_card(std::string&& value) {
+inline void RegisterPassageRequest::set_par_card(std::string&& value) {
   
   par_card_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.par_card)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.par_card)
 }
-inline void RegisterPassage::set_par_card(const char* value) {
+inline void RegisterPassageRequest::set_par_card(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   par_card_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.par_card)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.par_card)
 }
-inline void RegisterPassage::set_par_card(const char* value,
+inline void RegisterPassageRequest::set_par_card(const char* value,
     size_t size) {
   
   par_card_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.par_card)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.par_card)
 }
-inline std::string* RegisterPassage::_internal_mutable_par_card() {
+inline std::string* RegisterPassageRequest::_internal_mutable_par_card() {
   
   return par_card_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_par_card() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.par_card)
+inline std::string* RegisterPassageRequest::release_par_card() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.par_card)
   return par_card_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_par_card(std::string* par_card) {
+inline void RegisterPassageRequest::set_allocated_par_card(std::string* par_card) {
   if (par_card != nullptr) {
     
   } else {
@@ -1313,61 +1324,61 @@ inline void RegisterPassage::set_allocated_par_card(std::string* par_card) {
   }
   par_card_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), par_card,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.par_card)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.par_card)
 }
 
 // bytes transaction_data = 11;
-inline void RegisterPassage::clear_transaction_data() {
+inline void RegisterPassageRequest::clear_transaction_data() {
   transaction_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::transaction_data() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.transaction_data)
+inline const std::string& RegisterPassageRequest::transaction_data() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.transaction_data)
   return _internal_transaction_data();
 }
-inline void RegisterPassage::set_transaction_data(const std::string& value) {
+inline void RegisterPassageRequest::set_transaction_data(const std::string& value) {
   _internal_set_transaction_data(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.transaction_data)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.transaction_data)
 }
-inline std::string* RegisterPassage::mutable_transaction_data() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.transaction_data)
+inline std::string* RegisterPassageRequest::mutable_transaction_data() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.transaction_data)
   return _internal_mutable_transaction_data();
 }
-inline const std::string& RegisterPassage::_internal_transaction_data() const {
+inline const std::string& RegisterPassageRequest::_internal_transaction_data() const {
   return transaction_data_.Get();
 }
-inline void RegisterPassage::_internal_set_transaction_data(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_transaction_data(const std::string& value) {
   
   transaction_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_transaction_data(std::string&& value) {
+inline void RegisterPassageRequest::set_transaction_data(std::string&& value) {
   
   transaction_data_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.transaction_data)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.transaction_data)
 }
-inline void RegisterPassage::set_transaction_data(const char* value) {
+inline void RegisterPassageRequest::set_transaction_data(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   transaction_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.transaction_data)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.transaction_data)
 }
-inline void RegisterPassage::set_transaction_data(const void* value,
+inline void RegisterPassageRequest::set_transaction_data(const void* value,
     size_t size) {
   
   transaction_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.transaction_data)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.transaction_data)
 }
-inline std::string* RegisterPassage::_internal_mutable_transaction_data() {
+inline std::string* RegisterPassageRequest::_internal_mutable_transaction_data() {
   
   return transaction_data_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_transaction_data() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.transaction_data)
+inline std::string* RegisterPassageRequest::release_transaction_data() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.transaction_data)
   return transaction_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_transaction_data(std::string* transaction_data) {
+inline void RegisterPassageRequest::set_allocated_transaction_data(std::string* transaction_data) {
   if (transaction_data != nullptr) {
     
   } else {
@@ -1375,141 +1386,161 @@ inline void RegisterPassage::set_allocated_transaction_data(std::string* transac
   }
   transaction_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transaction_data,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.transaction_data)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.transaction_data)
 }
 
 // int32 emv_parameters_version = 12;
-inline void RegisterPassage::clear_emv_parameters_version() {
+inline void RegisterPassageRequest::clear_emv_parameters_version() {
   emv_parameters_version_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::_internal_emv_parameters_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::_internal_emv_parameters_version() const {
   return emv_parameters_version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::emv_parameters_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.emv_parameters_version)
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::emv_parameters_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.emv_parameters_version)
   return _internal_emv_parameters_version();
 }
-inline void RegisterPassage::_internal_set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::_internal_set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   emv_parameters_version_ = value;
 }
-inline void RegisterPassage::set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::set_emv_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_emv_parameters_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.emv_parameters_version)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.emv_parameters_version)
 }
 
 // int32 bin_parameters_version = 13;
-inline void RegisterPassage::clear_bin_parameters_version() {
+inline void RegisterPassageRequest::clear_bin_parameters_version() {
   bin_parameters_version_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::_internal_bin_parameters_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::_internal_bin_parameters_version() const {
   return bin_parameters_version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::bin_parameters_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.bin_parameters_version)
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::bin_parameters_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.bin_parameters_version)
   return _internal_bin_parameters_version();
 }
-inline void RegisterPassage::_internal_set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::_internal_set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   bin_parameters_version_ = value;
 }
-inline void RegisterPassage::set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::set_bin_parameters_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_bin_parameters_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.bin_parameters_version)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.bin_parameters_version)
 }
 
 // int32 restriction_list_version = 14;
-inline void RegisterPassage::clear_restriction_list_version() {
+inline void RegisterPassageRequest::clear_restriction_list_version() {
   restriction_list_version_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::_internal_restriction_list_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::_internal_restriction_list_version() const {
   return restriction_list_version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::restriction_list_version() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.restriction_list_version)
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::restriction_list_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.restriction_list_version)
   return _internal_restriction_list_version();
 }
-inline void RegisterPassage::_internal_set_restriction_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::_internal_set_restriction_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   restriction_list_version_ = value;
 }
-inline void RegisterPassage::set_restriction_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::set_restriction_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_restriction_list_version(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.restriction_list_version)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.restriction_list_version)
 }
 
-// int32 transaction_value = 15;
-inline void RegisterPassage::clear_transaction_value() {
+// int32 acceptance_list_version = 15;
+inline void RegisterPassageRequest::clear_acceptance_list_version() {
+  acceptance_list_version_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::_internal_acceptance_list_version() const {
+  return acceptance_list_version_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::acceptance_list_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.acceptance_list_version)
+  return _internal_acceptance_list_version();
+}
+inline void RegisterPassageRequest::_internal_set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  acceptance_list_version_ = value;
+}
+inline void RegisterPassageRequest::set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_acceptance_list_version(value);
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.acceptance_list_version)
+}
+
+// int32 transaction_value = 16;
+inline void RegisterPassageRequest::clear_transaction_value() {
   transaction_value_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::_internal_transaction_value() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::_internal_transaction_value() const {
   return transaction_value_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassage::transaction_value() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.transaction_value)
+inline ::PROTOBUF_NAMESPACE_ID::int32 RegisterPassageRequest::transaction_value() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.transaction_value)
   return _internal_transaction_value();
 }
-inline void RegisterPassage::_internal_set_transaction_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::_internal_set_transaction_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   transaction_value_ = value;
 }
-inline void RegisterPassage::set_transaction_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void RegisterPassageRequest::set_transaction_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_transaction_value(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.transaction_value)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.transaction_value)
 }
 
-// string line_id = 16;
-inline void RegisterPassage::clear_line_id() {
+// string line_id = 17;
+inline void RegisterPassageRequest::clear_line_id() {
   line_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::line_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.line_id)
+inline const std::string& RegisterPassageRequest::line_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.line_id)
   return _internal_line_id();
 }
-inline void RegisterPassage::set_line_id(const std::string& value) {
+inline void RegisterPassageRequest::set_line_id(const std::string& value) {
   _internal_set_line_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.line_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.line_id)
 }
-inline std::string* RegisterPassage::mutable_line_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.line_id)
+inline std::string* RegisterPassageRequest::mutable_line_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.line_id)
   return _internal_mutable_line_id();
 }
-inline const std::string& RegisterPassage::_internal_line_id() const {
+inline const std::string& RegisterPassageRequest::_internal_line_id() const {
   return line_id_.Get();
 }
-inline void RegisterPassage::_internal_set_line_id(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_line_id(const std::string& value) {
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_line_id(std::string&& value) {
+inline void RegisterPassageRequest::set_line_id(std::string&& value) {
   
   line_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.line_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.line_id)
 }
-inline void RegisterPassage::set_line_id(const char* value) {
+inline void RegisterPassageRequest::set_line_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.line_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.line_id)
 }
-inline void RegisterPassage::set_line_id(const char* value,
+inline void RegisterPassageRequest::set_line_id(const char* value,
     size_t size) {
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.line_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.line_id)
 }
-inline std::string* RegisterPassage::_internal_mutable_line_id() {
+inline std::string* RegisterPassageRequest::_internal_mutable_line_id() {
   
   return line_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_line_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.line_id)
+inline std::string* RegisterPassageRequest::release_line_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.line_id)
   return line_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_line_id(std::string* line_id) {
+inline void RegisterPassageRequest::set_allocated_line_id(std::string* line_id) {
   if (line_id != nullptr) {
     
   } else {
@@ -1517,61 +1548,61 @@ inline void RegisterPassage::set_allocated_line_id(std::string* line_id) {
   }
   line_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), line_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.line_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.line_id)
 }
 
-// string vehicle_id = 17;
-inline void RegisterPassage::clear_vehicle_id() {
+// string vehicle_id = 18;
+inline void RegisterPassageRequest::clear_vehicle_id() {
   vehicle_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::vehicle_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.vehicle_id)
+inline const std::string& RegisterPassageRequest::vehicle_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.vehicle_id)
   return _internal_vehicle_id();
 }
-inline void RegisterPassage::set_vehicle_id(const std::string& value) {
+inline void RegisterPassageRequest::set_vehicle_id(const std::string& value) {
   _internal_set_vehicle_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.vehicle_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.vehicle_id)
 }
-inline std::string* RegisterPassage::mutable_vehicle_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.vehicle_id)
+inline std::string* RegisterPassageRequest::mutable_vehicle_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.vehicle_id)
   return _internal_mutable_vehicle_id();
 }
-inline const std::string& RegisterPassage::_internal_vehicle_id() const {
+inline const std::string& RegisterPassageRequest::_internal_vehicle_id() const {
   return vehicle_id_.Get();
 }
-inline void RegisterPassage::_internal_set_vehicle_id(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_vehicle_id(const std::string& value) {
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_vehicle_id(std::string&& value) {
+inline void RegisterPassageRequest::set_vehicle_id(std::string&& value) {
   
   vehicle_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.vehicle_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.vehicle_id)
 }
-inline void RegisterPassage::set_vehicle_id(const char* value) {
+inline void RegisterPassageRequest::set_vehicle_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.vehicle_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.vehicle_id)
 }
-inline void RegisterPassage::set_vehicle_id(const char* value,
+inline void RegisterPassageRequest::set_vehicle_id(const char* value,
     size_t size) {
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.vehicle_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.vehicle_id)
 }
-inline std::string* RegisterPassage::_internal_mutable_vehicle_id() {
+inline std::string* RegisterPassageRequest::_internal_mutable_vehicle_id() {
   
   return vehicle_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_vehicle_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.vehicle_id)
+inline std::string* RegisterPassageRequest::release_vehicle_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.vehicle_id)
   return vehicle_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_vehicle_id(std::string* vehicle_id) {
+inline void RegisterPassageRequest::set_allocated_vehicle_id(std::string* vehicle_id) {
   if (vehicle_id != nullptr) {
     
   } else {
@@ -1579,61 +1610,61 @@ inline void RegisterPassage::set_allocated_vehicle_id(std::string* vehicle_id) {
   }
   vehicle_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vehicle_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.vehicle_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.vehicle_id)
 }
 
-// string geolocation = 18;
-inline void RegisterPassage::clear_geolocation() {
+// string geolocation = 19;
+inline void RegisterPassageRequest::clear_geolocation() {
   geolocation_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& RegisterPassage::geolocation() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassage.geolocation)
+inline const std::string& RegisterPassageRequest::geolocation() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RegisterPassageRequest.geolocation)
   return _internal_geolocation();
 }
-inline void RegisterPassage::set_geolocation(const std::string& value) {
+inline void RegisterPassageRequest::set_geolocation(const std::string& value) {
   _internal_set_geolocation(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassage.geolocation)
+  // @@protoc_insertion_point(field_set:axis.transactions.RegisterPassageRequest.geolocation)
 }
-inline std::string* RegisterPassage::mutable_geolocation() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassage.geolocation)
+inline std::string* RegisterPassageRequest::mutable_geolocation() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RegisterPassageRequest.geolocation)
   return _internal_mutable_geolocation();
 }
-inline const std::string& RegisterPassage::_internal_geolocation() const {
+inline const std::string& RegisterPassageRequest::_internal_geolocation() const {
   return geolocation_.Get();
 }
-inline void RegisterPassage::_internal_set_geolocation(const std::string& value) {
+inline void RegisterPassageRequest::_internal_set_geolocation(const std::string& value) {
   
   geolocation_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void RegisterPassage::set_geolocation(std::string&& value) {
+inline void RegisterPassageRequest::set_geolocation(std::string&& value) {
   
   geolocation_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassage.geolocation)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.RegisterPassageRequest.geolocation)
 }
-inline void RegisterPassage::set_geolocation(const char* value) {
+inline void RegisterPassageRequest::set_geolocation(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   geolocation_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassage.geolocation)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.RegisterPassageRequest.geolocation)
 }
-inline void RegisterPassage::set_geolocation(const char* value,
+inline void RegisterPassageRequest::set_geolocation(const char* value,
     size_t size) {
   
   geolocation_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassage.geolocation)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.RegisterPassageRequest.geolocation)
 }
-inline std::string* RegisterPassage::_internal_mutable_geolocation() {
+inline std::string* RegisterPassageRequest::_internal_mutable_geolocation() {
   
   return geolocation_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* RegisterPassage::release_geolocation() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassage.geolocation)
+inline std::string* RegisterPassageRequest::release_geolocation() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RegisterPassageRequest.geolocation)
   return geolocation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void RegisterPassage::set_allocated_geolocation(std::string* geolocation) {
+inline void RegisterPassageRequest::set_allocated_geolocation(std::string* geolocation) {
   if (geolocation != nullptr) {
     
   } else {
@@ -1641,7 +1672,7 @@ inline void RegisterPassage::set_allocated_geolocation(std::string* geolocation)
   }
   geolocation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), geolocation,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassage.geolocation)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RegisterPassageRequest.geolocation)
 }
 
 // -------------------------------------------------------------------

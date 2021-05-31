@@ -6,14 +6,14 @@ using grpc::ClientContext;
 
 DevicesManagerClient::DevicesManagerClient(std::shared_ptr<Channel> channel)
 {
-   stub_ = DevicesManager::NewStub(channel);
+   stub_ = DeviceRegisterService::NewStub(channel);
 }
 
 DevicesManagerClient::~DevicesManagerClient()
 {
 }
 
-DeviceRegisterResponse DevicesManagerClient::RegisterDevice(DeviceRegister registrerDevice, int timeout_seconds) throw (Status) {
+DeviceRegisterResponse DevicesManagerClient::RegisterDevice(DeviceRegisterRequest registrerDevice, int timeout_seconds) throw (Status) {
 
    // Container for the data we expect from the server.
    DeviceRegisterResponse response;

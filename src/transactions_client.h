@@ -8,8 +8,8 @@
 #include "auto_gen_grpc_client\passage_register.grpc.pb.h"
 
 
-using axis::transactions::Transactions;
-using axis::transactions::RegisterPassage;
+using axis::transactions::RegisterPassageService;
+using axis::transactions::RegisterPassageRequest;
 using axis::transactions::RegisterPassageResponse;
 
 using grpc::Channel;
@@ -21,10 +21,10 @@ class TransactionsClient
 public:
    TransactionsClient(std::shared_ptr<Channel> channel);
    ~TransactionsClient();
-   RegisterPassageResponse MakeTransaction(RegisterPassage registrer, int timeout_seconds=10) throw (Status);
+   RegisterPassageResponse MakeTransaction(RegisterPassageRequest registrer, int timeout_seconds=10) throw (Status);
 
 private:
-   std::unique_ptr<Transactions::Stub> stub_;
+   std::unique_ptr<RegisterPassageService::Stub> stub_;
 };
 
 

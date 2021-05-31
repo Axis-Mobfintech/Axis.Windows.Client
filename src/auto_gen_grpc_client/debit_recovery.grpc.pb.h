@@ -29,29 +29,29 @@
 namespace axis {
 namespace transactions {
 
-class RecoverDebit final {
+class RecoverDebitService final {
  public:
   static constexpr char const* service_full_name() {
-    return "axis.transactions.RecoverDebit";
+    return "axis.transactions.RecoverDebitService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::axis::transactions::DebitRecoveryResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>> AsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::axis::transactions::DebitRecoveryResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>> AsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>>(AsyncRecoverRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>> PrepareAsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>> PrepareAsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>>(PrepareAsyncRecoverRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -62,27 +62,27 @@ class RecoverDebit final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>* AsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>* PrepareAsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>* AsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::DebitRecoveryResponse>* PrepareAsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::axis::transactions::DebitRecoveryResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>> AsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::axis::transactions::DebitRecoveryResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>> AsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>>(AsyncRecoverRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>> PrepareAsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>> PrepareAsyncRecover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>>(PrepareAsyncRecoverRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response, std::function<void(::grpc::Status)>) override;
+      void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -95,8 +95,8 @@ class RecoverDebit final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>* AsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>* PrepareAsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecovery& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>* AsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>* PrepareAsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_Recover_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -105,7 +105,7 @@ class RecoverDebit final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status Recover(::grpc::ServerContext* context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response);
+    virtual ::grpc::Status Recover(::grpc::ServerContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_Recover : public BaseClass {
@@ -119,11 +119,11 @@ class RecoverDebit final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
+    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRecover(::grpc::ServerContext* context, ::axis::transactions::DebitRecovery* request, ::grpc::ServerAsyncResponseWriter< ::axis::transactions::DebitRecoveryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRecover(::grpc::ServerContext* context, ::axis::transactions::DebitRecoveryRequest* request, ::grpc::ServerAsyncResponseWriter< ::axis::transactions::DebitRecoveryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -140,38 +140,38 @@ class RecoverDebit final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DebitRecovery, ::axis::transactions::DebitRecoveryResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::axis::transactions::DebitRecovery* request, ::axis::transactions::DebitRecoveryResponse* response) { return this->Recover(context, request, response); }));}
+                     context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response) { return this->Recover(context, request, response); }));}
     void SetMessageAllocatorFor_Recover(
-        ::grpc::experimental::MessageAllocator< ::axis::transactions::DebitRecovery, ::axis::transactions::DebitRecoveryResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DebitRecovery, ::axis::transactions::DebitRecoveryResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Recover() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
+    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* Recover(
-      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* Recover(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -192,7 +192,7 @@ class RecoverDebit final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
+    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -209,7 +209,7 @@ class RecoverDebit final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
+    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -242,7 +242,7 @@ class RecoverDebit final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
+    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -263,10 +263,10 @@ class RecoverDebit final {
     WithStreamedUnaryMethod_Recover() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::axis::transactions::DebitRecovery, ::axis::transactions::DebitRecoveryResponse>(
+          ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::axis::transactions::DebitRecovery, ::axis::transactions::DebitRecoveryResponse>* streamer) {
+                     ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse>* streamer) {
                        return this->StreamedRecover(context,
                          streamer);
                   }));
@@ -275,12 +275,12 @@ class RecoverDebit final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecovery* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
+    ::grpc::Status Recover(::grpc::ServerContext* /*context*/, const ::axis::transactions::DebitRecoveryRequest* /*request*/, ::axis::transactions::DebitRecoveryResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRecover(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::axis::transactions::DebitRecovery,::axis::transactions::DebitRecoveryResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRecover(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::axis::transactions::DebitRecoveryRequest,::axis::transactions::DebitRecoveryResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_Recover<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;

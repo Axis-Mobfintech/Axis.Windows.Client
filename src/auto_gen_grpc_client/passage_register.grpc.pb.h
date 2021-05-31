@@ -29,29 +29,29 @@
 namespace axis {
 namespace transactions {
 
-class Transactions final {
+class RegisterPassageService final {
  public:
   static constexpr char const* service_full_name() {
-    return "axis.transactions.Transactions";
+    return "axis.transactions.RegisterPassageService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::axis::transactions::RegisterPassageResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>> AsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::axis::transactions::RegisterPassageResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>> AsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>>(AsyncMakeTransactionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>> PrepareAsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>> PrepareAsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>>(PrepareAsyncMakeTransactionRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -62,27 +62,27 @@ class Transactions final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>* AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>* PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>* AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::RegisterPassageResponse>* PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::axis::transactions::RegisterPassageResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>> AsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::axis::transactions::RegisterPassageResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>> AsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>>(AsyncMakeTransactionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>> PrepareAsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>> PrepareAsyncMakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>>(PrepareAsyncMakeTransactionRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)>) override;
+      void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -95,8 +95,8 @@ class Transactions final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_MakeTransaction_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -105,7 +105,7 @@ class Transactions final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status MakeTransaction(::grpc::ServerContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response);
+    virtual ::grpc::Status MakeTransaction(::grpc::ServerContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_MakeTransaction : public BaseClass {
@@ -119,11 +119,11 @@ class Transactions final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
+    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestMakeTransaction(::grpc::ServerContext* context, ::axis::transactions::RegisterPassage* request, ::grpc::ServerAsyncResponseWriter< ::axis::transactions::RegisterPassageResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestMakeTransaction(::grpc::ServerContext* context, ::axis::transactions::RegisterPassageRequest* request, ::grpc::ServerAsyncResponseWriter< ::axis::transactions::RegisterPassageResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -140,38 +140,38 @@ class Transactions final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::RegisterPassage, ::axis::transactions::RegisterPassageResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response) { return this->MakeTransaction(context, request, response); }));}
+                     context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response) { return this->MakeTransaction(context, request, response); }));}
     void SetMessageAllocatorFor_MakeTransaction(
-        ::grpc::experimental::MessageAllocator< ::axis::transactions::RegisterPassage, ::axis::transactions::RegisterPassageResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::RegisterPassage, ::axis::transactions::RegisterPassageResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_MakeTransaction() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
+    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* MakeTransaction(
-      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* MakeTransaction(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -192,7 +192,7 @@ class Transactions final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
+    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -209,7 +209,7 @@ class Transactions final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
+    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -242,7 +242,7 @@ class Transactions final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
+    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -263,10 +263,10 @@ class Transactions final {
     WithStreamedUnaryMethod_MakeTransaction() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::axis::transactions::RegisterPassage, ::axis::transactions::RegisterPassageResponse>(
+          ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::axis::transactions::RegisterPassage, ::axis::transactions::RegisterPassageResponse>* streamer) {
+                     ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>* streamer) {
                        return this->StreamedMakeTransaction(context,
                          streamer);
                   }));
@@ -275,12 +275,12 @@ class Transactions final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassage* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
+    ::grpc::Status MakeTransaction(::grpc::ServerContext* /*context*/, const ::axis::transactions::RegisterPassageRequest* /*request*/, ::axis::transactions::RegisterPassageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedMakeTransaction(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::axis::transactions::RegisterPassage,::axis::transactions::RegisterPassageResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedMakeTransaction(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::axis::transactions::RegisterPassageRequest,::axis::transactions::RegisterPassageResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_MakeTransaction<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;

@@ -44,7 +44,7 @@ static std::string obtem_dado_(std::string titulo)
 
 
 /*-----------------------------------------------------*/
-static void registro_do_validador_(void) 
+static void registro_do_validador_(void)
 {
    std::cout << std::endl << "##########  Registro do Validador  ##########" << std::endl << std::endl;
        
@@ -55,15 +55,15 @@ static void registro_do_validador_(void)
 
    DevicesManagerClient deviceManagerClient(channel);
 
-   DeviceRegister registrerDevice;   
+   DeviceRegisterRequest registrerDevice;
 
    registrerDevice.set_ksn_data("1234567890"); //KSN LEITOR
    registrerDevice.set_device_serial_number("1234567890");
    registrerDevice.set_reader_serial_number("1234567890");
    
-   registrerDevice.set_line_id(obtem_dado_("Insira o ID da linha   :"));
-   registrerDevice.set_operator_id(obtem_dado_("Insira o ID do operador:"));
-   registrerDevice.set_vehicle_id(obtem_dado_("Insira o ID do veiculo :"));
+   registrerDevice.set_line_id("11111" /* obtem_dado_("Insira o ID da linha   :") */ );
+   registrerDevice.set_operator_id("11111" /* obtem_dado_("Insira o ID do operador:") */ );
+   registrerDevice.set_vehicle_id("11111" /* obtem_dado_("Insira o ID do veiculo :") */);
    
    auto date_time = new Timestamp{};
    date_time->set_seconds(time(NULL));
@@ -83,6 +83,7 @@ static void registro_do_validador_(void)
       std::cout << ">> Descricao:" << s.error_message() << std::endl;
       return;
    }
+
 
    std::cout 
       << "RegisterDevice OK!" << std::endl << std::endl
@@ -172,7 +173,7 @@ static void requisicao_de_parametros_(void)
 
    DevicesParametersClient devicesParameters(channel);
 
-   Parameters parametres;
+   ParametersRequest parametres;
 
    parametres.set_device_id("id do validador");
    parametres.set_device_serial_number("numero serie validador");
@@ -310,13 +311,13 @@ static void log_requisicao_lista_aceitacao_(AcceptanceListResponse response)
    for (i = 0; i < response.card_information_size(); i++)
    {
       AcceptanceListCardInformation card_info = response.card_information(i);
-      std::cout << "   restriction card - action         : " << card_info.action() << std::endl;
+      std::cout << std::endl << "   restriction card - action       : " << card_info.action() << std::endl;
 
 
       // PAN White List
       PrimaryAccountNumberWhiteList pan_white_list = card_info.pan_list();
       std::cout
-         << "   pan white list index            : " << pan_white_list.index() << std::endl
+         << "   PAN white list index            : " << pan_white_list.index() << std::endl
          << "    reason                         : " << pan_white_list.reason() << std::endl
          << "    date                           : " << TimeUtil::ToString(pan_white_list.register_date()) << std::endl
          << "    initial pan crypt              : " << pan_white_list.initial_pan_crypt() << std::endl
@@ -325,7 +326,7 @@ static void log_requisicao_lista_aceitacao_(AcceptanceListResponse response)
       // PAR White List
       PrimaryAccountReferenceWhiteList par_white_list = card_info.par_list();
       std::cout
-         << "   pan white list index            : " << par_white_list.index() << std::endl
+         << "   PAR white list index            : " << par_white_list.index() << std::endl
          << "    reason                         : " << par_white_list.reason() << std::endl
          << "    date                           : " << TimeUtil::ToString(par_white_list.register_date()) << std::endl
          << "    payment account reference      : " << par_white_list.payment_account_reference() << std::endl;
@@ -407,7 +408,7 @@ static void registro_de_passagem_(void)
 
    TransactionsClient transactionsClient(channel);
 
-   RegisterPassage registrer;
+   RegisterPassageRequest registrer;
 
    registrer.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    registrer.set_operator_id(obtem_dado_("Insira o ID do operador:"));
@@ -453,6 +454,7 @@ static void registro_de_passagem_(void)
    registrer.set_emv_parameters_version(1234);
    registrer.set_bin_parameters_version(1234);
    registrer.set_restriction_list_version(1234);
+   registrer.set_acceptance_list_version(1234);
    registrer.set_transaction_value(250);
    registrer.set_geolocation("geolocalizacao");
 
@@ -493,7 +495,7 @@ static void recuperacao_de_debito_(void)
    
    RecoverDebitClient recoverDebit(channel);
 
-   DebitRecovery debit;
+   DebitRecoveryRequest debit;
 
    debit.set_line_id(obtem_dado_("Insira o ID da linha   :"));
    debit.set_operator_id(obtem_dado_("Insira o ID do operador:"));  
@@ -553,6 +555,7 @@ void main(void)
       << " *    Validador Windows C++ (Client AXIS) - " << AppVersion::getInstance().getFullVersion() << "   *" << std::endl
       << " ******************************************************" << std::endl;
    
+
    for (;;)
    {
       std::cout << std::endl 

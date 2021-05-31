@@ -57,16 +57,16 @@ struct TableStruct_device_5fregister_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_5fregister_2eproto;
 namespace axis {
 namespace transactions {
-class DeviceRegister;
-class DeviceRegisterDefaultTypeInternal;
-extern DeviceRegisterDefaultTypeInternal _DeviceRegister_default_instance_;
+class DeviceRegisterRequest;
+class DeviceRegisterRequestDefaultTypeInternal;
+extern DeviceRegisterRequestDefaultTypeInternal _DeviceRegisterRequest_default_instance_;
 class DeviceRegisterResponse;
 class DeviceRegisterResponseDefaultTypeInternal;
 extern DeviceRegisterResponseDefaultTypeInternal _DeviceRegisterResponse_default_instance_;
 }  // namespace transactions
 }  // namespace axis
 PROTOBUF_NAMESPACE_OPEN
-template<> ::axis::transactions::DeviceRegister* Arena::CreateMaybeMessage<::axis::transactions::DeviceRegister>(Arena*);
+template<> ::axis::transactions::DeviceRegisterRequest* Arena::CreateMaybeMessage<::axis::transactions::DeviceRegisterRequest>(Arena*);
 template<> ::axis::transactions::DeviceRegisterResponse* Arena::CreateMaybeMessage<::axis::transactions::DeviceRegisterResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace axis {
@@ -74,23 +74,23 @@ namespace transactions {
 
 // ===================================================================
 
-class DeviceRegister PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:axis.transactions.DeviceRegister) */ {
+class DeviceRegisterRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:axis.transactions.DeviceRegisterRequest) */ {
  public:
-  inline DeviceRegister() : DeviceRegister(nullptr) {}
-  virtual ~DeviceRegister();
+  inline DeviceRegisterRequest() : DeviceRegisterRequest(nullptr) {}
+  virtual ~DeviceRegisterRequest();
 
-  DeviceRegister(const DeviceRegister& from);
-  DeviceRegister(DeviceRegister&& from) noexcept
-    : DeviceRegister() {
+  DeviceRegisterRequest(const DeviceRegisterRequest& from);
+  DeviceRegisterRequest(DeviceRegisterRequest&& from) noexcept
+    : DeviceRegisterRequest() {
     *this = ::std::move(from);
   }
 
-  inline DeviceRegister& operator=(const DeviceRegister& from) {
+  inline DeviceRegisterRequest& operator=(const DeviceRegisterRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline DeviceRegister& operator=(DeviceRegister&& from) noexcept {
+  inline DeviceRegisterRequest& operator=(DeviceRegisterRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -108,20 +108,20 @@ class DeviceRegister PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const DeviceRegister& default_instance();
+  static const DeviceRegisterRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DeviceRegister* internal_default_instance() {
-    return reinterpret_cast<const DeviceRegister*>(
-               &_DeviceRegister_default_instance_);
+  static inline const DeviceRegisterRequest* internal_default_instance() {
+    return reinterpret_cast<const DeviceRegisterRequest*>(
+               &_DeviceRegisterRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(DeviceRegister& a, DeviceRegister& b) {
+  friend void swap(DeviceRegisterRequest& a, DeviceRegisterRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(DeviceRegister* other) {
+  inline void Swap(DeviceRegisterRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -129,7 +129,7 @@ class DeviceRegister PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(DeviceRegister* other) {
+  void UnsafeArenaSwap(DeviceRegisterRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -137,17 +137,17 @@ class DeviceRegister PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline DeviceRegister* New() const final {
-    return CreateMaybeMessage<DeviceRegister>(nullptr);
+  inline DeviceRegisterRequest* New() const final {
+    return CreateMaybeMessage<DeviceRegisterRequest>(nullptr);
   }
 
-  DeviceRegister* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<DeviceRegister>(arena);
+  DeviceRegisterRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeviceRegisterRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const DeviceRegister& from);
-  void MergeFrom(const DeviceRegister& from);
+  void CopyFrom(const DeviceRegisterRequest& from);
+  void MergeFrom(const DeviceRegisterRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -161,13 +161,13 @@ class DeviceRegister PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DeviceRegister* other);
+  void InternalSwap(DeviceRegisterRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "axis.transactions.DeviceRegister";
+    return "axis.transactions.DeviceRegisterRequest";
   }
   protected:
-  explicit DeviceRegister(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit DeviceRegisterRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -309,7 +309,7 @@ class DeviceRegister PROTOBUF_FINAL :
       PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
   PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
 
-  // @@protoc_insertion_point(class_scope:axis.transactions.DeviceRegister)
+  // @@protoc_insertion_point(class_scope:axis.transactions.DeviceRegisterRequest)
  private:
   class _Internal;
 
@@ -528,60 +528,60 @@ class DeviceRegisterResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// DeviceRegister
+// DeviceRegisterRequest
 
 // string operator_id = 1;
-inline void DeviceRegister::clear_operator_id() {
+inline void DeviceRegisterRequest::clear_operator_id() {
   operator_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& DeviceRegister::operator_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.operator_id)
+inline const std::string& DeviceRegisterRequest::operator_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.operator_id)
   return _internal_operator_id();
 }
-inline void DeviceRegister::set_operator_id(const std::string& value) {
+inline void DeviceRegisterRequest::set_operator_id(const std::string& value) {
   _internal_set_operator_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegister.operator_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegisterRequest.operator_id)
 }
-inline std::string* DeviceRegister::mutable_operator_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.operator_id)
+inline std::string* DeviceRegisterRequest::mutable_operator_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.operator_id)
   return _internal_mutable_operator_id();
 }
-inline const std::string& DeviceRegister::_internal_operator_id() const {
+inline const std::string& DeviceRegisterRequest::_internal_operator_id() const {
   return operator_id_.Get();
 }
-inline void DeviceRegister::_internal_set_operator_id(const std::string& value) {
+inline void DeviceRegisterRequest::_internal_set_operator_id(const std::string& value) {
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void DeviceRegister::set_operator_id(std::string&& value) {
+inline void DeviceRegisterRequest::set_operator_id(std::string&& value) {
   
   operator_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegister.operator_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegisterRequest.operator_id)
 }
-inline void DeviceRegister::set_operator_id(const char* value) {
+inline void DeviceRegisterRequest::set_operator_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegister.operator_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegisterRequest.operator_id)
 }
-inline void DeviceRegister::set_operator_id(const char* value,
+inline void DeviceRegisterRequest::set_operator_id(const char* value,
     size_t size) {
   
   operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegister.operator_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegisterRequest.operator_id)
 }
-inline std::string* DeviceRegister::_internal_mutable_operator_id() {
+inline std::string* DeviceRegisterRequest::_internal_mutable_operator_id() {
   
   return operator_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* DeviceRegister::release_operator_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.operator_id)
+inline std::string* DeviceRegisterRequest::release_operator_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.operator_id)
   return operator_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DeviceRegister::set_allocated_operator_id(std::string* operator_id) {
+inline void DeviceRegisterRequest::set_allocated_operator_id(std::string* operator_id) {
   if (operator_id != nullptr) {
     
   } else {
@@ -589,61 +589,61 @@ inline void DeviceRegister::set_allocated_operator_id(std::string* operator_id) 
   }
   operator_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operator_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.operator_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.operator_id)
 }
 
 // string reader_serial_number = 2;
-inline void DeviceRegister::clear_reader_serial_number() {
+inline void DeviceRegisterRequest::clear_reader_serial_number() {
   reader_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& DeviceRegister::reader_serial_number() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.reader_serial_number)
+inline const std::string& DeviceRegisterRequest::reader_serial_number() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.reader_serial_number)
   return _internal_reader_serial_number();
 }
-inline void DeviceRegister::set_reader_serial_number(const std::string& value) {
+inline void DeviceRegisterRequest::set_reader_serial_number(const std::string& value) {
   _internal_set_reader_serial_number(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegister.reader_serial_number)
+  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegisterRequest.reader_serial_number)
 }
-inline std::string* DeviceRegister::mutable_reader_serial_number() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.reader_serial_number)
+inline std::string* DeviceRegisterRequest::mutable_reader_serial_number() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.reader_serial_number)
   return _internal_mutable_reader_serial_number();
 }
-inline const std::string& DeviceRegister::_internal_reader_serial_number() const {
+inline const std::string& DeviceRegisterRequest::_internal_reader_serial_number() const {
   return reader_serial_number_.Get();
 }
-inline void DeviceRegister::_internal_set_reader_serial_number(const std::string& value) {
+inline void DeviceRegisterRequest::_internal_set_reader_serial_number(const std::string& value) {
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void DeviceRegister::set_reader_serial_number(std::string&& value) {
+inline void DeviceRegisterRequest::set_reader_serial_number(std::string&& value) {
   
   reader_serial_number_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegister.reader_serial_number)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegisterRequest.reader_serial_number)
 }
-inline void DeviceRegister::set_reader_serial_number(const char* value) {
+inline void DeviceRegisterRequest::set_reader_serial_number(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegister.reader_serial_number)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegisterRequest.reader_serial_number)
 }
-inline void DeviceRegister::set_reader_serial_number(const char* value,
+inline void DeviceRegisterRequest::set_reader_serial_number(const char* value,
     size_t size) {
   
   reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegister.reader_serial_number)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegisterRequest.reader_serial_number)
 }
-inline std::string* DeviceRegister::_internal_mutable_reader_serial_number() {
+inline std::string* DeviceRegisterRequest::_internal_mutable_reader_serial_number() {
   
   return reader_serial_number_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* DeviceRegister::release_reader_serial_number() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.reader_serial_number)
+inline std::string* DeviceRegisterRequest::release_reader_serial_number() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.reader_serial_number)
   return reader_serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DeviceRegister::set_allocated_reader_serial_number(std::string* reader_serial_number) {
+inline void DeviceRegisterRequest::set_allocated_reader_serial_number(std::string* reader_serial_number) {
   if (reader_serial_number != nullptr) {
     
   } else {
@@ -651,61 +651,61 @@ inline void DeviceRegister::set_allocated_reader_serial_number(std::string* read
   }
   reader_serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reader_serial_number,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.reader_serial_number)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.reader_serial_number)
 }
 
 // string device_serial_number = 3;
-inline void DeviceRegister::clear_device_serial_number() {
+inline void DeviceRegisterRequest::clear_device_serial_number() {
   device_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& DeviceRegister::device_serial_number() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.device_serial_number)
+inline const std::string& DeviceRegisterRequest::device_serial_number() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.device_serial_number)
   return _internal_device_serial_number();
 }
-inline void DeviceRegister::set_device_serial_number(const std::string& value) {
+inline void DeviceRegisterRequest::set_device_serial_number(const std::string& value) {
   _internal_set_device_serial_number(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegister.device_serial_number)
+  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegisterRequest.device_serial_number)
 }
-inline std::string* DeviceRegister::mutable_device_serial_number() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.device_serial_number)
+inline std::string* DeviceRegisterRequest::mutable_device_serial_number() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.device_serial_number)
   return _internal_mutable_device_serial_number();
 }
-inline const std::string& DeviceRegister::_internal_device_serial_number() const {
+inline const std::string& DeviceRegisterRequest::_internal_device_serial_number() const {
   return device_serial_number_.Get();
 }
-inline void DeviceRegister::_internal_set_device_serial_number(const std::string& value) {
+inline void DeviceRegisterRequest::_internal_set_device_serial_number(const std::string& value) {
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void DeviceRegister::set_device_serial_number(std::string&& value) {
+inline void DeviceRegisterRequest::set_device_serial_number(std::string&& value) {
   
   device_serial_number_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegister.device_serial_number)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegisterRequest.device_serial_number)
 }
-inline void DeviceRegister::set_device_serial_number(const char* value) {
+inline void DeviceRegisterRequest::set_device_serial_number(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegister.device_serial_number)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegisterRequest.device_serial_number)
 }
-inline void DeviceRegister::set_device_serial_number(const char* value,
+inline void DeviceRegisterRequest::set_device_serial_number(const char* value,
     size_t size) {
   
   device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegister.device_serial_number)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegisterRequest.device_serial_number)
 }
-inline std::string* DeviceRegister::_internal_mutable_device_serial_number() {
+inline std::string* DeviceRegisterRequest::_internal_mutable_device_serial_number() {
   
   return device_serial_number_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* DeviceRegister::release_device_serial_number() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.device_serial_number)
+inline std::string* DeviceRegisterRequest::release_device_serial_number() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.device_serial_number)
   return device_serial_number_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DeviceRegister::set_allocated_device_serial_number(std::string* device_serial_number) {
+inline void DeviceRegisterRequest::set_allocated_device_serial_number(std::string* device_serial_number) {
   if (device_serial_number != nullptr) {
     
   } else {
@@ -713,61 +713,61 @@ inline void DeviceRegister::set_allocated_device_serial_number(std::string* devi
   }
   device_serial_number_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_serial_number,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.device_serial_number)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.device_serial_number)
 }
 
 // bytes ksn_data = 4;
-inline void DeviceRegister::clear_ksn_data() {
+inline void DeviceRegisterRequest::clear_ksn_data() {
   ksn_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& DeviceRegister::ksn_data() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.ksn_data)
+inline const std::string& DeviceRegisterRequest::ksn_data() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.ksn_data)
   return _internal_ksn_data();
 }
-inline void DeviceRegister::set_ksn_data(const std::string& value) {
+inline void DeviceRegisterRequest::set_ksn_data(const std::string& value) {
   _internal_set_ksn_data(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegister.ksn_data)
+  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegisterRequest.ksn_data)
 }
-inline std::string* DeviceRegister::mutable_ksn_data() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.ksn_data)
+inline std::string* DeviceRegisterRequest::mutable_ksn_data() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.ksn_data)
   return _internal_mutable_ksn_data();
 }
-inline const std::string& DeviceRegister::_internal_ksn_data() const {
+inline const std::string& DeviceRegisterRequest::_internal_ksn_data() const {
   return ksn_data_.Get();
 }
-inline void DeviceRegister::_internal_set_ksn_data(const std::string& value) {
+inline void DeviceRegisterRequest::_internal_set_ksn_data(const std::string& value) {
   
   ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void DeviceRegister::set_ksn_data(std::string&& value) {
+inline void DeviceRegisterRequest::set_ksn_data(std::string&& value) {
   
   ksn_data_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegister.ksn_data)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegisterRequest.ksn_data)
 }
-inline void DeviceRegister::set_ksn_data(const char* value) {
+inline void DeviceRegisterRequest::set_ksn_data(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegister.ksn_data)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegisterRequest.ksn_data)
 }
-inline void DeviceRegister::set_ksn_data(const void* value,
+inline void DeviceRegisterRequest::set_ksn_data(const void* value,
     size_t size) {
   
   ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegister.ksn_data)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegisterRequest.ksn_data)
 }
-inline std::string* DeviceRegister::_internal_mutable_ksn_data() {
+inline std::string* DeviceRegisterRequest::_internal_mutable_ksn_data() {
   
   return ksn_data_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* DeviceRegister::release_ksn_data() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.ksn_data)
+inline std::string* DeviceRegisterRequest::release_ksn_data() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.ksn_data)
   return ksn_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DeviceRegister::set_allocated_ksn_data(std::string* ksn_data) {
+inline void DeviceRegisterRequest::set_allocated_ksn_data(std::string* ksn_data) {
   if (ksn_data != nullptr) {
     
   } else {
@@ -775,61 +775,61 @@ inline void DeviceRegister::set_allocated_ksn_data(std::string* ksn_data) {
   }
   ksn_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ksn_data,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.ksn_data)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.ksn_data)
 }
 
 // string line_id = 5;
-inline void DeviceRegister::clear_line_id() {
+inline void DeviceRegisterRequest::clear_line_id() {
   line_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& DeviceRegister::line_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.line_id)
+inline const std::string& DeviceRegisterRequest::line_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.line_id)
   return _internal_line_id();
 }
-inline void DeviceRegister::set_line_id(const std::string& value) {
+inline void DeviceRegisterRequest::set_line_id(const std::string& value) {
   _internal_set_line_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegister.line_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegisterRequest.line_id)
 }
-inline std::string* DeviceRegister::mutable_line_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.line_id)
+inline std::string* DeviceRegisterRequest::mutable_line_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.line_id)
   return _internal_mutable_line_id();
 }
-inline const std::string& DeviceRegister::_internal_line_id() const {
+inline const std::string& DeviceRegisterRequest::_internal_line_id() const {
   return line_id_.Get();
 }
-inline void DeviceRegister::_internal_set_line_id(const std::string& value) {
+inline void DeviceRegisterRequest::_internal_set_line_id(const std::string& value) {
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void DeviceRegister::set_line_id(std::string&& value) {
+inline void DeviceRegisterRequest::set_line_id(std::string&& value) {
   
   line_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegister.line_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegisterRequest.line_id)
 }
-inline void DeviceRegister::set_line_id(const char* value) {
+inline void DeviceRegisterRequest::set_line_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegister.line_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegisterRequest.line_id)
 }
-inline void DeviceRegister::set_line_id(const char* value,
+inline void DeviceRegisterRequest::set_line_id(const char* value,
     size_t size) {
   
   line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegister.line_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegisterRequest.line_id)
 }
-inline std::string* DeviceRegister::_internal_mutable_line_id() {
+inline std::string* DeviceRegisterRequest::_internal_mutable_line_id() {
   
   return line_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* DeviceRegister::release_line_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.line_id)
+inline std::string* DeviceRegisterRequest::release_line_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.line_id)
   return line_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DeviceRegister::set_allocated_line_id(std::string* line_id) {
+inline void DeviceRegisterRequest::set_allocated_line_id(std::string* line_id) {
   if (line_id != nullptr) {
     
   } else {
@@ -837,61 +837,61 @@ inline void DeviceRegister::set_allocated_line_id(std::string* line_id) {
   }
   line_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), line_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.line_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.line_id)
 }
 
 // string vehicle_id = 6;
-inline void DeviceRegister::clear_vehicle_id() {
+inline void DeviceRegisterRequest::clear_vehicle_id() {
   vehicle_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& DeviceRegister::vehicle_id() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.vehicle_id)
+inline const std::string& DeviceRegisterRequest::vehicle_id() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.vehicle_id)
   return _internal_vehicle_id();
 }
-inline void DeviceRegister::set_vehicle_id(const std::string& value) {
+inline void DeviceRegisterRequest::set_vehicle_id(const std::string& value) {
   _internal_set_vehicle_id(value);
-  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegister.vehicle_id)
+  // @@protoc_insertion_point(field_set:axis.transactions.DeviceRegisterRequest.vehicle_id)
 }
-inline std::string* DeviceRegister::mutable_vehicle_id() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.vehicle_id)
+inline std::string* DeviceRegisterRequest::mutable_vehicle_id() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.vehicle_id)
   return _internal_mutable_vehicle_id();
 }
-inline const std::string& DeviceRegister::_internal_vehicle_id() const {
+inline const std::string& DeviceRegisterRequest::_internal_vehicle_id() const {
   return vehicle_id_.Get();
 }
-inline void DeviceRegister::_internal_set_vehicle_id(const std::string& value) {
+inline void DeviceRegisterRequest::_internal_set_vehicle_id(const std::string& value) {
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void DeviceRegister::set_vehicle_id(std::string&& value) {
+inline void DeviceRegisterRequest::set_vehicle_id(std::string&& value) {
   
   vehicle_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegister.vehicle_id)
+  // @@protoc_insertion_point(field_set_rvalue:axis.transactions.DeviceRegisterRequest.vehicle_id)
 }
-inline void DeviceRegister::set_vehicle_id(const char* value) {
+inline void DeviceRegisterRequest::set_vehicle_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegister.vehicle_id)
+  // @@protoc_insertion_point(field_set_char:axis.transactions.DeviceRegisterRequest.vehicle_id)
 }
-inline void DeviceRegister::set_vehicle_id(const char* value,
+inline void DeviceRegisterRequest::set_vehicle_id(const char* value,
     size_t size) {
   
   vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegister.vehicle_id)
+  // @@protoc_insertion_point(field_set_pointer:axis.transactions.DeviceRegisterRequest.vehicle_id)
 }
-inline std::string* DeviceRegister::_internal_mutable_vehicle_id() {
+inline std::string* DeviceRegisterRequest::_internal_mutable_vehicle_id() {
   
   return vehicle_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* DeviceRegister::release_vehicle_id() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.vehicle_id)
+inline std::string* DeviceRegisterRequest::release_vehicle_id() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.vehicle_id)
   return vehicle_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DeviceRegister::set_allocated_vehicle_id(std::string* vehicle_id) {
+inline void DeviceRegisterRequest::set_allocated_vehicle_id(std::string* vehicle_id) {
   if (vehicle_id != nullptr) {
     
   } else {
@@ -899,26 +899,26 @@ inline void DeviceRegister::set_allocated_vehicle_id(std::string* vehicle_id) {
   }
   vehicle_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vehicle_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.vehicle_id)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.vehicle_id)
 }
 
 // .google.protobuf.Timestamp register_date = 7;
-inline bool DeviceRegister::_internal_has_register_date() const {
+inline bool DeviceRegisterRequest::_internal_has_register_date() const {
   return this != internal_default_instance() && register_date_ != nullptr;
 }
-inline bool DeviceRegister::has_register_date() const {
+inline bool DeviceRegisterRequest::has_register_date() const {
   return _internal_has_register_date();
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegister::_internal_register_date() const {
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterRequest::_internal_register_date() const {
   const PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
   return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
       &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegister::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegister.register_date)
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterRequest::register_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.register_date)
   return _internal_register_date();
 }
-inline void DeviceRegister::unsafe_arena_set_allocated_register_date(
+inline void DeviceRegisterRequest::unsafe_arena_set_allocated_register_date(
     PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
@@ -929,9 +929,9 @@ inline void DeviceRegister::unsafe_arena_set_allocated_register_date(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.DeviceRegister.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.DeviceRegisterRequest.register_date)
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegister::release_register_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::release_register_date() {
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
   register_date_ = nullptr;
@@ -940,14 +940,14 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegister::release_register_date()
   }
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegister::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegister.register_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::unsafe_arena_release_register_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.register_date)
   
   PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
   register_date_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegister::_internal_mutable_register_date() {
+inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::_internal_mutable_register_date() {
   
   if (register_date_ == nullptr) {
     auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
@@ -955,11 +955,11 @@ inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegister::_internal_mutable_regis
   }
   return register_date_;
 }
-inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegister::mutable_register_date() {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegister.register_date)
+inline PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::mutable_register_date() {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.register_date)
   return _internal_mutable_register_date();
 }
-inline void DeviceRegister::set_allocated_register_date(PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void DeviceRegisterRequest::set_allocated_register_date(PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
@@ -976,7 +976,7 @@ inline void DeviceRegister::set_allocated_register_date(PROTOBUF_NAMESPACE_ID::T
     
   }
   register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegister.register_date)
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.register_date)
 }
 
 // -------------------------------------------------------------------

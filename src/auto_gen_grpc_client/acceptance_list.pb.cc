@@ -154,12 +154,12 @@ const char descriptor_table_protodef_acceptance_5flist_2eproto[] PROTOBUF_SECTIO
   "WhiteList\022E\n\010par_list\030\002 \001(\01323.axis.trans"
   "actions.PrimaryAccountReferenceWhiteList"
   "\022-\n\006action\030\003 \001(\0162\035.axis.transactions.Car"
-  "dAction2{\n\017AcceptanceLists\022h\n\021GetAccepta"
-  "nceList\022(.axis.transactions.AcceptanceLi"
-  "stRequest\032).axis.transactions.Acceptance"
-  "ListResponseBQ\n#com.axismobfintech.gpb.t"
-  "ransactionsZ\022axistransactionspb\252\002\025Axis.G"
-  "PB.Transactionsb\006proto3"
+  "dAction2\201\001\n\025AcceptanceListService\022h\n\021Get"
+  "AcceptanceList\022(.axis.transactions.Accep"
+  "tanceListRequest\032).axis.transactions.Acc"
+  "eptanceListResponseBQ\n#com.axismobfintec"
+  "h.gpb.transactionsZ\022axistransactionspb\252\002"
+  "\025Axis.GPB.Transactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_acceptance_5flist_2eproto_deps[4] = {
   &::descriptor_table_Protos_2fcard_5faction_2eproto,
@@ -174,7 +174,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_acc
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_acceptance_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_acceptance_5flist_2eproto = {
-  false, false, descriptor_table_protodef_acceptance_5flist_2eproto, "acceptance_list.proto", 1103,
+  false, false, descriptor_table_protodef_acceptance_5flist_2eproto, "acceptance_list.proto", 1110,
   &descriptor_table_acceptance_5flist_2eproto_once, descriptor_table_acceptance_5flist_2eproto_sccs, descriptor_table_acceptance_5flist_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_acceptance_5flist_2eproto::offsets,
   file_level_metadata_acceptance_5flist_2eproto, 3, file_level_enum_descriptors_acceptance_5flist_2eproto, file_level_service_descriptors_acceptance_5flist_2eproto,

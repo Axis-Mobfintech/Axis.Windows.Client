@@ -8,8 +8,8 @@
 #include "auto_gen_grpc_client\debit_recovery.grpc.pb.h"
 
 
-using axis::transactions::RecoverDebit;
-using axis::transactions::DebitRecovery;
+using axis::transactions::RecoverDebitService;
+using axis::transactions::DebitRecoveryRequest;
 using axis::transactions::DebitRecoveryResponse;
 
 using grpc::Channel;
@@ -21,10 +21,10 @@ class RecoverDebitClient
 public:
    RecoverDebitClient(std::shared_ptr<Channel> channel);
    ~RecoverDebitClient();
-   DebitRecoveryResponse RecoverDebit(DebitRecovery debit, int timeout_seconds=10) throw (Status);
+   DebitRecoveryResponse RecoverDebit(DebitRecoveryRequest debit, int timeout_seconds=10) throw (Status);
 
 private:
-   std::unique_ptr<RecoverDebit::Stub> stub_;
+   std::unique_ptr<RecoverDebitService::Stub> stub_;
 };
 
 

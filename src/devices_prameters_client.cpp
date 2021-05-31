@@ -6,14 +6,14 @@ using grpc::ClientContext;
 
 DevicesParametersClient::DevicesParametersClient(std::shared_ptr<Channel> channel)
 {
-   stub_ = DevicesParameters::NewStub(channel);
+   stub_ = DeviceParametersService::NewStub(channel);
 }
 
 DevicesParametersClient::~DevicesParametersClient()
 {
 }
 
-ParametersResponse DevicesParametersClient::GetDeviceParameters(Parameters parametres, int timeout_seconds) throw (Status) {
+ParametersResponse DevicesParametersClient::GetDeviceParameters(ParametersRequest parametres, int timeout_seconds) throw (Status) {
 
    // Container for the data we expect from the server.
    ParametersResponse response;

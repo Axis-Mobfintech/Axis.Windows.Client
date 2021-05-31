@@ -22,60 +22,60 @@
 namespace axis {
 namespace transactions {
 
-static const char* DevicesParameters_method_names[] = {
-  "/axis.transactions.DevicesParameters/GetDeviceParameters",
+static const char* DeviceParametersService_method_names[] = {
+  "/axis.transactions.DeviceParametersService/GetDeviceParameters",
 };
 
-std::unique_ptr< DevicesParameters::Stub> DevicesParameters::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< DeviceParametersService::Stub> DeviceParametersService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< DevicesParameters::Stub> stub(new DevicesParameters::Stub(channel));
+  std::unique_ptr< DeviceParametersService::Stub> stub(new DeviceParametersService::Stub(channel));
   return stub;
 }
 
-DevicesParameters::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_GetDeviceParameters_(DevicesParameters_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+DeviceParametersService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_GetDeviceParameters_(DeviceParametersService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status DevicesParameters::Stub::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::Parameters& request, ::axis::transactions::ParametersResponse* response) {
+::grpc::Status DeviceParametersService::Stub::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::axis::transactions::ParametersResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetDeviceParameters_, context, request, response);
 }
 
-void DevicesParameters::Stub::experimental_async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::Parameters* request, ::axis::transactions::ParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void DeviceParametersService::Stub::experimental_async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDeviceParameters_, context, request, response, std::move(f));
 }
 
-void DevicesParameters::Stub::experimental_async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::Parameters* request, ::axis::transactions::ParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void DeviceParametersService::Stub::experimental_async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetDeviceParameters_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* DevicesParameters::Stub::PrepareAsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::Parameters& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* DeviceParametersService::Stub::PrepareAsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::ParametersResponse>::Create(channel_.get(), cq, rpcmethod_GetDeviceParameters_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* DevicesParameters::Stub::AsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::Parameters& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* DeviceParametersService::Stub::AsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetDeviceParametersRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-DevicesParameters::Service::Service() {
+DeviceParametersService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      DevicesParameters_method_names[0],
+      DeviceParametersService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< DevicesParameters::Service, ::axis::transactions::Parameters, ::axis::transactions::ParametersResponse>(
-          [](DevicesParameters::Service* service,
+      new ::grpc::internal::RpcMethodHandler< DeviceParametersService::Service, ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse>(
+          [](DeviceParametersService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::axis::transactions::Parameters* req,
+             const ::axis::transactions::ParametersRequest* req,
              ::axis::transactions::ParametersResponse* resp) {
                return service->GetDeviceParameters(ctx, req, resp);
              }, this)));
 }
 
-DevicesParameters::Service::~Service() {
+DeviceParametersService::Service::~Service() {
 }
 
-::grpc::Status DevicesParameters::Service::GetDeviceParameters(::grpc::ServerContext* context, const ::axis::transactions::Parameters* request, ::axis::transactions::ParametersResponse* response) {
+::grpc::Status DeviceParametersService::Service::GetDeviceParameters(::grpc::ServerContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response) {
   (void) context;
   (void) request;
   (void) response;

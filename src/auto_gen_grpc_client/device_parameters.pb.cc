@@ -20,29 +20,29 @@ extern PROTOBUF_INTERNAL_EXPORT_Protos_2fcapk_5ftable_2eproto ::PROTOBUF_NAMESPA
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace axis {
 namespace transactions {
-class ParametersDefaultTypeInternal {
+class ParametersRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Parameters> _instance;
-} _Parameters_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ParametersRequest> _instance;
+} _ParametersRequest_default_instance_;
 class ParametersResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ParametersResponse> _instance;
 } _ParametersResponse_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_Parameters_device_5fparameters_2eproto() {
+static void InitDefaultsscc_info_ParametersRequest_device_5fparameters_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::axis::transactions::_Parameters_default_instance_;
-    new (ptr) ::axis::transactions::Parameters();
+    void* ptr = &::axis::transactions::_ParametersRequest_default_instance_;
+    new (ptr) ::axis::transactions::ParametersRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::axis::transactions::Parameters::InitAsDefaultInstance();
+  ::axis::transactions::ParametersRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Parameters_device_5fparameters_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Parameters_device_5fparameters_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ParametersRequest_device_5fparameters_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ParametersRequest_device_5fparameters_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
 static void InitDefaultsscc_info_ParametersResponse_device_5fparameters_2eproto() {
@@ -69,22 +69,22 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_device_5fparameters_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, device_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, operator_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, reader_serial_number_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, device_serial_number_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, ksn_data_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, register_code_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, line_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, vehicle_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, register_date_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, emv_parameters_version_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, bin_parameters_version_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::Parameters, capk_parameters_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, device_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, operator_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, reader_serial_number_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, device_serial_number_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, ksn_data_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, register_code_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, line_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, vehicle_id_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, register_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, emv_parameters_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, bin_parameters_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, capk_parameters_version_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -99,12 +99,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_device_5fparameters_2eproto::o
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, response_date_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::Parameters)},
+  { 0, -1, sizeof(::axis::transactions::ParametersRequest)},
   { 17, -1, sizeof(::axis::transactions::ParametersResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_Parameters_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_ParametersRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::axis::transactions::_ParametersResponse_default_instance_),
 };
 
@@ -113,30 +113,30 @@ const char descriptor_table_protodef_device_5fparameters_2eproto[] PROTOBUF_SECT
   "ions\032\037google/protobuf/timestamp.proto\032\031P"
   "rotos/accepted_bin.proto\032#Protos/applica"
   "tion_identifier.proto\032\027Protos/capk_table"
-  ".proto\"\322\002\n\nParameters\022\021\n\tdevice_id\030\001 \001(\t"
-  "\022\023\n\013operator_id\030\002 \001(\t\022\034\n\024reader_serial_n"
-  "umber\030\003 \001(\t\022\034\n\024device_serial_number\030\004 \001("
-  "\t\022\020\n\010ksn_data\030\005 \001(\014\022\025\n\rregister_code\030\006 \001"
-  "(\005\022\017\n\007line_id\030\007 \001(\t\022\022\n\nvehicle_id\030\010 \001(\t\022"
-  "1\n\rregister_date\030\t \001(\0132\032.google.protobuf"
-  ".Timestamp\022\036\n\026emv_parameters_version\030\n \001"
-  "(\005\022\036\n\026bin_parameters_version\030\013 \001(\005\022\037\n\027ca"
-  "pk_parameters_version\030\014 \001(\005\"\356\002\n\022Paramete"
-  "rsResponse\022\025\n\rresponse_code\030\001 \001(\005\022\036\n\026emv"
-  "_parameters_version\030\002 \001(\005\022\036\n\026bin_paramet"
-  "ers_version\030\003 \001(\005\022;\n\taid_table\030\004 \003(\0132(.a"
-  "xis.transactions.ApplicationIdentifier\022F"
-  "\n\tbin_table\030\005 \003(\01323.axis.transactions.Ac"
-  "ceptedBankIdentificationNumber\022I\n\ncapk_t"
-  "able\030\006 \003(\01325.axis.transactions.Certifica"
-  "teAuthorityPublicKeyTable\0221\n\rresponse_da"
-  "te\030\007 \001(\0132\032.google.protobuf.Timestamp2p\n\021"
-  "DevicesParameters\022[\n\023GetDeviceParameters"
-  "\022\035.axis.transactions.Parameters\032%.axis.t"
-  "ransactions.ParametersResponseBQ\n#com.ax"
-  "ismobfintech.gpb.transactionsZ\022axistrans"
-  "actionspb\252\002\025Axis.GPB.Transactionsb\006proto"
-  "3"
+  ".proto\"\331\002\n\021ParametersRequest\022\021\n\tdevice_i"
+  "d\030\001 \001(\t\022\023\n\013operator_id\030\002 \001(\t\022\034\n\024reader_s"
+  "erial_number\030\003 \001(\t\022\034\n\024device_serial_numb"
+  "er\030\004 \001(\t\022\020\n\010ksn_data\030\005 \001(\014\022\025\n\rregister_c"
+  "ode\030\006 \001(\005\022\017\n\007line_id\030\007 \001(\t\022\022\n\nvehicle_id"
+  "\030\010 \001(\t\0221\n\rregister_date\030\t \001(\0132\032.google.p"
+  "rotobuf.Timestamp\022\036\n\026emv_parameters_vers"
+  "ion\030\n \001(\005\022\036\n\026bin_parameters_version\030\013 \001("
+  "\005\022\037\n\027capk_parameters_version\030\014 \001(\005\"\356\002\n\022P"
+  "arametersResponse\022\025\n\rresponse_code\030\001 \001(\005"
+  "\022\036\n\026emv_parameters_version\030\002 \001(\005\022\036\n\026bin_"
+  "parameters_version\030\003 \001(\005\022;\n\taid_table\030\004 "
+  "\003(\0132(.axis.transactions.ApplicationIdent"
+  "ifier\022F\n\tbin_table\030\005 \003(\01323.axis.transact"
+  "ions.AcceptedBankIdentificationNumber\022I\n"
+  "\ncapk_table\030\006 \003(\01325.axis.transactions.Ce"
+  "rtificateAuthorityPublicKeyTable\0221\n\rresp"
+  "onse_date\030\007 \001(\0132\032.google.protobuf.Timest"
+  "amp2}\n\027DeviceParametersService\022b\n\023GetDev"
+  "iceParameters\022$.axis.transactions.Parame"
+  "tersRequest\032%.axis.transactions.Paramete"
+  "rsResponseBQ\n#com.axismobfintech.gpb.tra"
+  "nsactionsZ\022axistransactionspb\252\002\025Axis.GPB"
+  ".Transactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_device_5fparameters_2eproto_deps[4] = {
   &::descriptor_table_Protos_2faccepted_5fbin_2eproto,
@@ -145,12 +145,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_device_5fparameters_2eproto_sccs[2] = {
-  &scc_info_Parameters_device_5fparameters_2eproto.base,
+  &scc_info_ParametersRequest_device_5fparameters_2eproto.base,
   &scc_info_ParametersResponse_device_5fparameters_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_device_5fparameters_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_5fparameters_2eproto = {
-  false, false, descriptor_table_protodef_device_5fparameters_2eproto, "device_parameters.proto", 1081,
+  false, false, descriptor_table_protodef_device_5fparameters_2eproto, "device_parameters.proto", 1101,
   &descriptor_table_device_5fparameters_2eproto_once, descriptor_table_device_5fparameters_2eproto_sccs, descriptor_table_device_5fparameters_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_device_5fparameters_2eproto::offsets,
   file_level_metadata_device_5fparameters_2eproto, 2, file_level_enum_descriptors_device_5fparameters_2eproto, file_level_service_descriptors_device_5fparameters_2eproto,
@@ -163,32 +163,32 @@ namespace transactions {
 
 // ===================================================================
 
-void Parameters::InitAsDefaultInstance() {
-  ::axis::transactions::_Parameters_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+void ParametersRequest::InitAsDefaultInstance() {
+  ::axis::transactions::_ParametersRequest_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
       PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
 }
-class Parameters::_Internal {
+class ParametersRequest::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const Parameters* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const ParametersRequest* msg);
 };
 
 const PROTOBUF_NAMESPACE_ID::Timestamp&
-Parameters::_Internal::register_date(const Parameters* msg) {
+ParametersRequest::_Internal::register_date(const ParametersRequest* msg) {
   return *msg->register_date_;
 }
-void Parameters::clear_register_date() {
+void ParametersRequest::clear_register_date() {
   if (GetArena() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-Parameters::Parameters(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+ParametersRequest::ParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:axis.transactions.Parameters)
+  // @@protoc_insertion_point(arena_constructor:axis.transactions.ParametersRequest)
 }
-Parameters::Parameters(const Parameters& from)
+ParametersRequest::ParametersRequest(const ParametersRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -234,11 +234,11 @@ Parameters::Parameters(const Parameters& from)
   ::memcpy(&register_code_, &from.register_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&capk_parameters_version_) -
     reinterpret_cast<char*>(&register_code_)) + sizeof(capk_parameters_version_));
-  // @@protoc_insertion_point(copy_constructor:axis.transactions.Parameters)
+  // @@protoc_insertion_point(copy_constructor:axis.transactions.ParametersRequest)
 }
 
-void Parameters::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Parameters_device_5fparameters_2eproto.base);
+void ParametersRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ParametersRequest_device_5fparameters_2eproto.base);
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -251,13 +251,13 @@ void Parameters::SharedCtor() {
       reinterpret_cast<char*>(&register_date_)) + sizeof(capk_parameters_version_));
 }
 
-Parameters::~Parameters() {
-  // @@protoc_insertion_point(destructor:axis.transactions.Parameters)
+ParametersRequest::~ParametersRequest() {
+  // @@protoc_insertion_point(destructor:axis.transactions.ParametersRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Parameters::SharedDtor() {
+void ParametersRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operator_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -269,23 +269,23 @@ void Parameters::SharedDtor() {
   if (this != internal_default_instance()) delete register_date_;
 }
 
-void Parameters::ArenaDtor(void* object) {
-  Parameters* _this = reinterpret_cast< Parameters* >(object);
+void ParametersRequest::ArenaDtor(void* object) {
+  ParametersRequest* _this = reinterpret_cast< ParametersRequest* >(object);
   (void)_this;
 }
-void Parameters::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void ParametersRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void Parameters::SetCachedSize(int size) const {
+void ParametersRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Parameters& Parameters::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Parameters_device_5fparameters_2eproto.base);
+const ParametersRequest& ParametersRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ParametersRequest_device_5fparameters_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Parameters::Clear() {
-// @@protoc_insertion_point(message_clear_start:axis.transactions.Parameters)
+void ParametersRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:axis.transactions.ParametersRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -307,7 +307,7 @@ void Parameters::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* ParametersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -320,7 +320,7 @@ const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_device_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.Parameters.device_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.ParametersRequest.device_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -329,7 +329,7 @@ const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_operator_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.Parameters.operator_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.ParametersRequest.operator_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -338,7 +338,7 @@ const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_reader_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.Parameters.reader_serial_number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.ParametersRequest.reader_serial_number"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -347,7 +347,7 @@ const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_device_serial_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.Parameters.device_serial_number"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.ParametersRequest.device_serial_number"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -371,7 +371,7 @@ const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_line_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.Parameters.line_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.ParametersRequest.line_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -380,7 +380,7 @@ const char* Parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_vehicle_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.Parameters.vehicle_id"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.ParametersRequest.vehicle_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -434,9 +434,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Parameters::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* ParametersRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.Parameters)
+  // @@protoc_insertion_point(serialize_to_array_start:axis.transactions.ParametersRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -445,7 +445,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.Parameters.device_id");
+      "axis.transactions.ParametersRequest.device_id");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_device_id(), target);
   }
@@ -455,7 +455,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_operator_id().data(), static_cast<int>(this->_internal_operator_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.Parameters.operator_id");
+      "axis.transactions.ParametersRequest.operator_id");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_operator_id(), target);
   }
@@ -465,7 +465,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reader_serial_number().data(), static_cast<int>(this->_internal_reader_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.Parameters.reader_serial_number");
+      "axis.transactions.ParametersRequest.reader_serial_number");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_reader_serial_number(), target);
   }
@@ -475,7 +475,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_serial_number().data(), static_cast<int>(this->_internal_device_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.Parameters.device_serial_number");
+      "axis.transactions.ParametersRequest.device_serial_number");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_device_serial_number(), target);
   }
@@ -497,7 +497,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_line_id().data(), static_cast<int>(this->_internal_line_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.Parameters.line_id");
+      "axis.transactions.ParametersRequest.line_id");
     target = stream->WriteStringMaybeAliased(
         7, this->_internal_line_id(), target);
   }
@@ -507,7 +507,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_vehicle_id().data(), static_cast<int>(this->_internal_vehicle_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "axis.transactions.Parameters.vehicle_id");
+      "axis.transactions.ParametersRequest.vehicle_id");
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_vehicle_id(), target);
   }
@@ -542,12 +542,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:axis.transactions.Parameters)
+  // @@protoc_insertion_point(serialize_to_array_end:axis.transactions.ParametersRequest)
   return target;
 }
 
-size_t Parameters::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:axis.transactions.Parameters)
+size_t ParametersRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:axis.transactions.ParametersRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -647,23 +647,23 @@ size_t Parameters::ByteSizeLong() const {
   return total_size;
 }
 
-void Parameters::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.Parameters)
+void ParametersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.ParametersRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const Parameters* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Parameters>(
+  const ParametersRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ParametersRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.Parameters)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.ParametersRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.Parameters)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.ParametersRequest)
     MergeFrom(*source);
   }
 }
 
-void Parameters::MergeFrom(const Parameters& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.Parameters)
+void ParametersRequest::MergeFrom(const ParametersRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.ParametersRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -707,25 +707,25 @@ void Parameters::MergeFrom(const Parameters& from) {
   }
 }
 
-void Parameters::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.Parameters)
+void ParametersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.ParametersRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Parameters::CopyFrom(const Parameters& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:axis.transactions.Parameters)
+void ParametersRequest::CopyFrom(const ParametersRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:axis.transactions.ParametersRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Parameters::IsInitialized() const {
+bool ParametersRequest::IsInitialized() const {
   return true;
 }
 
-void Parameters::InternalSwap(Parameters* other) {
+void ParametersRequest::InternalSwap(ParametersRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   device_id_.Swap(&other->device_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -736,14 +736,14 @@ void Parameters::InternalSwap(Parameters* other) {
   line_id_.Swap(&other->line_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   vehicle_id_.Swap(&other->vehicle_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Parameters, capk_parameters_version_)
-      + sizeof(Parameters::capk_parameters_version_)
-      - PROTOBUF_FIELD_OFFSET(Parameters, register_date_)>(
+      PROTOBUF_FIELD_OFFSET(ParametersRequest, capk_parameters_version_)
+      + sizeof(ParametersRequest::capk_parameters_version_)
+      - PROTOBUF_FIELD_OFFSET(ParametersRequest, register_date_)>(
           reinterpret_cast<char*>(&register_date_),
           reinterpret_cast<char*>(&other->register_date_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Parameters::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ParametersRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1160,8 +1160,8 @@ void ParametersResponse::InternalSwap(ParametersResponse* other) {
 }  // namespace transactions
 }  // namespace axis
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::axis::transactions::Parameters* Arena::CreateMaybeMessage< ::axis::transactions::Parameters >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::axis::transactions::Parameters >(arena);
+template<> PROTOBUF_NOINLINE ::axis::transactions::ParametersRequest* Arena::CreateMaybeMessage< ::axis::transactions::ParametersRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::axis::transactions::ParametersRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::axis::transactions::ParametersResponse* Arena::CreateMaybeMessage< ::axis::transactions::ParametersResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::axis::transactions::ParametersResponse >(arena);

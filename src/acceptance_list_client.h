@@ -7,7 +7,7 @@
 
 #include "auto_gen_grpc_client\acceptance_list.grpc.pb.h"
 
-using axis::transactions::AcceptanceLists;
+using axis::transactions::AcceptanceListService;
 using axis::transactions::AcceptanceListResponse;
 using axis::transactions::AcceptanceListRequest;
 using axis::transactions::AcceptanceListCardInformation;
@@ -27,7 +27,7 @@ public:
    AcceptanceListResponse GetAcceptanceList(AcceptanceListRequest parametres, int timeout_seconds=10) throw (Status);
 
 private:
-   std::unique_ptr<AcceptanceLists::Stub> stub_;
+   std::unique_ptr<AcceptanceListService::Stub> stub_;
 };
 
 

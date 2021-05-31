@@ -22,60 +22,60 @@
 namespace axis {
 namespace transactions {
 
-static const char* Transactions_method_names[] = {
-  "/axis.transactions.Transactions/MakeTransaction",
+static const char* RegisterPassageService_method_names[] = {
+  "/axis.transactions.RegisterPassageService/MakeTransaction",
 };
 
-std::unique_ptr< Transactions::Stub> Transactions::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< RegisterPassageService::Stub> RegisterPassageService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< Transactions::Stub> stub(new Transactions::Stub(channel));
+  std::unique_ptr< RegisterPassageService::Stub> stub(new RegisterPassageService::Stub(channel));
   return stub;
 }
 
-Transactions::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_MakeTransaction_(Transactions_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+RegisterPassageService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_MakeTransaction_(RegisterPassageService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status Transactions::Stub::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::axis::transactions::RegisterPassageResponse* response) {
+::grpc::Status RegisterPassageService::Stub::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::axis::transactions::RegisterPassageResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_MakeTransaction_, context, request, response);
 }
 
-void Transactions::Stub::experimental_async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)> f) {
+void RegisterPassageService::Stub::experimental_async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MakeTransaction_, context, request, response, std::move(f));
 }
 
-void Transactions::Stub::experimental_async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void RegisterPassageService::Stub::experimental_async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MakeTransaction_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* Transactions::Stub::PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* RegisterPassageService::Stub::PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::RegisterPassageResponse>::Create(channel_.get(), cq, rpcmethod_MakeTransaction_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* Transactions::Stub::AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassage& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* RegisterPassageService::Stub::AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMakeTransactionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-Transactions::Service::Service() {
+RegisterPassageService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Transactions_method_names[0],
+      RegisterPassageService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Transactions::Service, ::axis::transactions::RegisterPassage, ::axis::transactions::RegisterPassageResponse>(
-          [](Transactions::Service* service,
+      new ::grpc::internal::RpcMethodHandler< RegisterPassageService::Service, ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>(
+          [](RegisterPassageService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::axis::transactions::RegisterPassage* req,
+             const ::axis::transactions::RegisterPassageRequest* req,
              ::axis::transactions::RegisterPassageResponse* resp) {
                return service->MakeTransaction(ctx, req, resp);
              }, this)));
 }
 
-Transactions::Service::~Service() {
+RegisterPassageService::Service::~Service() {
 }
 
-::grpc::Status Transactions::Service::MakeTransaction(::grpc::ServerContext* context, const ::axis::transactions::RegisterPassage* request, ::axis::transactions::RegisterPassageResponse* response) {
+::grpc::Status RegisterPassageService::Service::MakeTransaction(::grpc::ServerContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response) {
   (void) context;
   (void) request;
   (void) response;

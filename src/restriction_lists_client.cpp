@@ -6,7 +6,7 @@ using grpc::ClientContext;
 
 RestrictionListsClient::RestrictionListsClient(std::shared_ptr<Channel> channel)
 {
-   stub_ = RestrictionLists::NewStub(channel);
+   stub_ = RestrictionListService::NewStub(channel);
 }
 
 RestrictionListsClient::~RestrictionListsClient()

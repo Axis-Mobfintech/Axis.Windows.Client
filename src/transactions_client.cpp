@@ -6,14 +6,14 @@ using grpc::ClientContext;
 
 TransactionsClient::TransactionsClient(std::shared_ptr<Channel> channel)
 {
-   stub_ = Transactions::NewStub(channel);
+   stub_ = RegisterPassageService::NewStub(channel);
 }
 
 TransactionsClient::~TransactionsClient()
 {
 }
 
-RegisterPassageResponse TransactionsClient::MakeTransaction(RegisterPassage registrer, int timeout_seconds)  throw (Status) {
+RegisterPassageResponse TransactionsClient::MakeTransaction(RegisterPassageRequest registrer, int timeout_seconds)  throw (Status) {
 
    // Container for the data we expect from the server.
    RegisterPassageResponse response;
