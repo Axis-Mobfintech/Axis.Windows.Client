@@ -1,10 +1,10 @@
-#**IntroduÁ„o**
+#**Introdu√ß√£o**
 
 ---
 O projeto AXIS Client visa demonstrar o uso da API gRPC, em C++, para acesso ao Servidor AXIS Go Cloud.
 
 
-#**DocumentaÁ„o**
+#**Documenta√ß√£o**
 
 ---
 - https://grpc.io/
@@ -12,28 +12,29 @@ O projeto AXIS Client visa demonstrar o uso da API gRPC, em C++, para acesso ao 
 - https://sanoj.in/2020/05/07/working-with-grpc-in-windows.html
 
 
-#**InstalaÁ„o do ambiente**
+#**Instala√ß√£o do ambiente**
 
 ##**Windows (vcpkg)**
 
 ---
-- Instalar Visual Studio 2015, 2017 ou 2019;
+- Instalar Visual Studio 2019 (requerimento do protobuf);
 - No Visual Studio, instalar Templates para Visual C++;
-- Instalar o Package Manager vcpkg (ser· utilizado para a instalaÁ„o e uso de bibliotecas adicionais, ex.: gPRC, Protoc etc.):
+- Instalar o Package Manager vcpkg (ser√° utilizado para a instala√ß√£o e uso de bibliotecas adicionais, ex.: gPRC, Protoc etc.):
    - cd c:\tools
    - git clone https://github.com/microsoft/vcpkg 
    - .\vcpkg\bootstrap-vcpkg.bat
-   - Acrescentar o diretÛrio de instalaÁ„o ‡ vari·vel de ambiente PATH: "C:\tools\vcpkg"
+   - Acrescentar o diret√≥rio de instala√ß√£o √† vari√°vel de ambiente PATH: "C:\tools\vcpkg"
 - Instalar o gRPC (pode demorar quase 1 hora): "vcpkg install grpc:x64-windows"
 - Instalar o protobuf: "vcpkg install protobuf protobuf:x64-windows"
-- Executar o comando a seguir, para que os pacotes recÈm instalados fiquem disponÌveis para o sistema: "vcpkg integrate install"
-- Acrescentar o diretÛrio do protoc ‡ vari·vel de ambiente PATH: "C:\tools\vcpkg\packages\protobuf_x64-windows\tools\"
-- Por default, o diretÛrio dos certificados fica em "/usr/share/grpc/roots.pem". Para alter·-lo, basta acrescentar a seguinte vari·vel de 
+- Executar o comando a seguir, para que os pacotes rec√©m instalados fiquem dispon√≠veis para o sistema: "vcpkg integrate install"
+- Acrescentar o diret√≥rio do protoc √† vari√°vel de ambiente PATH: "C:\tools\vcpkg\packages\protobuf_x64-windows\tools\"
+- Por default, o diret√≥rio dos certificados fica em "/usr/share/grpc/roots.pem". Para alter√°-lo, basta acrescentar a seguinte vari√°vel de 
   ambiente GRPC_DEFAULT_SSL_ROOTS_FILE_PATH: "C:\tools\vcpkg\installed\x64-windows\share\gRPC\roots.pem" 
-  (ou via API, atravÈs de SslCredentials(ssl_opts)).
+  (ou via API, atrav√©s de SslCredentials(ssl_opts)).
+- Se ao abrir a solu√ß√£o o Visual Studio perguntar se o projeto deve ser migrado, aceite.
 
 
-Para mais informaÁıes, consultar: 
+Para mais informa√ß√µes, consultar: 
    - https://sanoj.in/2020/05/07/working-with-grpc-in-windows.html
    - https://github.com/Microsoft/vcpkg
    - https://github.com/googleapis/google-cloud-cpp/blob/master/google/cloud/bigtable/examples/README.md#configure-grpc-root-certificates
@@ -51,9 +52,9 @@ Para mais informaÁıes, consultar:
 // TODO
 
 
-#**GeraÁ„o autom·tica dos fontes em C++**
-Para realizar a compilaÁ„o dos arquivos *.protoc, dando origem aos fontes em C++:
-   - Copiar a ˙ltima vers„o dos arquivos *.proto, recebidos da AXIS, para a pasta "gRPC_protos";     
+#**Gera√ß√£o autom√°tica dos fontes em C++**
+Para realizar a compila√ß√£o dos arquivos *.protoc, dando origem aos fontes em C++:
+   - Copiar a √∫ltima vers√£o dos arquivos *.proto, recebidos da AXIS, para a pasta "gRPC_protos";     
    - Executar o "build_protos.bat".
 
 
