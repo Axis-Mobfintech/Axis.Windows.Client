@@ -14,73 +14,63 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_acceptance_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_Protos_2fpan_5facceptance_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrimaryAccountNumberWhiteList_Protos_2fpan_5facceptance_5flist_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_Protos_2fpar_5facceptance_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrimaryAccountReferenceWhiteList_Protos_2fpar_5facceptance_5flist_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace axis {
 namespace transactions {
-class AcceptanceListRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AcceptanceListRequest> _instance;
-} _AcceptanceListRequest_default_instance_;
-class AcceptanceListResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AcceptanceListResponse> _instance;
-} _AcceptanceListResponse_default_instance_;
-class AcceptanceListCardInformationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AcceptanceListCardInformation> _instance;
-} _AcceptanceListCardInformation_default_instance_;
+constexpr AcceptanceListRequest::AcceptanceListRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : device_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , operator_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , reader_serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , device_serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ksn_data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , line_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , vehicle_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , register_date_(nullptr)
+  , register_code_(0)
+  , acceptance_list_version_(0){}
+struct AcceptanceListRequestDefaultTypeInternal {
+  constexpr AcceptanceListRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AcceptanceListRequestDefaultTypeInternal() {}
+  union {
+    AcceptanceListRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcceptanceListRequestDefaultTypeInternal _AcceptanceListRequest_default_instance_;
+constexpr AcceptanceListResponse::AcceptanceListResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : card_information_()
+  , register_date_(nullptr)
+  , response_code_(0)
+  , acceptance_list_version_(0){}
+struct AcceptanceListResponseDefaultTypeInternal {
+  constexpr AcceptanceListResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AcceptanceListResponseDefaultTypeInternal() {}
+  union {
+    AcceptanceListResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcceptanceListResponseDefaultTypeInternal _AcceptanceListResponse_default_instance_;
+constexpr AcceptanceListCardInformation::AcceptanceListCardInformation(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : pan_list_(nullptr)
+  , par_list_(nullptr)
+  , action_(0)
+{}
+struct AcceptanceListCardInformationDefaultTypeInternal {
+  constexpr AcceptanceListCardInformationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AcceptanceListCardInformationDefaultTypeInternal() {}
+  union {
+    AcceptanceListCardInformation _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcceptanceListCardInformationDefaultTypeInternal _AcceptanceListCardInformation_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_AcceptanceListCardInformation_default_instance_;
-    new (ptr) ::axis::transactions::AcceptanceListCardInformation();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::AcceptanceListCardInformation::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto}, {
-      &scc_info_PrimaryAccountNumberWhiteList_Protos_2fpan_5facceptance_5flist_2eproto.base,
-      &scc_info_PrimaryAccountReferenceWhiteList_Protos_2fpar_5facceptance_5flist_2eproto.base,}};
-
-static void InitDefaultsscc_info_AcceptanceListRequest_acceptance_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_AcceptanceListRequest_default_instance_;
-    new (ptr) ::axis::transactions::AcceptanceListRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::AcceptanceListRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AcceptanceListRequest_acceptance_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AcceptanceListRequest_acceptance_5flist_2eproto}, {
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
-
-static void InitDefaultsscc_info_AcceptanceListResponse_acceptance_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_AcceptanceListResponse_default_instance_;
-    new (ptr) ::axis::transactions::AcceptanceListResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::AcceptanceListResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_AcceptanceListResponse_acceptance_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_AcceptanceListResponse_acceptance_5flist_2eproto}, {
-      &scc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto.base,
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_acceptance_5flist_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_acceptance_5flist_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_acceptance_5flist_2eproto = nullptr;
@@ -91,6 +81,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_acceptance_5flist_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, device_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, operator_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, reader_serial_number_),
@@ -106,6 +97,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_acceptance_5flist_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, response_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, acceptance_list_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, card_information_),
@@ -115,14 +107,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_acceptance_5flist_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListCardInformation, pan_list_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListCardInformation, par_list_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListCardInformation, action_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::AcceptanceListRequest)},
-  { 15, -1, sizeof(::axis::transactions::AcceptanceListResponse)},
-  { 24, -1, sizeof(::axis::transactions::AcceptanceListCardInformation)},
+  { 0, -1, -1, sizeof(::axis::transactions::AcceptanceListRequest)},
+  { 16, -1, -1, sizeof(::axis::transactions::AcceptanceListResponse)},
+  { 26, -1, -1, sizeof(::axis::transactions::AcceptanceListCardInformation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -167,49 +160,46 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_Protos_2fpar_5facceptance_5flist_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_acceptance_5flist_2eproto_sccs[3] = {
-  &scc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto.base,
-  &scc_info_AcceptanceListRequest_acceptance_5flist_2eproto.base,
-  &scc_info_AcceptanceListResponse_acceptance_5flist_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_acceptance_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_acceptance_5flist_2eproto = {
-  false, false, descriptor_table_protodef_acceptance_5flist_2eproto, "acceptance_list.proto", 1110,
-  &descriptor_table_acceptance_5flist_2eproto_once, descriptor_table_acceptance_5flist_2eproto_sccs, descriptor_table_acceptance_5flist_2eproto_deps, 3, 4,
+  false, false, 1110, descriptor_table_protodef_acceptance_5flist_2eproto, "acceptance_list.proto", 
+  &descriptor_table_acceptance_5flist_2eproto_once, descriptor_table_acceptance_5flist_2eproto_deps, 4, 3,
   schemas, file_default_instances, TableStruct_acceptance_5flist_2eproto::offsets,
-  file_level_metadata_acceptance_5flist_2eproto, 3, file_level_enum_descriptors_acceptance_5flist_2eproto, file_level_service_descriptors_acceptance_5flist_2eproto,
+  file_level_metadata_acceptance_5flist_2eproto, file_level_enum_descriptors_acceptance_5flist_2eproto, file_level_service_descriptors_acceptance_5flist_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_acceptance_5flist_2eproto_getter() {
+  return &descriptor_table_acceptance_5flist_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_acceptance_5flist_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_acceptance_5flist_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_acceptance_5flist_2eproto(&descriptor_table_acceptance_5flist_2eproto);
 namespace axis {
 namespace transactions {
 
 // ===================================================================
 
-void AcceptanceListRequest::InitAsDefaultInstance() {
-  ::axis::transactions::_AcceptanceListRequest_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
-      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
-}
 class AcceptanceListRequest::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const AcceptanceListRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const AcceptanceListRequest* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 AcceptanceListRequest::_Internal::register_date(const AcceptanceListRequest* msg) {
   return *msg->register_date_;
 }
 void AcceptanceListRequest::clear_register_date() {
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-AcceptanceListRequest::AcceptanceListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+AcceptanceListRequest::AcceptanceListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.AcceptanceListRequest)
 }
 AcceptanceListRequest::AcceptanceListRequest(const AcceptanceListRequest& from)
@@ -217,41 +207,41 @@ AcceptanceListRequest::AcceptanceListRequest(const AcceptanceListRequest& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_device_id().empty()) {
-    device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_device_id(),
-      GetArena());
+    device_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_id(), 
+      GetArenaForAllocation());
   }
   operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_operator_id().empty()) {
-    operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_operator_id(),
-      GetArena());
+    operator_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_operator_id(), 
+      GetArenaForAllocation());
   }
   reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_reader_serial_number().empty()) {
-    reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_reader_serial_number(),
-      GetArena());
+    reader_serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reader_serial_number(), 
+      GetArenaForAllocation());
   }
   device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_device_serial_number().empty()) {
-    device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_device_serial_number(),
-      GetArena());
+    device_serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_serial_number(), 
+      GetArenaForAllocation());
   }
   ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ksn_data().empty()) {
-    ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_ksn_data(),
-      GetArena());
+    ksn_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ksn_data(), 
+      GetArenaForAllocation());
   }
   line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_line_id().empty()) {
-    line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_line_id(),
-      GetArena());
+    line_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_line_id(), 
+      GetArenaForAllocation());
   }
   vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_vehicle_id().empty()) {
-    vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_vehicle_id(),
-      GetArena());
+    vehicle_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vehicle_id(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_register_date()) {
-    register_date_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
   } else {
     register_date_ = nullptr;
   }
@@ -262,27 +252,28 @@ AcceptanceListRequest::AcceptanceListRequest(const AcceptanceListRequest& from)
 }
 
 void AcceptanceListRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AcceptanceListRequest_acceptance_5flist_2eproto.base);
-  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&register_date_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&acceptance_list_version_) -
-      reinterpret_cast<char*>(&register_date_)) + sizeof(acceptance_list_version_));
+device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
+    reinterpret_cast<char*>(&register_date_)) + sizeof(acceptance_list_version_));
 }
 
 AcceptanceListRequest::~AcceptanceListRequest() {
   // @@protoc_insertion_point(destructor:axis.transactions.AcceptanceListRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void AcceptanceListRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void AcceptanceListRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operator_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reader_serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -302,11 +293,6 @@ void AcceptanceListRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void AcceptanceListRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AcceptanceListRequest& AcceptanceListRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AcceptanceListRequest_acceptance_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AcceptanceListRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.AcceptanceListRequest)
@@ -314,14 +300,14 @@ void AcceptanceListRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  operator_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  reader_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  device_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ksn_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  line_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  vehicle_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  device_id_.ClearToEmpty();
+  operator_id_.ClearToEmpty();
+  reader_serial_number_.ClearToEmpty();
+  device_serial_number_.ClearToEmpty();
+  ksn_data_.ClearToEmpty();
+  line_id_.ClearToEmpty();
+  vehicle_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
@@ -333,11 +319,9 @@ void AcceptanceListRequest::Clear() {
 
 const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string device_id = 1;
       case 1:
@@ -346,7 +330,8 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.AcceptanceListRequest.device_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string operator_id = 2;
       case 2:
@@ -355,7 +340,8 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.AcceptanceListRequest.operator_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string reader_serial_number = 3;
       case 3:
@@ -364,7 +350,8 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.AcceptanceListRequest.reader_serial_number"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string device_serial_number = 4;
       case 4:
@@ -373,7 +360,8 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.AcceptanceListRequest.device_serial_number"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes ksn_data = 5;
       case 5:
@@ -381,14 +369,16 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           auto str = _internal_mutable_ksn_data();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 register_code = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           register_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string line_id = 7;
       case 7:
@@ -397,7 +387,8 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.AcceptanceListRequest.line_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string vehicle_id = 8;
       case 8:
@@ -406,41 +397,45 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.AcceptanceListRequest.vehicle_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp register_date = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 acceptance_list_version = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
           acceptance_list_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -451,7 +446,7 @@ failure:
   (void) cached_has_bits;
 
   // string device_id = 1;
-  if (this->device_id().size() > 0) {
+  if (!this->_internal_device_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -461,7 +456,7 @@ failure:
   }
 
   // string operator_id = 2;
-  if (this->operator_id().size() > 0) {
+  if (!this->_internal_operator_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_operator_id().data(), static_cast<int>(this->_internal_operator_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -471,7 +466,7 @@ failure:
   }
 
   // string reader_serial_number = 3;
-  if (this->reader_serial_number().size() > 0) {
+  if (!this->_internal_reader_serial_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reader_serial_number().data(), static_cast<int>(this->_internal_reader_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -481,7 +476,7 @@ failure:
   }
 
   // string device_serial_number = 4;
-  if (this->device_serial_number().size() > 0) {
+  if (!this->_internal_device_serial_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_serial_number().data(), static_cast<int>(this->_internal_device_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -491,19 +486,19 @@ failure:
   }
 
   // bytes ksn_data = 5;
-  if (this->ksn_data().size() > 0) {
+  if (!this->_internal_ksn_data().empty()) {
     target = stream->WriteBytesMaybeAliased(
         5, this->_internal_ksn_data(), target);
   }
 
   // int32 register_code = 6;
-  if (this->register_code() != 0) {
+  if (this->_internal_register_code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_register_code(), target);
   }
 
   // string line_id = 7;
-  if (this->line_id().size() > 0) {
+  if (!this->_internal_line_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_line_id().data(), static_cast<int>(this->_internal_line_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -513,7 +508,7 @@ failure:
   }
 
   // string vehicle_id = 8;
-  if (this->vehicle_id().size() > 0) {
+  if (!this->_internal_vehicle_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_vehicle_id().data(), static_cast<int>(this->_internal_vehicle_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -523,7 +518,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp register_date = 9;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -531,7 +526,7 @@ failure:
   }
 
   // int32 acceptance_list_version = 10;
-  if (this->acceptance_list_version() != 0) {
+  if (this->_internal_acceptance_list_version() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_acceptance_list_version(), target);
   }
@@ -553,143 +548,124 @@ size_t AcceptanceListRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string device_id = 1;
-  if (this->device_id().size() > 0) {
+  if (!this->_internal_device_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_device_id());
   }
 
   // string operator_id = 2;
-  if (this->operator_id().size() > 0) {
+  if (!this->_internal_operator_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_operator_id());
   }
 
   // string reader_serial_number = 3;
-  if (this->reader_serial_number().size() > 0) {
+  if (!this->_internal_reader_serial_number().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_reader_serial_number());
   }
 
   // string device_serial_number = 4;
-  if (this->device_serial_number().size() > 0) {
+  if (!this->_internal_device_serial_number().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_device_serial_number());
   }
 
   // bytes ksn_data = 5;
-  if (this->ksn_data().size() > 0) {
+  if (!this->_internal_ksn_data().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_ksn_data());
   }
 
   // string line_id = 7;
-  if (this->line_id().size() > 0) {
+  if (!this->_internal_line_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_line_id());
   }
 
   // string vehicle_id = 8;
-  if (this->vehicle_id().size() > 0) {
+  if (!this->_internal_vehicle_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_vehicle_id());
   }
 
   // .google.protobuf.Timestamp register_date = 9;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *register_date_);
   }
 
   // int32 register_code = 6;
-  if (this->register_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_register_code());
+  if (this->_internal_register_code() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_register_code());
   }
 
   // int32 acceptance_list_version = 10;
-  if (this->acceptance_list_version() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_acceptance_list_version());
+  if (this->_internal_acceptance_list_version() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_acceptance_list_version());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void AcceptanceListRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.AcceptanceListRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const AcceptanceListRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AcceptanceListRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.AcceptanceListRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.AcceptanceListRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AcceptanceListRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AcceptanceListRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AcceptanceListRequest::GetClassData() const { return &_class_data_; }
+
+void AcceptanceListRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<AcceptanceListRequest *>(to)->MergeFrom(
+      static_cast<const AcceptanceListRequest &>(from));
 }
+
 
 void AcceptanceListRequest::MergeFrom(const AcceptanceListRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.AcceptanceListRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.device_id().size() > 0) {
+  if (!from._internal_device_id().empty()) {
     _internal_set_device_id(from._internal_device_id());
   }
-  if (from.operator_id().size() > 0) {
+  if (!from._internal_operator_id().empty()) {
     _internal_set_operator_id(from._internal_operator_id());
   }
-  if (from.reader_serial_number().size() > 0) {
+  if (!from._internal_reader_serial_number().empty()) {
     _internal_set_reader_serial_number(from._internal_reader_serial_number());
   }
-  if (from.device_serial_number().size() > 0) {
+  if (!from._internal_device_serial_number().empty()) {
     _internal_set_device_serial_number(from._internal_device_serial_number());
   }
-  if (from.ksn_data().size() > 0) {
+  if (!from._internal_ksn_data().empty()) {
     _internal_set_ksn_data(from._internal_ksn_data());
   }
-  if (from.line_id().size() > 0) {
+  if (!from._internal_line_id().empty()) {
     _internal_set_line_id(from._internal_line_id());
   }
-  if (from.vehicle_id().size() > 0) {
+  if (!from._internal_vehicle_id().empty()) {
     _internal_set_vehicle_id(from._internal_vehicle_id());
   }
-  if (from.has_register_date()) {
-    _internal_mutable_register_date()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_register_date()) {
+    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
   }
-  if (from.register_code() != 0) {
+  if (from._internal_register_code() != 0) {
     _internal_set_register_code(from._internal_register_code());
   }
-  if (from.acceptance_list_version() != 0) {
+  if (from._internal_acceptance_list_version() != 0) {
     _internal_set_acceptance_list_version(from._internal_acceptance_list_version());
   }
-}
-
-void AcceptanceListRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.AcceptanceListRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AcceptanceListRequest::CopyFrom(const AcceptanceListRequest& from) {
@@ -705,14 +681,44 @@ bool AcceptanceListRequest::IsInitialized() const {
 
 void AcceptanceListRequest::InternalSwap(AcceptanceListRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  device_id_.Swap(&other->device_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  operator_id_.Swap(&other->operator_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  reader_serial_number_.Swap(&other->reader_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  device_serial_number_.Swap(&other->device_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ksn_data_.Swap(&other->ksn_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  line_id_.Swap(&other->line_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  vehicle_id_.Swap(&other->vehicle_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &device_id_, lhs_arena,
+      &other->device_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &operator_id_, lhs_arena,
+      &other->operator_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &reader_serial_number_, lhs_arena,
+      &other->reader_serial_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &device_serial_number_, lhs_arena,
+      &other->device_serial_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ksn_data_, lhs_arena,
+      &other->ksn_data_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &line_id_, lhs_arena,
+      &other->line_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vehicle_id_, lhs_arena,
+      &other->vehicle_id_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AcceptanceListRequest, acceptance_list_version_)
       + sizeof(AcceptanceListRequest::acceptance_list_version_)
@@ -722,36 +728,36 @@ void AcceptanceListRequest::InternalSwap(AcceptanceListRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptanceListRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_acceptance_5flist_2eproto_getter, &descriptor_table_acceptance_5flist_2eproto_once,
+      file_level_metadata_acceptance_5flist_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void AcceptanceListResponse::InitAsDefaultInstance() {
-  ::axis::transactions::_AcceptanceListResponse_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
-      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
-}
 class AcceptanceListResponse::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const AcceptanceListResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const AcceptanceListResponse* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 AcceptanceListResponse::_Internal::register_date(const AcceptanceListResponse* msg) {
   return *msg->register_date_;
 }
 void AcceptanceListResponse::clear_register_date() {
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-AcceptanceListResponse::AcceptanceListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+AcceptanceListResponse::AcceptanceListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   card_information_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.AcceptanceListResponse)
 }
 AcceptanceListResponse::AcceptanceListResponse(const AcceptanceListResponse& from)
@@ -759,7 +765,7 @@ AcceptanceListResponse::AcceptanceListResponse(const AcceptanceListResponse& fro
       card_information_(from.card_information_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_register_date()) {
-    register_date_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
   } else {
     register_date_ = nullptr;
   }
@@ -770,20 +776,21 @@ AcceptanceListResponse::AcceptanceListResponse(const AcceptanceListResponse& fro
 }
 
 void AcceptanceListResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AcceptanceListResponse_acceptance_5flist_2eproto.base);
-  ::memset(&register_date_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&acceptance_list_version_) -
-      reinterpret_cast<char*>(&register_date_)) + sizeof(acceptance_list_version_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
+    reinterpret_cast<char*>(&register_date_)) + sizeof(acceptance_list_version_));
 }
 
 AcceptanceListResponse::~AcceptanceListResponse() {
   // @@protoc_insertion_point(destructor:axis.transactions.AcceptanceListResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void AcceptanceListResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void AcceptanceListResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete register_date_;
 }
 
@@ -796,11 +803,6 @@ void AcceptanceListResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) 
 void AcceptanceListResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AcceptanceListResponse& AcceptanceListResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AcceptanceListResponse_acceptance_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AcceptanceListResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.AcceptanceListResponse)
@@ -809,7 +811,7 @@ void AcceptanceListResponse::Clear() {
   (void) cached_has_bits;
 
   card_information_.Clear();
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
@@ -821,25 +823,25 @@ void AcceptanceListResponse::Clear() {
 
 const char* AcceptanceListResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 response_code = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           response_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 acceptance_list_version = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           acceptance_list_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .axis.transactions.AcceptanceListCardInformation card_information = 3;
       case 3:
@@ -851,34 +853,37 @@ const char* AcceptanceListResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp register_date = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -889,13 +894,13 @@ failure:
   (void) cached_has_bits;
 
   // int32 response_code = 1;
-  if (this->response_code() != 0) {
+  if (this->_internal_response_code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_response_code(), target);
   }
 
   // int32 acceptance_list_version = 2;
-  if (this->acceptance_list_version() != 0) {
+  if (this->_internal_acceptance_list_version() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_acceptance_list_version(), target);
   }
@@ -909,7 +914,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp register_date = 4;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -940,74 +945,55 @@ size_t AcceptanceListResponse::ByteSizeLong() const {
   }
 
   // .google.protobuf.Timestamp register_date = 4;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *register_date_);
   }
 
   // int32 response_code = 1;
-  if (this->response_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_response_code());
+  if (this->_internal_response_code() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_response_code());
   }
 
   // int32 acceptance_list_version = 2;
-  if (this->acceptance_list_version() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_acceptance_list_version());
+  if (this->_internal_acceptance_list_version() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_acceptance_list_version());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void AcceptanceListResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.AcceptanceListResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const AcceptanceListResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AcceptanceListResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.AcceptanceListResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.AcceptanceListResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AcceptanceListResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AcceptanceListResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AcceptanceListResponse::GetClassData() const { return &_class_data_; }
+
+void AcceptanceListResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<AcceptanceListResponse *>(to)->MergeFrom(
+      static_cast<const AcceptanceListResponse &>(from));
 }
+
 
 void AcceptanceListResponse::MergeFrom(const AcceptanceListResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.AcceptanceListResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   card_information_.MergeFrom(from.card_information_);
-  if (from.has_register_date()) {
-    _internal_mutable_register_date()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_register_date()) {
+    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
   }
-  if (from.response_code() != 0) {
+  if (from._internal_response_code() != 0) {
     _internal_set_response_code(from._internal_response_code());
   }
-  if (from.acceptance_list_version() != 0) {
+  if (from._internal_acceptance_list_version() != 0) {
     _internal_set_acceptance_list_version(from._internal_acceptance_list_version());
   }
-}
-
-void AcceptanceListResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.AcceptanceListResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AcceptanceListResponse::CopyFrom(const AcceptanceListResponse& from) {
@@ -1023,7 +1009,7 @@ bool AcceptanceListResponse::IsInitialized() const {
 
 void AcceptanceListResponse::InternalSwap(AcceptanceListResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   card_information_.InternalSwap(&other->card_information_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AcceptanceListResponse, acceptance_list_version_)
@@ -1034,18 +1020,13 @@ void AcceptanceListResponse::InternalSwap(AcceptanceListResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptanceListResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_acceptance_5flist_2eproto_getter, &descriptor_table_acceptance_5flist_2eproto_once,
+      file_level_metadata_acceptance_5flist_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void AcceptanceListCardInformation::InitAsDefaultInstance() {
-  ::axis::transactions::_AcceptanceListCardInformation_default_instance_._instance.get_mutable()->pan_list_ = const_cast< ::axis::transactions::PrimaryAccountNumberWhiteList*>(
-      ::axis::transactions::PrimaryAccountNumberWhiteList::internal_default_instance());
-  ::axis::transactions::_AcceptanceListCardInformation_default_instance_._instance.get_mutable()->par_list_ = const_cast< ::axis::transactions::PrimaryAccountReferenceWhiteList*>(
-      ::axis::transactions::PrimaryAccountReferenceWhiteList::internal_default_instance());
-}
 class AcceptanceListCardInformation::_Internal {
  public:
   static const ::axis::transactions::PrimaryAccountNumberWhiteList& pan_list(const AcceptanceListCardInformation* msg);
@@ -1061,21 +1042,24 @@ AcceptanceListCardInformation::_Internal::par_list(const AcceptanceListCardInfor
   return *msg->par_list_;
 }
 void AcceptanceListCardInformation::clear_pan_list() {
-  if (GetArena() == nullptr && pan_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && pan_list_ != nullptr) {
     delete pan_list_;
   }
   pan_list_ = nullptr;
 }
 void AcceptanceListCardInformation::clear_par_list() {
-  if (GetArena() == nullptr && par_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && par_list_ != nullptr) {
     delete par_list_;
   }
   par_list_ = nullptr;
 }
-AcceptanceListCardInformation::AcceptanceListCardInformation(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+AcceptanceListCardInformation::AcceptanceListCardInformation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.AcceptanceListCardInformation)
 }
 AcceptanceListCardInformation::AcceptanceListCardInformation(const AcceptanceListCardInformation& from)
@@ -1096,20 +1080,21 @@ AcceptanceListCardInformation::AcceptanceListCardInformation(const AcceptanceLis
 }
 
 void AcceptanceListCardInformation::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto.base);
-  ::memset(&pan_list_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&action_) -
-      reinterpret_cast<char*>(&pan_list_)) + sizeof(action_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&pan_list_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&action_) -
+    reinterpret_cast<char*>(&pan_list_)) + sizeof(action_));
 }
 
 AcceptanceListCardInformation::~AcceptanceListCardInformation() {
   // @@protoc_insertion_point(destructor:axis.transactions.AcceptanceListCardInformation)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void AcceptanceListCardInformation::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void AcceptanceListCardInformation::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete pan_list_;
   if (this != internal_default_instance()) delete par_list_;
 }
@@ -1123,11 +1108,6 @@ void AcceptanceListCardInformation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::A
 void AcceptanceListCardInformation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AcceptanceListCardInformation& AcceptanceListCardInformation::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AcceptanceListCardInformation_acceptance_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AcceptanceListCardInformation::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.AcceptanceListCardInformation)
@@ -1135,11 +1115,11 @@ void AcceptanceListCardInformation::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && pan_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && pan_list_ != nullptr) {
     delete pan_list_;
   }
   pan_list_ = nullptr;
-  if (GetArena() == nullptr && par_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && par_list_ != nullptr) {
     delete par_list_;
   }
   par_list_ = nullptr;
@@ -1149,25 +1129,25 @@ void AcceptanceListCardInformation::Clear() {
 
 const char* AcceptanceListCardInformation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .axis.transactions.PrimaryAccountNumberWhiteList pan_list = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pan_list(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .axis.transactions.PrimaryAccountReferenceWhiteList par_list = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_par_list(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .axis.transactions.CardAction action = 3;
       case 3:
@@ -1175,27 +1155,29 @@ const char* AcceptanceListCardInformation::_InternalParse(const char* ptr, ::PRO
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_action(static_cast<::axis::transactions::CardAction>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -1206,7 +1188,7 @@ failure:
   (void) cached_has_bits;
 
   // .axis.transactions.PrimaryAccountNumberWhiteList pan_list = 1;
-  if (this->has_pan_list()) {
+  if (this->_internal_has_pan_list()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1214,7 +1196,7 @@ failure:
   }
 
   // .axis.transactions.PrimaryAccountReferenceWhiteList par_list = 2;
-  if (this->has_par_list()) {
+  if (this->_internal_has_par_list()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1222,7 +1204,7 @@ failure:
   }
 
   // .axis.transactions.CardAction action = 3;
-  if (this->action() != 0) {
+  if (this->_internal_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       3, this->_internal_action(), target);
@@ -1245,72 +1227,57 @@ size_t AcceptanceListCardInformation::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // .axis.transactions.PrimaryAccountNumberWhiteList pan_list = 1;
-  if (this->has_pan_list()) {
+  if (this->_internal_has_pan_list()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pan_list_);
   }
 
   // .axis.transactions.PrimaryAccountReferenceWhiteList par_list = 2;
-  if (this->has_par_list()) {
+  if (this->_internal_has_par_list()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *par_list_);
   }
 
   // .axis.transactions.CardAction action = 3;
-  if (this->action() != 0) {
+  if (this->_internal_action() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_action());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void AcceptanceListCardInformation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.AcceptanceListCardInformation)
-  GOOGLE_DCHECK_NE(&from, this);
-  const AcceptanceListCardInformation* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AcceptanceListCardInformation>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.AcceptanceListCardInformation)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.AcceptanceListCardInformation)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AcceptanceListCardInformation::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AcceptanceListCardInformation::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AcceptanceListCardInformation::GetClassData() const { return &_class_data_; }
+
+void AcceptanceListCardInformation::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<AcceptanceListCardInformation *>(to)->MergeFrom(
+      static_cast<const AcceptanceListCardInformation &>(from));
 }
+
 
 void AcceptanceListCardInformation::MergeFrom(const AcceptanceListCardInformation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.AcceptanceListCardInformation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_pan_list()) {
+  if (from._internal_has_pan_list()) {
     _internal_mutable_pan_list()->::axis::transactions::PrimaryAccountNumberWhiteList::MergeFrom(from._internal_pan_list());
   }
-  if (from.has_par_list()) {
+  if (from._internal_has_par_list()) {
     _internal_mutable_par_list()->::axis::transactions::PrimaryAccountReferenceWhiteList::MergeFrom(from._internal_par_list());
   }
-  if (from.action() != 0) {
+  if (from._internal_action() != 0) {
     _internal_set_action(from._internal_action());
   }
-}
-
-void AcceptanceListCardInformation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.AcceptanceListCardInformation)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AcceptanceListCardInformation::CopyFrom(const AcceptanceListCardInformation& from) {
@@ -1326,7 +1293,7 @@ bool AcceptanceListCardInformation::IsInitialized() const {
 
 void AcceptanceListCardInformation::InternalSwap(AcceptanceListCardInformation* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AcceptanceListCardInformation, action_)
       + sizeof(AcceptanceListCardInformation::action_)
@@ -1336,9 +1303,10 @@ void AcceptanceListCardInformation::InternalSwap(AcceptanceListCardInformation* 
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptanceListCardInformation::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_acceptance_5flist_2eproto_getter, &descriptor_table_acceptance_5flist_2eproto_once,
+      file_level_metadata_acceptance_5flist_2eproto[2]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transactions

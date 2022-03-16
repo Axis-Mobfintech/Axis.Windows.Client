@@ -28,28 +28,28 @@ static const char* DeviceParametersService_method_names[] = {
 
 std::unique_ptr< DeviceParametersService::Stub> DeviceParametersService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< DeviceParametersService::Stub> stub(new DeviceParametersService::Stub(channel));
+  std::unique_ptr< DeviceParametersService::Stub> stub(new DeviceParametersService::Stub(channel, options));
   return stub;
 }
 
-DeviceParametersService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_GetDeviceParameters_(DeviceParametersService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+DeviceParametersService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_GetDeviceParameters_(DeviceParametersService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status DeviceParametersService::Stub::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::axis::transactions::ParametersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetDeviceParameters_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetDeviceParameters_, context, request, response);
 }
 
-void DeviceParametersService::Stub::experimental_async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetDeviceParameters_, context, request, response, std::move(f));
+void DeviceParametersService::Stub::async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDeviceParameters_, context, request, response, std::move(f));
 }
 
-void DeviceParametersService::Stub::experimental_async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetDeviceParameters_, context, request, response, reactor);
+void DeviceParametersService::Stub::async::GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDeviceParameters_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* DeviceParametersService::Stub::PrepareAsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::ParametersResponse>::Create(channel_.get(), cq, rpcmethod_GetDeviceParameters_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::axis::transactions::ParametersResponse, ::axis::transactions::ParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetDeviceParameters_, context, request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* DeviceParametersService::Stub::AsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
@@ -63,7 +63,7 @@ DeviceParametersService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DeviceParametersService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< DeviceParametersService::Service, ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse>(
+      new ::grpc::internal::RpcMethodHandler< DeviceParametersService::Service, ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](DeviceParametersService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::axis::transactions::ParametersRequest* req,

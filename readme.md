@@ -54,7 +54,9 @@ Para mais informações, consultar:
 
 #**Geração automática dos fontes em C++**
 Para realizar a compilação dos arquivos *.protoc, dando origem aos fontes em C++:
-   - Copiar a última versão dos arquivos *.proto, recebidos da AXIS, para a pasta "gRPC_protos";     
+   - Copiar a última versão dos arquivos *.proto, recebidos da AXIS, para a pasta "gRPC_protos",
+     a estrutura de diretórios mostrada do projeto deve ser preservada, com alguns arquivos
+     .proto dentro da pasta "Protos" abaixo de "gRPC_protos";
    - Executar o "build_protos.bat".
 
 

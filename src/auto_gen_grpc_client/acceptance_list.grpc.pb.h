@@ -7,7 +7,6 @@
 #include "acceptance_list.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -44,30 +43,22 @@ class AcceptanceListService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::AcceptanceListResponse>> PrepareAsyncGetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::AcceptanceListResponse>>(PrepareAsyncGetAcceptanceListRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::AcceptanceListResponse>* AsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::AcceptanceListResponse>* PrepareAsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::axis::transactions::AcceptanceListResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>> AsyncGetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>>(AsyncGetAcceptanceListRaw(context, request, cq));
@@ -75,26 +66,22 @@ class AcceptanceListService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>> PrepareAsyncGetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>>(PrepareAsyncGetAcceptanceListRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetAcceptanceList(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>* AsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::axis::transactions::AcceptanceListResponse>* PrepareAsyncGetAcceptanceListRaw(::grpc::ClientContext* context, const ::axis::transactions::AcceptanceListRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetAcceptanceList_;
@@ -129,36 +116,22 @@ class AcceptanceListService final {
   };
   typedef WithAsyncMethod_GetAcceptanceList<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetAcceptanceList : public BaseClass {
+  class WithCallbackMethod_GetAcceptanceList : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetAcceptanceList() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_GetAcceptanceList() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::AcceptanceListRequest, ::axis::transactions::AcceptanceListResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response) { return this->GetAcceptanceList(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::axis::transactions::AcceptanceListRequest* request, ::axis::transactions::AcceptanceListResponse* response) { return this->GetAcceptanceList(context, request, response); }));}
     void SetMessageAllocatorFor_GetAcceptanceList(
-        ::grpc::experimental::MessageAllocator< ::axis::transactions::AcceptanceListRequest, ::axis::transactions::AcceptanceListResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::axis::transactions::AcceptanceListRequest, ::axis::transactions::AcceptanceListResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::AcceptanceListRequest, ::axis::transactions::AcceptanceListResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetAcceptanceList() override {
+    ~WithCallbackMethod_GetAcceptanceList() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -166,20 +139,11 @@ class AcceptanceListService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetAcceptanceList(
-      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::AcceptanceListRequest* /*request*/, ::axis::transactions::AcceptanceListResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetAcceptanceList(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::AcceptanceListRequest* /*request*/, ::axis::transactions::AcceptanceListResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::AcceptanceListRequest* /*request*/, ::axis::transactions::AcceptanceListResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_GetAcceptanceList<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_GetAcceptanceList<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_GetAcceptanceList<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetAcceptanceList : public BaseClass {
    private:
@@ -218,27 +182,17 @@ class AcceptanceListService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetAcceptanceList : public BaseClass {
+  class WithRawCallbackMethod_GetAcceptanceList : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetAcceptanceList() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_GetAcceptanceList() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAcceptanceList(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAcceptanceList(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetAcceptanceList() override {
+    ~WithRawCallbackMethod_GetAcceptanceList() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -246,14 +200,8 @@ class AcceptanceListService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetAcceptanceList(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetAcceptanceList(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetAcceptanceList : public BaseClass {
