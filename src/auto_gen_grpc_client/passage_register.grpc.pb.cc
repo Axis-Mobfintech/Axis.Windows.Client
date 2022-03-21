@@ -28,28 +28,28 @@ static const char* RegisterPassageService_method_names[] = {
 
 std::unique_ptr< RegisterPassageService::Stub> RegisterPassageService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< RegisterPassageService::Stub> stub(new RegisterPassageService::Stub(channel));
+  std::unique_ptr< RegisterPassageService::Stub> stub(new RegisterPassageService::Stub(channel, options));
   return stub;
 }
 
-RegisterPassageService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_MakeTransaction_(RegisterPassageService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+RegisterPassageService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_MakeTransaction_(RegisterPassageService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RegisterPassageService::Stub::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::axis::transactions::RegisterPassageResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_MakeTransaction_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MakeTransaction_, context, request, response);
 }
 
-void RegisterPassageService::Stub::experimental_async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MakeTransaction_, context, request, response, std::move(f));
+void RegisterPassageService::Stub::async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MakeTransaction_, context, request, response, std::move(f));
 }
 
-void RegisterPassageService::Stub::experimental_async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MakeTransaction_, context, request, response, reactor);
+void RegisterPassageService::Stub::async::MakeTransaction(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest* request, ::axis::transactions::RegisterPassageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MakeTransaction_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* RegisterPassageService::Stub::PrepareAsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::RegisterPassageResponse>::Create(channel_.get(), cq, rpcmethod_MakeTransaction_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::axis::transactions::RegisterPassageResponse, ::axis::transactions::RegisterPassageRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MakeTransaction_, context, request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::RegisterPassageResponse>* RegisterPassageService::Stub::AsyncMakeTransactionRaw(::grpc::ClientContext* context, const ::axis::transactions::RegisterPassageRequest& request, ::grpc::CompletionQueue* cq) {
@@ -63,7 +63,7 @@ RegisterPassageService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RegisterPassageService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< RegisterPassageService::Service, ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse>(
+      new ::grpc::internal::RpcMethodHandler< RegisterPassageService::Service, ::axis::transactions::RegisterPassageRequest, ::axis::transactions::RegisterPassageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](RegisterPassageService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::axis::transactions::RegisterPassageRequest* req,

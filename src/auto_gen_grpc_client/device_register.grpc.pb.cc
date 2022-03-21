@@ -28,28 +28,28 @@ static const char* DeviceRegisterService_method_names[] = {
 
 std::unique_ptr< DeviceRegisterService::Stub> DeviceRegisterService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< DeviceRegisterService::Stub> stub(new DeviceRegisterService::Stub(channel));
+  std::unique_ptr< DeviceRegisterService::Stub> stub(new DeviceRegisterService::Stub(channel, options));
   return stub;
 }
 
-DeviceRegisterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_RegisterDevice_(DeviceRegisterService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+DeviceRegisterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_RegisterDevice_(DeviceRegisterService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status DeviceRegisterService::Stub::RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::axis::transactions::DeviceRegisterResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RegisterDevice_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RegisterDevice_, context, request, response);
 }
 
-void DeviceRegisterService::Stub::experimental_async::RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterDevice_, context, request, response, std::move(f));
+void DeviceRegisterService::Stub::async::RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RegisterDevice_, context, request, response, std::move(f));
 }
 
-void DeviceRegisterService::Stub::experimental_async::RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterDevice_, context, request, response, reactor);
+void DeviceRegisterService::Stub::async::RegisterDevice(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest* request, ::axis::transactions::DeviceRegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RegisterDevice_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>* DeviceRegisterService::Stub::PrepareAsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::DeviceRegisterResponse>::Create(channel_.get(), cq, rpcmethod_RegisterDevice_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::axis::transactions::DeviceRegisterResponse, ::axis::transactions::DeviceRegisterRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RegisterDevice_, context, request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::DeviceRegisterResponse>* DeviceRegisterService::Stub::AsyncRegisterDeviceRaw(::grpc::ClientContext* context, const ::axis::transactions::DeviceRegisterRequest& request, ::grpc::CompletionQueue* cq) {
@@ -63,7 +63,7 @@ DeviceRegisterService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DeviceRegisterService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< DeviceRegisterService::Service, ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse>(
+      new ::grpc::internal::RpcMethodHandler< DeviceRegisterService::Service, ::axis::transactions::DeviceRegisterRequest, ::axis::transactions::DeviceRegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](DeviceRegisterService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::axis::transactions::DeviceRegisterRequest* req,

@@ -28,28 +28,28 @@ static const char* RecoverDebitService_method_names[] = {
 
 std::unique_ptr< RecoverDebitService::Stub> RecoverDebitService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< RecoverDebitService::Stub> stub(new RecoverDebitService::Stub(channel));
+  std::unique_ptr< RecoverDebitService::Stub> stub(new RecoverDebitService::Stub(channel, options));
   return stub;
 }
 
-RecoverDebitService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_Recover_(RecoverDebitService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+RecoverDebitService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_Recover_(RecoverDebitService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RecoverDebitService::Stub::Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::axis::transactions::DebitRecoveryResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Recover_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Recover_, context, request, response);
 }
 
-void RecoverDebitService::Stub::experimental_async::Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Recover_, context, request, response, std::move(f));
+void RecoverDebitService::Stub::async::Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Recover_, context, request, response, std::move(f));
 }
 
-void RecoverDebitService::Stub::experimental_async::Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Recover_, context, request, response, reactor);
+void RecoverDebitService::Stub::async::Recover(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest* request, ::axis::transactions::DebitRecoveryResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Recover_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>* RecoverDebitService::Stub::PrepareAsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::DebitRecoveryResponse>::Create(channel_.get(), cq, rpcmethod_Recover_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::axis::transactions::DebitRecoveryResponse, ::axis::transactions::DebitRecoveryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Recover_, context, request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::DebitRecoveryResponse>* RecoverDebitService::Stub::AsyncRecoverRaw(::grpc::ClientContext* context, const ::axis::transactions::DebitRecoveryRequest& request, ::grpc::CompletionQueue* cq) {
@@ -63,7 +63,7 @@ RecoverDebitService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RecoverDebitService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< RecoverDebitService::Service, ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse>(
+      new ::grpc::internal::RpcMethodHandler< RecoverDebitService::Service, ::axis::transactions::DebitRecoveryRequest, ::axis::transactions::DebitRecoveryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](RecoverDebitService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::axis::transactions::DebitRecoveryRequest* req,

@@ -14,30 +14,28 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace axis {
 namespace transactions {
-class PrimaryAccountNumberBlackListDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrimaryAccountNumberBlackList> _instance;
-} _PrimaryAccountNumberBlackList_default_instance_;
+constexpr PrimaryAccountNumberBlackList::PrimaryAccountNumberBlackList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : initial_pan_crypt_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , register_date_(nullptr)
+  , index_(0)
+  , reason_(0)
+  , pan_sequence_number_(0){}
+struct PrimaryAccountNumberBlackListDefaultTypeInternal {
+  constexpr PrimaryAccountNumberBlackListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PrimaryAccountNumberBlackListDefaultTypeInternal() {}
+  union {
+    PrimaryAccountNumberBlackList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PrimaryAccountNumberBlackListDefaultTypeInternal _PrimaryAccountNumberBlackList_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_PrimaryAccountNumberBlackList_default_instance_;
-    new (ptr) ::axis::transactions::PrimaryAccountNumberBlackList();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::PrimaryAccountNumberBlackList::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto}, {
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_Protos_2fpan_5frestriction_5flist_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_Protos_2fpan_5frestriction_5flist_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_Protos_2fpan_5frestriction_5flist_2eproto = nullptr;
@@ -48,6 +46,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2fpan_5frestriction_5fl
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountNumberBlackList, index_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountNumberBlackList, reason_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountNumberBlackList, register_date_),
@@ -55,7 +54,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2fpan_5frestriction_5fl
   PROTOBUF_FIELD_OFFSET(::axis::transactions::PrimaryAccountNumberBlackList, pan_sequence_number_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::PrimaryAccountNumberBlackList)},
+  { 0, -1, -1, sizeof(::axis::transactions::PrimaryAccountNumberBlackList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -76,47 +75,46 @@ const char descriptor_table_protodef_Protos_2fpan_5frestriction_5flist_2eproto[]
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_sccs[1] = {
-  &scc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto = {
-  false, false, descriptor_table_protodef_Protos_2fpan_5frestriction_5flist_2eproto, "Protos/pan_restriction_list.proto", 350,
-  &descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_once, descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_sccs, descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_deps, 1, 1,
+  false, false, 350, descriptor_table_protodef_Protos_2fpan_5frestriction_5flist_2eproto, "Protos/pan_restriction_list.proto", 
+  &descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_once, descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_Protos_2fpan_5frestriction_5flist_2eproto::offsets,
-  file_level_metadata_Protos_2fpan_5frestriction_5flist_2eproto, 1, file_level_enum_descriptors_Protos_2fpan_5frestriction_5flist_2eproto, file_level_service_descriptors_Protos_2fpan_5frestriction_5flist_2eproto,
+  file_level_metadata_Protos_2fpan_5frestriction_5flist_2eproto, file_level_enum_descriptors_Protos_2fpan_5frestriction_5flist_2eproto, file_level_service_descriptors_Protos_2fpan_5frestriction_5flist_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_getter() {
+  return &descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_Protos_2fpan_5frestriction_5flist_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_Protos_2fpan_5frestriction_5flist_2eproto(&descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto);
 namespace axis {
 namespace transactions {
 
 // ===================================================================
 
-void PrimaryAccountNumberBlackList::InitAsDefaultInstance() {
-  ::axis::transactions::_PrimaryAccountNumberBlackList_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
-      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
-}
 class PrimaryAccountNumberBlackList::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const PrimaryAccountNumberBlackList* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const PrimaryAccountNumberBlackList* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 PrimaryAccountNumberBlackList::_Internal::register_date(const PrimaryAccountNumberBlackList* msg) {
   return *msg->register_date_;
 }
 void PrimaryAccountNumberBlackList::clear_register_date() {
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-PrimaryAccountNumberBlackList::PrimaryAccountNumberBlackList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+PrimaryAccountNumberBlackList::PrimaryAccountNumberBlackList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.PrimaryAccountNumberBlackList)
 }
 PrimaryAccountNumberBlackList::PrimaryAccountNumberBlackList(const PrimaryAccountNumberBlackList& from)
@@ -124,11 +122,11 @@ PrimaryAccountNumberBlackList::PrimaryAccountNumberBlackList(const PrimaryAccoun
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   initial_pan_crypt_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_initial_pan_crypt().empty()) {
-    initial_pan_crypt_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_initial_pan_crypt(),
-      GetArena());
+    initial_pan_crypt_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_initial_pan_crypt(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_register_date()) {
-    register_date_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
   } else {
     register_date_ = nullptr;
   }
@@ -139,21 +137,22 @@ PrimaryAccountNumberBlackList::PrimaryAccountNumberBlackList(const PrimaryAccoun
 }
 
 void PrimaryAccountNumberBlackList::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto.base);
-  initial_pan_crypt_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&register_date_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&pan_sequence_number_) -
-      reinterpret_cast<char*>(&register_date_)) + sizeof(pan_sequence_number_));
+initial_pan_crypt_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&pan_sequence_number_) -
+    reinterpret_cast<char*>(&register_date_)) + sizeof(pan_sequence_number_));
 }
 
 PrimaryAccountNumberBlackList::~PrimaryAccountNumberBlackList() {
   // @@protoc_insertion_point(destructor:axis.transactions.PrimaryAccountNumberBlackList)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PrimaryAccountNumberBlackList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void PrimaryAccountNumberBlackList::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   initial_pan_crypt_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete register_date_;
 }
@@ -167,11 +166,6 @@ void PrimaryAccountNumberBlackList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::A
 void PrimaryAccountNumberBlackList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrimaryAccountNumberBlackList& PrimaryAccountNumberBlackList::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PrimaryAccountNumberBlackList::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.PrimaryAccountNumberBlackList)
@@ -179,8 +173,8 @@ void PrimaryAccountNumberBlackList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  initial_pan_crypt_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  initial_pan_crypt_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
@@ -192,32 +186,33 @@ void PrimaryAccountNumberBlackList::Clear() {
 
 const char* PrimaryAccountNumberBlackList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 reason = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           reason_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp register_date = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes initial_pan_crypt = 4;
       case 4:
@@ -225,34 +220,37 @@ const char* PrimaryAccountNumberBlackList::_InternalParse(const char* ptr, ::PRO
           auto str = _internal_mutable_initial_pan_crypt();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 pan_sequence_number = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           pan_sequence_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -263,19 +261,19 @@ failure:
   (void) cached_has_bits;
 
   // int32 index = 1;
-  if (this->index() != 0) {
+  if (this->_internal_index() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_index(), target);
   }
 
   // int32 reason = 2;
-  if (this->reason() != 0) {
+  if (this->_internal_reason() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_reason(), target);
   }
 
   // .google.protobuf.Timestamp register_date = 3;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -283,13 +281,13 @@ failure:
   }
 
   // bytes initial_pan_crypt = 4;
-  if (this->initial_pan_crypt().size() > 0) {
+  if (!this->_internal_initial_pan_crypt().empty()) {
     target = stream->WriteBytesMaybeAliased(
         4, this->_internal_initial_pan_crypt(), target);
   }
 
   // int32 pan_sequence_number = 5;
-  if (this->pan_sequence_number() != 0) {
+  if (this->_internal_pan_sequence_number() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_pan_sequence_number(), target);
   }
@@ -311,93 +309,72 @@ size_t PrimaryAccountNumberBlackList::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes initial_pan_crypt = 4;
-  if (this->initial_pan_crypt().size() > 0) {
+  if (!this->_internal_initial_pan_crypt().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_initial_pan_crypt());
   }
 
   // .google.protobuf.Timestamp register_date = 3;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *register_date_);
   }
 
   // int32 index = 1;
-  if (this->index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_index());
+  if (this->_internal_index() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_index());
   }
 
   // int32 reason = 2;
-  if (this->reason() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_reason());
+  if (this->_internal_reason() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_reason());
   }
 
   // int32 pan_sequence_number = 5;
-  if (this->pan_sequence_number() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_pan_sequence_number());
+  if (this->_internal_pan_sequence_number() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_pan_sequence_number());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void PrimaryAccountNumberBlackList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.PrimaryAccountNumberBlackList)
-  GOOGLE_DCHECK_NE(&from, this);
-  const PrimaryAccountNumberBlackList* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrimaryAccountNumberBlackList>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.PrimaryAccountNumberBlackList)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.PrimaryAccountNumberBlackList)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PrimaryAccountNumberBlackList::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    PrimaryAccountNumberBlackList::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PrimaryAccountNumberBlackList::GetClassData() const { return &_class_data_; }
+
+void PrimaryAccountNumberBlackList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<PrimaryAccountNumberBlackList *>(to)->MergeFrom(
+      static_cast<const PrimaryAccountNumberBlackList &>(from));
 }
+
 
 void PrimaryAccountNumberBlackList::MergeFrom(const PrimaryAccountNumberBlackList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.PrimaryAccountNumberBlackList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.initial_pan_crypt().size() > 0) {
+  if (!from._internal_initial_pan_crypt().empty()) {
     _internal_set_initial_pan_crypt(from._internal_initial_pan_crypt());
   }
-  if (from.has_register_date()) {
-    _internal_mutable_register_date()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_register_date()) {
+    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
   }
-  if (from.index() != 0) {
+  if (from._internal_index() != 0) {
     _internal_set_index(from._internal_index());
   }
-  if (from.reason() != 0) {
+  if (from._internal_reason() != 0) {
     _internal_set_reason(from._internal_reason());
   }
-  if (from.pan_sequence_number() != 0) {
+  if (from._internal_pan_sequence_number() != 0) {
     _internal_set_pan_sequence_number(from._internal_pan_sequence_number());
   }
-}
-
-void PrimaryAccountNumberBlackList::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.PrimaryAccountNumberBlackList)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PrimaryAccountNumberBlackList::CopyFrom(const PrimaryAccountNumberBlackList& from) {
@@ -413,8 +390,14 @@ bool PrimaryAccountNumberBlackList::IsInitialized() const {
 
 void PrimaryAccountNumberBlackList::InternalSwap(PrimaryAccountNumberBlackList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  initial_pan_crypt_.Swap(&other->initial_pan_crypt_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &initial_pan_crypt_, lhs_arena,
+      &other->initial_pan_crypt_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PrimaryAccountNumberBlackList, pan_sequence_number_)
       + sizeof(PrimaryAccountNumberBlackList::pan_sequence_number_)
@@ -424,9 +407,10 @@ void PrimaryAccountNumberBlackList::InternalSwap(PrimaryAccountNumberBlackList* 
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PrimaryAccountNumberBlackList::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_getter, &descriptor_table_Protos_2fpan_5frestriction_5flist_2eproto_once,
+      file_level_metadata_Protos_2fpan_5frestriction_5flist_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transactions

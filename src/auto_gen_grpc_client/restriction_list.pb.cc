@@ -14,73 +14,63 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_Protos_2fpan_5frestriction_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_Protos_2fpar_5frestriction_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrimaryAccountReferenceBlackList_Protos_2fpar_5frestriction_5flist_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_restriction_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_RestrictionListCardInformation_restriction_5flist_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace axis {
 namespace transactions {
-class RestrictionListRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RestrictionListRequest> _instance;
-} _RestrictionListRequest_default_instance_;
-class RestrictionListResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RestrictionListResponse> _instance;
-} _RestrictionListResponse_default_instance_;
-class RestrictionListCardInformationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RestrictionListCardInformation> _instance;
-} _RestrictionListCardInformation_default_instance_;
+constexpr RestrictionListRequest::RestrictionListRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : device_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , operator_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , reader_serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , device_serial_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ksn_data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , line_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , vehicle_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , register_date_(nullptr)
+  , register_code_(0)
+  , restriction_list_version_(0){}
+struct RestrictionListRequestDefaultTypeInternal {
+  constexpr RestrictionListRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RestrictionListRequestDefaultTypeInternal() {}
+  union {
+    RestrictionListRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RestrictionListRequestDefaultTypeInternal _RestrictionListRequest_default_instance_;
+constexpr RestrictionListResponse::RestrictionListResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : card_information_()
+  , register_date_(nullptr)
+  , response_code_(0)
+  , restriction_list_version_(0){}
+struct RestrictionListResponseDefaultTypeInternal {
+  constexpr RestrictionListResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RestrictionListResponseDefaultTypeInternal() {}
+  union {
+    RestrictionListResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RestrictionListResponseDefaultTypeInternal _RestrictionListResponse_default_instance_;
+constexpr RestrictionListCardInformation::RestrictionListCardInformation(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : pan_list_(nullptr)
+  , par_list_(nullptr)
+  , action_(0)
+{}
+struct RestrictionListCardInformationDefaultTypeInternal {
+  constexpr RestrictionListCardInformationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RestrictionListCardInformationDefaultTypeInternal() {}
+  union {
+    RestrictionListCardInformation _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RestrictionListCardInformationDefaultTypeInternal _RestrictionListCardInformation_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_RestrictionListCardInformation_restriction_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_RestrictionListCardInformation_default_instance_;
-    new (ptr) ::axis::transactions::RestrictionListCardInformation();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::RestrictionListCardInformation::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_RestrictionListCardInformation_restriction_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_RestrictionListCardInformation_restriction_5flist_2eproto}, {
-      &scc_info_PrimaryAccountNumberBlackList_Protos_2fpan_5frestriction_5flist_2eproto.base,
-      &scc_info_PrimaryAccountReferenceBlackList_Protos_2fpar_5frestriction_5flist_2eproto.base,}};
-
-static void InitDefaultsscc_info_RestrictionListRequest_restriction_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_RestrictionListRequest_default_instance_;
-    new (ptr) ::axis::transactions::RestrictionListRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::RestrictionListRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RestrictionListRequest_restriction_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_RestrictionListRequest_restriction_5flist_2eproto}, {
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
-
-static void InitDefaultsscc_info_RestrictionListResponse_restriction_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_RestrictionListResponse_default_instance_;
-    new (ptr) ::axis::transactions::RestrictionListResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::RestrictionListResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_RestrictionListResponse_restriction_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_RestrictionListResponse_restriction_5flist_2eproto}, {
-      &scc_info_RestrictionListCardInformation_restriction_5flist_2eproto.base,
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_restriction_5flist_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_restriction_5flist_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_restriction_5flist_2eproto = nullptr;
@@ -91,6 +81,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_restriction_5flist_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListRequest, device_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListRequest, operator_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListRequest, reader_serial_number_),
@@ -106,6 +97,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_restriction_5flist_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListResponse, response_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListResponse, restriction_list_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListResponse, card_information_),
@@ -115,14 +107,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_restriction_5flist_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListCardInformation, pan_list_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListCardInformation, par_list_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RestrictionListCardInformation, action_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::RestrictionListRequest)},
-  { 15, -1, sizeof(::axis::transactions::RestrictionListResponse)},
-  { 24, -1, sizeof(::axis::transactions::RestrictionListCardInformation)},
+  { 0, -1, -1, sizeof(::axis::transactions::RestrictionListRequest)},
+  { 16, -1, -1, sizeof(::axis::transactions::RestrictionListResponse)},
+  { 26, -1, -1, sizeof(::axis::transactions::RestrictionListCardInformation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -168,49 +161,46 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_Protos_2fpar_5frestriction_5flist_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_restriction_5flist_2eproto_sccs[3] = {
-  &scc_info_RestrictionListCardInformation_restriction_5flist_2eproto.base,
-  &scc_info_RestrictionListRequest_restriction_5flist_2eproto.base,
-  &scc_info_RestrictionListResponse_restriction_5flist_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_restriction_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_restriction_5flist_2eproto = {
-  false, false, descriptor_table_protodef_restriction_5flist_2eproto, "restriction_list.proto", 1123,
-  &descriptor_table_restriction_5flist_2eproto_once, descriptor_table_restriction_5flist_2eproto_sccs, descriptor_table_restriction_5flist_2eproto_deps, 3, 4,
+  false, false, 1123, descriptor_table_protodef_restriction_5flist_2eproto, "restriction_list.proto", 
+  &descriptor_table_restriction_5flist_2eproto_once, descriptor_table_restriction_5flist_2eproto_deps, 4, 3,
   schemas, file_default_instances, TableStruct_restriction_5flist_2eproto::offsets,
-  file_level_metadata_restriction_5flist_2eproto, 3, file_level_enum_descriptors_restriction_5flist_2eproto, file_level_service_descriptors_restriction_5flist_2eproto,
+  file_level_metadata_restriction_5flist_2eproto, file_level_enum_descriptors_restriction_5flist_2eproto, file_level_service_descriptors_restriction_5flist_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_restriction_5flist_2eproto_getter() {
+  return &descriptor_table_restriction_5flist_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_restriction_5flist_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_restriction_5flist_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_restriction_5flist_2eproto(&descriptor_table_restriction_5flist_2eproto);
 namespace axis {
 namespace transactions {
 
 // ===================================================================
 
-void RestrictionListRequest::InitAsDefaultInstance() {
-  ::axis::transactions::_RestrictionListRequest_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
-      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
-}
 class RestrictionListRequest::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const RestrictionListRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const RestrictionListRequest* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 RestrictionListRequest::_Internal::register_date(const RestrictionListRequest* msg) {
   return *msg->register_date_;
 }
 void RestrictionListRequest::clear_register_date() {
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-RestrictionListRequest::RestrictionListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+RestrictionListRequest::RestrictionListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.RestrictionListRequest)
 }
 RestrictionListRequest::RestrictionListRequest(const RestrictionListRequest& from)
@@ -218,41 +208,41 @@ RestrictionListRequest::RestrictionListRequest(const RestrictionListRequest& fro
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_device_id().empty()) {
-    device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_device_id(),
-      GetArena());
+    device_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_id(), 
+      GetArenaForAllocation());
   }
   operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_operator_id().empty()) {
-    operator_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_operator_id(),
-      GetArena());
+    operator_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_operator_id(), 
+      GetArenaForAllocation());
   }
   reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_reader_serial_number().empty()) {
-    reader_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_reader_serial_number(),
-      GetArena());
+    reader_serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reader_serial_number(), 
+      GetArenaForAllocation());
   }
   device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_device_serial_number().empty()) {
-    device_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_device_serial_number(),
-      GetArena());
+    device_serial_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_serial_number(), 
+      GetArenaForAllocation());
   }
   ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ksn_data().empty()) {
-    ksn_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_ksn_data(),
-      GetArena());
+    ksn_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ksn_data(), 
+      GetArenaForAllocation());
   }
   line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_line_id().empty()) {
-    line_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_line_id(),
-      GetArena());
+    line_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_line_id(), 
+      GetArenaForAllocation());
   }
   vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_vehicle_id().empty()) {
-    vehicle_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_vehicle_id(),
-      GetArena());
+    vehicle_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vehicle_id(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_register_date()) {
-    register_date_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
   } else {
     register_date_ = nullptr;
   }
@@ -263,27 +253,28 @@ RestrictionListRequest::RestrictionListRequest(const RestrictionListRequest& fro
 }
 
 void RestrictionListRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RestrictionListRequest_restriction_5flist_2eproto.base);
-  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&register_date_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&restriction_list_version_) -
-      reinterpret_cast<char*>(&register_date_)) + sizeof(restriction_list_version_));
+device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+operator_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+reader_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+device_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&restriction_list_version_) -
+    reinterpret_cast<char*>(&register_date_)) + sizeof(restriction_list_version_));
 }
 
 RestrictionListRequest::~RestrictionListRequest() {
   // @@protoc_insertion_point(destructor:axis.transactions.RestrictionListRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void RestrictionListRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void RestrictionListRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operator_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   reader_serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -303,11 +294,6 @@ void RestrictionListRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) 
 void RestrictionListRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RestrictionListRequest& RestrictionListRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RestrictionListRequest_restriction_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RestrictionListRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.RestrictionListRequest)
@@ -315,14 +301,14 @@ void RestrictionListRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  operator_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  reader_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  device_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ksn_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  line_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  vehicle_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  device_id_.ClearToEmpty();
+  operator_id_.ClearToEmpty();
+  reader_serial_number_.ClearToEmpty();
+  device_serial_number_.ClearToEmpty();
+  ksn_data_.ClearToEmpty();
+  line_id_.ClearToEmpty();
+  vehicle_id_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
@@ -334,11 +320,9 @@ void RestrictionListRequest::Clear() {
 
 const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string device_id = 1;
       case 1:
@@ -347,7 +331,8 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RestrictionListRequest.device_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string operator_id = 2;
       case 2:
@@ -356,7 +341,8 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RestrictionListRequest.operator_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string reader_serial_number = 3;
       case 3:
@@ -365,7 +351,8 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RestrictionListRequest.reader_serial_number"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string device_serial_number = 4;
       case 4:
@@ -374,7 +361,8 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RestrictionListRequest.device_serial_number"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes ksn_data = 5;
       case 5:
@@ -382,14 +370,16 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           auto str = _internal_mutable_ksn_data();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 register_code = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           register_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string line_id = 7;
       case 7:
@@ -398,7 +388,8 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RestrictionListRequest.line_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string vehicle_id = 8;
       case 8:
@@ -407,41 +398,45 @@ const char* RestrictionListRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RestrictionListRequest.vehicle_id"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp register_date = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 restriction_list_version = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
           restriction_list_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -452,7 +447,7 @@ failure:
   (void) cached_has_bits;
 
   // string device_id = 1;
-  if (this->device_id().size() > 0) {
+  if (!this->_internal_device_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -462,7 +457,7 @@ failure:
   }
 
   // string operator_id = 2;
-  if (this->operator_id().size() > 0) {
+  if (!this->_internal_operator_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_operator_id().data(), static_cast<int>(this->_internal_operator_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -472,7 +467,7 @@ failure:
   }
 
   // string reader_serial_number = 3;
-  if (this->reader_serial_number().size() > 0) {
+  if (!this->_internal_reader_serial_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reader_serial_number().data(), static_cast<int>(this->_internal_reader_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -482,7 +477,7 @@ failure:
   }
 
   // string device_serial_number = 4;
-  if (this->device_serial_number().size() > 0) {
+  if (!this->_internal_device_serial_number().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_serial_number().data(), static_cast<int>(this->_internal_device_serial_number().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -492,19 +487,19 @@ failure:
   }
 
   // bytes ksn_data = 5;
-  if (this->ksn_data().size() > 0) {
+  if (!this->_internal_ksn_data().empty()) {
     target = stream->WriteBytesMaybeAliased(
         5, this->_internal_ksn_data(), target);
   }
 
   // int32 register_code = 6;
-  if (this->register_code() != 0) {
+  if (this->_internal_register_code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_register_code(), target);
   }
 
   // string line_id = 7;
-  if (this->line_id().size() > 0) {
+  if (!this->_internal_line_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_line_id().data(), static_cast<int>(this->_internal_line_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -514,7 +509,7 @@ failure:
   }
 
   // string vehicle_id = 8;
-  if (this->vehicle_id().size() > 0) {
+  if (!this->_internal_vehicle_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_vehicle_id().data(), static_cast<int>(this->_internal_vehicle_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -524,7 +519,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp register_date = 9;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -532,7 +527,7 @@ failure:
   }
 
   // int32 restriction_list_version = 10;
-  if (this->restriction_list_version() != 0) {
+  if (this->_internal_restriction_list_version() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(10, this->_internal_restriction_list_version(), target);
   }
@@ -554,143 +549,124 @@ size_t RestrictionListRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string device_id = 1;
-  if (this->device_id().size() > 0) {
+  if (!this->_internal_device_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_device_id());
   }
 
   // string operator_id = 2;
-  if (this->operator_id().size() > 0) {
+  if (!this->_internal_operator_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_operator_id());
   }
 
   // string reader_serial_number = 3;
-  if (this->reader_serial_number().size() > 0) {
+  if (!this->_internal_reader_serial_number().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_reader_serial_number());
   }
 
   // string device_serial_number = 4;
-  if (this->device_serial_number().size() > 0) {
+  if (!this->_internal_device_serial_number().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_device_serial_number());
   }
 
   // bytes ksn_data = 5;
-  if (this->ksn_data().size() > 0) {
+  if (!this->_internal_ksn_data().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_ksn_data());
   }
 
   // string line_id = 7;
-  if (this->line_id().size() > 0) {
+  if (!this->_internal_line_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_line_id());
   }
 
   // string vehicle_id = 8;
-  if (this->vehicle_id().size() > 0) {
+  if (!this->_internal_vehicle_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_vehicle_id());
   }
 
   // .google.protobuf.Timestamp register_date = 9;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *register_date_);
   }
 
   // int32 register_code = 6;
-  if (this->register_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_register_code());
+  if (this->_internal_register_code() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_register_code());
   }
 
   // int32 restriction_list_version = 10;
-  if (this->restriction_list_version() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_restriction_list_version());
+  if (this->_internal_restriction_list_version() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_restriction_list_version());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void RestrictionListRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.RestrictionListRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const RestrictionListRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RestrictionListRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.RestrictionListRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.RestrictionListRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RestrictionListRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RestrictionListRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RestrictionListRequest::GetClassData() const { return &_class_data_; }
+
+void RestrictionListRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RestrictionListRequest *>(to)->MergeFrom(
+      static_cast<const RestrictionListRequest &>(from));
 }
+
 
 void RestrictionListRequest::MergeFrom(const RestrictionListRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.RestrictionListRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.device_id().size() > 0) {
+  if (!from._internal_device_id().empty()) {
     _internal_set_device_id(from._internal_device_id());
   }
-  if (from.operator_id().size() > 0) {
+  if (!from._internal_operator_id().empty()) {
     _internal_set_operator_id(from._internal_operator_id());
   }
-  if (from.reader_serial_number().size() > 0) {
+  if (!from._internal_reader_serial_number().empty()) {
     _internal_set_reader_serial_number(from._internal_reader_serial_number());
   }
-  if (from.device_serial_number().size() > 0) {
+  if (!from._internal_device_serial_number().empty()) {
     _internal_set_device_serial_number(from._internal_device_serial_number());
   }
-  if (from.ksn_data().size() > 0) {
+  if (!from._internal_ksn_data().empty()) {
     _internal_set_ksn_data(from._internal_ksn_data());
   }
-  if (from.line_id().size() > 0) {
+  if (!from._internal_line_id().empty()) {
     _internal_set_line_id(from._internal_line_id());
   }
-  if (from.vehicle_id().size() > 0) {
+  if (!from._internal_vehicle_id().empty()) {
     _internal_set_vehicle_id(from._internal_vehicle_id());
   }
-  if (from.has_register_date()) {
-    _internal_mutable_register_date()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_register_date()) {
+    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
   }
-  if (from.register_code() != 0) {
+  if (from._internal_register_code() != 0) {
     _internal_set_register_code(from._internal_register_code());
   }
-  if (from.restriction_list_version() != 0) {
+  if (from._internal_restriction_list_version() != 0) {
     _internal_set_restriction_list_version(from._internal_restriction_list_version());
   }
-}
-
-void RestrictionListRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.RestrictionListRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RestrictionListRequest::CopyFrom(const RestrictionListRequest& from) {
@@ -706,14 +682,44 @@ bool RestrictionListRequest::IsInitialized() const {
 
 void RestrictionListRequest::InternalSwap(RestrictionListRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  device_id_.Swap(&other->device_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  operator_id_.Swap(&other->operator_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  reader_serial_number_.Swap(&other->reader_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  device_serial_number_.Swap(&other->device_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ksn_data_.Swap(&other->ksn_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  line_id_.Swap(&other->line_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  vehicle_id_.Swap(&other->vehicle_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &device_id_, lhs_arena,
+      &other->device_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &operator_id_, lhs_arena,
+      &other->operator_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &reader_serial_number_, lhs_arena,
+      &other->reader_serial_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &device_serial_number_, lhs_arena,
+      &other->device_serial_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ksn_data_, lhs_arena,
+      &other->ksn_data_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &line_id_, lhs_arena,
+      &other->line_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vehicle_id_, lhs_arena,
+      &other->vehicle_id_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RestrictionListRequest, restriction_list_version_)
       + sizeof(RestrictionListRequest::restriction_list_version_)
@@ -723,36 +729,36 @@ void RestrictionListRequest::InternalSwap(RestrictionListRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RestrictionListRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_restriction_5flist_2eproto_getter, &descriptor_table_restriction_5flist_2eproto_once,
+      file_level_metadata_restriction_5flist_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void RestrictionListResponse::InitAsDefaultInstance() {
-  ::axis::transactions::_RestrictionListResponse_default_instance_._instance.get_mutable()->register_date_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
-      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
-}
 class RestrictionListResponse::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const RestrictionListResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const RestrictionListResponse* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Timestamp&
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
 RestrictionListResponse::_Internal::register_date(const RestrictionListResponse* msg) {
   return *msg->register_date_;
 }
 void RestrictionListResponse::clear_register_date() {
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
 }
-RestrictionListResponse::RestrictionListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+RestrictionListResponse::RestrictionListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   card_information_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.RestrictionListResponse)
 }
 RestrictionListResponse::RestrictionListResponse(const RestrictionListResponse& from)
@@ -760,7 +766,7 @@ RestrictionListResponse::RestrictionListResponse(const RestrictionListResponse& 
       card_information_(from.card_information_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_register_date()) {
-    register_date_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
   } else {
     register_date_ = nullptr;
   }
@@ -771,20 +777,21 @@ RestrictionListResponse::RestrictionListResponse(const RestrictionListResponse& 
 }
 
 void RestrictionListResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RestrictionListResponse_restriction_5flist_2eproto.base);
-  ::memset(&register_date_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&restriction_list_version_) -
-      reinterpret_cast<char*>(&register_date_)) + sizeof(restriction_list_version_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&restriction_list_version_) -
+    reinterpret_cast<char*>(&register_date_)) + sizeof(restriction_list_version_));
 }
 
 RestrictionListResponse::~RestrictionListResponse() {
   // @@protoc_insertion_point(destructor:axis.transactions.RestrictionListResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void RestrictionListResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void RestrictionListResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete register_date_;
 }
 
@@ -797,11 +804,6 @@ void RestrictionListResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*)
 void RestrictionListResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RestrictionListResponse& RestrictionListResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RestrictionListResponse_restriction_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RestrictionListResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.RestrictionListResponse)
@@ -810,7 +812,7 @@ void RestrictionListResponse::Clear() {
   (void) cached_has_bits;
 
   card_information_.Clear();
-  if (GetArena() == nullptr && register_date_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
     delete register_date_;
   }
   register_date_ = nullptr;
@@ -822,25 +824,25 @@ void RestrictionListResponse::Clear() {
 
 const char* RestrictionListResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 response_code = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           response_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 restriction_list_version = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           restriction_list_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .axis.transactions.RestrictionListCardInformation card_information = 3;
       case 3:
@@ -852,34 +854,37 @@ const char* RestrictionListResponse::_InternalParse(const char* ptr, ::PROTOBUF_
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .google.protobuf.Timestamp register_date = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -890,13 +895,13 @@ failure:
   (void) cached_has_bits;
 
   // int32 response_code = 1;
-  if (this->response_code() != 0) {
+  if (this->_internal_response_code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_response_code(), target);
   }
 
   // int32 restriction_list_version = 2;
-  if (this->restriction_list_version() != 0) {
+  if (this->_internal_restriction_list_version() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_restriction_list_version(), target);
   }
@@ -910,7 +915,7 @@ failure:
   }
 
   // .google.protobuf.Timestamp register_date = 4;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -941,74 +946,55 @@ size_t RestrictionListResponse::ByteSizeLong() const {
   }
 
   // .google.protobuf.Timestamp register_date = 4;
-  if (this->has_register_date()) {
+  if (this->_internal_has_register_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *register_date_);
   }
 
   // int32 response_code = 1;
-  if (this->response_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_response_code());
+  if (this->_internal_response_code() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_response_code());
   }
 
   // int32 restriction_list_version = 2;
-  if (this->restriction_list_version() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_restriction_list_version());
+  if (this->_internal_restriction_list_version() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_restriction_list_version());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void RestrictionListResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.RestrictionListResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const RestrictionListResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RestrictionListResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.RestrictionListResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.RestrictionListResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RestrictionListResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RestrictionListResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RestrictionListResponse::GetClassData() const { return &_class_data_; }
+
+void RestrictionListResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RestrictionListResponse *>(to)->MergeFrom(
+      static_cast<const RestrictionListResponse &>(from));
 }
+
 
 void RestrictionListResponse::MergeFrom(const RestrictionListResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.RestrictionListResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   card_information_.MergeFrom(from.card_information_);
-  if (from.has_register_date()) {
-    _internal_mutable_register_date()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_register_date()) {
+    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
   }
-  if (from.response_code() != 0) {
+  if (from._internal_response_code() != 0) {
     _internal_set_response_code(from._internal_response_code());
   }
-  if (from.restriction_list_version() != 0) {
+  if (from._internal_restriction_list_version() != 0) {
     _internal_set_restriction_list_version(from._internal_restriction_list_version());
   }
-}
-
-void RestrictionListResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.RestrictionListResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RestrictionListResponse::CopyFrom(const RestrictionListResponse& from) {
@@ -1024,7 +1010,7 @@ bool RestrictionListResponse::IsInitialized() const {
 
 void RestrictionListResponse::InternalSwap(RestrictionListResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   card_information_.InternalSwap(&other->card_information_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RestrictionListResponse, restriction_list_version_)
@@ -1035,18 +1021,13 @@ void RestrictionListResponse::InternalSwap(RestrictionListResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RestrictionListResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_restriction_5flist_2eproto_getter, &descriptor_table_restriction_5flist_2eproto_once,
+      file_level_metadata_restriction_5flist_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void RestrictionListCardInformation::InitAsDefaultInstance() {
-  ::axis::transactions::_RestrictionListCardInformation_default_instance_._instance.get_mutable()->pan_list_ = const_cast< ::axis::transactions::PrimaryAccountNumberBlackList*>(
-      ::axis::transactions::PrimaryAccountNumberBlackList::internal_default_instance());
-  ::axis::transactions::_RestrictionListCardInformation_default_instance_._instance.get_mutable()->par_list_ = const_cast< ::axis::transactions::PrimaryAccountReferenceBlackList*>(
-      ::axis::transactions::PrimaryAccountReferenceBlackList::internal_default_instance());
-}
 class RestrictionListCardInformation::_Internal {
  public:
   static const ::axis::transactions::PrimaryAccountNumberBlackList& pan_list(const RestrictionListCardInformation* msg);
@@ -1062,21 +1043,24 @@ RestrictionListCardInformation::_Internal::par_list(const RestrictionListCardInf
   return *msg->par_list_;
 }
 void RestrictionListCardInformation::clear_pan_list() {
-  if (GetArena() == nullptr && pan_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && pan_list_ != nullptr) {
     delete pan_list_;
   }
   pan_list_ = nullptr;
 }
 void RestrictionListCardInformation::clear_par_list() {
-  if (GetArena() == nullptr && par_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && par_list_ != nullptr) {
     delete par_list_;
   }
   par_list_ = nullptr;
 }
-RestrictionListCardInformation::RestrictionListCardInformation(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+RestrictionListCardInformation::RestrictionListCardInformation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.RestrictionListCardInformation)
 }
 RestrictionListCardInformation::RestrictionListCardInformation(const RestrictionListCardInformation& from)
@@ -1097,20 +1081,21 @@ RestrictionListCardInformation::RestrictionListCardInformation(const Restriction
 }
 
 void RestrictionListCardInformation::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RestrictionListCardInformation_restriction_5flist_2eproto.base);
-  ::memset(&pan_list_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&action_) -
-      reinterpret_cast<char*>(&pan_list_)) + sizeof(action_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&pan_list_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&action_) -
+    reinterpret_cast<char*>(&pan_list_)) + sizeof(action_));
 }
 
 RestrictionListCardInformation::~RestrictionListCardInformation() {
   // @@protoc_insertion_point(destructor:axis.transactions.RestrictionListCardInformation)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void RestrictionListCardInformation::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void RestrictionListCardInformation::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete pan_list_;
   if (this != internal_default_instance()) delete par_list_;
 }
@@ -1124,11 +1109,6 @@ void RestrictionListCardInformation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::
 void RestrictionListCardInformation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RestrictionListCardInformation& RestrictionListCardInformation::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RestrictionListCardInformation_restriction_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RestrictionListCardInformation::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.RestrictionListCardInformation)
@@ -1136,11 +1116,11 @@ void RestrictionListCardInformation::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && pan_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && pan_list_ != nullptr) {
     delete pan_list_;
   }
   pan_list_ = nullptr;
-  if (GetArena() == nullptr && par_list_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && par_list_ != nullptr) {
     delete par_list_;
   }
   par_list_ = nullptr;
@@ -1150,25 +1130,25 @@ void RestrictionListCardInformation::Clear() {
 
 const char* RestrictionListCardInformation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .axis.transactions.PrimaryAccountNumberBlackList pan_list = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pan_list(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .axis.transactions.PrimaryAccountReferenceBlackList par_list = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_par_list(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .axis.transactions.CardAction action = 3;
       case 3:
@@ -1176,27 +1156,29 @@ const char* RestrictionListCardInformation::_InternalParse(const char* ptr, ::PR
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_action(static_cast<::axis::transactions::CardAction>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -1207,7 +1189,7 @@ failure:
   (void) cached_has_bits;
 
   // .axis.transactions.PrimaryAccountNumberBlackList pan_list = 1;
-  if (this->has_pan_list()) {
+  if (this->_internal_has_pan_list()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1215,7 +1197,7 @@ failure:
   }
 
   // .axis.transactions.PrimaryAccountReferenceBlackList par_list = 2;
-  if (this->has_par_list()) {
+  if (this->_internal_has_par_list()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1223,7 +1205,7 @@ failure:
   }
 
   // .axis.transactions.CardAction action = 3;
-  if (this->action() != 0) {
+  if (this->_internal_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       3, this->_internal_action(), target);
@@ -1246,72 +1228,57 @@ size_t RestrictionListCardInformation::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // .axis.transactions.PrimaryAccountNumberBlackList pan_list = 1;
-  if (this->has_pan_list()) {
+  if (this->_internal_has_pan_list()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pan_list_);
   }
 
   // .axis.transactions.PrimaryAccountReferenceBlackList par_list = 2;
-  if (this->has_par_list()) {
+  if (this->_internal_has_par_list()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *par_list_);
   }
 
   // .axis.transactions.CardAction action = 3;
-  if (this->action() != 0) {
+  if (this->_internal_action() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_action());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void RestrictionListCardInformation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.RestrictionListCardInformation)
-  GOOGLE_DCHECK_NE(&from, this);
-  const RestrictionListCardInformation* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RestrictionListCardInformation>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.RestrictionListCardInformation)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.RestrictionListCardInformation)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RestrictionListCardInformation::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RestrictionListCardInformation::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RestrictionListCardInformation::GetClassData() const { return &_class_data_; }
+
+void RestrictionListCardInformation::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RestrictionListCardInformation *>(to)->MergeFrom(
+      static_cast<const RestrictionListCardInformation &>(from));
 }
+
 
 void RestrictionListCardInformation::MergeFrom(const RestrictionListCardInformation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.RestrictionListCardInformation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_pan_list()) {
+  if (from._internal_has_pan_list()) {
     _internal_mutable_pan_list()->::axis::transactions::PrimaryAccountNumberBlackList::MergeFrom(from._internal_pan_list());
   }
-  if (from.has_par_list()) {
+  if (from._internal_has_par_list()) {
     _internal_mutable_par_list()->::axis::transactions::PrimaryAccountReferenceBlackList::MergeFrom(from._internal_par_list());
   }
-  if (from.action() != 0) {
+  if (from._internal_action() != 0) {
     _internal_set_action(from._internal_action());
   }
-}
-
-void RestrictionListCardInformation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.RestrictionListCardInformation)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RestrictionListCardInformation::CopyFrom(const RestrictionListCardInformation& from) {
@@ -1327,7 +1294,7 @@ bool RestrictionListCardInformation::IsInitialized() const {
 
 void RestrictionListCardInformation::InternalSwap(RestrictionListCardInformation* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RestrictionListCardInformation, action_)
       + sizeof(RestrictionListCardInformation::action_)
@@ -1337,9 +1304,10 @@ void RestrictionListCardInformation::InternalSwap(RestrictionListCardInformation
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RestrictionListCardInformation::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_restriction_5flist_2eproto_getter, &descriptor_table_restriction_5flist_2eproto_once,
+      file_level_metadata_restriction_5flist_2eproto[2]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transactions

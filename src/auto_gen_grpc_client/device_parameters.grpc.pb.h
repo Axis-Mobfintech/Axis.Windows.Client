@@ -7,7 +7,6 @@
 #include "device_parameters.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -44,30 +43,22 @@ class DeviceParametersService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::ParametersResponse>> PrepareAsyncGetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::ParametersResponse>>(PrepareAsyncGetDeviceParametersRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::ParametersResponse>* AsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::axis::transactions::ParametersResponse>* PrepareAsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::axis::transactions::ParametersResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>> AsyncGetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>>(AsyncGetDeviceParametersRaw(context, request, cq));
@@ -75,26 +66,22 @@ class DeviceParametersService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>> PrepareAsyncGetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>>(PrepareAsyncGetDeviceParametersRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetDeviceParameters(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* AsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::axis::transactions::ParametersResponse>* PrepareAsyncGetDeviceParametersRaw(::grpc::ClientContext* context, const ::axis::transactions::ParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetDeviceParameters_;
@@ -129,36 +116,22 @@ class DeviceParametersService final {
   };
   typedef WithAsyncMethod_GetDeviceParameters<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetDeviceParameters : public BaseClass {
+  class WithCallbackMethod_GetDeviceParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetDeviceParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_GetDeviceParameters() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response) { return this->GetDeviceParameters(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::axis::transactions::ParametersRequest* request, ::axis::transactions::ParametersResponse* response) { return this->GetDeviceParameters(context, request, response); }));}
     void SetMessageAllocatorFor_GetDeviceParameters(
-        ::grpc::experimental::MessageAllocator< ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::axis::transactions::ParametersRequest, ::axis::transactions::ParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetDeviceParameters() override {
+    ~WithCallbackMethod_GetDeviceParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -166,20 +139,11 @@ class DeviceParametersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetDeviceParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::ParametersRequest* /*request*/, ::axis::transactions::ParametersResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetDeviceParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::axis::transactions::ParametersRequest* /*request*/, ::axis::transactions::ParametersResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::axis::transactions::ParametersRequest* /*request*/, ::axis::transactions::ParametersResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_GetDeviceParameters<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_GetDeviceParameters<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_GetDeviceParameters<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetDeviceParameters : public BaseClass {
    private:
@@ -218,27 +182,17 @@ class DeviceParametersService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetDeviceParameters : public BaseClass {
+  class WithRawCallbackMethod_GetDeviceParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetDeviceParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_GetDeviceParameters() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDeviceParameters(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDeviceParameters(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetDeviceParameters() override {
+    ~WithRawCallbackMethod_GetDeviceParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -246,14 +200,8 @@ class DeviceParametersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetDeviceParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetDeviceParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetDeviceParameters : public BaseClass {

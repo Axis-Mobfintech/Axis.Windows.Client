@@ -28,28 +28,28 @@ static const char* RestrictionListService_method_names[] = {
 
 std::unique_ptr< RestrictionListService::Stub> RestrictionListService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< RestrictionListService::Stub> stub(new RestrictionListService::Stub(channel));
+  std::unique_ptr< RestrictionListService::Stub> stub(new RestrictionListService::Stub(channel, options));
   return stub;
 }
 
-RestrictionListService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_GetRestrictionList_(RestrictionListService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+RestrictionListService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_GetRestrictionList_(RestrictionListService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RestrictionListService::Stub::GetRestrictionList(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest& request, ::axis::transactions::RestrictionListResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetRestrictionList_, context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::axis::transactions::RestrictionListRequest, ::axis::transactions::RestrictionListResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetRestrictionList_, context, request, response);
 }
 
-void RestrictionListService::Stub::experimental_async::GetRestrictionList(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest* request, ::axis::transactions::RestrictionListResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRestrictionList_, context, request, response, std::move(f));
+void RestrictionListService::Stub::async::GetRestrictionList(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest* request, ::axis::transactions::RestrictionListResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::axis::transactions::RestrictionListRequest, ::axis::transactions::RestrictionListResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRestrictionList_, context, request, response, std::move(f));
 }
 
-void RestrictionListService::Stub::experimental_async::GetRestrictionList(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest* request, ::axis::transactions::RestrictionListResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetRestrictionList_, context, request, response, reactor);
+void RestrictionListService::Stub::async::GetRestrictionList(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest* request, ::axis::transactions::RestrictionListResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRestrictionList_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::RestrictionListResponse>* RestrictionListService::Stub::PrepareAsyncGetRestrictionListRaw(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::axis::transactions::RestrictionListResponse>::Create(channel_.get(), cq, rpcmethod_GetRestrictionList_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::axis::transactions::RestrictionListResponse, ::axis::transactions::RestrictionListRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetRestrictionList_, context, request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::axis::transactions::RestrictionListResponse>* RestrictionListService::Stub::AsyncGetRestrictionListRaw(::grpc::ClientContext* context, const ::axis::transactions::RestrictionListRequest& request, ::grpc::CompletionQueue* cq) {
@@ -63,7 +63,7 @@ RestrictionListService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RestrictionListService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< RestrictionListService::Service, ::axis::transactions::RestrictionListRequest, ::axis::transactions::RestrictionListResponse>(
+      new ::grpc::internal::RpcMethodHandler< RestrictionListService::Service, ::axis::transactions::RestrictionListRequest, ::axis::transactions::RestrictionListResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](RestrictionListService::Service* service,
              ::grpc::ServerContext* ctx,
              const ::axis::transactions::RestrictionListRequest* req,

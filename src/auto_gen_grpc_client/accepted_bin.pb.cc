@@ -14,28 +14,30 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace axis {
 namespace transactions {
-class AcceptedBankIdentificationNumberDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AcceptedBankIdentificationNumber> _instance;
-} _AcceptedBankIdentificationNumber_default_instance_;
+constexpr AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : index_(0)
+  , issuer_code_(0)
+  , initial_range_(uint64_t{0u})
+  , final_range_(uint64_t{0u})
+  , total_sequential_transactions_allowed_(0u)
+  , card_action_(0)
+{}
+struct AcceptedBankIdentificationNumberDefaultTypeInternal {
+  constexpr AcceptedBankIdentificationNumberDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AcceptedBankIdentificationNumberDefaultTypeInternal() {}
+  union {
+    AcceptedBankIdentificationNumber _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcceptedBankIdentificationNumberDefaultTypeInternal _AcceptedBankIdentificationNumber_default_instance_;
 }  // namespace transactions
 }  // namespace axis
-static void InitDefaultsscc_info_AcceptedBankIdentificationNumber_Protos_2faccepted_5fbin_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::axis::transactions::_AcceptedBankIdentificationNumber_default_instance_;
-    new (ptr) ::axis::transactions::AcceptedBankIdentificationNumber();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::axis::transactions::AcceptedBankIdentificationNumber::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AcceptedBankIdentificationNumber_Protos_2faccepted_5fbin_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AcceptedBankIdentificationNumber_Protos_2faccepted_5fbin_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_Protos_2faccepted_5fbin_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_Protos_2faccepted_5fbin_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_Protos_2faccepted_5fbin_2eproto = nullptr;
@@ -46,6 +48,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2faccepted_5fbin_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, index_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, issuer_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, initial_range_),
@@ -54,7 +57,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_Protos_2faccepted_5fbin_2eprot
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptedBankIdentificationNumber, card_action_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::axis::transactions::AcceptedBankIdentificationNumber)},
+  { 0, -1, -1, sizeof(::axis::transactions::AcceptedBankIdentificationNumber)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -76,34 +79,35 @@ const char descriptor_table_protodef_Protos_2faccepted_5fbin_2eproto[] PROTOBUF_
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_Protos_2faccepted_5fbin_2eproto_deps[1] = {
   &::descriptor_table_Protos_2fcard_5faction_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Protos_2faccepted_5fbin_2eproto_sccs[1] = {
-  &scc_info_AcceptedBankIdentificationNumber_Protos_2faccepted_5fbin_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_Protos_2faccepted_5fbin_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_Protos_2faccepted_5fbin_2eproto = {
-  false, false, descriptor_table_protodef_Protos_2faccepted_5fbin_2eproto, "Protos/accepted_bin.proto", 379,
-  &descriptor_table_Protos_2faccepted_5fbin_2eproto_once, descriptor_table_Protos_2faccepted_5fbin_2eproto_sccs, descriptor_table_Protos_2faccepted_5fbin_2eproto_deps, 1, 1,
+  false, false, 379, descriptor_table_protodef_Protos_2faccepted_5fbin_2eproto, "Protos/accepted_bin.proto", 
+  &descriptor_table_Protos_2faccepted_5fbin_2eproto_once, descriptor_table_Protos_2faccepted_5fbin_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_Protos_2faccepted_5fbin_2eproto::offsets,
-  file_level_metadata_Protos_2faccepted_5fbin_2eproto, 1, file_level_enum_descriptors_Protos_2faccepted_5fbin_2eproto, file_level_service_descriptors_Protos_2faccepted_5fbin_2eproto,
+  file_level_metadata_Protos_2faccepted_5fbin_2eproto, file_level_enum_descriptors_Protos_2faccepted_5fbin_2eproto, file_level_service_descriptors_Protos_2faccepted_5fbin_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_Protos_2faccepted_5fbin_2eproto_getter() {
+  return &descriptor_table_Protos_2faccepted_5fbin_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_Protos_2faccepted_5fbin_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_Protos_2faccepted_5fbin_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_Protos_2faccepted_5fbin_2eproto(&descriptor_table_Protos_2faccepted_5fbin_2eproto);
 namespace axis {
 namespace transactions {
 
 // ===================================================================
 
-void AcceptedBankIdentificationNumber::InitAsDefaultInstance() {
-}
 class AcceptedBankIdentificationNumber::_Internal {
  public:
 };
 
-AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:axis.transactions.AcceptedBankIdentificationNumber)
 }
 AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(const AcceptedBankIdentificationNumber& from)
@@ -116,19 +120,21 @@ AcceptedBankIdentificationNumber::AcceptedBankIdentificationNumber(const Accepte
 }
 
 void AcceptedBankIdentificationNumber::SharedCtor() {
-  ::memset(&index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&card_action_) -
-      reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&index_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&card_action_) -
+    reinterpret_cast<char*>(&index_)) + sizeof(card_action_));
 }
 
 AcceptedBankIdentificationNumber::~AcceptedBankIdentificationNumber() {
   // @@protoc_insertion_point(destructor:axis.transactions.AcceptedBankIdentificationNumber)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void AcceptedBankIdentificationNumber::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void AcceptedBankIdentificationNumber::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void AcceptedBankIdentificationNumber::ArenaDtor(void* object) {
@@ -140,11 +146,6 @@ void AcceptedBankIdentificationNumber::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID
 void AcceptedBankIdentificationNumber::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AcceptedBankIdentificationNumber& AcceptedBankIdentificationNumber::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AcceptedBankIdentificationNumber_Protos_2faccepted_5fbin_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AcceptedBankIdentificationNumber::Clear() {
 // @@protoc_insertion_point(message_clear_start:axis.transactions.AcceptedBankIdentificationNumber)
@@ -160,46 +161,49 @@ void AcceptedBankIdentificationNumber::Clear() {
 
 const char* AcceptedBankIdentificationNumber::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 index = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 issuer_code = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           issuer_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint64 initial_range = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           initial_range_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint64 final_range = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           final_range_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 total_sequential_transactions_allowed = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           total_sequential_transactions_allowed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .axis.transactions.CardAction card_action = 7;
       case 7:
@@ -207,27 +211,29 @@ const char* AcceptedBankIdentificationNumber::_InternalParse(const char* ptr, ::
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_card_action(static_cast<::axis::transactions::CardAction>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
@@ -238,37 +244,37 @@ failure:
   (void) cached_has_bits;
 
   // int32 index = 2;
-  if (this->index() != 0) {
+  if (this->_internal_index() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_index(), target);
   }
 
   // int32 issuer_code = 3;
-  if (this->issuer_code() != 0) {
+  if (this->_internal_issuer_code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_issuer_code(), target);
   }
 
   // uint64 initial_range = 4;
-  if (this->initial_range() != 0) {
+  if (this->_internal_initial_range() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_initial_range(), target);
   }
 
   // uint64 final_range = 5;
-  if (this->final_range() != 0) {
+  if (this->_internal_final_range() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_final_range(), target);
   }
 
   // uint32 total_sequential_transactions_allowed = 6;
-  if (this->total_sequential_transactions_allowed() != 0) {
+  if (this->_internal_total_sequential_transactions_allowed() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_total_sequential_transactions_allowed(), target);
   }
 
   // .axis.transactions.CardAction card_action = 7;
-  if (this->card_action() != 0) {
+  if (this->_internal_card_action() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       7, this->_internal_card_action(), target);
@@ -291,102 +297,77 @@ size_t AcceptedBankIdentificationNumber::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // int32 index = 2;
-  if (this->index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_index());
+  if (this->_internal_index() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_index());
   }
 
   // int32 issuer_code = 3;
-  if (this->issuer_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_issuer_code());
+  if (this->_internal_issuer_code() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_issuer_code());
   }
 
   // uint64 initial_range = 4;
-  if (this->initial_range() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_initial_range());
+  if (this->_internal_initial_range() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_initial_range());
   }
 
   // uint64 final_range = 5;
-  if (this->final_range() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_final_range());
+  if (this->_internal_final_range() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_final_range());
   }
 
   // uint32 total_sequential_transactions_allowed = 6;
-  if (this->total_sequential_transactions_allowed() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_total_sequential_transactions_allowed());
+  if (this->_internal_total_sequential_transactions_allowed() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_total_sequential_transactions_allowed());
   }
 
   // .axis.transactions.CardAction card_action = 7;
-  if (this->card_action() != 0) {
+  if (this->_internal_card_action() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_card_action());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void AcceptedBankIdentificationNumber::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:axis.transactions.AcceptedBankIdentificationNumber)
-  GOOGLE_DCHECK_NE(&from, this);
-  const AcceptedBankIdentificationNumber* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AcceptedBankIdentificationNumber>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:axis.transactions.AcceptedBankIdentificationNumber)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:axis.transactions.AcceptedBankIdentificationNumber)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AcceptedBankIdentificationNumber::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AcceptedBankIdentificationNumber::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AcceptedBankIdentificationNumber::GetClassData() const { return &_class_data_; }
+
+void AcceptedBankIdentificationNumber::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<AcceptedBankIdentificationNumber *>(to)->MergeFrom(
+      static_cast<const AcceptedBankIdentificationNumber &>(from));
 }
+
 
 void AcceptedBankIdentificationNumber::MergeFrom(const AcceptedBankIdentificationNumber& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:axis.transactions.AcceptedBankIdentificationNumber)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.index() != 0) {
+  if (from._internal_index() != 0) {
     _internal_set_index(from._internal_index());
   }
-  if (from.issuer_code() != 0) {
+  if (from._internal_issuer_code() != 0) {
     _internal_set_issuer_code(from._internal_issuer_code());
   }
-  if (from.initial_range() != 0) {
+  if (from._internal_initial_range() != 0) {
     _internal_set_initial_range(from._internal_initial_range());
   }
-  if (from.final_range() != 0) {
+  if (from._internal_final_range() != 0) {
     _internal_set_final_range(from._internal_final_range());
   }
-  if (from.total_sequential_transactions_allowed() != 0) {
+  if (from._internal_total_sequential_transactions_allowed() != 0) {
     _internal_set_total_sequential_transactions_allowed(from._internal_total_sequential_transactions_allowed());
   }
-  if (from.card_action() != 0) {
+  if (from._internal_card_action() != 0) {
     _internal_set_card_action(from._internal_card_action());
   }
-}
-
-void AcceptedBankIdentificationNumber::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:axis.transactions.AcceptedBankIdentificationNumber)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AcceptedBankIdentificationNumber::CopyFrom(const AcceptedBankIdentificationNumber& from) {
@@ -402,7 +383,7 @@ bool AcceptedBankIdentificationNumber::IsInitialized() const {
 
 void AcceptedBankIdentificationNumber::InternalSwap(AcceptedBankIdentificationNumber* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AcceptedBankIdentificationNumber, card_action_)
       + sizeof(AcceptedBankIdentificationNumber::card_action_)
@@ -412,9 +393,10 @@ void AcceptedBankIdentificationNumber::InternalSwap(AcceptedBankIdentificationNu
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptedBankIdentificationNumber::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_Protos_2faccepted_5fbin_2eproto_getter, &descriptor_table_Protos_2faccepted_5fbin_2eproto_once,
+      file_level_metadata_Protos_2faccepted_5fbin_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transactions
