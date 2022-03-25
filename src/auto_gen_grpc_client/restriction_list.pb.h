@@ -206,7 +206,7 @@ class RestrictionListRequest final :
     kKsnDataFieldNumber = 5,
     kLineIdFieldNumber = 7,
     kVehicleIdFieldNumber = 8,
-    kRegisterDateFieldNumber = 9,
+    kTransactionDateFieldNumber = 9,
     kRegisterCodeFieldNumber = 6,
     kRestrictionListVersionFieldNumber = 10,
   };
@@ -308,23 +308,23 @@ class RestrictionListRequest final :
   std::string* _internal_mutable_vehicle_id();
   public:
 
-  // .google.protobuf.Timestamp register_date = 9;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 9;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 register_code = 6;
   void clear_register_code();
@@ -358,7 +358,7 @@ class RestrictionListRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ksn_data_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr line_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vehicle_id_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 register_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 restriction_list_version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -485,46 +485,46 @@ class RestrictionListResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCardInformationFieldNumber = 3,
-    kRegisterDateFieldNumber = 4,
+    kRestrictionListFieldNumber = 3,
+    kTransactionDateFieldNumber = 4,
     kResponseCodeFieldNumber = 1,
     kRestrictionListVersionFieldNumber = 2,
   };
-  // repeated .axis.transactions.RestrictionListCardInformation card_information = 3;
-  int card_information_size() const;
+  // repeated .axis.transactions.RestrictionListCardInformation restriction_list = 3;
+  int restriction_list_size() const;
   private:
-  int _internal_card_information_size() const;
+  int _internal_restriction_list_size() const;
   public:
-  void clear_card_information();
-  ::axis::transactions::RestrictionListCardInformation* mutable_card_information(int index);
+  void clear_restriction_list();
+  ::axis::transactions::RestrictionListCardInformation* mutable_restriction_list(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::RestrictionListCardInformation >*
-      mutable_card_information();
+      mutable_restriction_list();
   private:
-  const ::axis::transactions::RestrictionListCardInformation& _internal_card_information(int index) const;
-  ::axis::transactions::RestrictionListCardInformation* _internal_add_card_information();
+  const ::axis::transactions::RestrictionListCardInformation& _internal_restriction_list(int index) const;
+  ::axis::transactions::RestrictionListCardInformation* _internal_add_restriction_list();
   public:
-  const ::axis::transactions::RestrictionListCardInformation& card_information(int index) const;
-  ::axis::transactions::RestrictionListCardInformation* add_card_information();
+  const ::axis::transactions::RestrictionListCardInformation& restriction_list(int index) const;
+  ::axis::transactions::RestrictionListCardInformation* add_restriction_list();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::RestrictionListCardInformation >&
-      card_information() const;
+      restriction_list() const;
 
-  // .google.protobuf.Timestamp register_date = 4;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 4;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 response_code = 1;
   void clear_response_code();
@@ -551,8 +551,8 @@ class RestrictionListResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::RestrictionListCardInformation > card_information_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::RestrictionListCardInformation > restriction_list_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 response_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 restriction_list_version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1094,39 +1094,39 @@ inline void RestrictionListRequest::set_allocated_vehicle_id(std::string* vehicl
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.RestrictionListRequest.vehicle_id)
 }
 
-// .google.protobuf.Timestamp register_date = 9;
-inline bool RestrictionListRequest::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 9;
+inline bool RestrictionListRequest::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool RestrictionListRequest::has_register_date() const {
-  return _internal_has_register_date();
+inline bool RestrictionListRequest::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListRequest::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListRequest::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListRequest::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RestrictionListRequest.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListRequest::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RestrictionListRequest.transaction_date)
+  return _internal_transaction_date();
 }
-inline void RestrictionListRequest::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void RestrictionListRequest::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RestrictionListRequest.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RestrictionListRequest.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1138,46 +1138,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::release_regis
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RestrictionListRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RestrictionListRequest.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RestrictionListRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListRequest::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RestrictionListRequest.transaction_date)
   return _msg;
 }
-inline void RestrictionListRequest::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void RestrictionListRequest::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RestrictionListRequest.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RestrictionListRequest.transaction_date)
 }
 
 // int32 restriction_list_version = 10;
@@ -1244,79 +1244,79 @@ inline void RestrictionListResponse::set_restriction_list_version(::PROTOBUF_NAM
   // @@protoc_insertion_point(field_set:axis.transactions.RestrictionListResponse.restriction_list_version)
 }
 
-// repeated .axis.transactions.RestrictionListCardInformation card_information = 3;
-inline int RestrictionListResponse::_internal_card_information_size() const {
-  return card_information_.size();
+// repeated .axis.transactions.RestrictionListCardInformation restriction_list = 3;
+inline int RestrictionListResponse::_internal_restriction_list_size() const {
+  return restriction_list_.size();
 }
-inline int RestrictionListResponse::card_information_size() const {
-  return _internal_card_information_size();
+inline int RestrictionListResponse::restriction_list_size() const {
+  return _internal_restriction_list_size();
 }
-inline void RestrictionListResponse::clear_card_information() {
-  card_information_.Clear();
+inline void RestrictionListResponse::clear_restriction_list() {
+  restriction_list_.Clear();
 }
-inline ::axis::transactions::RestrictionListCardInformation* RestrictionListResponse::mutable_card_information(int index) {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RestrictionListResponse.card_information)
-  return card_information_.Mutable(index);
+inline ::axis::transactions::RestrictionListCardInformation* RestrictionListResponse::mutable_restriction_list(int index) {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RestrictionListResponse.restriction_list)
+  return restriction_list_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::RestrictionListCardInformation >*
-RestrictionListResponse::mutable_card_information() {
-  // @@protoc_insertion_point(field_mutable_list:axis.transactions.RestrictionListResponse.card_information)
-  return &card_information_;
+RestrictionListResponse::mutable_restriction_list() {
+  // @@protoc_insertion_point(field_mutable_list:axis.transactions.RestrictionListResponse.restriction_list)
+  return &restriction_list_;
 }
-inline const ::axis::transactions::RestrictionListCardInformation& RestrictionListResponse::_internal_card_information(int index) const {
-  return card_information_.Get(index);
+inline const ::axis::transactions::RestrictionListCardInformation& RestrictionListResponse::_internal_restriction_list(int index) const {
+  return restriction_list_.Get(index);
 }
-inline const ::axis::transactions::RestrictionListCardInformation& RestrictionListResponse::card_information(int index) const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RestrictionListResponse.card_information)
-  return _internal_card_information(index);
+inline const ::axis::transactions::RestrictionListCardInformation& RestrictionListResponse::restriction_list(int index) const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RestrictionListResponse.restriction_list)
+  return _internal_restriction_list(index);
 }
-inline ::axis::transactions::RestrictionListCardInformation* RestrictionListResponse::_internal_add_card_information() {
-  return card_information_.Add();
+inline ::axis::transactions::RestrictionListCardInformation* RestrictionListResponse::_internal_add_restriction_list() {
+  return restriction_list_.Add();
 }
-inline ::axis::transactions::RestrictionListCardInformation* RestrictionListResponse::add_card_information() {
-  ::axis::transactions::RestrictionListCardInformation* _add = _internal_add_card_information();
-  // @@protoc_insertion_point(field_add:axis.transactions.RestrictionListResponse.card_information)
+inline ::axis::transactions::RestrictionListCardInformation* RestrictionListResponse::add_restriction_list() {
+  ::axis::transactions::RestrictionListCardInformation* _add = _internal_add_restriction_list();
+  // @@protoc_insertion_point(field_add:axis.transactions.RestrictionListResponse.restriction_list)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::RestrictionListCardInformation >&
-RestrictionListResponse::card_information() const {
-  // @@protoc_insertion_point(field_list:axis.transactions.RestrictionListResponse.card_information)
-  return card_information_;
+RestrictionListResponse::restriction_list() const {
+  // @@protoc_insertion_point(field_list:axis.transactions.RestrictionListResponse.restriction_list)
+  return restriction_list_;
 }
 
-// .google.protobuf.Timestamp register_date = 4;
-inline bool RestrictionListResponse::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 4;
+inline bool RestrictionListResponse::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool RestrictionListResponse::has_register_date() const {
-  return _internal_has_register_date();
+inline bool RestrictionListResponse::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListResponse::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListResponse::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListResponse::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.RestrictionListResponse.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& RestrictionListResponse::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.RestrictionListResponse.transaction_date)
+  return _internal_transaction_date();
 }
-inline void RestrictionListResponse::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void RestrictionListResponse::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RestrictionListResponse.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.RestrictionListResponse.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1328,46 +1328,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::release_regi
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.RestrictionListResponse.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.RestrictionListResponse.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.RestrictionListResponse.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* RestrictionListResponse::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.RestrictionListResponse.transaction_date)
   return _msg;
 }
-inline void RestrictionListResponse::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void RestrictionListResponse::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RestrictionListResponse.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.RestrictionListResponse.transaction_date)
 }
 
 // -------------------------------------------------------------------

@@ -607,11 +607,12 @@ class DebitRecoveryResponse final :
 
   enum : int {
     kGatewayUidFieldNumber = 2,
-    kDeviceSuidFieldNumber = 6,
+    kDeviceSuidFieldNumber = 7,
     kResponseCodeFieldNumber = 1,
     kEmvParametersVersionFieldNumber = 3,
     kBinParametersVersionFieldNumber = 4,
     kRestrictionListVersionFieldNumber = 5,
+    kAcceptanceListVersionFieldNumber = 6,
   };
   // string gateway_uid = 2;
   void clear_gateway_uid();
@@ -627,7 +628,7 @@ class DebitRecoveryResponse final :
   std::string* _internal_mutable_gateway_uid();
   public:
 
-  // string device_suid = 6;
+  // string device_suid = 7;
   void clear_device_suid();
   const std::string& device_suid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -677,6 +678,15 @@ class DebitRecoveryResponse final :
   void _internal_set_restriction_list_version(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // int32 acceptance_list_version = 6;
+  void clear_acceptance_list_version();
+  ::PROTOBUF_NAMESPACE_ID::int32 acceptance_list_version() const;
+  void set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_acceptance_list_version() const;
+  void _internal_set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:axis.transactions.DebitRecoveryResponse)
  private:
   class _Internal;
@@ -690,6 +700,7 @@ class DebitRecoveryResponse final :
   ::PROTOBUF_NAMESPACE_ID::int32 emv_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 bin_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 restriction_list_version_;
+  ::PROTOBUF_NAMESPACE_ID::int32 acceptance_list_version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_debit_5frecovery_2eproto;
 };
@@ -1632,7 +1643,27 @@ inline void DebitRecoveryResponse::set_restriction_list_version(::PROTOBUF_NAMES
   // @@protoc_insertion_point(field_set:axis.transactions.DebitRecoveryResponse.restriction_list_version)
 }
 
-// string device_suid = 6;
+// int32 acceptance_list_version = 6;
+inline void DebitRecoveryResponse::clear_acceptance_list_version() {
+  acceptance_list_version_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DebitRecoveryResponse::_internal_acceptance_list_version() const {
+  return acceptance_list_version_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DebitRecoveryResponse::acceptance_list_version() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DebitRecoveryResponse.acceptance_list_version)
+  return _internal_acceptance_list_version();
+}
+inline void DebitRecoveryResponse::_internal_set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  acceptance_list_version_ = value;
+}
+inline void DebitRecoveryResponse::set_acceptance_list_version(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_acceptance_list_version(value);
+  // @@protoc_insertion_point(field_set:axis.transactions.DebitRecoveryResponse.acceptance_list_version)
+}
+
+// string device_suid = 7;
 inline void DebitRecoveryResponse::clear_device_suid() {
   device_suid_.ClearToEmpty();
 }

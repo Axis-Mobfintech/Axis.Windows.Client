@@ -27,7 +27,7 @@ constexpr AcceptanceListRequest::AcceptanceListRequest(
   , ksn_data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , line_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , vehicle_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , register_date_(nullptr)
+  , transaction_date_(nullptr)
   , register_code_(0)
   , acceptance_list_version_(0){}
 struct AcceptanceListRequestDefaultTypeInternal {
@@ -41,8 +41,8 @@ struct AcceptanceListRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcceptanceListRequestDefaultTypeInternal _AcceptanceListRequest_default_instance_;
 constexpr AcceptanceListResponse::AcceptanceListResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : card_information_()
-  , register_date_(nullptr)
+  : acceptance_list_()
+  , transaction_date_(nullptr)
   , response_code_(0)
   , acceptance_list_version_(0){}
 struct AcceptanceListResponseDefaultTypeInternal {
@@ -90,7 +90,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_acceptance_5flist_2eproto::off
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, register_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, line_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, vehicle_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, register_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, transaction_date_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListRequest, acceptance_list_version_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, _internal_metadata_),
@@ -100,8 +100,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_acceptance_5flist_2eproto::off
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, response_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, acceptance_list_version_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, card_information_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, register_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, acceptance_list_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListResponse, transaction_date_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::axis::transactions::AcceptanceListCardInformation, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -129,30 +129,30 @@ const char descriptor_table_protodef_acceptance_5flist_2eproto[] PROTOBUF_SECTIO
   "ns\032\037google/protobuf/timestamp.proto\032 Pro"
   "tos/pan_acceptance_list.proto\032 Protos/pa"
   "r_acceptance_list.proto\032\030Protos/card_act"
-  "ion.proto\"\235\002\n\025AcceptanceListRequest\022\021\n\td"
+  "ion.proto\"\240\002\n\025AcceptanceListRequest\022\021\n\td"
   "evice_id\030\001 \001(\t\022\023\n\013operator_id\030\002 \001(\t\022\034\n\024r"
   "eader_serial_number\030\003 \001(\t\022\034\n\024device_seri"
   "al_number\030\004 \001(\t\022\020\n\010ksn_data\030\005 \001(\014\022\025\n\rreg"
   "ister_code\030\006 \001(\005\022\017\n\007line_id\030\007 \001(\t\022\022\n\nveh"
-  "icle_id\030\010 \001(\t\0221\n\rregister_date\030\t \001(\0132\032.g"
-  "oogle.protobuf.Timestamp\022\037\n\027acceptance_l"
-  "ist_version\030\n \001(\005\"\317\001\n\026AcceptanceListResp"
-  "onse\022\025\n\rresponse_code\030\001 \001(\005\022\037\n\027acceptanc"
-  "e_list_version\030\002 \001(\005\022J\n\020card_information"
-  "\030\003 \003(\01320.axis.transactions.AcceptanceLis"
-  "tCardInformation\0221\n\rregister_date\030\004 \001(\0132"
-  "\032.google.protobuf.Timestamp\"\331\001\n\035Acceptan"
-  "ceListCardInformation\022B\n\010pan_list\030\001 \001(\0132"
-  "0.axis.transactions.PrimaryAccountNumber"
-  "WhiteList\022E\n\010par_list\030\002 \001(\01323.axis.trans"
-  "actions.PrimaryAccountReferenceWhiteList"
-  "\022-\n\006action\030\003 \001(\0162\035.axis.transactions.Car"
-  "dAction2\201\001\n\025AcceptanceListService\022h\n\021Get"
-  "AcceptanceList\022(.axis.transactions.Accep"
-  "tanceListRequest\032).axis.transactions.Acc"
-  "eptanceListResponseBQ\n#com.axismobfintec"
-  "h.gpb.transactionsZ\022axistransactionspb\252\002"
-  "\025Axis.GPB.Transactionsb\006proto3"
+  "icle_id\030\010 \001(\t\0224\n\020transaction_date\030\t \001(\0132"
+  "\032.google.protobuf.Timestamp\022\037\n\027acceptanc"
+  "e_list_version\030\n \001(\005\"\321\001\n\026AcceptanceListR"
+  "esponse\022\025\n\rresponse_code\030\001 \001(\005\022\037\n\027accept"
+  "ance_list_version\030\002 \001(\005\022I\n\017acceptance_li"
+  "st\030\003 \003(\01320.axis.transactions.AcceptanceL"
+  "istCardInformation\0224\n\020transaction_date\030\004"
+  " \001(\0132\032.google.protobuf.Timestamp\"\331\001\n\035Acc"
+  "eptanceListCardInformation\022B\n\010pan_list\030\001"
+  " \001(\01320.axis.transactions.PrimaryAccountN"
+  "umberWhiteList\022E\n\010par_list\030\002 \001(\01323.axis."
+  "transactions.PrimaryAccountReferenceWhit"
+  "eList\022-\n\006action\030\003 \001(\0162\035.axis.transaction"
+  "s.CardAction2\201\001\n\025AcceptanceListService\022h"
+  "\n\021GetAcceptanceList\022(.axis.transactions."
+  "AcceptanceListRequest\032).axis.transaction"
+  "s.AcceptanceListResponseBQ\n#com.axismobf"
+  "intech.gpb.transactionsZ\022axistransaction"
+  "spb\252\002\025Axis.GPB.Transactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_acceptance_5flist_2eproto_deps[4] = {
   &::descriptor_table_Protos_2fcard_5faction_2eproto,
@@ -162,7 +162,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_acceptance_5flist_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_acceptance_5flist_2eproto = {
-  false, false, 1110, descriptor_table_protodef_acceptance_5flist_2eproto, "acceptance_list.proto", 
+  false, false, 1115, descriptor_table_protodef_acceptance_5flist_2eproto, "acceptance_list.proto", 
   &descriptor_table_acceptance_5flist_2eproto_once, descriptor_table_acceptance_5flist_2eproto_deps, 4, 3,
   schemas, file_default_instances, TableStruct_acceptance_5flist_2eproto::offsets,
   file_level_metadata_acceptance_5flist_2eproto, file_level_enum_descriptors_acceptance_5flist_2eproto, file_level_service_descriptors_acceptance_5flist_2eproto,
@@ -180,18 +180,18 @@ namespace transactions {
 
 class AcceptanceListRequest::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const AcceptanceListRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date(const AcceptanceListRequest* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-AcceptanceListRequest::_Internal::register_date(const AcceptanceListRequest* msg) {
-  return *msg->register_date_;
+AcceptanceListRequest::_Internal::transaction_date(const AcceptanceListRequest* msg) {
+  return *msg->transaction_date_;
 }
-void AcceptanceListRequest::clear_register_date() {
-  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
-    delete register_date_;
+void AcceptanceListRequest::clear_transaction_date() {
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  register_date_ = nullptr;
+  transaction_date_ = nullptr;
 }
 AcceptanceListRequest::AcceptanceListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -240,10 +240,10 @@ AcceptanceListRequest::AcceptanceListRequest(const AcceptanceListRequest& from)
     vehicle_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vehicle_id(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_register_date()) {
-    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+  if (from._internal_has_transaction_date()) {
+    transaction_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.transaction_date_);
   } else {
-    register_date_ = nullptr;
+    transaction_date_ = nullptr;
   }
   ::memcpy(&register_code_, &from.register_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
@@ -260,9 +260,9 @@ ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&transaction_date_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
-    reinterpret_cast<char*>(&register_date_)) + sizeof(acceptance_list_version_));
+    reinterpret_cast<char*>(&transaction_date_)) + sizeof(acceptance_list_version_));
 }
 
 AcceptanceListRequest::~AcceptanceListRequest() {
@@ -281,7 +281,7 @@ inline void AcceptanceListRequest::SharedDtor() {
   ksn_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   line_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   vehicle_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete register_date_;
+  if (this != internal_default_instance()) delete transaction_date_;
 }
 
 void AcceptanceListRequest::ArenaDtor(void* object) {
@@ -307,10 +307,10 @@ void AcceptanceListRequest::Clear() {
   ksn_data_.ClearToEmpty();
   line_id_.ClearToEmpty();
   vehicle_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
-    delete register_date_;
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  register_date_ = nullptr;
+  transaction_date_ = nullptr;
   ::memset(&register_code_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&acceptance_list_version_) -
       reinterpret_cast<char*>(&register_code_)) + sizeof(acceptance_list_version_));
@@ -400,10 +400,10 @@ const char* AcceptanceListRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp register_date = 9;
+      // .google.protobuf.Timestamp transaction_date = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_transaction_date(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -517,12 +517,12 @@ failure:
         8, this->_internal_vehicle_id(), target);
   }
 
-  // .google.protobuf.Timestamp register_date = 9;
-  if (this->_internal_has_register_date()) {
+  // .google.protobuf.Timestamp transaction_date = 9;
+  if (this->_internal_has_transaction_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        9, _Internal::register_date(this), target, stream);
+        9, _Internal::transaction_date(this), target, stream);
   }
 
   // int32 acceptance_list_version = 10;
@@ -596,11 +596,11 @@ size_t AcceptanceListRequest::ByteSizeLong() const {
         this->_internal_vehicle_id());
   }
 
-  // .google.protobuf.Timestamp register_date = 9;
-  if (this->_internal_has_register_date()) {
+  // .google.protobuf.Timestamp transaction_date = 9;
+  if (this->_internal_has_transaction_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *register_date_);
+        *transaction_date_);
   }
 
   // int32 register_code = 6;
@@ -656,8 +656,8 @@ void AcceptanceListRequest::MergeFrom(const AcceptanceListRequest& from) {
   if (!from._internal_vehicle_id().empty()) {
     _internal_set_vehicle_id(from._internal_vehicle_id());
   }
-  if (from._internal_has_register_date()) {
-    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_transaction_date()) {
+    _internal_mutable_transaction_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_transaction_date());
   }
   if (from._internal_register_code() != 0) {
     _internal_set_register_code(from._internal_register_code());
@@ -722,9 +722,9 @@ void AcceptanceListRequest::InternalSwap(AcceptanceListRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AcceptanceListRequest, acceptance_list_version_)
       + sizeof(AcceptanceListRequest::acceptance_list_version_)
-      - PROTOBUF_FIELD_OFFSET(AcceptanceListRequest, register_date_)>(
-          reinterpret_cast<char*>(&register_date_),
-          reinterpret_cast<char*>(&other->register_date_));
+      - PROTOBUF_FIELD_OFFSET(AcceptanceListRequest, transaction_date_)>(
+          reinterpret_cast<char*>(&transaction_date_),
+          reinterpret_cast<char*>(&other->transaction_date_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptanceListRequest::GetMetadata() const {
@@ -737,23 +737,23 @@ void AcceptanceListRequest::InternalSwap(AcceptanceListRequest* other) {
 
 class AcceptanceListResponse::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const AcceptanceListResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date(const AcceptanceListResponse* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-AcceptanceListResponse::_Internal::register_date(const AcceptanceListResponse* msg) {
-  return *msg->register_date_;
+AcceptanceListResponse::_Internal::transaction_date(const AcceptanceListResponse* msg) {
+  return *msg->transaction_date_;
 }
-void AcceptanceListResponse::clear_register_date() {
-  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
-    delete register_date_;
+void AcceptanceListResponse::clear_transaction_date() {
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  register_date_ = nullptr;
+  transaction_date_ = nullptr;
 }
 AcceptanceListResponse::AcceptanceListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  card_information_(arena) {
+  acceptance_list_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -762,12 +762,12 @@ AcceptanceListResponse::AcceptanceListResponse(::PROTOBUF_NAMESPACE_ID::Arena* a
 }
 AcceptanceListResponse::AcceptanceListResponse(const AcceptanceListResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      card_information_(from.card_information_) {
+      acceptance_list_(from.acceptance_list_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_register_date()) {
-    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+  if (from._internal_has_transaction_date()) {
+    transaction_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.transaction_date_);
   } else {
-    register_date_ = nullptr;
+    transaction_date_ = nullptr;
   }
   ::memcpy(&response_code_, &from.response_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
@@ -777,9 +777,9 @@ AcceptanceListResponse::AcceptanceListResponse(const AcceptanceListResponse& fro
 
 void AcceptanceListResponse::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&transaction_date_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
-    reinterpret_cast<char*>(&register_date_)) + sizeof(acceptance_list_version_));
+    reinterpret_cast<char*>(&transaction_date_)) + sizeof(acceptance_list_version_));
 }
 
 AcceptanceListResponse::~AcceptanceListResponse() {
@@ -791,7 +791,7 @@ AcceptanceListResponse::~AcceptanceListResponse() {
 
 inline void AcceptanceListResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete register_date_;
+  if (this != internal_default_instance()) delete transaction_date_;
 }
 
 void AcceptanceListResponse::ArenaDtor(void* object) {
@@ -810,11 +810,11 @@ void AcceptanceListResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  card_information_.Clear();
-  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
-    delete register_date_;
+  acceptance_list_.Clear();
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  register_date_ = nullptr;
+  transaction_date_ = nullptr;
   ::memset(&response_code_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&acceptance_list_version_) -
       reinterpret_cast<char*>(&response_code_)) + sizeof(acceptance_list_version_));
@@ -843,23 +843,23 @@ const char* AcceptanceListResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
         } else
           goto handle_unusual;
         continue;
-      // repeated .axis.transactions.AcceptanceListCardInformation card_information = 3;
+      // repeated .axis.transactions.AcceptanceListCardInformation acceptance_list = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_card_information(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_acceptance_list(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp register_date = 4;
+      // .google.protobuf.Timestamp transaction_date = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_transaction_date(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -905,20 +905,20 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_acceptance_list_version(), target);
   }
 
-  // repeated .axis.transactions.AcceptanceListCardInformation card_information = 3;
+  // repeated .axis.transactions.AcceptanceListCardInformation acceptance_list = 3;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_card_information_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_acceptance_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_card_information(i), target, stream);
+      InternalWriteMessage(3, this->_internal_acceptance_list(i), target, stream);
   }
 
-  // .google.protobuf.Timestamp register_date = 4;
-  if (this->_internal_has_register_date()) {
+  // .google.protobuf.Timestamp transaction_date = 4;
+  if (this->_internal_has_transaction_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::register_date(this), target, stream);
+        4, _Internal::transaction_date(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -937,18 +937,18 @@ size_t AcceptanceListResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .axis.transactions.AcceptanceListCardInformation card_information = 3;
-  total_size += 1UL * this->_internal_card_information_size();
-  for (const auto& msg : this->card_information_) {
+  // repeated .axis.transactions.AcceptanceListCardInformation acceptance_list = 3;
+  total_size += 1UL * this->_internal_acceptance_list_size();
+  for (const auto& msg : this->acceptance_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .google.protobuf.Timestamp register_date = 4;
-  if (this->_internal_has_register_date()) {
+  // .google.protobuf.Timestamp transaction_date = 4;
+  if (this->_internal_has_transaction_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *register_date_);
+        *transaction_date_);
   }
 
   // int32 response_code = 1;
@@ -983,9 +983,9 @@ void AcceptanceListResponse::MergeFrom(const AcceptanceListResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  card_information_.MergeFrom(from.card_information_);
-  if (from._internal_has_register_date()) {
-    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  acceptance_list_.MergeFrom(from.acceptance_list_);
+  if (from._internal_has_transaction_date()) {
+    _internal_mutable_transaction_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_transaction_date());
   }
   if (from._internal_response_code() != 0) {
     _internal_set_response_code(from._internal_response_code());
@@ -1010,13 +1010,13 @@ bool AcceptanceListResponse::IsInitialized() const {
 void AcceptanceListResponse::InternalSwap(AcceptanceListResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  card_information_.InternalSwap(&other->card_information_);
+  acceptance_list_.InternalSwap(&other->acceptance_list_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AcceptanceListResponse, acceptance_list_version_)
       + sizeof(AcceptanceListResponse::acceptance_list_version_)
-      - PROTOBUF_FIELD_OFFSET(AcceptanceListResponse, register_date_)>(
-          reinterpret_cast<char*>(&register_date_),
-          reinterpret_cast<char*>(&other->register_date_));
+      - PROTOBUF_FIELD_OFFSET(AcceptanceListResponse, transaction_date_)>(
+          reinterpret_cast<char*>(&transaction_date_),
+          reinterpret_cast<char*>(&other->transaction_date_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AcceptanceListResponse::GetMetadata() const {

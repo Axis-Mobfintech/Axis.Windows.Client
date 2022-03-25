@@ -27,7 +27,7 @@ constexpr ParametersRequest::ParametersRequest(
   , ksn_data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , line_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , vehicle_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , register_date_(nullptr)
+  , transaction_date_(nullptr)
   , register_code_(0)
   , emv_parameters_version_(0)
   , bin_parameters_version_(0)
@@ -46,7 +46,7 @@ constexpr ParametersResponse::ParametersResponse(
   : aid_table_()
   , bin_table_()
   , capk_table_()
-  , response_date_(nullptr)
+  , transaction_date_(nullptr)
   , response_code_(0)
   , emv_parameters_version_(0)
   , bin_parameters_version_(0){}
@@ -80,7 +80,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_device_5fparameters_2eproto::o
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, register_code_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, line_id_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, vehicle_id_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, register_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, transaction_date_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, emv_parameters_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, bin_parameters_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersRequest, capk_parameters_version_),
@@ -96,7 +96,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_device_5fparameters_2eproto::o
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, aid_table_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, bin_table_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, capk_table_),
-  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, response_date_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::ParametersResponse, transaction_date_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::axis::transactions::ParametersRequest)},
@@ -113,30 +113,30 @@ const char descriptor_table_protodef_device_5fparameters_2eproto[] PROTOBUF_SECT
   "ions\032\037google/protobuf/timestamp.proto\032\031P"
   "rotos/accepted_bin.proto\032#Protos/applica"
   "tion_identifier.proto\032\027Protos/capk_table"
-  ".proto\"\331\002\n\021ParametersRequest\022\021\n\tdevice_i"
+  ".proto\"\334\002\n\021ParametersRequest\022\021\n\tdevice_i"
   "d\030\001 \001(\t\022\023\n\013operator_id\030\002 \001(\t\022\034\n\024reader_s"
   "erial_number\030\003 \001(\t\022\034\n\024device_serial_numb"
   "er\030\004 \001(\t\022\020\n\010ksn_data\030\005 \001(\014\022\025\n\rregister_c"
   "ode\030\006 \001(\005\022\017\n\007line_id\030\007 \001(\t\022\022\n\nvehicle_id"
-  "\030\010 \001(\t\0221\n\rregister_date\030\t \001(\0132\032.google.p"
-  "rotobuf.Timestamp\022\036\n\026emv_parameters_vers"
-  "ion\030\n \001(\005\022\036\n\026bin_parameters_version\030\013 \001("
-  "\005\022\037\n\027capk_parameters_version\030\014 \001(\005\"\356\002\n\022P"
-  "arametersResponse\022\025\n\rresponse_code\030\001 \001(\005"
-  "\022\036\n\026emv_parameters_version\030\002 \001(\005\022\036\n\026bin_"
-  "parameters_version\030\003 \001(\005\022;\n\taid_table\030\004 "
-  "\003(\0132(.axis.transactions.ApplicationIdent"
-  "ifier\022F\n\tbin_table\030\005 \003(\01323.axis.transact"
-  "ions.AcceptedBankIdentificationNumber\022I\n"
-  "\ncapk_table\030\006 \003(\01325.axis.transactions.Ce"
-  "rtificateAuthorityPublicKeyTable\0221\n\rresp"
-  "onse_date\030\007 \001(\0132\032.google.protobuf.Timest"
-  "amp2}\n\027DeviceParametersService\022b\n\023GetDev"
-  "iceParameters\022$.axis.transactions.Parame"
-  "tersRequest\032%.axis.transactions.Paramete"
-  "rsResponseBQ\n#com.axismobfintech.gpb.tra"
-  "nsactionsZ\022axistransactionspb\252\002\025Axis.GPB"
-  ".Transactionsb\006proto3"
+  "\030\010 \001(\t\0224\n\020transaction_date\030\t \001(\0132\032.googl"
+  "e.protobuf.Timestamp\022\036\n\026emv_parameters_v"
+  "ersion\030\n \001(\005\022\036\n\026bin_parameters_version\030\013"
+  " \001(\005\022\037\n\027capk_parameters_version\030\014 \001(\005\"\361\002"
+  "\n\022ParametersResponse\022\025\n\rresponse_code\030\001 "
+  "\001(\005\022\036\n\026emv_parameters_version\030\002 \001(\005\022\036\n\026b"
+  "in_parameters_version\030\003 \001(\005\022;\n\taid_table"
+  "\030\004 \003(\0132(.axis.transactions.ApplicationId"
+  "entifier\022F\n\tbin_table\030\005 \003(\01323.axis.trans"
+  "actions.AcceptedBankIdentificationNumber"
+  "\022I\n\ncapk_table\030\006 \003(\01325.axis.transactions"
+  ".CertificateAuthorityPublicKeyTable\0224\n\020t"
+  "ransaction_date\030\007 \001(\0132\032.google.protobuf."
+  "Timestamp2}\n\027DeviceParametersService\022b\n\023"
+  "GetDeviceParameters\022$.axis.transactions."
+  "ParametersRequest\032%.axis.transactions.Pa"
+  "rametersResponseBQ\n#com.axismobfintech.g"
+  "pb.transactionsZ\022axistransactionspb\252\002\025Ax"
+  "is.GPB.Transactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_device_5fparameters_2eproto_deps[4] = {
   &::descriptor_table_Protos_2faccepted_5fbin_2eproto,
@@ -146,7 +146,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_device_5fparameters_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_device_5fparameters_2eproto = {
-  false, false, 1101, descriptor_table_protodef_device_5fparameters_2eproto, "device_parameters.proto", 
+  false, false, 1107, descriptor_table_protodef_device_5fparameters_2eproto, "device_parameters.proto", 
   &descriptor_table_device_5fparameters_2eproto_once, descriptor_table_device_5fparameters_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_device_5fparameters_2eproto::offsets,
   file_level_metadata_device_5fparameters_2eproto, file_level_enum_descriptors_device_5fparameters_2eproto, file_level_service_descriptors_device_5fparameters_2eproto,
@@ -164,18 +164,18 @@ namespace transactions {
 
 class ParametersRequest::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date(const ParametersRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date(const ParametersRequest* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-ParametersRequest::_Internal::register_date(const ParametersRequest* msg) {
-  return *msg->register_date_;
+ParametersRequest::_Internal::transaction_date(const ParametersRequest* msg) {
+  return *msg->transaction_date_;
 }
-void ParametersRequest::clear_register_date() {
-  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
-    delete register_date_;
+void ParametersRequest::clear_transaction_date() {
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  register_date_ = nullptr;
+  transaction_date_ = nullptr;
 }
 ParametersRequest::ParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -224,10 +224,10 @@ ParametersRequest::ParametersRequest(const ParametersRequest& from)
     vehicle_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vehicle_id(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_register_date()) {
-    register_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.register_date_);
+  if (from._internal_has_transaction_date()) {
+    transaction_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.transaction_date_);
   } else {
-    register_date_ = nullptr;
+    transaction_date_ = nullptr;
   }
   ::memcpy(&register_code_, &from.register_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&capk_parameters_version_) -
@@ -244,9 +244,9 @@ ksn_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 line_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 vehicle_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&register_date_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&transaction_date_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&capk_parameters_version_) -
-    reinterpret_cast<char*>(&register_date_)) + sizeof(capk_parameters_version_));
+    reinterpret_cast<char*>(&transaction_date_)) + sizeof(capk_parameters_version_));
 }
 
 ParametersRequest::~ParametersRequest() {
@@ -265,7 +265,7 @@ inline void ParametersRequest::SharedDtor() {
   ksn_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   line_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   vehicle_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete register_date_;
+  if (this != internal_default_instance()) delete transaction_date_;
 }
 
 void ParametersRequest::ArenaDtor(void* object) {
@@ -291,10 +291,10 @@ void ParametersRequest::Clear() {
   ksn_data_.ClearToEmpty();
   line_id_.ClearToEmpty();
   vehicle_id_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && register_date_ != nullptr) {
-    delete register_date_;
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  register_date_ = nullptr;
+  transaction_date_ = nullptr;
   ::memset(&register_code_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&capk_parameters_version_) -
       reinterpret_cast<char*>(&register_code_)) + sizeof(capk_parameters_version_));
@@ -384,10 +384,10 @@ const char* ParametersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp register_date = 9;
+      // .google.protobuf.Timestamp transaction_date = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr = ctx->ParseMessage(_internal_mutable_register_date(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_transaction_date(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -517,12 +517,12 @@ failure:
         8, this->_internal_vehicle_id(), target);
   }
 
-  // .google.protobuf.Timestamp register_date = 9;
-  if (this->_internal_has_register_date()) {
+  // .google.protobuf.Timestamp transaction_date = 9;
+  if (this->_internal_has_transaction_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        9, _Internal::register_date(this), target, stream);
+        9, _Internal::transaction_date(this), target, stream);
   }
 
   // int32 emv_parameters_version = 10;
@@ -608,11 +608,11 @@ size_t ParametersRequest::ByteSizeLong() const {
         this->_internal_vehicle_id());
   }
 
-  // .google.protobuf.Timestamp register_date = 9;
-  if (this->_internal_has_register_date()) {
+  // .google.protobuf.Timestamp transaction_date = 9;
+  if (this->_internal_has_transaction_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *register_date_);
+        *transaction_date_);
   }
 
   // int32 register_code = 6;
@@ -678,8 +678,8 @@ void ParametersRequest::MergeFrom(const ParametersRequest& from) {
   if (!from._internal_vehicle_id().empty()) {
     _internal_set_vehicle_id(from._internal_vehicle_id());
   }
-  if (from._internal_has_register_date()) {
-    _internal_mutable_register_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_register_date());
+  if (from._internal_has_transaction_date()) {
+    _internal_mutable_transaction_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_transaction_date());
   }
   if (from._internal_register_code() != 0) {
     _internal_set_register_code(from._internal_register_code());
@@ -750,9 +750,9 @@ void ParametersRequest::InternalSwap(ParametersRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ParametersRequest, capk_parameters_version_)
       + sizeof(ParametersRequest::capk_parameters_version_)
-      - PROTOBUF_FIELD_OFFSET(ParametersRequest, register_date_)>(
-          reinterpret_cast<char*>(&register_date_),
-          reinterpret_cast<char*>(&other->register_date_));
+      - PROTOBUF_FIELD_OFFSET(ParametersRequest, transaction_date_)>(
+          reinterpret_cast<char*>(&transaction_date_),
+          reinterpret_cast<char*>(&other->transaction_date_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ParametersRequest::GetMetadata() const {
@@ -765,12 +765,12 @@ void ParametersRequest::InternalSwap(ParametersRequest* other) {
 
 class ParametersResponse::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& response_date(const ParametersResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date(const ParametersResponse* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-ParametersResponse::_Internal::response_date(const ParametersResponse* msg) {
-  return *msg->response_date_;
+ParametersResponse::_Internal::transaction_date(const ParametersResponse* msg) {
+  return *msg->transaction_date_;
 }
 void ParametersResponse::clear_aid_table() {
   aid_table_.Clear();
@@ -781,11 +781,11 @@ void ParametersResponse::clear_bin_table() {
 void ParametersResponse::clear_capk_table() {
   capk_table_.Clear();
 }
-void ParametersResponse::clear_response_date() {
-  if (GetArenaForAllocation() == nullptr && response_date_ != nullptr) {
-    delete response_date_;
+void ParametersResponse::clear_transaction_date() {
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  response_date_ = nullptr;
+  transaction_date_ = nullptr;
 }
 ParametersResponse::ParametersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -805,10 +805,10 @@ ParametersResponse::ParametersResponse(const ParametersResponse& from)
       bin_table_(from.bin_table_),
       capk_table_(from.capk_table_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_response_date()) {
-    response_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.response_date_);
+  if (from._internal_has_transaction_date()) {
+    transaction_date_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.transaction_date_);
   } else {
-    response_date_ = nullptr;
+    transaction_date_ = nullptr;
   }
   ::memcpy(&response_code_, &from.response_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&bin_parameters_version_) -
@@ -818,9 +818,9 @@ ParametersResponse::ParametersResponse(const ParametersResponse& from)
 
 void ParametersResponse::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&response_date_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&transaction_date_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&bin_parameters_version_) -
-    reinterpret_cast<char*>(&response_date_)) + sizeof(bin_parameters_version_));
+    reinterpret_cast<char*>(&transaction_date_)) + sizeof(bin_parameters_version_));
 }
 
 ParametersResponse::~ParametersResponse() {
@@ -832,7 +832,7 @@ ParametersResponse::~ParametersResponse() {
 
 inline void ParametersResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete response_date_;
+  if (this != internal_default_instance()) delete transaction_date_;
 }
 
 void ParametersResponse::ArenaDtor(void* object) {
@@ -854,10 +854,10 @@ void ParametersResponse::Clear() {
   aid_table_.Clear();
   bin_table_.Clear();
   capk_table_.Clear();
-  if (GetArenaForAllocation() == nullptr && response_date_ != nullptr) {
-    delete response_date_;
+  if (GetArenaForAllocation() == nullptr && transaction_date_ != nullptr) {
+    delete transaction_date_;
   }
-  response_date_ = nullptr;
+  transaction_date_ = nullptr;
   ::memset(&response_code_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&bin_parameters_version_) -
       reinterpret_cast<char*>(&response_code_)) + sizeof(bin_parameters_version_));
@@ -933,10 +933,10 @@ const char* ParametersResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp response_date = 7;
+      // .google.protobuf.Timestamp transaction_date = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_response_date(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_transaction_date(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1012,12 +1012,12 @@ failure:
       InternalWriteMessage(6, this->_internal_capk_table(i), target, stream);
   }
 
-  // .google.protobuf.Timestamp response_date = 7;
-  if (this->_internal_has_response_date()) {
+  // .google.protobuf.Timestamp transaction_date = 7;
+  if (this->_internal_has_transaction_date()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        7, _Internal::response_date(this), target, stream);
+        7, _Internal::transaction_date(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1057,11 +1057,11 @@ size_t ParametersResponse::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .google.protobuf.Timestamp response_date = 7;
-  if (this->_internal_has_response_date()) {
+  // .google.protobuf.Timestamp transaction_date = 7;
+  if (this->_internal_has_transaction_date()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *response_date_);
+        *transaction_date_);
   }
 
   // int32 response_code = 1;
@@ -1104,8 +1104,8 @@ void ParametersResponse::MergeFrom(const ParametersResponse& from) {
   aid_table_.MergeFrom(from.aid_table_);
   bin_table_.MergeFrom(from.bin_table_);
   capk_table_.MergeFrom(from.capk_table_);
-  if (from._internal_has_response_date()) {
-    _internal_mutable_response_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_response_date());
+  if (from._internal_has_transaction_date()) {
+    _internal_mutable_transaction_date()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_transaction_date());
   }
   if (from._internal_response_code() != 0) {
     _internal_set_response_code(from._internal_response_code());
@@ -1139,9 +1139,9 @@ void ParametersResponse::InternalSwap(ParametersResponse* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ParametersResponse, bin_parameters_version_)
       + sizeof(ParametersResponse::bin_parameters_version_)
-      - PROTOBUF_FIELD_OFFSET(ParametersResponse, response_date_)>(
-          reinterpret_cast<char*>(&response_date_),
-          reinterpret_cast<char*>(&other->response_date_));
+      - PROTOBUF_FIELD_OFFSET(ParametersResponse, transaction_date_)>(
+          reinterpret_cast<char*>(&transaction_date_),
+          reinterpret_cast<char*>(&other->transaction_date_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ParametersResponse::GetMetadata() const {

@@ -206,7 +206,7 @@ class AcceptanceListRequest final :
     kKsnDataFieldNumber = 5,
     kLineIdFieldNumber = 7,
     kVehicleIdFieldNumber = 8,
-    kRegisterDateFieldNumber = 9,
+    kTransactionDateFieldNumber = 9,
     kRegisterCodeFieldNumber = 6,
     kAcceptanceListVersionFieldNumber = 10,
   };
@@ -308,23 +308,23 @@ class AcceptanceListRequest final :
   std::string* _internal_mutable_vehicle_id();
   public:
 
-  // .google.protobuf.Timestamp register_date = 9;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 9;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 register_code = 6;
   void clear_register_code();
@@ -358,7 +358,7 @@ class AcceptanceListRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ksn_data_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr line_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vehicle_id_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 register_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 acceptance_list_version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -485,46 +485,46 @@ class AcceptanceListResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCardInformationFieldNumber = 3,
-    kRegisterDateFieldNumber = 4,
+    kAcceptanceListFieldNumber = 3,
+    kTransactionDateFieldNumber = 4,
     kResponseCodeFieldNumber = 1,
     kAcceptanceListVersionFieldNumber = 2,
   };
-  // repeated .axis.transactions.AcceptanceListCardInformation card_information = 3;
-  int card_information_size() const;
+  // repeated .axis.transactions.AcceptanceListCardInformation acceptance_list = 3;
+  int acceptance_list_size() const;
   private:
-  int _internal_card_information_size() const;
+  int _internal_acceptance_list_size() const;
   public:
-  void clear_card_information();
-  ::axis::transactions::AcceptanceListCardInformation* mutable_card_information(int index);
+  void clear_acceptance_list();
+  ::axis::transactions::AcceptanceListCardInformation* mutable_acceptance_list(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptanceListCardInformation >*
-      mutable_card_information();
+      mutable_acceptance_list();
   private:
-  const ::axis::transactions::AcceptanceListCardInformation& _internal_card_information(int index) const;
-  ::axis::transactions::AcceptanceListCardInformation* _internal_add_card_information();
+  const ::axis::transactions::AcceptanceListCardInformation& _internal_acceptance_list(int index) const;
+  ::axis::transactions::AcceptanceListCardInformation* _internal_add_acceptance_list();
   public:
-  const ::axis::transactions::AcceptanceListCardInformation& card_information(int index) const;
-  ::axis::transactions::AcceptanceListCardInformation* add_card_information();
+  const ::axis::transactions::AcceptanceListCardInformation& acceptance_list(int index) const;
+  ::axis::transactions::AcceptanceListCardInformation* add_acceptance_list();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptanceListCardInformation >&
-      card_information() const;
+      acceptance_list() const;
 
-  // .google.protobuf.Timestamp register_date = 4;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 4;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 response_code = 1;
   void clear_response_code();
@@ -551,8 +551,8 @@ class AcceptanceListResponse final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptanceListCardInformation > card_information_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptanceListCardInformation > acceptance_list_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 response_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 acceptance_list_version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1094,39 +1094,39 @@ inline void AcceptanceListRequest::set_allocated_vehicle_id(std::string* vehicle
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.AcceptanceListRequest.vehicle_id)
 }
 
-// .google.protobuf.Timestamp register_date = 9;
-inline bool AcceptanceListRequest::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 9;
+inline bool AcceptanceListRequest::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool AcceptanceListRequest::has_register_date() const {
-  return _internal_has_register_date();
+inline bool AcceptanceListRequest::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListRequest::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListRequest::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListRequest::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.AcceptanceListRequest.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListRequest::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.AcceptanceListRequest.transaction_date)
+  return _internal_transaction_date();
 }
-inline void AcceptanceListRequest::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void AcceptanceListRequest::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.AcceptanceListRequest.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.AcceptanceListRequest.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1138,46 +1138,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::release_regist
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.AcceptanceListRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.AcceptanceListRequest.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.AcceptanceListRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListRequest::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.AcceptanceListRequest.transaction_date)
   return _msg;
 }
-inline void AcceptanceListRequest::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void AcceptanceListRequest::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.AcceptanceListRequest.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.AcceptanceListRequest.transaction_date)
 }
 
 // int32 acceptance_list_version = 10;
@@ -1244,79 +1244,79 @@ inline void AcceptanceListResponse::set_acceptance_list_version(::PROTOBUF_NAMES
   // @@protoc_insertion_point(field_set:axis.transactions.AcceptanceListResponse.acceptance_list_version)
 }
 
-// repeated .axis.transactions.AcceptanceListCardInformation card_information = 3;
-inline int AcceptanceListResponse::_internal_card_information_size() const {
-  return card_information_.size();
+// repeated .axis.transactions.AcceptanceListCardInformation acceptance_list = 3;
+inline int AcceptanceListResponse::_internal_acceptance_list_size() const {
+  return acceptance_list_.size();
 }
-inline int AcceptanceListResponse::card_information_size() const {
-  return _internal_card_information_size();
+inline int AcceptanceListResponse::acceptance_list_size() const {
+  return _internal_acceptance_list_size();
 }
-inline void AcceptanceListResponse::clear_card_information() {
-  card_information_.Clear();
+inline void AcceptanceListResponse::clear_acceptance_list() {
+  acceptance_list_.Clear();
 }
-inline ::axis::transactions::AcceptanceListCardInformation* AcceptanceListResponse::mutable_card_information(int index) {
-  // @@protoc_insertion_point(field_mutable:axis.transactions.AcceptanceListResponse.card_information)
-  return card_information_.Mutable(index);
+inline ::axis::transactions::AcceptanceListCardInformation* AcceptanceListResponse::mutable_acceptance_list(int index) {
+  // @@protoc_insertion_point(field_mutable:axis.transactions.AcceptanceListResponse.acceptance_list)
+  return acceptance_list_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptanceListCardInformation >*
-AcceptanceListResponse::mutable_card_information() {
-  // @@protoc_insertion_point(field_mutable_list:axis.transactions.AcceptanceListResponse.card_information)
-  return &card_information_;
+AcceptanceListResponse::mutable_acceptance_list() {
+  // @@protoc_insertion_point(field_mutable_list:axis.transactions.AcceptanceListResponse.acceptance_list)
+  return &acceptance_list_;
 }
-inline const ::axis::transactions::AcceptanceListCardInformation& AcceptanceListResponse::_internal_card_information(int index) const {
-  return card_information_.Get(index);
+inline const ::axis::transactions::AcceptanceListCardInformation& AcceptanceListResponse::_internal_acceptance_list(int index) const {
+  return acceptance_list_.Get(index);
 }
-inline const ::axis::transactions::AcceptanceListCardInformation& AcceptanceListResponse::card_information(int index) const {
-  // @@protoc_insertion_point(field_get:axis.transactions.AcceptanceListResponse.card_information)
-  return _internal_card_information(index);
+inline const ::axis::transactions::AcceptanceListCardInformation& AcceptanceListResponse::acceptance_list(int index) const {
+  // @@protoc_insertion_point(field_get:axis.transactions.AcceptanceListResponse.acceptance_list)
+  return _internal_acceptance_list(index);
 }
-inline ::axis::transactions::AcceptanceListCardInformation* AcceptanceListResponse::_internal_add_card_information() {
-  return card_information_.Add();
+inline ::axis::transactions::AcceptanceListCardInformation* AcceptanceListResponse::_internal_add_acceptance_list() {
+  return acceptance_list_.Add();
 }
-inline ::axis::transactions::AcceptanceListCardInformation* AcceptanceListResponse::add_card_information() {
-  ::axis::transactions::AcceptanceListCardInformation* _add = _internal_add_card_information();
-  // @@protoc_insertion_point(field_add:axis.transactions.AcceptanceListResponse.card_information)
+inline ::axis::transactions::AcceptanceListCardInformation* AcceptanceListResponse::add_acceptance_list() {
+  ::axis::transactions::AcceptanceListCardInformation* _add = _internal_add_acceptance_list();
+  // @@protoc_insertion_point(field_add:axis.transactions.AcceptanceListResponse.acceptance_list)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptanceListCardInformation >&
-AcceptanceListResponse::card_information() const {
-  // @@protoc_insertion_point(field_list:axis.transactions.AcceptanceListResponse.card_information)
-  return card_information_;
+AcceptanceListResponse::acceptance_list() const {
+  // @@protoc_insertion_point(field_list:axis.transactions.AcceptanceListResponse.acceptance_list)
+  return acceptance_list_;
 }
 
-// .google.protobuf.Timestamp register_date = 4;
-inline bool AcceptanceListResponse::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 4;
+inline bool AcceptanceListResponse::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool AcceptanceListResponse::has_register_date() const {
-  return _internal_has_register_date();
+inline bool AcceptanceListResponse::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListResponse::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListResponse::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListResponse::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.AcceptanceListResponse.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& AcceptanceListResponse::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.AcceptanceListResponse.transaction_date)
+  return _internal_transaction_date();
 }
-inline void AcceptanceListResponse::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void AcceptanceListResponse::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.AcceptanceListResponse.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.AcceptanceListResponse.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1328,46 +1328,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::release_regis
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.AcceptanceListResponse.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.AcceptanceListResponse.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.AcceptanceListResponse.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* AcceptanceListResponse::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.AcceptanceListResponse.transaction_date)
   return _msg;
 }
-inline void AcceptanceListResponse::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void AcceptanceListResponse::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.AcceptanceListResponse.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.AcceptanceListResponse.transaction_date)
 }
 
 // -------------------------------------------------------------------
