@@ -198,7 +198,7 @@ class DeviceRegisterRequest final :
     kKsnDataFieldNumber = 4,
     kLineIdFieldNumber = 5,
     kVehicleIdFieldNumber = 6,
-    kRegisterDateFieldNumber = 7,
+    kTransactionDateFieldNumber = 7,
   };
   // string operator_id = 1;
   void clear_operator_id();
@@ -284,23 +284,23 @@ class DeviceRegisterRequest final :
   std::string* _internal_mutable_vehicle_id();
   public:
 
-  // .google.protobuf.Timestamp register_date = 7;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 7;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // @@protoc_insertion_point(class_scope:axis.transactions.DeviceRegisterRequest)
  private:
@@ -315,7 +315,7 @@ class DeviceRegisterRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ksn_data_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr line_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vehicle_id_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_device_5fregister_2eproto;
 };
@@ -442,7 +442,7 @@ class DeviceRegisterResponse final :
   enum : int {
     kRegisterCodeFieldNumber = 2,
     kDeviceIdFieldNumber = 3,
-    kRegisterDateFieldNumber = 4,
+    kTransactionDateFieldNumber = 4,
     kResponseCodeFieldNumber = 1,
   };
   // string register_code = 2;
@@ -473,23 +473,23 @@ class DeviceRegisterResponse final :
   std::string* _internal_mutable_device_id();
   public:
 
-  // .google.protobuf.Timestamp register_date = 4;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 4;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 response_code = 1;
   void clear_response_code();
@@ -509,7 +509,7 @@ class DeviceRegisterResponse final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr register_code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_id_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 response_code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_device_5fregister_2eproto;
@@ -801,39 +801,39 @@ inline void DeviceRegisterRequest::set_allocated_vehicle_id(std::string* vehicle
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.vehicle_id)
 }
 
-// .google.protobuf.Timestamp register_date = 7;
-inline bool DeviceRegisterRequest::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 7;
+inline bool DeviceRegisterRequest::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool DeviceRegisterRequest::has_register_date() const {
-  return _internal_has_register_date();
+inline bool DeviceRegisterRequest::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterRequest::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterRequest::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterRequest::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterRequest::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterRequest.transaction_date)
+  return _internal_transaction_date();
 }
-inline void DeviceRegisterRequest::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void DeviceRegisterRequest::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.DeviceRegisterRequest.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.DeviceRegisterRequest.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -845,46 +845,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::release_regist
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterRequest.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterRequest::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterRequest.transaction_date)
   return _msg;
 }
-inline void DeviceRegisterRequest::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void DeviceRegisterRequest::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterRequest.transaction_date)
 }
 
 // -------------------------------------------------------------------
@@ -1003,39 +1003,39 @@ inline void DeviceRegisterResponse::set_allocated_device_id(std::string* device_
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterResponse.device_id)
 }
 
-// .google.protobuf.Timestamp register_date = 4;
-inline bool DeviceRegisterResponse::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 4;
+inline bool DeviceRegisterResponse::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool DeviceRegisterResponse::has_register_date() const {
-  return _internal_has_register_date();
+inline bool DeviceRegisterResponse::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterResponse::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterResponse::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterResponse::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterResponse.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& DeviceRegisterResponse::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.DeviceRegisterResponse.transaction_date)
+  return _internal_transaction_date();
 }
-inline void DeviceRegisterResponse::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void DeviceRegisterResponse::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.DeviceRegisterResponse.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.DeviceRegisterResponse.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1047,46 +1047,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::release_regis
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterResponse.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.DeviceRegisterResponse.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterResponse.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* DeviceRegisterResponse::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.DeviceRegisterResponse.transaction_date)
   return _msg;
 }
-inline void DeviceRegisterResponse::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void DeviceRegisterResponse::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterResponse.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.DeviceRegisterResponse.transaction_date)
 }
 
 #ifdef __GNUC__

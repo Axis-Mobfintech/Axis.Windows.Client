@@ -202,7 +202,7 @@ class ParametersRequest final :
     kKsnDataFieldNumber = 5,
     kLineIdFieldNumber = 7,
     kVehicleIdFieldNumber = 8,
-    kRegisterDateFieldNumber = 9,
+    kTransactionDateFieldNumber = 9,
     kRegisterCodeFieldNumber = 6,
     kEmvParametersVersionFieldNumber = 10,
     kBinParametersVersionFieldNumber = 11,
@@ -306,23 +306,23 @@ class ParametersRequest final :
   std::string* _internal_mutable_vehicle_id();
   public:
 
-  // .google.protobuf.Timestamp register_date = 9;
-  bool has_register_date() const;
+  // .google.protobuf.Timestamp transaction_date = 9;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_register_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_register_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& register_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_register_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_register_date();
-  void set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_register_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_register_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_register_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_register_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 register_code = 6;
   void clear_register_code();
@@ -374,7 +374,7 @@ class ParametersRequest final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ksn_data_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr line_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vehicle_id_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 register_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 emv_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 bin_parameters_version_;
@@ -506,7 +506,7 @@ class ParametersResponse final :
     kAidTableFieldNumber = 4,
     kBinTableFieldNumber = 5,
     kCapkTableFieldNumber = 6,
-    kResponseDateFieldNumber = 7,
+    kTransactionDateFieldNumber = 7,
     kResponseCodeFieldNumber = 1,
     kEmvParametersVersionFieldNumber = 2,
     kBinParametersVersionFieldNumber = 3,
@@ -565,23 +565,23 @@ class ParametersResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::CertificateAuthorityPublicKeyTable >&
       capk_table() const;
 
-  // .google.protobuf.Timestamp response_date = 7;
-  bool has_response_date() const;
+  // .google.protobuf.Timestamp transaction_date = 7;
+  bool has_transaction_date() const;
   private:
-  bool _internal_has_response_date() const;
+  bool _internal_has_transaction_date() const;
   public:
-  void clear_response_date();
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& response_date() const;
-  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_response_date();
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_response_date();
-  void set_allocated_response_date(::PROTOBUF_NAMESPACE_ID::Timestamp* response_date);
+  void clear_transaction_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& transaction_date() const;
+  PROTOBUF_MUST_USE_RESULT ::PROTOBUF_NAMESPACE_ID::Timestamp* release_transaction_date();
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* mutable_transaction_date();
+  void set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_response_date() const;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_response_date();
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp& _internal_transaction_date() const;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_transaction_date();
   public:
-  void unsafe_arena_set_allocated_response_date(
-      ::PROTOBUF_NAMESPACE_ID::Timestamp* response_date);
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_response_date();
+  void unsafe_arena_set_allocated_transaction_date(
+      ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date);
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_transaction_date();
 
   // int32 response_code = 1;
   void clear_response_code();
@@ -620,7 +620,7 @@ class ParametersResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::ApplicationIdentifier > aid_table_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::AcceptedBankIdentificationNumber > bin_table_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::axis::transactions::CertificateAuthorityPublicKeyTable > capk_table_;
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* response_date_;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date_;
   ::PROTOBUF_NAMESPACE_ID::int32 response_code_;
   ::PROTOBUF_NAMESPACE_ID::int32 emv_parameters_version_;
   ::PROTOBUF_NAMESPACE_ID::int32 bin_parameters_version_;
@@ -980,39 +980,39 @@ inline void ParametersRequest::set_allocated_vehicle_id(std::string* vehicle_id)
   // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.vehicle_id)
 }
 
-// .google.protobuf.Timestamp register_date = 9;
-inline bool ParametersRequest::_internal_has_register_date() const {
-  return this != internal_default_instance() && register_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 9;
+inline bool ParametersRequest::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool ParametersRequest::has_register_date() const {
-  return _internal_has_register_date();
+inline bool ParametersRequest::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersRequest::_internal_register_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = register_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersRequest::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersRequest::register_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.register_date)
-  return _internal_register_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersRequest::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersRequest.transaction_date)
+  return _internal_transaction_date();
 }
-inline void ParametersRequest::unsafe_arena_set_allocated_register_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void ParametersRequest::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  register_date_ = register_date;
-  if (register_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.ParametersRequest.register_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.ParametersRequest.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::release_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1024,46 +1024,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::release_register_d
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::unsafe_arena_release_register_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersRequest.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = register_date_;
-  register_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::_internal_mutable_register_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::_internal_mutable_transaction_date() {
   
-  if (register_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    register_date_ = p;
+    transaction_date_ = p;
   }
-  return register_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::mutable_register_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_register_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.register_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersRequest::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersRequest.transaction_date)
   return _msg;
 }
-inline void ParametersRequest::set_allocated_register_date(::PROTOBUF_NAMESPACE_ID::Timestamp* register_date) {
+inline void ParametersRequest::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (register_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(register_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      register_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  register_date_ = register_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.register_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersRequest.transaction_date)
 }
 
 // int32 emv_parameters_version = 10;
@@ -1301,39 +1301,39 @@ ParametersResponse::capk_table() const {
   return capk_table_;
 }
 
-// .google.protobuf.Timestamp response_date = 7;
-inline bool ParametersResponse::_internal_has_response_date() const {
-  return this != internal_default_instance() && response_date_ != nullptr;
+// .google.protobuf.Timestamp transaction_date = 7;
+inline bool ParametersResponse::_internal_has_transaction_date() const {
+  return this != internal_default_instance() && transaction_date_ != nullptr;
 }
-inline bool ParametersResponse::has_response_date() const {
-  return _internal_has_response_date();
+inline bool ParametersResponse::has_transaction_date() const {
+  return _internal_has_transaction_date();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersResponse::_internal_response_date() const {
-  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = response_date_;
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersResponse::_internal_transaction_date() const {
+  const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = transaction_date_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersResponse::response_date() const {
-  // @@protoc_insertion_point(field_get:axis.transactions.ParametersResponse.response_date)
-  return _internal_response_date();
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& ParametersResponse::transaction_date() const {
+  // @@protoc_insertion_point(field_get:axis.transactions.ParametersResponse.transaction_date)
+  return _internal_transaction_date();
 }
-inline void ParametersResponse::unsafe_arena_set_allocated_response_date(
-    ::PROTOBUF_NAMESPACE_ID::Timestamp* response_date) {
+inline void ParametersResponse::unsafe_arena_set_allocated_transaction_date(
+    ::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(response_date_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  response_date_ = response_date;
-  if (response_date) {
+  transaction_date_ = transaction_date;
+  if (transaction_date) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.ParametersResponse.response_date)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:axis.transactions.ParametersResponse.transaction_date)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::release_response_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::release_transaction_date() {
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = response_date_;
-  response_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1345,46 +1345,46 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::release_response_
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::unsafe_arena_release_response_date() {
-  // @@protoc_insertion_point(field_release:axis.transactions.ParametersResponse.response_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::unsafe_arena_release_transaction_date() {
+  // @@protoc_insertion_point(field_release:axis.transactions.ParametersResponse.transaction_date)
   
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = response_date_;
-  response_date_ = nullptr;
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = transaction_date_;
+  transaction_date_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::_internal_mutable_response_date() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::_internal_mutable_transaction_date() {
   
-  if (response_date_ == nullptr) {
+  if (transaction_date_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
-    response_date_ = p;
+    transaction_date_ = p;
   }
-  return response_date_;
+  return transaction_date_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::mutable_response_date() {
-  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_response_date();
-  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersResponse.response_date)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* ParametersResponse::mutable_transaction_date() {
+  ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_transaction_date();
+  // @@protoc_insertion_point(field_mutable:axis.transactions.ParametersResponse.transaction_date)
   return _msg;
 }
-inline void ParametersResponse::set_allocated_response_date(::PROTOBUF_NAMESPACE_ID::Timestamp* response_date) {
+inline void ParametersResponse::set_allocated_transaction_date(::PROTOBUF_NAMESPACE_ID::Timestamp* transaction_date) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(response_date_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date_);
   }
-  if (response_date) {
+  if (transaction_date) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(response_date));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_date));
     if (message_arena != submessage_arena) {
-      response_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, response_date, submessage_arena);
+      transaction_date = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction_date, submessage_arena);
     }
     
   } else {
     
   }
-  response_date_ = response_date;
-  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersResponse.response_date)
+  transaction_date_ = transaction_date;
+  // @@protoc_insertion_point(field_set_allocated:axis.transactions.ParametersResponse.transaction_date)
 }
 
 #ifdef __GNUC__

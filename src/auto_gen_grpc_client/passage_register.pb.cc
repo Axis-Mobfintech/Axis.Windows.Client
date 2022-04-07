@@ -55,7 +55,8 @@ constexpr RegisterPassageResponse::RegisterPassageResponse(
   , response_code_(0)
   , emv_parameters_version_(0)
   , bin_parameters_version_(0)
-  , restriction_list_version_(0){}
+  , restriction_list_version_(0)
+  , acceptance_list_version_(0){}
 struct RegisterPassageResponseDefaultTypeInternal {
   constexpr RegisterPassageResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -108,6 +109,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_passage_5fregister_2eproto::of
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RegisterPassageResponse, emv_parameters_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RegisterPassageResponse, bin_parameters_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RegisterPassageResponse, restriction_list_version_),
+  PROTOBUF_FIELD_OFFSET(::axis::transactions::RegisterPassageResponse, acceptance_list_version_),
   PROTOBUF_FIELD_OFFSET(::axis::transactions::RegisterPassageResponse, device_suid_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -136,25 +138,25 @@ const char descriptor_table_protodef_passage_5fregister_2eproto[] PROTOBUF_SECTI
   "\030restriction_list_version\030\016 \001(\005\022\037\n\027accep"
   "tance_list_version\030\017 \001(\005\022\031\n\021transaction_"
   "value\030\020 \001(\005\022\017\n\007line_id\030\021 \001(\t\022\022\n\nvehicle_"
-  "id\030\022 \001(\t\022\023\n\013geolocation\030\023 \001(\t\"\274\001\n\027Regist"
+  "id\030\022 \001(\t\022\023\n\013geolocation\030\023 \001(\t\"\335\001\n\027Regist"
   "erPassageResponse\022\025\n\rresponse_code\030\001 \001(\005"
   "\022\023\n\013gateway_uid\030\002 \001(\t\022\036\n\026emv_parameters_"
   "version\030\003 \001(\005\022\036\n\026bin_parameters_version\030"
   "\004 \001(\005\022 \n\030restriction_list_version\030\005 \001(\005\022"
-  "\023\n\013device_suid\030\006 \001(\t2\202\001\n\026RegisterPassage"
-  "Service\022h\n\017MakeTransaction\022).axis.transa"
-  "ctions.RegisterPassageRequest\032*.axis.tra"
-  "nsactions.RegisterPassageResponseBQ\n#com"
-  ".axismobfintech.gpb.transactionsZ\022axistr"
-  "ansactionspb\252\002\025Axis.GPB.Transactionsb\006pr"
-  "oto3"
+  "\037\n\027acceptance_list_version\030\006 \001(\005\022\023\n\013devi"
+  "ce_suid\030\007 \001(\t2\202\001\n\026RegisterPassageService"
+  "\022h\n\017MakeTransaction\022).axis.transactions."
+  "RegisterPassageRequest\032*.axis.transactio"
+  "ns.RegisterPassageResponseBQ\n#com.axismo"
+  "bfintech.gpb.transactionsZ\022axistransacti"
+  "onspb\252\002\025Axis.GPB.Transactionsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_passage_5fregister_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_passage_5fregister_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_passage_5fregister_2eproto = {
-  false, false, 1044, descriptor_table_protodef_passage_5fregister_2eproto, "passage_register.proto", 
+  false, false, 1077, descriptor_table_protodef_passage_5fregister_2eproto, "passage_register.proto", 
   &descriptor_table_passage_5fregister_2eproto_once, descriptor_table_passage_5fregister_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_passage_5fregister_2eproto::offsets,
   file_level_metadata_passage_5fregister_2eproto, file_level_enum_descriptors_passage_5fregister_2eproto, file_level_service_descriptors_passage_5fregister_2eproto,
@@ -1058,8 +1060,8 @@ RegisterPassageResponse::RegisterPassageResponse(const RegisterPassageResponse& 
       GetArenaForAllocation());
   }
   ::memcpy(&response_code_, &from.response_code_,
-    static_cast<size_t>(reinterpret_cast<char*>(&restriction_list_version_) -
-    reinterpret_cast<char*>(&response_code_)) + sizeof(restriction_list_version_));
+    static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
+    reinterpret_cast<char*>(&response_code_)) + sizeof(acceptance_list_version_));
   // @@protoc_insertion_point(copy_constructor:axis.transactions.RegisterPassageResponse)
 }
 
@@ -1068,8 +1070,8 @@ gateway_uid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 device_suid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&response_code_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&restriction_list_version_) -
-    reinterpret_cast<char*>(&response_code_)) + sizeof(restriction_list_version_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&acceptance_list_version_) -
+    reinterpret_cast<char*>(&response_code_)) + sizeof(acceptance_list_version_));
 }
 
 RegisterPassageResponse::~RegisterPassageResponse() {
@@ -1104,8 +1106,8 @@ void RegisterPassageResponse::Clear() {
   gateway_uid_.ClearToEmpty();
   device_suid_.ClearToEmpty();
   ::memset(&response_code_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&restriction_list_version_) -
-      reinterpret_cast<char*>(&response_code_)) + sizeof(restriction_list_version_));
+      reinterpret_cast<char*>(&acceptance_list_version_) -
+      reinterpret_cast<char*>(&response_code_)) + sizeof(acceptance_list_version_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1157,9 +1159,17 @@ const char* RegisterPassageResponse::_InternalParse(const char* ptr, ::PROTOBUF_
         } else
           goto handle_unusual;
         continue;
-      // string device_suid = 6;
+      // int32 acceptance_list_version = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          acceptance_list_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string device_suid = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_device_suid();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "axis.transactions.RegisterPassageResponse.device_suid"));
@@ -1230,14 +1240,20 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_restriction_list_version(), target);
   }
 
-  // string device_suid = 6;
+  // int32 acceptance_list_version = 6;
+  if (this->_internal_acceptance_list_version() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_acceptance_list_version(), target);
+  }
+
+  // string device_suid = 7;
   if (!this->_internal_device_suid().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_device_suid().data(), static_cast<int>(this->_internal_device_suid().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "axis.transactions.RegisterPassageResponse.device_suid");
     target = stream->WriteStringMaybeAliased(
-        6, this->_internal_device_suid(), target);
+        7, this->_internal_device_suid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1263,7 +1279,7 @@ size_t RegisterPassageResponse::ByteSizeLong() const {
         this->_internal_gateway_uid());
   }
 
-  // string device_suid = 6;
+  // string device_suid = 7;
   if (!this->_internal_device_suid().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -1288,6 +1304,11 @@ size_t RegisterPassageResponse::ByteSizeLong() const {
   // int32 restriction_list_version = 5;
   if (this->_internal_restriction_list_version() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_restriction_list_version());
+  }
+
+  // int32 acceptance_list_version = 6;
+  if (this->_internal_acceptance_list_version() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_acceptance_list_version());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1330,6 +1351,9 @@ void RegisterPassageResponse::MergeFrom(const RegisterPassageResponse& from) {
   if (from._internal_restriction_list_version() != 0) {
     _internal_set_restriction_list_version(from._internal_restriction_list_version());
   }
+  if (from._internal_acceptance_list_version() != 0) {
+    _internal_set_acceptance_list_version(from._internal_acceptance_list_version());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1360,8 +1384,8 @@ void RegisterPassageResponse::InternalSwap(RegisterPassageResponse* other) {
       &other->device_suid_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RegisterPassageResponse, restriction_list_version_)
-      + sizeof(RegisterPassageResponse::restriction_list_version_)
+      PROTOBUF_FIELD_OFFSET(RegisterPassageResponse, acceptance_list_version_)
+      + sizeof(RegisterPassageResponse::acceptance_list_version_)
       - PROTOBUF_FIELD_OFFSET(RegisterPassageResponse, response_code_)>(
           reinterpret_cast<char*>(&response_code_),
           reinterpret_cast<char*>(&other->response_code_));
